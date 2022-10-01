@@ -29,6 +29,7 @@ class Controller extends BaseController
     }
 
     public function scanDir(){
+        dd($this->service->getCameraList());
         /*$dir = scandir('smb://share:share@192.168.100.100/Records/xiaomi_camera_videos');
         dd($dir);*/
 //        echo phpversion();

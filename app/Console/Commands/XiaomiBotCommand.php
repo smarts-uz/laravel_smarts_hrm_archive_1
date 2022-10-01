@@ -3,8 +3,10 @@
 namespace App\Console\Commands;
 
 use App\Models\Camera;
+use App\Services\NutgramService;
 use Illuminate\Console\Command;
 use App\Models\Office;
+use SergiX44\Nutgram\Nutgram;
 
 class XiaomiBotCommand extends Command
 {
@@ -13,7 +15,7 @@ class XiaomiBotCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'xiaomi:bot {office_id}';
+    protected $signature = 'xiaomi:bot';
 
     /**
      * The console command description.
@@ -29,33 +31,53 @@ class XiaomiBotCommand extends Command
      */
     public function handle()
     {
-
-        $id = $this->argument('office_id');
-        $cameras = Camera::where('office_id', $id)->get();
-        $length = count($cameras);
-        print_r($cameras);
-        die();
-        for ($i = 0; $i <= $length - 1; $i++){
-            print_r($cameras[$i]['title']);
-            echo "\n";
-//            echo $cameras[$i]->title."\n";
+        $services = new NutgramService();
+        $cameras = $services->getCameraList();
+        foreach ($cameras as $camera) {
+            print_r('Camera: ' . $camera->title);
+            print_r(PHP_EOL);
+            $services->getActualData($camera);
         }
 
+        /*
+                $user = 'share';
+                $password = 'admin123456';
 
-        /*$user = 'share';
-        $password = 'admin123456';
 
-        exec('net use "\\\192.168.100.100" /user:"'.$user.'" "'.$password.'" /persistent:no');
 
-        $last_folder = '2022093014';
-        $camera_id = '44237c9659a3';
-        $last_video = '28M56S_1664533736.mp4';
-        $camera_folder = scandir('\\\192.168.100.100/Records/xiaomi_camera_videos/' . $camera_id);
 
-        for($i = array_search($last_folder, $camera_folder)+1; $i<count($camera_folder)-2; $i++){
-            print_r('Folder: ');
-            print_r($camera_folder[$i]);
-            print_r(PHP_EOL);
-        }*/
+
+
+
+                // Log In
+                exec('net use "\\\192.168.100.100" /user:"' . $user . '" "' . $password . '" /persistent:no');
+                $bot = new Nutgram("5743173293:AAF33GAKELp-Id9y00EhIJRrpWI37umZ788");
+                $camera_folder = scandir('\\\192.168.100.100/Records/xiaomi_camera_videos/' . $camera_id);
+                for ($i = array_search($last_folder, $camera_folder) + 1; $i < count($camera_folder) - 2; $i++) {
+                    $path = 'Z:/xiaomi_camera_videos/' . $camera_id . '/' . $camera_folder[$i];
+                    $current_dir = scandir('\\\192.168.100.100/Records/xiaomi_camera_videos/' . $camera_id . '/' . $camera_folder[$i]);
+                    print_r('Folder: ');
+                    print_r($camera_folder[$i]);
+                    print_r(PHP_EOL);
+                    print_r('Files: ');
+                    print_r(PHP_EOL);
+                    if ($i == array_search($last_folder, $camera_folder) + 1) {
+                        for ($o = array_search($last_video, $current_dir) + 1; $o <= count($current_dir) - 2; $o++) {
+                            print_r($current_dir[$o]);
+                            print_r(PHP_EOL);
+                            $video = fopen($path . '/' . $current_dir[$o], 'r+');
+                            $bot->sendDocument($video, ['chat_id' => '-1001626673572', 'reply_to_message_id' => '11', 'caption' => $current_dir[$o]]);
+                            sleep(0.2);
+
+                        }
+                    } else {
+                        for ($o = 0; $o <= count($current_dir) - 2; $o++) {
+                            print_r($current_dir[$o]);
+                            print_r(PHP_EOL);
+
+                        }
+                    }
+                }
+            }*/
     }
 }
