@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\Controller;
+use App\Http\Controllers\TgController;
+use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::match(['post', 'get'],'/', [TgController::class, 'index']);
+
+Route::get('/scan', [Controller::class, 'scanDir']);
 
 
 Route::group(['prefix' => 'admin'], function () {
