@@ -27,7 +27,7 @@ class NutgramService
 
     public function getMessageId($text)
     {
-        $bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 20]);
+        $bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 60]);
         $updates = $bot->getUpdates();
         foreach ($updates as $update) {
             if ($update->message) {
@@ -43,7 +43,7 @@ class NutgramService
 
     public function getActualData($camera)
     {
-        $bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 20]);
+        $bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 60]);
         $camera_folder = scandir('\\\192.168.100.100/Records/xiaomi_camera_videos/' . $camera->title);
 //        dd(is_numeric(array_search($camera->folder, $camera_folder)));
         for ($i = array_search($camera->folder, $camera_folder); $i < count($camera_folder) - 2; $i++) {
