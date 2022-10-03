@@ -8,14 +8,14 @@ use Illuminate\Console\Command;
 use App\Models\Office;
 use SergiX44\Nutgram\Nutgram;
 
-class XiaomiBotCommand extends Command
+class CameraIdCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'xiaomi:bot';
+    protected $signature = 'xiaomi:id {id}';
 
     /**
      * The console command description.
@@ -31,8 +31,10 @@ class XiaomiBotCommand extends Command
      */
     public function handle()
     {
+        $id = $this->argument('id');
         $services = new NutgramService();
-        $cameras = $services->getCameraList();
+        $cameras = $services->getOfficeCameras((int) $id);
+//        var_dump($cameras);
         foreach ($cameras as $camera) {
             print_r('Camera: ' . $camera->title);
             print_r(PHP_EOL);
