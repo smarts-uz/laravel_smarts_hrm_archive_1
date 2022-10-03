@@ -24,7 +24,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        // $schedule->command('inspire')->hourly();
+        $schedule->command('xiaomi:id 1')->hourly();
+        $schedule->command('xiaomi:id 2')->hourly();
     }
 
     /**
