@@ -40,14 +40,11 @@ Route::get('/bot', function () {
 
 Route::get('/chat', function() {
 
-    $file_system = new \App\Services\FileSystemService();
-    dd($file_system->readUrl('D:/PHPALL.url'));
+    $nutgram = new NutgramService();
 
-
-//    $nutgram = new NutgramService();
-//
-//    $channel_message = $nutgram->getChannelPost('https://t.me/c/1827937110/12');
-//    dd($nutgram->getComments($channel_message));
+    $channel_message = $nutgram->getChannelPost('https://t.me/c/1827937110/12');
+    $comments = $nutgram->getComments($channel_message);
+    dd($nutgram->getDocuments($comments));
 });
 
 Route::group(['prefix' => 'admin'], function () {

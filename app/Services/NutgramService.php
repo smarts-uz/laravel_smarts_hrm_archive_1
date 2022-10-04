@@ -75,20 +75,21 @@ class NutgramService
         sleep(3);
     }
 
-    public function getComments($channel_post){
+    public function getComments($channel_post)
+    {
         $messages = array();
         $message = $this->getMessagesId($channel_post);
         $updates = $this->bot->getUpdates();
-        foreach ($updates as $update){
+        foreach ($updates as $update) {
             if ($update->message) {
-            $test = $update->message;
-            if($test->reply_to_message) {
-                $reply_to = $test->reply_to_message;
-                if ($reply_to->message_id === $message->message_id) {
-                    array_push($messages, $test);
+                $test = $update->message;
+                if ($test->reply_to_message) {
+                    $reply_to = $test->reply_to_message;
+                    if ($reply_to->message_id === $message->message_id) {
+                        array_push($messages, $test);
+                    }
                 }
             }
-        }
         }
         return $messages;
     }
@@ -154,6 +155,18 @@ class NutgramService
                 }
             }
         }
+    }
+
+    public function getDocuments($messages)
+    {
+        $files = array();
+        foreach ($messages as $message){
+            if($message->document){
+                $file = $message->document;
+                array_push($files, $file->file_name);
+            }
+        }
+        return $files;
     }
 
 }
