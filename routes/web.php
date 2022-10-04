@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\TgController;
 use App\Models\Camera;
+use App\Services\NutgramService;
 use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\Route;
 use SergiX44\Nutgram\Nutgram;
@@ -18,30 +19,36 @@ use SergiX44\Nutgram\Nutgram;
 |
 */
 
-Route::match(['post', 'get'], '/', [TgController::class, 'index']);
 
-Route::get('/scan', [Controller::class, 'scanDir']);
-Route::get('/camera', function () {
-
-    $cameras = Camera::where('office_id', 1)->get();
-    dd($cameras[0]->id);
-
-});
 Route::get('/bot', function () {
-    $bot = new Nutgram("5743173293:AAF33GAKELp-Id9y00EhIJRrpWI37umZ788");
-    $updates = $bot->getUpdates(['chat_id' => '1244414566']);
+
+    $bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 60]);
+    $chat = array();
+    $updates = $bot->getUpdates();
     foreach ($updates as $update) {
-        if ($update->message) {
-            $test = $update->message;
-            if($test->chat->id == -1001626673572) {
-                if ($test->text == "Hello World") {
-                    $bot->sendMessage('Hello World!', ['chat_id' => '-1001626673572', 'reply_to_message_id' => $test->message_id]);
-                }
+        if ($update->channel_post) {
+            $test = $update->channel_post;
+            $qwe = $test->chat;
+            if ($qwe->id == -1001827937110 && $test->text === "TestSync") {
+                array_push($chat, $test);
             }
         }
     }
-});
+    dd($chat);
+    return $chat;
+    });
 
+Route::get('/chat', function() {
+
+    $file_system = new \App\Services\FileSystemService();
+    dd($file_system->readUrl('D:/PHPALL.url'));
+
+
+//    $nutgram = new NutgramService();
+//
+//    $channel_message = $nutgram->getChannelPost('https://t.me/c/1827937110/12');
+//    dd($nutgram->getComments($channel_message));
+});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
