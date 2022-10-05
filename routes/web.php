@@ -3,6 +3,7 @@
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\TgController;
 use App\Models\Camera;
+use App\Services\FileSystemService;
 use App\Services\NutgramService;
 use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\Route;
@@ -40,11 +41,12 @@ Route::get('/bot', function () {
 
 Route::get('/chat', function() {
 
+    $file_system = new FileSystemService();
     $nutgram = new NutgramService();
+    $message_id = $nutgram->getMessageId('TestSyncFolder');
+    $files = $file_system->syncTelegramWanted('D:\PHP');
+    $file_system->sendToTelegram('D:/PHP', $files, $message_id);
 
-    $channel_message = $nutgram->getChannelPost('https://t.me/c/1827937110/12');
-    $comments = $nutgram->getComments($channel_message);
-    dd($nutgram->getDocuments($comments));
 });
 
 Route::group(['prefix' => 'admin'], function () {

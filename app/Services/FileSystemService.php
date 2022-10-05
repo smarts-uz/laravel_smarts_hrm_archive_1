@@ -2,6 +2,8 @@
 
 namespace App\Services;
 
+use SergiX44\Nutgram\Nutgram;
+
 class FileSystemService
 {
     public $path;
@@ -47,5 +49,57 @@ IconFile=C:\Windows\System32\SHELL32.dll';
         }
         return $url;
     }
+
+    public function syncTelegramWanted($path)
+    {
+        $nutgram = new NutgramService();
+        $url = $this->searchForUrl($path);
+        if ($url != NULL) {
+            $url = $this->readUrl($url);
+            $post = $nutgram->getChannelPost($url);
+            $comments = $nutgram->getComments($post);
+            $files = $nutgram->getDocuments($comments);
+        }
+        $files_local = array_filter(array_slice(scandir($path),2), function ($item) use ($path) {
+            if (strripos($item, '.') != 0) {
+                return $item;
+            }
+        });
+        return array_diff($files_local, $files);
+    }
+
+    public function syncStorageWanted($path)
+    {
+        $nutgram = new NutgramService();
+        $url = $this->searchForUrl($path);
+        if ($url != NULL) {
+            $url = $this->readUrl($url);
+            $post = $nutgram->getChannelPost($url);
+            $comments = $nutgram->getComments($post);
+            $files = $nutgram->getDocuments($comments);
+        }
+        $files_local = array_filter(array_slice(scandir($path),2), function ($item) use ($path) {
+            if (strripos($item, '.') != 0) {
+                return $item;
+            }
+        });
+        return array_diff($files, $files_local);
+    }
+
+    public function sendToTelegram($path, $array, $reply){
+        $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 120]);
+        foreach ($array as $item){
+            $file = fopen($path . '/' . $item, 'r+');
+            $bot->sendDocument($file, ['chat_id' => env('GROUP_ID'), 'reply_to_message_id' => $reply, 'caption' => $item]);
+        }
+    }
+
+//    public function saveToSotrage($path, $messages, $array){
+//        $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
+//        foreach ($array as $item){
+//            $bot->downloadFile();
+//            $bot->sendDocument($path . $item, ['chat_id' => env('GROUP_ID'), 'reply_to_message_id' => $reply, 'caption' => $item]);
+//        }
+//    }
 
 }
