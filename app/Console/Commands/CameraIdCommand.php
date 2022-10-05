@@ -34,7 +34,6 @@ class CameraIdCommand extends Command
         $id = $this->argument('id');
         $services = new NutgramService();
         $cameras = $services->getOfficeCameras((int) $id);
-//        var_dump($cameras);
         foreach ($cameras as $camera) {
             print_r('Camera: ' . $camera->title);
             print_r(PHP_EOL);

@@ -169,4 +169,8 @@ class NutgramService
         return $files;
     }
 
+    public function sendChannelPost($text){
+        $this->bot->sendMessage($text, ['chat_id' => env('CHANNEL_ID')]);
+    }
+
 }

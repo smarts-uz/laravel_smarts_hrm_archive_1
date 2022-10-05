@@ -37,15 +37,33 @@ Route::get('/bot', function () {
     }
     dd($chat);
     return $chat;
-    });
+});
 
-Route::get('/chat', function() {
+Route::get('/chat', function () {
 
-    $file_system = new FileSystemService();
+    /*$file_system = new FileSystemService();
     $nutgram = new NutgramService();
     $message_id = $nutgram->getMessageId('TestSyncFolder');
-    $files = $file_system->syncTelegramWanted('D:\PHP');
-    $file_system->sendToTelegram('D:/PHP', $files, $message_id);
+    $files = $file_system->TelegramWanted('D:\PHP');
+    $file_system->sendToTelegram('D:/PHP', $files, $message_id);*/
+
+    $file_system = new FileSystemService();
+    $array = $file_system->scanCurFolder('D:/TG/PHP');
+    //$array = $file_system->TelegramWanted('D:/PHP');
+//    dd($array);
+
+
+
+    foreach ($array as $item) {
+        if(!is_array($item) && !is_dir('D:/TG/PHP' .'/'. $item)){
+            array_push($array2,$item);
+
+        }else if(is_array($item)){
+            $index = array_search($item , $array);
+        }
+    }
+
+
 
 });
 
