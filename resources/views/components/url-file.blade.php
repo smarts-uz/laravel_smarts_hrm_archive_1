@@ -2,7 +2,7 @@
 Prop3=19,11
 [InternetShortcut]
 IDList=
-URL=https://t.me/c/{{$chat_id}}/{{$message_id}}
+URL=https://t.me/c/{{$message->chat->id}}/{{$message->message_id}}
 IconIndex=13
 HotKey=0
 IconFile=C:\Windows\System32\SHELL32.dll

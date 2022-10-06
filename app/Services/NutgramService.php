@@ -46,15 +46,27 @@ class NutgramService
 
     public function getChannelPost($url)
     {
-        $url_arr = explode("/", $url);
-
-        $updates = $this->bot->getUpdates();
-        foreach ($updates as $update) {
-            if ($update->channel_post) {
-                $test = $update->channel_post;
-                $qwe = $test->chat;
-                if ($qwe->id == '-100' . $url_arr[count($url_arr) - 2] && $test->message_id == $url_arr[count($url_arr) - 1]) {
-                    return $test;
+        if (str_contains($url, 'https://t.me/')) {
+            $url_arr = explode("/", $url);
+            $updates = $this->bot->getUpdates();
+            foreach ($updates as $update) {
+                if ($update->channel_post) {
+                    $test = $update->channel_post;
+                    $qwe = $test->chat;
+                    if ($qwe->id == '-100' . $url_arr[count($url_arr) - 2] && $test->message_id == $url_arr[count($url_arr) - 1]) {
+                        return $test;
+                    }
+                }
+            }
+        } else {
+            $updates = $this->bot->getUpdates();
+            foreach ($updates as $update) {
+                if ($update->channel_post) {
+                    $test = $update->channel_post;
+                    $qwe = $test->chat;
+                    if ($qwe->id == env("CHANNEL_ID") && $test->text == $url) {
+                        return $test;
+                    }
                 }
             }
         }
@@ -68,6 +80,20 @@ class NutgramService
             if ($update->message) {
                 $test = $update->message;
                 if ($test->text == $message->text && $test->chat->id == env("GROUP_ID")) {
+                    return $test;
+                }
+            }
+        }
+        sleep(3);
+    }
+
+    public function getGroupMessageId($text)
+    {
+        $updates = $this->bot->getUpdates();
+        foreach ($updates as $update) {
+            if ($update->message) {
+                $test = $update->message;
+                if ($test->text == $text && $test->chat->id == env("GROUP_ID")) {
                     return $test;
                 }
             }
@@ -160,8 +186,8 @@ class NutgramService
     public function getDocuments($messages)
     {
         $files = array();
-        foreach ($messages as $message){
-            if($message->document){
+        foreach ($messages as $message) {
+            if ($message->document) {
                 $file = $message->document;
                 array_push($files, $file->file_name);
             }
@@ -169,8 +195,42 @@ class NutgramService
         return $files;
     }
 
-    public function sendChannelPost($text){
+    public function sendChannelPost($text)
+    {
         $this->bot->sendMessage($text, ['chat_id' => env('CHANNEL_ID')]);
+    }
+
+    public function sendFileToComments($parrent, $path, $message_id)
+    {
+        $file = fopen($parrent . '/' . $path, 'r+');
+        $this->bot->sendDocument($file, ['chat_id' => env('GROUP_ID'), 'reply_to_message_id' => $message_id, 'caption' => $path]);
+    }
+
+    public function syncTelegram($array, $path)
+    {
+        foreach ($array as $item) {
+            print_r($item);
+            print_r(PHP_EOL);
+            $file_system = new FileSystemService();
+            if (!is_array($item) && !is_dir($path . '/' . $item)) {
+                $url_file = $file_system->searchForUrl($path);
+                if ($url_file != NULL) {
+                    $url = $file_system->readUrl($url_file);
+                    $post = $this->getChannelPost($url);
+                    $message_id = $this->getMessagesId($post);
+                    $this->sendFileToComments($path , $item, $message_id);
+                } else {
+                    $this->sendChannelPost($path);
+                    $post = $this->getChannelPost($path);
+                    $file_system->createUrl($path , $post);
+                    $message = $this->getGroupMessageId($path);
+                    $this->sendFileToComments($path , $item, $message->message_id);
+                }
+            } else if(is_array($item)) {
+                $path = array_search($item, $array);
+                $this->syncTelegram($item, $path);
+            }
+        }
     }
 
 }

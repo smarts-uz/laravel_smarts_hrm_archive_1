@@ -39,32 +39,37 @@ Route::get('/bot', function () {
     return $chat;
 });
 
+Route::get('/folder', function () {
+    $file_system = new FileSystemService();
+    $array = $file_system->scanCurFolder('D:/TG/PHP');
+    dd($array);
+});
+
 Route::get('/chat', function () {
 
     /*$file_system = new FileSystemService();
-    $nutgram = new NutgramService();
     $message_id = $nutgram->getMessageId('TestSyncFolder');
     $files = $file_system->TelegramWanted('D:\PHP');
     $file_system->sendToTelegram('D:/PHP', $files, $message_id);*/
-
+    $nutgram = new NutgramService();
     $file_system = new FileSystemService();
     $array = $file_system->scanCurFolder('D:/TG/PHP');
-    //$array = $file_system->TelegramWanted('D:/PHP');
 //    dd($array);
 
 
-
     foreach ($array as $item) {
-        if(!is_array($item) && !is_dir('D:/TG/PHP' .'/'. $item)){
-            array_push($array2,$item);
 
-        }else if(is_array($item)){
-            $index = array_search($item , $array);
-        }
+        /*else if (is_array($item)) {
+            $index = array_search($item, $array);
+
+            // Check url file
+            //Create Post in Channel
+            //Upload to Comments
+        }*/
     }
 
-
-
+    /*$message = $nutgram->getGroupMessageId('D:/TG/PHP');
+                    $nutgram->sendFileToComments('D:/TG/PHP', $item, $message->message_id);*/
 });
 
 Route::group(['prefix' => 'admin'], function () {

@@ -14,10 +14,10 @@ class FileSystemService
         $this->path = 'Z:/';
     }
 
-    public function createUrl($path)
+    public function createUrl($path, $message)
     {
         $url = fopen($path . '/ALL.url', 'w');
-        $text = view('components.url-file', ['message_id' => '12', 'chat_id' => '1871463648']);
+        $text = view('components.url-file', compact($message));
         fwrite($url, $text);
         fclose($url);
     }
@@ -118,7 +118,7 @@ class FileSystemService
     {
         $list = scandir($path);
         foreach ($list as $value) {
-            if ($value != '..') {
+            if ($value != '..' && $value != '.') {
                 if (is_dir($path . '/' . $value)) {
                     $list[$path . '/' . $value] = $this->scanFolder($path . '/' . $value);
                 }
