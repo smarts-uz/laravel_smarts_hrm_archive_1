@@ -204,20 +204,24 @@ class NutgramService
     {
         $file = fopen($parrent . '/' . $path, 'r+');
         $this->bot->sendDocument($file, ['chat_id' => env('GROUP_ID'), 'reply_to_message_id' => $message_id, 'caption' => $path]);
+        sleep(3);
     }
 
     public function syncTelegram($array, $path)
     {
+//        $not_exist = $this->file_system->TelegramWanted($path);
         foreach ($array as $item) {
             $file_system = new FileSystemService();
             if (!is_array($item) && !is_dir($path . '/' . $item)) {
                 $message_id = $this->getGroupMessageId($path);
-                if($message_id == NULL){
+                if ($message_id == NULL) {
                     $this->sendChannelPost($path);
                     sleep(5);
                     $message_id = $this->getGroupMessageId($path);
                 }
-                $this->sendFileToComments($path , $item, $message_id->message_id);
+                print_r($item);
+                    $this->sendFileToComments($path, $item, $message_id->message_id);
+
                 /*$url_file = $file_system->searchForUrl($path);
                 if ($url_file != NULL) {
                     $url = $file_system->readUrl($url_file);
@@ -233,7 +237,7 @@ class NutgramService
 //                    dd($message);
                     $this->sendFileToComments($path , $item, $message);
                 }*/
-            } else if(is_array($item)) {
+            } else if (is_array($item)) {
                 $path = array_search($item, $array);
                 $this->syncTelegram($item, $path);
             }

@@ -33,8 +33,8 @@ class TestCommand extends Command
         $nutgram = new NutgramService();
         $file_system = new FileSystemService();
 
-        $array = $file_system->scanCurFolder('D:/Anthony Akbar/Documents');
-        $nutgram->syncTelegram($array, 'D:/Anthony Akbar/Documents');
+        $array = $file_system->scanCurFolder('D:\Anthony Akbar\Documents\Универ');
+        $nutgram->syncTelegram($array, 'D:\Anthony Akbar\Documents\Универ');
         dd($array);
 
         /*$post = $nutgram->getChannelPost('D:/Anthony Akbar/Documents/Koder');

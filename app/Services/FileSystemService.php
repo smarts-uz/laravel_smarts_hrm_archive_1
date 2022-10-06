@@ -46,13 +46,9 @@ class FileSystemService
     public function TelegramWanted($path)
     {
         $nutgram = new NutgramService();
-        $url = $this->searchForUrl($path);
-        if ($url != NULL) {
-            $url = $this->readUrl($url);
-            $post = $nutgram->getChannelPost($url);
-            $comments = $nutgram->getComments($post);
-            $files = $nutgram->getDocuments($comments);
-        }
+        $post = $nutgram->getChannelPost($path);
+        $comments = $nutgram->getComments($post);
+        $files = $nutgram->getDocuments($comments);
         $files_local = array_filter(array_slice(scandir($path), 2), function ($item) use ($path) {
             if (!is_dir($path . '/' . $item)) {
                 return $item;
@@ -79,17 +75,6 @@ class FileSystemService
         return array_diff($files, $files_local);
     }
 
-    public function sendToTelegram($path, $array, $reply)
-    {
-        $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 120]);
-        foreach ($array as $item) {
-            print_r('Sending ' . $item);
-            $file = fopen($path . '/' . $item, 'r+');
-            $bot->sendDocument($file, ['chat_id' => env('GROUP_ID'), 'reply_to_message_id' => $reply, 'caption' => $item]);
-            print_r($item . ' sent');
-            print(PHP_EOL);
-        }
-    }
 
 //    public function saveToSotrage($path, $messages, $array){
 //        $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
@@ -102,12 +87,10 @@ class FileSystemService
 
     public function scanFolder($folder)
     {
-        $list = array_diff( scandir( $folder), array('..', '.'));
+        $list = array_diff(scandir($folder), array('..', '.'));
         foreach ($list as $value) {
-            if ($value != '..' && $value != ".") {
-                if (is_dir($folder . '/' . $value)) {
-                    $list[$folder . '/' . $value] = $this->scanFolder($folder . '/' . $value);
-                }
+            if (is_dir($folder . '/' . $value)) {
+                $list[$folder . '/' . $value] = $this->scanFolder($folder . '/' . $value);
             }
         }
         return $list;
@@ -116,7 +99,7 @@ class FileSystemService
 
     public function scanCurFolder($path)
     {
-        $list = array_diff( scandir( $path), array('..', '.'));
+        $list = array_diff(scandir($path), array('..', '.'));
         foreach ($list as $value) {
             if ($value != '..' && $value != '.') {
                 if (is_dir($path . '/' . $value)) {
