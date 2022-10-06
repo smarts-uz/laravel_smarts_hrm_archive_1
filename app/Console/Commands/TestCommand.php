@@ -30,12 +30,14 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        dd(1111111);
-        $file_system = new FileSystemService();
         $nutgram = new NutgramService();
-        $array = $file_system->scanCurFolder('D:/TG/PHP');
-        dd($array);
-        $nutgram->syncTelegram('D:/TG/PHP', $array);
+        $file_system = new FileSystemService();
 
+        $array = $file_system->scanCurFolder('D:/Anthony Akbar/Documents');
+        $nutgram->syncTelegram($array, 'D:/Anthony Akbar/Documents');
+        dd($array);
+
+        /*$post = $nutgram->getChannelPost('D:/Anthony Akbar/Documents/Koder');
+        dd($post);*/
     }
 }

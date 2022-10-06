@@ -10,14 +10,14 @@ class FileSystemService
 
     public function __construct()
     {
-        exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
+//        exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
         $this->path = 'Z:/';
     }
 
-    public function createUrl($path, $message)
+    public function createUrl($path, $message_id, $channel_id)
     {
         $url = fopen($path . '/ALL.url', 'w');
-        $text = view('components.url-file', compact($message));
+        $text = view('components.url-file', compact('message_id', 'channel_id'));
         fwrite($url, $text);
         fclose($url);
     }
@@ -102,7 +102,7 @@ class FileSystemService
 
     public function scanFolder($folder)
     {
-        $list = scandir($folder);
+        $list = array_diff( scandir( $folder), array('..', '.'));
         foreach ($list as $value) {
             if ($value != '..' && $value != ".") {
                 if (is_dir($folder . '/' . $value)) {
@@ -116,7 +116,7 @@ class FileSystemService
 
     public function scanCurFolder($path)
     {
-        $list = scandir($path);
+        $list = array_diff( scandir( $path), array('..', '.'));
         foreach ($list as $value) {
             if ($value != '..' && $value != '.') {
                 if (is_dir($path . '/' . $value)) {

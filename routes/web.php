@@ -21,6 +21,29 @@ use SergiX44\Nutgram\Nutgram;
 */
 
 
+Route::get('/view', function () {
+    $file_system = new FileSystemService();
+    $message = [
+        "message_id"=> 4,
+"from"=> [
+        "id"=> 1244414566,
+"is_bot"=> false,
+"first_name"=> "Anthony Akbar",
+"username"=> "akbarshoh8522",
+"language_code"=> "ru"
+],
+"chat"=> [
+        "id"=> 1244414566,
+"first_name"=> "Anthony Akbar",
+"username"=> "akbarshoh8522",
+"type"=> "private"
+],
+"date"=> 1665033366,
+"text"=> "svsdvsv"
+];
+    return $file_system->createUrl('D:/',$message);
+});
+
 Route::get('/bot', function () {
 
     $bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 60]);
@@ -41,7 +64,7 @@ Route::get('/bot', function () {
 
 Route::get('/folder', function () {
     $file_system = new FileSystemService();
-    $array = $file_system->scanCurFolder('D:/TG/PHP');
+    $array = $file_system->scanCurFolder('D:/Anthony Akbar/Documents');
     dd($array);
 });
 

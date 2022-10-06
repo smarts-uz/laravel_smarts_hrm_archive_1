@@ -209,23 +209,30 @@ class NutgramService
     public function syncTelegram($array, $path)
     {
         foreach ($array as $item) {
-            print_r($item);
-            print_r(PHP_EOL);
             $file_system = new FileSystemService();
             if (!is_array($item) && !is_dir($path . '/' . $item)) {
-                $url_file = $file_system->searchForUrl($path);
+                $message_id = $this->getGroupMessageId($path);
+                if($message_id == NULL){
+                    $this->sendChannelPost($path);
+                    sleep(5);
+                    $message_id = $this->getGroupMessageId($path);
+                }
+                $this->sendFileToComments($path , $item, $message_id->message_id);
+                /*$url_file = $file_system->searchForUrl($path);
                 if ($url_file != NULL) {
                     $url = $file_system->readUrl($url_file);
                     $post = $this->getChannelPost($url);
                     $message_id = $this->getMessagesId($post);
-                    $this->sendFileToComments($path , $item, $message_id);
+
                 } else {
                     $this->sendChannelPost($path);
-                    $post = $this->getChannelPost($path);
-                    $file_system->createUrl($path , $post);
+                    sleep(1);
+//                    $file_system->createUrl($path , $mes, $chat_id);
                     $message = $this->getGroupMessageId($path);
-                    $this->sendFileToComments($path , $item, $message->message_id);
-                }
+                    sleep(8);
+//                    dd($message);
+                    $this->sendFileToComments($path , $item, $message);
+                }*/
             } else if(is_array($item)) {
                 $path = array_search($item, $array);
                 $this->syncTelegram($item, $path);
