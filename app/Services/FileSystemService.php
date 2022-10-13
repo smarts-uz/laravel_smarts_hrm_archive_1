@@ -30,27 +30,6 @@ class FileSystemService
         fclose($url);
     }
 
-    public function readUrl($path)
-    {
-        $file = fopen($path, 'r+');
-        $text = fread($file, filesize($path));
-        $split = explode("\n", $text);
-        $result = preg_grep("/^url=/i", $split);
-        return substr($result[4], 4);
-    }
-
-    public function searchForUrl($path)
-    {
-        $files = scandir($path);
-        $url = NULL;
-        foreach ($files as $file) {
-            if (substr($file, -4) === '.url') {
-                $url = $path . '/' . $file;
-            }
-        }
-        return $url;
-    }
-
     public function scanFolder($folder)
     {
         $list = array_diff(scandir($folder), array('..', '.'));

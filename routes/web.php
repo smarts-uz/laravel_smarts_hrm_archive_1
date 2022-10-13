@@ -32,9 +32,6 @@ Route::get('/test', function () {
     $file_system = new FileSystemService();
     $bot = new NutgramService();
     $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
-//    $TEST = ' Nutgram | Laravel';
-//    $Q =  explode(' | ', $TEST);
-//    dd(count($Q));
     $path = 'D:\Nutgram Sync';
     $files = $file_system->fileExists($path);
     if($files === 1){
@@ -50,21 +47,6 @@ Route::get('/test', function () {
         }
 
     }
-
-//    if((int)$file[1] != 0){
-//        $url = exec('PythonSearch');
-//        if($url != null){
-//            $file_system->createUrl($url);
-//
-//        }else{
-//         $bot->sendMessage((int)$file[1], $file[0]);
-//        }
-//    }else{
-//        return null;
-//    }
-//    var_dump((int)$file[0]);
-//    var_dump((int)$file[1]);
-//    dd($file);
 });
 
 Route::group(['prefix' => 'admin'], function () {
