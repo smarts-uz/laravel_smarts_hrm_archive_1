@@ -220,7 +220,7 @@ class NutgramService
                     $message_id = $this->getGroupMessageId($path);
                 }
                 print_r($item);
-                    $this->sendFileToComments($path, $item, $message_id->message_id);
+                $this->sendFileToComments($path, $item, $message_id->message_id);
 
                 /*$url_file = $file_system->searchForUrl($path);
                 if ($url_file != NULL) {
@@ -242,6 +242,19 @@ class NutgramService
                 $this->syncTelegram($item, $path);
             }
         }
+    }
+
+    public function sendFiles($array)
+    {
+        foreach ($array as $item){
+            $path = $item->folder;
+            $file_name = $item->file;
+
+            $message = $this->getGroupMessageId($path);
+            $file = fopen($path . '/' . $file_name, 'r+');
+            $this->bot->sendDocument($file, ['chat_id'=>env('GROUP_ID'), 'reply_to_message_id'=>$message->message_id]);
+        }
+
     }
 
 }

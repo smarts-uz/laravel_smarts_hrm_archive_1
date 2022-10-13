@@ -21,78 +21,50 @@ use SergiX44\Nutgram\Nutgram;
 */
 
 
-Route::get('/view', function () {
-    $file_system = new FileSystemService();
-    $message = [
-        "message_id"=> 4,
-"from"=> [
-        "id"=> 1244414566,
-"is_bot"=> false,
-"first_name"=> "Anthony Akbar",
-"username"=> "akbarshoh8522",
-"language_code"=> "ru"
-],
-"chat"=> [
-        "id"=> 1244414566,
-"first_name"=> "Anthony Akbar",
-"username"=> "akbarshoh8522",
-"type"=> "private"
-],
-"date"=> 1665033366,
-"text"=> "svsdvsv"
-];
-    return $file_system->createUrl('D:/',$message);
-});
-
-Route::get('/bot', function () {
-
-    $bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 60]);
-    $chat = array();
-    $updates = $bot->getUpdates();
-    foreach ($updates as $update) {
-        if ($update->channel_post) {
-            $test = $update->channel_post;
-            $qwe = $test->chat;
-            if ($qwe->id == -1001827937110 && $test->text === "TestSync") {
-                array_push($chat, $test);
-            }
-        }
-    }
-    dd($chat);
-    return $chat;
-});
 
 Route::get('/folder', function () {
     $file_system = new FileSystemService();
-    $array = $file_system->scanCurFolder('D:/Anthony Akbar/Documents');
+    $array = $file_system->scanCurFolder('D:\Nutgram Sync');
     dd($array);
 });
 
-Route::get('/chat', function () {
-
-    /*$file_system = new FileSystemService();
-    $message_id = $nutgram->getMessageId('TestSyncFolder');
-    $files = $file_system->TelegramWanted('D:\PHP');
-    $file_system->sendToTelegram('D:/PHP', $files, $message_id);*/
-    $nutgram = new NutgramService();
+Route::get('/test', function () {
     $file_system = new FileSystemService();
-    $array = $file_system->scanCurFolder('D:/TG/PHP');
-//    dd($array);
+    $bot = new NutgramService();
+    $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
+//    $TEST = ' Nutgram | Laravel';
+//    $Q =  explode(' | ', $TEST);
+//    dd(count($Q));
+    $path = 'D:\Nutgram Sync';
+    $files = $file_system->fileExists($path);
+    if($files === 1){
+        $all_txt = $file_system->searchForTxt($path);
+        $file = $file_system->readTxt($all_txt);
+        if(count(explode(' | ', $file[0]))>1 && (int)$file[1] != 0){
+            $getUrl = exec('D:\Nutgram_Sync_Components\venv\Scripts\python.exe D:\Nutgram_Sync_Components\search.py "' . (string)$file[1] . '::' . $file[0] . '"');
+            if($getUrl === "Message not Found"){
+                $bot->sendMessage($file[0], ['chat_id' => $file[1]]);
+                $getUrl = exec('D:\Nutgram_Sync_Components\venv\Scripts\python.exe D:\Nutgram_Sync_Components\search.py "' . (string)$file[1] . '::' . $file[0] . '"');
+            }
+            $file_system->createUrlFile($path, (string)$getUrl);
+        }
 
-
-    foreach ($array as $item) {
-
-        /*else if (is_array($item)) {
-            $index = array_search($item, $array);
-
-            // Check url file
-            //Create Post in Channel
-            //Upload to Comments
-        }*/
     }
 
-    /*$message = $nutgram->getGroupMessageId('D:/TG/PHP');
-                    $nutgram->sendFileToComments('D:/TG/PHP', $item, $message->message_id);*/
+//    if((int)$file[1] != 0){
+//        $url = exec('PythonSearch');
+//        if($url != null){
+//            $file_system->createUrl($url);
+//
+//        }else{
+//         $bot->sendMessage((int)$file[1], $file[0]);
+//        }
+//    }else{
+//        return null;
+//    }
+//    var_dump((int)$file[0]);
+//    var_dump((int)$file[1]);
+//    dd($file);
 });
 
 Route::group(['prefix' => 'admin'], function () {

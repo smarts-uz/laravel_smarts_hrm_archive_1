@@ -30,14 +30,6 @@ class TestCommand extends Command
      */
     public function handle()
     {
-        $nutgram = new NutgramService();
-        $file_system = new FileSystemService();
-
-        $array = $file_system->scanCurFolder('D:\Anthony Akbar\Documents\Универ');
-        $nutgram->syncTelegram($array, 'D:\Anthony Akbar\Documents\Универ');
-        dd($array);
-
-        /*$post = $nutgram->getChannelPost('D:/Anthony Akbar/Documents/Koder');
-        dd($post);*/
+        exec(' D:\Nutgram_Sync_Components\venv\Scripts\python.exe D:\Nutgram_Sync_Components\search.py "-1001807426588::Sync | Nutgram | Laravel"');
     }
 }

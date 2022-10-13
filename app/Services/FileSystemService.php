@@ -22,6 +22,14 @@ class FileSystemService
         fclose($url);
     }
 
+    public function createUrlFile($path, $urll)
+    {
+        $url = fopen($path . '/ALL.url', 'w');
+        $text = view('components.urlfile', compact('urll'));
+        fwrite($url, $text);
+        fclose($url);
+    }
+
     public function readUrl($path)
     {
         $file = fopen($path, 'r+');
@@ -42,48 +50,6 @@ class FileSystemService
         }
         return $url;
     }
-
-    public function TelegramWanted($path)
-    {
-        $nutgram = new NutgramService();
-        $post = $nutgram->getChannelPost($path);
-        $comments = $nutgram->getComments($post);
-        $files = $nutgram->getDocuments($comments);
-        $files_local = array_filter(array_slice(scandir($path), 2), function ($item) use ($path) {
-            if (!is_dir($path . '/' . $item)) {
-                return $item;
-            }
-        });
-        return array_diff($files_local, $files);
-    }
-
-    public function StorageWanted($path)
-    {
-        $nutgram = new NutgramService();
-        $url = $this->searchForUrl($path);
-        if ($url != NULL) {
-            $url = $this->readUrl($url);
-            $post = $nutgram->getChannelPost($url);
-            $comments = $nutgram->getComments($post);
-            $files = $nutgram->getDocuments($comments);
-        }
-        $files_local = array_filter(array_slice(scandir($path), 2), function ($item) use ($path) {
-            if (strripos($item, '.') != 0) {
-                return $item;
-            }
-        });
-        return array_diff($files, $files_local);
-    }
-
-
-//    public function saveToSotrage($path, $messages, $array){
-//        $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
-//        foreach ($array as $item){
-//            $bot->downloadFile();
-//            $bot->sendDocument($path . $item, ['chat_id' => env('GROUP_ID'), 'reply_to_message_id' => $reply, 'caption' => $item]);
-//        }
-//    }
-
 
     public function scanFolder($folder)
     {
@@ -108,6 +74,37 @@ class FileSystemService
             }
         }
         return $list;
+    }
+
+    public function searchForTxt($path)
+    {
+        $result = null;
+        $list = scandir($path);
+        foreach ($list as $item) {
+            if (is_file($path . '/' . $item) && $item === 'ALL.txt') {
+                $result = $path . '/' . $item;
+            }
+        }
+        return $result;
+    }
+
+    public function readTxt($file){
+        $f = fopen($file, 'r+');
+        $text = fread($f, filesize($file));
+        $split = explode("\r\n", $text);
+        return $split;
+
+    }
+
+    public function fileExists($path){
+        $result = 0;
+        $list = scandir($path);
+        foreach ($list as $item){
+            if($item != 'ALL.txt' && is_file($path . '/' . $item)){
+                $result = 1;
+            }
+        }
+        return $result;
     }
 
 }
