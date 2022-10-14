@@ -10,8 +10,8 @@ class FileSystemService
 
     public function __construct()
     {
-//        exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
-        $this->path = 'Z:/';
+        exec('net use smb: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
+        $this->path = '/Volumes/Records/xiaomi_camera_videos/';
     }
 
     public function createUrl($path, $message_id, $channel_id)
@@ -67,7 +67,8 @@ class FileSystemService
         return $result;
     }
 
-    public function readTxt($file){
+    public function readTxt($file)
+    {
         $f = fopen($file, 'r+');
         $text = fread($f, filesize($file));
         $split = explode("\r\n", $text);
@@ -75,11 +76,12 @@ class FileSystemService
 
     }
 
-    public function fileExists($path){
+    public function fileExists($path)
+    {
         $result = 0;
         $list = scandir($path);
-        foreach ($list as $item){
-            if($item != 'ALL.txt' && is_file($path . '/' . $item)){
+        foreach ($list as $item) {
+            if ($item != 'ALL.txt' && is_file($path . '/' . $item)) {
                 $result = 1;
             }
         }
