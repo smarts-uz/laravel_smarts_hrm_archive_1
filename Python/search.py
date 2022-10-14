@@ -17,11 +17,12 @@ sys.exit()
 message = client.iter_messages(int(list[0]))
 message_id = None
 
+print(message_id)
+exit()
 
 for mess in message:
     if mess.message == list[1]:
         message_id = mess.id
-
 if message_id != None:
     print('https:t.me/c/' + list[0][4:] + '/' + str(message_id))
 else:
