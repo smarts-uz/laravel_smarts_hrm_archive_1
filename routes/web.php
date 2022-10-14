@@ -5,6 +5,7 @@ use App\Http\Controllers\TgController;
 use App\Models\Camera;
 use App\Services\FileSystemService;
 use App\Services\NutgramService;
+use App\Services\PythonService;
 use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\Route;
 use SergiX44\Nutgram\Nutgram;

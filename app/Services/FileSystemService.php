@@ -88,4 +88,19 @@ class FileSystemService
         return $result;
     }
 
+    public function createPost($path, $txt_data, $titles){
+        $python_service = new PythonService();
+        $titles = [];
+
+        $folders = scandir($path);
+        foreach ($folders as $folder) {
+            if(is_file($path . '/' . $folder)){
+                $post_url = $python_service->searchForMessageMac($txt_data, $titles);
+                $this->createUrlFile($path, $post_url);
+                break;
+
+            }
+        }
+    }
+
 }
