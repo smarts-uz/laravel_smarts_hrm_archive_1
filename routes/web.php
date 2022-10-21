@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\TgController;
 use App\Models\Camera;
 use App\Services\FileSystemService;
+use App\Services\ManageService;
 use App\Services\NutgramService;
 use App\Services\PythonService;
 use Illuminate\Routing\RouteRegistrar;
@@ -21,6 +22,7 @@ use SergiX44\Nutgram\Nutgram;
 |
 */
 
+Route::get('/user/{user}', [ManageService::class, 'getUser', 'user']);
 
 Route::get('/scan', function () {
     $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
