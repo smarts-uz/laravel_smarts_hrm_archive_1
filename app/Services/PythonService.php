@@ -8,7 +8,7 @@ class PythonService
 {
 //    public function searchForMessage($txt_data, $titles = [])
 //    {
-//        $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
+//        $bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 60]);
 //        $getUrl = exec('D:\Nutgram_Sync_Components\venv\Scripts\python.exe D:\Nutgram_Sync_Components\search.py "' . (string)$txt_data[1] . '::' . $txt_data[0] . '"');
 //        if ($getUrl === "Message not Found") {
 //            if (count($titles) != 0) {
@@ -27,7 +27,7 @@ class PythonService
 
     public function searchForMessageMac($txt_data, $titles = [])
     {
-        $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
+        $bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 60]);
         $getUrl = exec('/Users/ramziddinabdumominov/Desktop/Nutgram_Sync_Components_Mac/venv/bin/python3 /Users/ramziddinabdumominov/Desktop/Nutgram_Sync_Components_Mac/search.py "' . (string)$txt_data[1] . '::' . $txt_data[0] . '"');
 //        dd($getUrl);
         if ($getUrl === "Message not Found") {

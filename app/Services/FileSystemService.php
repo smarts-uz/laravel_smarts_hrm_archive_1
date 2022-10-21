@@ -73,7 +73,6 @@ class FileSystemService
         $text = fread($f, filesize($file));
         $split = explode("\r\n", $text);
         return $split;
-
     }
 
     public function fileExists($path)

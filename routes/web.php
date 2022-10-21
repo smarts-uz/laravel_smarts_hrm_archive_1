@@ -23,7 +23,7 @@ use SergiX44\Nutgram\Nutgram;
 
 
 Route::get('/scan', function () {
-    $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
+    //$bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 60]);
     $file_system = new FileSystemService();
     $python_service = new PythonService();
     $path = '/Users/ramziddinabdumominov/Desktop/Nutgram Sync';
@@ -52,15 +52,13 @@ Route::get('/scan', function () {
                 //if true create URL file
             }
         }
-
-
     }
 });
 
 Route::get('/test', function () {
     $file_system = new FileSystemService();
     $bot = new NutgramService();
-    $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
+    //$bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 60]);
     $path = 'D:\Nutgram Sync';
     $files = $file_system->fileExists($path);
     if ($files === 1) {
@@ -69,12 +67,11 @@ Route::get('/test', function () {
         if (count(explode(' | ', $file[0])) > 1 && (int)$file[1] != 0) {
             $getUrl = exec('D:\Nutgram_Sync_Components\venv\Scripts\python.exe D:\Nutgram_Sync_Components\search.py "' . (string)$file[1] . '::' . $file[0] . '"');
             if ($getUrl === "Message not Found") {
-                $bot->sendMessage($file[0], ['chat_id' => $file[1]]);
+                $bot->nutgram->sendMessage($file[0], ['chat_id' => $file[1]]);
                 $getUrl = exec('D:\Nutgram_Sync_Components\venv\Scripts\python.exe D:\Nutgram_Sync_Components\search.py "' . (string)$file[1] . '::' . $file[0] . '"');
             }
             $file_system->createUrlFile($path, (string)$getUrl);
         }
-
     }
 });
 

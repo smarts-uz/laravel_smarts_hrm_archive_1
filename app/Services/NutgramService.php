@@ -10,10 +10,18 @@ class NutgramService
 {
 
     private $nutgram;
+    private $rootPath;
 
     public function __construct()
     {
         $this->nutgram = new Nutgram(env('BOT_TOKEN'), ['timeout' => 20]);
+        $this->rootPath = strtr(env('SHARED_FOLDER'), '\\', '//' );
+    }
+
+    public function __get($property) {
+        if (property_exists($this, $property)) {
+            return $this->$property;
+        }
     }
 
 
@@ -35,8 +43,8 @@ class NutgramService
 
     public function getMessageId($text)
     {
-        $bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 20]);
-        $updates = $bot->getUpdates();
+        // = new Nutgram(env('BOT_TOKEN'), ['timeout' => 20]);
+        $updates = $this->nutgram->getUpdates();
         foreach ($updates as $update) {
             if ($update->message) {
                 $test = $update->message;
@@ -51,11 +59,11 @@ class NutgramService
 
     public function getActualData($camera)
     {
-        $bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 20]);
-        $camera_folder = scandir('\\\192.168.100.100/Records/xiaomi_camera_videos/' . $camera->title);
+        //$bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 20]);
+        $camera_folder = scandir('\\\\'. $this->rootPath .'/'. $camera->title);
 //        dd(is_numeric(array_search($camera->folder, $camera_folder)));
         for ($i = array_search($camera->folder, $camera_folder); $i < count($camera_folder) - 2; $i++) {
-            $current_dir = scandir('\\\192.168.100.100/Records/xiaomi_camera_videos/' . $camera->title . '/' . $camera_folder[$i]);
+            $current_dir = scandir('\\\\'. $this->rootPath .'/'. $camera->title . '/' . $camera_folder[$i]);
             print_r('Folder: ' . $camera_folder[$i]);
             print_r(PHP_EOL);
             print_r('Files: ');
@@ -81,11 +89,11 @@ class NutgramService
                 print_r($message_id);
 
                 if ($message_id === null) {
-                    $bot->sendMessage($text, ['chat_id' => env('CHANNEL_ID')]);
+                    $this->nutgram->sendMessage($text, ['chat_id' => env('CHANNEL_ID')]);
                     sleep(3);
                     $message_id = $this->getMessageId($text);
 
-                    $bot->sendDocument($video,
+                    $this->nutgram->sendDocument($video,
                         ['chat_id' => env('GROUP_ID'),
                             'reply_to_message_id' => $message_id,
                             'caption' => $current_dir[$o]]
@@ -97,7 +105,7 @@ class NutgramService
                     ]);
                     sleep(3);
                 } else {
-                    $bot->sendDocument($video, ['chat_id' => env('GROUP_ID'), 'reply_to_message_id' => $message_id, 'caption' => $current_dir[$o]]);
+                    $this->nutgram->sendDocument($video, ['chat_id' => env('GROUP_ID'), 'reply_to_message_id' => $message_id, 'caption' => $current_dir[$o]]);
                     $target = Camera::where('title', $camera->title);
                     $target->update([
                         'folder' => $camera_folder[$i],
@@ -108,5 +116,4 @@ class NutgramService
             }
         }
     }
-
 }
