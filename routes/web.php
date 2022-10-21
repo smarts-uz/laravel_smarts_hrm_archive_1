@@ -4,6 +4,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Controllers\TgController;
 use App\Models\Camera;
 use App\Services\FileSystemService;
+use App\Services\ManageService;
 use App\Services\NutgramService;
 use App\Services\PythonService;
 use Illuminate\Routing\RouteRegistrar;
@@ -20,6 +21,9 @@ use SergiX44\Nutgram\Nutgram;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/user/{user}', [ManageService::class, 'getUser', 'user']);
+Route::post('/hook', [ManageService::class, 'handle']);
 
 Route::get('/folder', function () {
 
