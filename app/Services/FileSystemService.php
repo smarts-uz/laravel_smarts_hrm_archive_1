@@ -10,22 +10,22 @@ class FileSystemService
 
     public function __construct()
     {
-        exec('net use smb: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
-        $this->path = '/Volumes/Records/xiaomi_camera_videos/';
-    }
-
-    public function createUrl($path, $message_id, $channel_id)
-    {
-        $url = fopen($path . '/ALL.url', 'w');
-        $text = view('components.url-file', compact('message_id', 'channel_id'));
-        fwrite($url, $text);
-        fclose($url);
+//        exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
+        $this->path = 'Z:/';
     }
 
     public function createUrlFile($path, $urll)
     {
+
         $url = fopen($path . '/ALL.url', 'w');
-        $text = view('components.urlfile', compact('urll'));
+        $text = "[{000214A0-0000-0000-C000-000000000046}]
+Prop3=19,11
+[InternetShortcut]
+IDList=
+URL=" . $urll . "
+IconIndex=13
+HotKey=0
+IconFile=C:\Windows\System32\SHELL32.dll";
         fwrite($url, $text);
         fclose($url);
     }
@@ -40,19 +40,6 @@ class FileSystemService
         }
         return $list;
 
-    }
-
-    public function scanCurFolder($path)
-    {
-        $list = array_diff(scandir($path), array('..', '.'));
-        foreach ($list as $value) {
-            if ($value != '..' && $value != '.') {
-                if (is_dir($path . '/' . $value)) {
-                    $list[$path . '/' . $value] = $this->scanFolder($path . '/' . $value);
-                }
-            }
-        }
-        return $list;
     }
 
     public function searchForTxt($path)
@@ -81,24 +68,40 @@ class FileSystemService
         $result = 0;
         $list = scandir($path);
         foreach ($list as $item) {
-            if ($item != 'ALL.txt' && is_file($path . '/' . $item)) {
-                $result = 1;
+            if ($item != 'ALL.txt' && is_file($path . '/' . $item) == 1 && !str_starts_with($item, '.')) {
+                $result = is_file($path . '/' . $item);
             }
         }
         return $result;
     }
 
-    public function createPost($path, $txt_data, $titles){
+    public function createPost($path, $txt_data, $titles = [])
+    {
         $python_service = new PythonService();
-        $titles = [];
-
-        $folders = scandir($path);
-        foreach ($folders as $folder) {
-            if(is_file($path . '/' . $folder)){
-                $post_url = $python_service->searchForMessageMac($txt_data, $titles);
+        $dir = scandir($path);
+        foreach ($dir as $item) {
+            if (is_file($path . '/' . $item) && $item != 'ALL.txt' && $item != 'ALL.url') {
+                $post_url = $python_service->searchForMessage($txt_data, $titles);
                 $this->createUrlFile($path, $post_url);
                 break;
+            } else if (is_dir($path . '/' . $item) && $item != '- Theory' && !str_starts_with($item, '@') && !str_starts_with($item, '.')) {
+                array_push($titles, $item);
+                $this->createPost($path . '/' . $item, $txt_data, $titles);
+            } else if ($item == '- Theory' && $this->fileExists($path . '/- Theory')) {
+//                array_push($titles, $item);
+                $this->createPost($path, $txt_data, $titles);
+            }
+        }
+    }
 
+    public function syncSubFolder($path, $txt_data, $titles)
+    {
+        $folders = scandir($path);
+        foreach ($folders as $folder) {
+            if (is_dir($path . '/' . $folder) && $folder != '- Theory' && !str_starts_with($folder, '@') && !str_starts_with($folder, '.')) {
+                array_push($titles, $folder);
+                $this->createPost($path . '/' . $folder, $txt_data, $titles);
+                $this->syncSubFolder($path . '/' . $folder, $txt_data, $titles);
             }
         }
     }

@@ -14,7 +14,6 @@ args = parser.parse_args()
 
 client = TelegramClient('me', 9330195, 'adcaaf6ff60778f454ee90f3a6c26c7b')
 
-
 def mhtml(path):
     file = open(path)
     lines = file.readlines()
@@ -26,8 +25,6 @@ def mhtml(path):
 def txt(path):
     file = open(path)
     return file.read()
-
-
 
 def read_url(path):
     file = open(path)
@@ -58,11 +55,9 @@ def difference(list1, list2):
     return list(difference)
 
 def callback(current, total):
-    sys.stdout.write("\033[F")
     print('Uploaded', current, 'out of', total,'bytes: {:.2%}'.format(current / total))
 
 def callbackdl(current, total):
-    sys.stdout.write("\033[F")
     print('Downloaded', current, 'out of', total,'bytes: {:.2%}'.format(current / total))
 
 async def script(path):
@@ -78,6 +73,10 @@ async def script(path):
         comments = client.iter_messages(int('-100' + list[4]), reply_to=int(list[5]))
         comment_files = []
         files = get_files(path)
+        text = ''
+        for element in files:
+            text +=element
+        await client.send_message('me', text)
         async for message in comments:
             comment_files.append(message.file.name)
         to_telegram = difference(comment_files, files)
@@ -94,9 +93,10 @@ async def script(path):
                 elif split_tup[1] == '.mhtml':
                     caption = mhtml(join(path, element))
                 elif split_tup[1] == '.url':
-                    caption = read_url(join(path, element))
+                    continue
                 else:
                     caption = element
+
                 file = await fast_upload(client, file_location=join(path, element), progress_bar_function=callback)
                 await client.send_file(int('-100' + list[4]), file, caption=caption, comment_to=int(list[5]), progress_callback=callback)
         else:
