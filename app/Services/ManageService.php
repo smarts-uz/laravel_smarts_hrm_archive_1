@@ -12,7 +12,7 @@ use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardMarkup;
 
 class ManageService extends InlineMenu
 {
-    
+
     public function handle(Nutgram $bot){
 
         $bot->onCommand('start', function (Nutgram $bot) {
@@ -100,6 +100,6 @@ class ManageService extends InlineMenu
     public function __construct()
     {
         parent::__construct();
-        $this->bot = new Nutgram('5405829088:AAEIArJ7zMIDjOqBEQyCmOnpQygyjkV09YQ');
+        $this->bot = new Nutgram(env('TELEGRAM_BOT_TOKEN'));
     }
 }
