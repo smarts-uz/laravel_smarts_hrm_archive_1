@@ -8,4 +8,5 @@ for dirs, folder, files in os.walk(path):
     array['files'] = files
     data[dirs] = array
 import json
-print(json.dumps(data))
+import sys
+print(json.dumps(sys.argv))
