@@ -76,10 +76,10 @@ class ManageService extends InlineMenu
 
     public function Addbutton(Nutgram $bot)
     {
-        $this->menuText('Choose a color:', ["chat_id" => 1307688882])
-            ->addButtonRow(InlineKeyboardButton::make('Red', callback_data: 'red@handleColor'))
-            ->addButtonRow(InlineKeyboardButton::make('Green', callback_data: 'green@handleColor'))
-            ->addButtonRow(InlineKeyboardButton::make('Yellow', callback_data: 'yellow@handleColor'))
+        dd($bot);
+        $this->menuText('User mavjud gruppa va kanallar:', ["chat_id" => 1307688882, "user_id" => 1307688882])->addButtonRow(InlineKeyboardButton::make('Red', callback_data: 'red@handleColor'), InlineKeyboardButton::make('❌', callback_data: 'red@handleColor'))
+            ->addButtonRow(InlineKeyboardButton::make('Green', callback_data: 'green@handleColor'), InlineKeyboardButton::make('❌', callback_data: 'red@handleColor'))
+            ->addButtonRow(InlineKeyboardButton::make('Yellow', callback_data: 'yellow@handleColor'), InlineKeyboardButton::make('❌', callback_data: 'red@handleColor'))
             ->orNext('none')
             ->showMenu();
     }
