@@ -67,7 +67,34 @@ class ManageService extends InlineMenu
 
             }
         }
-        $this->menuText('Choose a color:')->addButtonRow(InlineKeyboardButton::make('Red', callback_data: 'red@handleColor'))->addButtonRow(InlineKeyboardButton::make('Green', callback_data: 'green@handleColor'))->addButtonRow(InlineKeyboardButton::make('Yellow', callback_data: 'yellow@handleColor'))->orNext('none')->showMenu();
+
+        $this->Addbutton($bot);
+
+        dd($channels_title, $groups_title);
+        /*$this->menuText('Choose a color:')->addButtonRow(InlineKeyboardButton::make('Red', callback_data: 'red@handleColor'))->addButtonRow(InlineKeyboardButton::make('Green', callback_data: 'green@handleColor'))->addButtonRow(InlineKeyboardButton::make('Yellow', callback_data: 'yellow@handleColor'))->orNext('none')->showMenu();*/
+    }
+
+    public function Addbutton(Nutgram $bot)
+    {
+        $this->menuText('Choose a color:', ["chat_id" => 1307688882])
+            ->addButtonRow(InlineKeyboardButton::make('Red', callback_data: 'red@handleColor'))
+            ->addButtonRow(InlineKeyboardButton::make('Green', callback_data: 'green@handleColor'))
+            ->addButtonRow(InlineKeyboardButton::make('Yellow', callback_data: 'yellow@handleColor'))
+            ->orNext('none')
+            ->showMenu();
+    }
+
+    public function handleColor(Nutgram $bot)
+    {
+        $color = $bot->callbackQuery()->data;
+        $this->menuText("Choosen: $color!")
+            ->showMenu();
+    }
+
+    public function none(Nutgram $bot)
+    {
+        $bot->sendMessage('Bye!');
+        $this->end();
     }
 
     public function __construct()
