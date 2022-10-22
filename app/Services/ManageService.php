@@ -9,13 +9,28 @@ use SergiX44\Nutgram\Nutgram;
 
 class ManageService
 {
-    public Nutgram $bot;
     
     public function handle(Nutgram $bot){
+
         $bot->onCommand('start', function (Nutgram $bot) {
+            $bot->sendMessage('Tekshirmoqchi bo\'lgan useringizni idsini kiriting');
+        });
+
+        $bot->onText('id {user_id}', function (Nutgram $bot, $user_id) {
+            if (is_numeric($user_id)){
+                $this->getUser($bot, $user_id);
+            }else{
+                $bot->sendMessage('bu user idsi emas, id son bo\'lishi kerak');
+            }
+        });
+
+        $bot->run();
+
+
+        /*$bot->onCommand('start', function (Nutgram $bot) {
             return $bot->sendMessage('Hello, world!');
         })->description('The start command!');
-        $bot->run();
+        $bot->run();*/
     }
 
     public function getList(){
@@ -24,39 +39,42 @@ class ManageService
         $channels_arr = explode(" ", $channels);
         $groups_arr = explode(" ", $groups);
 
-        $list = [
+        return [
             "channels" => $channels_arr,
             "groups" => $groups_arr,
         ];
-
-        return $list;
     }
 
-    public function getUser($user){
+    public function getUser(Nutgram $bot, $user){
         $list = $this->getList();
         foreach ($list["channels"] as $channel) {
-            $member = $this->bot->getChatMember( (int)$channel, $user);
+                $channels_title = '';
+            $member = $bot->getChatMember( (int)$channel, $user);
             if ($member->status === 'member'){
-                $title ='channel: '.$this->bot->getChat($channel)->title;
+                $Chtitle = $bot->getChat($channel)->title;
                 $channels_id[] = $channel;
-                $channels_title[] = $title;
+                $channels_title .= "$Chtitle | ";
             }
         }
         foreach ($list["groups"] as $group) {
-            $member = $this->bot->getChatMember( (int)$group, $user);
+                $groups_title = '';
+            $member = $bot->getChatMember( (int)$group, $user);
             if ($member->status === 'member'){
-                $title = 'group: '.$this->bot->getChat($group)->title;
+                $Gtitle = $bot->getChat($group)->title;
                 $groups_id[] = $group;
-                $groups_title[] = $title;
+                $groups_title .= "$Gtitle | ";
 
             }
         }
-        echo 'channels';
-        dump($channels_id);
+        /*dump($groups_title);
+        dump($channels_title);*/
+        $bot->sendMessage("Kanallarda: $channels_title");
+        $bot->sendMessage("Gruppalarda: $groups_title");
+        /*dump($channels_id);
         dump($channels_title);
         echo "groups";
         dump($groups_id);
-        dump($groups_title);
+        dump($groups_title);*/
     }
 
     public function __construct()
