@@ -10,8 +10,11 @@ class FileSystemService
 
     public function __construct()
     {
-        exec('net use smb: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
-        $this->path = '/Volumes/Records/xiaomi_camera_videos/';
+        if (env('RUN_ON') === null) {
+            exec('net use smb: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
+        }
+
+        //$this->path = '/Volumes/Records/xiaomi_camera_videos/';
     }
 
     public function createUrl($path, $message_id, $channel_id)
@@ -87,13 +90,14 @@ class FileSystemService
         return $result;
     }
 
-    public function createPost($path, $txt_data, $titles){
+    public function createPost($path, $txt_data, $titles)
+    {
         $python_service = new PythonService();
         $titles = [];
 
         $folders = scandir($path);
         foreach ($folders as $folder) {
-            if(is_file($path . '/' . $folder)){
+            if (is_file($path . '/' . $folder)) {
                 $post_url = $python_service->searchForMessageMac($txt_data, $titles);
                 $this->createUrlFile($path, $post_url);
                 break;

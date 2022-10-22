@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Camera;
 use SergiX44\Nutgram\Nutgram;
+use function PHPUnit\Framework\isEmpty;
 
 
 class NutgramService
@@ -15,10 +16,16 @@ class NutgramService
     public function __construct()
     {
         $this->nutgram = new Nutgram(env('BOT_TOKEN'), ['timeout' => 20]);
-        $this->rootPath = strtr(env('SHARED_FOLDER'), '\\', '//' );
+        if (env('RUN_ON') === 'local') {
+            $this->rootPath = env('STORAGE_PATH_LOCAL');
+        } else {
+            $path = env('SHARED_FOLDER');
+            $this->rootPath = strtr($path, '\\', '//');
+        }
     }
 
-    public function __get($property) {
+    public function __get($property)
+    {
         if (property_exists($this, $property)) {
             return $this->$property;
         }
@@ -28,7 +35,9 @@ class NutgramService
     public function getCameraList()
     {
         $cameras = Camera::all();
-        exec('net use "\\\192.168.100.100" /user:"' . env('SHARED_FOLDER_USER') . '" "' . env('SHARED_FOLDER_PASSWORD') . '" /persistent:no');
+        if (env('RUN_ON') === null) {
+            exec('net use "\\\192.168.100.100" /user:"' . env('SHARED_FOLDER_USER') . '" "' . env('SHARED_FOLDER_PASSWORD') . '" /persistent:no');
+        }
         return $cameras;
     }
 
@@ -37,7 +46,9 @@ class NutgramService
         $cameras = Camera::where('office_id', $id)->get();
         $user = 'share';
         $password = 'admin123456';
-        exec('net use "\\\192.168.100.100" /user:"' . $user . '" "' . $password . '" /persistent:no');
+        if (env('RUN_ON') === null) {
+            exec('net use "\\\192.168.100.100" /user:"' . env('SHARED_FOLDER_USER') . '" "' . env('SHARED_FOLDER_PASSWORD') . '" /persistent:no');
+        }
         return $cameras;
     }
 
@@ -60,10 +71,10 @@ class NutgramService
     public function getActualData($camera)
     {
         //$bot = new Nutgram(env('BOT_TOKEN'), ['timeout' => 20]);
-        $camera_folder = scandir('\\\\'. $this->rootPath .'/'. $camera->title);
+        $camera_folder = scandir('\\\\' . $this->rootPath . '/' . $camera->title);
 //        dd(is_numeric(array_search($camera->folder, $camera_folder)));
         for ($i = array_search($camera->folder, $camera_folder); $i < count($camera_folder) - 2; $i++) {
-            $current_dir = scandir('\\\\'. $this->rootPath .'/'. $camera->title . '/' . $camera_folder[$i]);
+            $current_dir = scandir('\\\\' . $this->rootPath . '/' . $camera->title . '/' . $camera_folder[$i]);
             print_r('Folder: ' . $camera_folder[$i]);
             print_r(PHP_EOL);
             print_r('Files: ');

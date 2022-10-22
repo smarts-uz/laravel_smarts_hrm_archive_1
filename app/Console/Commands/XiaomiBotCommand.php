@@ -32,6 +32,7 @@ class XiaomiBotCommand extends Command
     public function handle()
     {
         $services = new NutgramService();
+        //$rootPath = $services->rootPath;
         $cameras = $services->getCameraList();
         foreach ($cameras as $camera) {
             print_r('Camera: ' . $camera->title);
