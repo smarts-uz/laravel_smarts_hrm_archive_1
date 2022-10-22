@@ -5,9 +5,12 @@ namespace App\Services;
 
 use Psr\Container\ContainerExceptionInterface;
 use Psr\Container\NotFoundExceptionInterface;
+use SergiX44\Nutgram\Conversations\InlineMenu;
 use SergiX44\Nutgram\Nutgram;
+use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardButton;
+use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardMarkup;
 
-class ManageService
+class ManageService extends InlineMenu
 {
     
     public function handle(Nutgram $bot){
@@ -48,37 +51,28 @@ class ManageService
     public function getUser(Nutgram $bot, $user){
         $list = $this->getList();
         foreach ($list["channels"] as $channel) {
-                $channels_title = '';
             $member = $bot->getChatMember( (int)$channel, $user);
             if ($member->status === 'member'){
-                $Chtitle = $bot->getChat($channel)->title;
+                $title = $bot->getChat($channel)->title;
                 $channels_id[] = $channel;
-                $channels_title .= "$Chtitle | ";
+                $channels_title[] = $title;
             }
         }
         foreach ($list["groups"] as $group) {
-                $groups_title = '';
             $member = $bot->getChatMember( (int)$group, $user);
             if ($member->status === 'member'){
-                $Gtitle = $bot->getChat($group)->title;
+                $title = $bot->getChat($group)->title;
                 $groups_id[] = $group;
-                $groups_title .= "$Gtitle | ";
+                $groups_title[] = $title;
 
             }
         }
-        /*dump($groups_title);
-        dump($channels_title);*/
-        $bot->sendMessage("Kanallarda: $channels_title");
-        $bot->sendMessage("Gruppalarda: $groups_title");
-        /*dump($channels_id);
-        dump($channels_title);
-        echo "groups";
-        dump($groups_id);
-        dump($groups_title);*/
+        $this->menuText('Choose a color:')->addButtonRow(InlineKeyboardButton::make('Red', callback_data: 'red@handleColor'))->addButtonRow(InlineKeyboardButton::make('Green', callback_data: 'green@handleColor'))->addButtonRow(InlineKeyboardButton::make('Yellow', callback_data: 'yellow@handleColor'))->orNext('none')->showMenu();
     }
 
     public function __construct()
     {
+        parent::__construct();
         $this->bot = new Nutgram('5405829088:AAEIArJ7zMIDjOqBEQyCmOnpQygyjkV09YQ');
     }
 }
