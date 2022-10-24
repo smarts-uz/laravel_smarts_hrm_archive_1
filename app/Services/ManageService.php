@@ -2,16 +2,17 @@
 
 namespace App\Services;
 
-
-use Psr\Container\ContainerExceptionInterface;
-use Psr\Container\NotFoundExceptionInterface;
-use SergiX44\Nutgram\Conversations\InlineMenu;
 use SergiX44\Nutgram\Nutgram;
-use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardButton;
-use SergiX44\Nutgram\Telegram\Types\Keyboard\InlineKeyboardMarkup;
+use SergiX44\Nutgram\Telegram\Types\Keyboard\KeyboardButton;
 
-class ManageService extends InlineMenu
+class ManageService
 {
+
+    public Nutgram $bot;
+
+    public $channels_title;
+
+    public $groups_title;
 
     public function handle(Nutgram $bot){
 
@@ -29,11 +30,6 @@ class ManageService extends InlineMenu
 
         $bot->run();
 
-
-        /*$bot->onCommand('start', function (Nutgram $bot) {
-            return $bot->sendMessage('Hello, world!');
-        })->description('The start command!');
-        $bot->run();*/
     }
 
     public function getList(){
@@ -55,7 +51,7 @@ class ManageService extends InlineMenu
             if ($member->status === 'member'){
                 $title = $bot->getChat($channel)->title;
                 $channels_id[] = $channel;
-                $channels_title[] = $title;
+                $this->channels_title[] = $title;
             }
         }
         foreach ($list["groups"] as $group) {
@@ -63,43 +59,44 @@ class ManageService extends InlineMenu
             if ($member->status === 'member'){
                 $title = $bot->getChat($group)->title;
                 $groups_id[] = $group;
-                $groups_title[] = $title;
+                $this->groups_title[] = $title;
 
             }
         }
 
         $this->Addbutton($bot);
-
-        dd($channels_title, $groups_title);
-        /*$this->menuText('Choose a color:')->addButtonRow(InlineKeyboardButton::make('Red', callback_data: 'red@handleColor'))->addButtonRow(InlineKeyboardButton::make('Green', callback_data: 'green@handleColor'))->addButtonRow(InlineKeyboardButton::make('Yellow', callback_data: 'yellow@handleColor'))->orNext('none')->showMenu();*/
     }
 
     public function Addbutton(Nutgram $bot)
     {
-        dd($bot);
-        $this->menuText('User mavjud gruppa va kanallar:', ["chat_id" => 1307688882, "user_id" => 1307688882])->addButtonRow(InlineKeyboardButton::make('Red', callback_data: 'red@handleColor'), InlineKeyboardButton::make('❌', callback_data: 'red@handleColor'))
-            ->addButtonRow(InlineKeyboardButton::make('Green', callback_data: 'green@handleColor'), InlineKeyboardButton::make('❌', callback_data: 'red@handleColor'))
-            ->addButtonRow(InlineKeyboardButton::make('Yellow', callback_data: 'yellow@handleColor'), InlineKeyboardButton::make('❌', callback_data: 'red@handleColor'))
-            ->orNext('none')
-            ->showMenu();
-    }
+        $kb = ['reply_markup' =>
+            ['keyboard' => [
 
-    public function handleColor(Nutgram $bot)
-    {
-        $color = $bot->callbackQuery()->data;
-        $this->menuText("Choosen: $color!")
-            ->showMenu();
-    }
+            ], 'resize_keyboard' => true]
+        ];
+        foreach ($this->channels_title as $item) {
+            $kb["reply_markup"]["keyboard"][] = [
 
-    public function none(Nutgram $bot)
-    {
-        $bot->sendMessage('Bye!');
-        $this->end();
+                ['text' => $item],
+                ['text' => '❌'],
+
+            ];
+
+        }
+        foreach ($this->groups_title as $item) {
+            $kb["reply_markup"]["keyboard"][] = [
+
+                ['text' => $item],
+                ['text' => '❌'],
+
+            ];
+
+        }
+        $bot->sendMessage("Выберите одно из следующих", $kb);
     }
 
     public function __construct()
     {
-        parent::__construct();
-        $this->bot = new Nutgram(env('TELEGRAM_BOT_TOKEN'));
+        $this->bot = new Nutgram(env('MANAGER_BOT_TOKEN'));
     }
 }
