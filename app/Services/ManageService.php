@@ -73,15 +73,18 @@ class ManageService
     public function Addbutton(Nutgram $bot)
     {
         $str = '';
-        for ($i = 0; $i < count($this->channels_title); $i++) {
-            $str .= $i + 1 . '. ' . $this->channels_title[$i] . " (Channel)" . "\n";
+        if ($this->channels_title !== null) {
+            for ($i = 0, $iMax = count($this->channels_title); $i < $iMax; $i++) {
+                $str .= $i + 1 . '. ' . $this->channels_title[$i] . " (Channel)" . "\n";
+            }
         }
-
         $str .= '_____________________________
         ' . "\n";
 
-        for ($i = 0; $i < count($this->groups_title); $i++) {
-            $str .= $i + 1 . '. ' . $this->groups_title[$i] . " (Group)" . "\n";
+        if ($this->groups_title !== null) {
+            for ($i = 0, $iMax = count($this->groups_title); $i < $iMax; $i++) {
+                $str .= $i + 1 . '. ' . $this->groups_title[$i] . " (Group)" . "\n";
+            }
         }
 
         $kb = ['reply_markup' =>
@@ -93,9 +96,6 @@ class ManageService
             $kb["reply_markup"]["keyboard"][] = [
 
                 ['text' => 'Channels ❌'],
-//                $bot->onText('', function (Nutgram $bot, $name) {
-//                    $bot->sendMessage("Hi {$name}");
-//                });
             ];
         }
         if ($this->groups_title !== null) {
@@ -113,7 +113,7 @@ class ManageService
             ];
 
         }
-        $bot->sendMessage($str);
+        $bot->sendMessage($str, $kb);
     }
 
     public function __construct()
