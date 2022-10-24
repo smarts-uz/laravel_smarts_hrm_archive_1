@@ -29,6 +29,12 @@ class ManageService
             }
         });
 
+        $bot->onText('Channels ❌', function (Nutgram $bot) {
+            $this->delFromChannel($bot);
+            $bot->sendMessage('User deleted from channels');
+        });
+
+
         $bot->run();
 
     }
@@ -68,6 +74,13 @@ class ManageService
             }
         }
         $this->Addbutton($bot);
+    }
+
+    public function delFromChannel(Nutgram $bot, $user_id){
+    dd($this->channels_title);
+        foreach ($this->channels_title as $item) {
+            $bot->kickChatMember($user_id, $item);
+        }
     }
 
     public function Addbutton(Nutgram $bot)
