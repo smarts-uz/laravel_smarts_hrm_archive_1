@@ -48,7 +48,8 @@ class ManageService
         $list = $this->getList();
         foreach ($list["channels"] as $channel) {
             $member = $bot->getChatMember( (int)$channel, $user);
-            if ($member->status === 'member'){
+            dump($member->status);
+            if ($member->status === 'member' || $member->status === 'creator'){
                 $title = $bot->getChat($channel)->title;
                 $channels_id[] = $channel;
                 $this->channels_title[] = $title;
@@ -56,14 +57,16 @@ class ManageService
         }
         foreach ($list["groups"] as $group) {
             $member = $bot->getChatMember( (int)$group, $user);
-            if ($member->status === 'member'){
+            echo 'gruppa';
+            dump($member->status);
+            if ($member->status === 'member' || $member->status === 'creator'){
                 $title = $bot->getChat($group)->title;
                 $groups_id[] = $group;
                 $this->groups_title[] = $title;
 
             }
         }
-
+die();
         $this->Addbutton($bot);
     }
 
@@ -74,23 +77,26 @@ class ManageService
 
             ], 'resize_keyboard' => true]
         ];
-        foreach ($this->channels_title as $item) {
-            $kb["reply_markup"]["keyboard"][] = [
+        if ($this->groups_title !== null) {
+            foreach ($this->channels_title as $item) {
+                $kb["reply_markup"]["keyboard"][] = [
 
-                ['text' => $item],
-                ['text' => '❌'],
+                    ['text' => $item],
+                    ['text' => '❌'],
 
-            ];
+                ];
 
+            }
         }
-        foreach ($this->groups_title as $item) {
-            $kb["reply_markup"]["keyboard"][] = [
+        if ($this->groups_title !== null){
+            foreach ($this->groups_title as $item) {
+                $kb["reply_markup"]["keyboard"][] = [
 
-                ['text' => $item],
-                ['text' => '❌'],
+                    ['text' => $item],
+                    ['text' => '❌'],
 
-            ];
-
+                ];
+            }
         }
         $bot->sendMessage("Выберите одно из следующих", $kb);
     }
