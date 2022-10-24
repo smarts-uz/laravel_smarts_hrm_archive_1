@@ -12,7 +12,11 @@ class ManageService
 
     public $channels_title;
 
+    public $channels_id;
+
     public $groups_title;
+
+    public $groups_id;
 
     public function handle(Nutgram $bot)
     {
@@ -23,15 +27,19 @@ class ManageService
 
         $bot->onText('id {user_id}', function (Nutgram $bot, $user_id) {
             if (is_numeric($user_id)) {
-                $this->getUser($bot, $user_id);
+                $user = $this->getUser($bot, $user_id);
+                $this->Addbutton($user);
             } else {
                 $bot->sendMessage('bu user idsi emas, id son bo\'lishi kerak');
             }
         });
 
         $bot->onText('Channels ❌', function (Nutgram $bot) {
-            $this->delFromChannel($bot);
-            $bot->sendMessage('User deleted from channels');
+            $this->delFromChannel($bot, );
+        });
+
+        $bot->onText('Groups ❌', function (Nutgram $bot) {
+            $this->delFromGroup($bot, );
         });
 
 
@@ -59,7 +67,7 @@ class ManageService
             $member = $bot->getChatMember((int)$channel, $user);
             if ($member->status === 'member' || $member->status === 'creator') {
                 $title = $bot->getChat($channel)->title;
-                $channels_id[] = $channel;
+                $this->channels_id[] = $channel;
                 $this->channels_title[] = $title;
             }
         }
@@ -68,19 +76,28 @@ class ManageService
             echo 'gruppa';
             if ($member->status === 'member' || $member->status === 'creator') {
                 $title = $bot->getChat($group)->title;
-                $groups_id[] = $group;
+                $this->groups_id[] = $group;
                 $this->groups_title[] = $title;
 
             }
         }
-        $this->Addbutton($bot);
+        return $bot;
     }
 
     public function delFromChannel(Nutgram $bot, $user_id){
-    dd($this->channels_title);
-        foreach ($this->channels_title as $item) {
-            $bot->kickChatMember($user_id, $item);
+        $this->getUser($bot,$user_id);
+        foreach ($this->channels_id as $item) {
+            $bot->banChatMember($item,$user_id);
         }
+        $bot->sendMessage('User deleted from channels');
+    }
+
+    public function delFromGroup(Nutgram $bot, $user_id){
+        $this->getUser($bot,$user_id);
+        foreach ($this->groups_id as $item) {
+            $bot->banChatMember($item,$user_id);
+        }
+        $bot->sendMessage('User deleted from groups');
     }
 
     public function Addbutton(Nutgram $bot)
