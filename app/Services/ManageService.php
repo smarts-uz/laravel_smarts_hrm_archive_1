@@ -63,15 +63,23 @@ class ManageService
     public function getUser(Nutgram $bot, $user)
     {
         $list = $this->getList();
-        foreach ($list["channels"] as $channel) {
-            $member = $bot->getChatMember((int)$channel, $user);
-            if ($member->status === 'member' || $member->status === 'creator') {
-                $title = $bot->getChat($channel)->title;
-                $this->channels_id[] = $channel;
-                $this->channels_title[] = $title;
+        foreach ($list as $chats => $type) {
+
+            foreach ($type as $chat => $key) {
+                $member = $bot->getChatMember((int)$key, $user);
+                if ($member->status === 'member' || $member->status === 'creator') {
+                    $title = $bot->getChat($key)->title;
+                    if ($chats === 'channels'){
+                        $this->channels_id[] = $key;
+                        $this->channels_title[] = $title;
+                    }else{
+                        $this->groups_id[] = $key;
+                        $this->groups_title[] = $title;
+                    }
+                }
             }
         }
-        foreach ($list["groups"] as $group) {
+        /*foreach ($list["groups"] as $group) {
             $member = $bot->getChatMember((int)$group, $user);
             echo 'gruppa';
             if ($member->status === 'member' || $member->status === 'creator') {
@@ -80,7 +88,7 @@ class ManageService
                 $this->groups_title[] = $title;
 
             }
-        }
+        }*/
         return $bot;
     }
 
