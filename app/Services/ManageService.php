@@ -74,13 +74,14 @@ class ManageService
     {
         $str = '';
         for ($i = 0; $i < count($this->channels_title); $i++) {
-            $str .= $i + 1 . '. ' . $this->channels_title[$i] . "(Channel)" . "\n";
+            $str .= $i + 1 . '. ' . $this->channels_title[$i] . " (Channel)" . "\n";
         }
 
-        $str .= '_____________________________' . "\n";
+        $str .= '_____________________________
+        ' . "\n";
 
         for ($i = 0; $i < count($this->groups_title); $i++) {
-            $str .= $i + 1 . '. ' . $this->groups_title[$i] . "(Group)" . "\n";
+            $str .= $i + 1 . '. ' . $this->groups_title[$i] . " (Group)" . "\n";
         }
 
         $kb = ['reply_markup' =>
@@ -92,7 +93,9 @@ class ManageService
             $kb["reply_markup"]["keyboard"][] = [
 
                 ['text' => 'Channels ❌'],
-
+//                $bot->onText('', function (Nutgram $bot, $name) {
+//                    $bot->sendMessage("Hi {$name}");
+//                });
             ];
         }
         if ($this->groups_title !== null) {
