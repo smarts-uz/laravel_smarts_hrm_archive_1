@@ -79,16 +79,6 @@ class ManageService
                 }
             }
         }
-        /*foreach ($list["groups"] as $group) {
-            $member = $bot->getChatMember((int)$group, $user);
-            echo 'gruppa';
-            if ($member->status === 'member' || $member->status === 'creator') {
-                $title = $bot->getChat($group)->title;
-                $this->groups_id[] = $group;
-                $this->groups_title[] = $title;
-
-            }
-        }*/
         return $bot;
     }
 
