@@ -24,10 +24,6 @@ class ManageService
 
     public $groups_invite_link;
 
-    public function tst(Nutgram $bot){
-        dd($bot->getChat(-1001715385949)->invite_link);
-    }
-
     public function handle(Nutgram $bot)
     {
 
