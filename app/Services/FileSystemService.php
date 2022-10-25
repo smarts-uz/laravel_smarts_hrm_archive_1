@@ -6,7 +6,7 @@ use SergiX44\Nutgram\Nutgram;
 
 class FileSystemService
 {
-    public $path;
+    private $path;
 
     public function __construct()
     {
@@ -17,6 +17,13 @@ class FileSystemService
        else {
         $this->path = env('ROOT_PATH');
        }
+    }
+
+    public function __get($property)
+    {
+        if (property_exists($this, $property)) {
+            return $this->$property;
+        }
     }
 
     public function createUrlFile($path, $urll)
@@ -44,7 +51,6 @@ IconFile=C:\Windows\System32\SHELL32.dll";
             }
         }
         return $list;
-
     }
 
     public function searchForTxt($path)
@@ -109,5 +115,4 @@ IconFile=C:\Windows\System32\SHELL32.dll";
             }
         }
     }
-
 }
