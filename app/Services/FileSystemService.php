@@ -10,8 +10,13 @@ class FileSystemService
 
     public function __construct()
     {
-//        exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
-        $this->path = 'Z:/';
+       if (getenv('COMPUTERNAME') !== 'WORKPC') {
+           exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
+           $this->path = 'Z:/';
+       }
+       else {
+        $this->path = env('ROOT_PATH');
+       }
     }
 
     public function createUrlFile($path, $urll)
@@ -60,7 +65,6 @@ IconFile=C:\Windows\System32\SHELL32.dll";
         $text = fread($f, filesize($file));
         $split = explode("\r\n", $text);
         return $split;
-
     }
 
     public function fileExists($path)
