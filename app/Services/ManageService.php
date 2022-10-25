@@ -2,13 +2,17 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Facades\Cache;
 use SergiX44\Nutgram\Nutgram;
 use SergiX44\Nutgram\Telegram\Types\Keyboard\KeyboardButton;
+use SergiX44\Nutgram\Cache\Adapters\ArrayCache;
 
 class ManageService
 {
 
     public Nutgram $bot;
+
+    public $cache;
 
     public $channels_title;
 
@@ -17,6 +21,10 @@ class ManageService
     public $groups_title;
 
     public $groups_id;
+
+    public function tst(){
+        dd(Cache::get('user_id'));
+    }
 
     public function handle(Nutgram $bot)
     {
@@ -27,6 +35,7 @@ class ManageService
 
         $bot->onText('id {user_id}', function (Nutgram $bot, $user_id) {
             if (is_numeric($user_id)) {
+                Cache::put('user_id', $user_id);
                 $user = $this->getUser($bot, $user_id);
                 $this->Addbutton($user);
             } else {
@@ -35,11 +44,19 @@ class ManageService
         });
 
         $bot->onText('Channels ❌', function (Nutgram $bot) {
-            $this->delFromChannel($bot, );
+            $user_id = Cache::get('user_id');
+            $this->delFromChannel($bot,$user_id);
         });
 
         $bot->onText('Groups ❌', function (Nutgram $bot) {
-            $this->delFromGroup($bot, );
+            $user_id = Cache::get('user_id');
+            $this->delFromGroup($bot, $user_id);
+        });
+
+        $bot->onText('All ❌', function (Nutgram $bot) {
+            $user_id = Cache::get('user_id');
+            $this->delFromChannel($bot,$user_id);
+            $this->delFromGroup($bot, $user_id);
         });
 
 
@@ -146,6 +163,9 @@ class ManageService
 
     public function __construct()
     {
+        /*$psr6Cache = new FilesystemAdapter();
+        $psr16Cache = new Psr16Cache($psr6Cache);*/
         $this->bot = new Nutgram(env('MANAGER_BOT_TOKEN'));
+        $this->cache = new Cache();
     }
 }
