@@ -22,7 +22,7 @@ use SergiX44\Nutgram\Nutgram;
 |
 */
 
-Route::get('/user/{user}', [ManageService::class, 'getUser', 'user']);
+Route::get('/user', [ManageService::class, 'tst']);
 Route::get('/delete/{user}', [ManageService::class, 'delFromChannel', 'user']);
 Route::post('/hook', [ManageService::class, 'handle']);
 

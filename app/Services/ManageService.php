@@ -4,8 +4,6 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Cache;
 use SergiX44\Nutgram\Nutgram;
-use SergiX44\Nutgram\Telegram\Types\Keyboard\KeyboardButton;
-use SergiX44\Nutgram\Cache\Adapters\ArrayCache;
 
 class ManageService
 {
@@ -23,7 +21,8 @@ class ManageService
     public $groups_id;
 
     public function tst(){
-        dd(Cache::get('user_id'));
+        Cache::put('test', 'dadawdawda');
+        dd(Cache::get('yoq'));
     }
 
     public function handle(Nutgram $bot)
@@ -44,19 +43,31 @@ class ManageService
         });
 
         $bot->onText('Channels ❌', function (Nutgram $bot) {
-            $user_id = Cache::get('user_id');
-            $this->delFromChannel($bot,$user_id);
+            if (Cache::get('user_id') !== null){
+                $user_id = Cache::get('user_id');
+                $this->delFromChannel($bot,$user_id);
+            }else{
+                $bot->sendMessage('The first enter user id, please!');
+            }
         });
 
         $bot->onText('Groups ❌', function (Nutgram $bot) {
-            $user_id = Cache::get('user_id');
-            $this->delFromGroup($bot, $user_id);
+            if (Cache::get('user_id') !== null){
+                $user_id = Cache::get('user_id');
+                $this->delFromGroup($bot, $user_id);
+            }else{
+                $bot->sendMessage('The first enter user id, please!');
+            }
         });
 
         $bot->onText('All ❌', function (Nutgram $bot) {
-            $user_id = Cache::get('user_id');
-            $this->delFromChannel($bot,$user_id);
-            $this->delFromGroup($bot, $user_id);
+            if (Cache::get('user_id') !== null){
+                $user_id = Cache::get('user_id');
+                $this->delFromChannel($bot,$user_id);
+                $this->delFromGroup($bot, $user_id);
+            }else{
+                $bot->sendMessage('The first enter user id, please!');
+            }
         });
 
 
@@ -101,18 +112,28 @@ class ManageService
 
     public function delFromChannel(Nutgram $bot, $user_id){
         $this->getUser($bot,$user_id);
-        foreach ($this->channels_id as $item) {
-            $bot->banChatMember($item,$user_id);
+        if ($this->channels_id !== null){
+            foreach ($this->channels_id as $item) {
+                $bot->banChatMember($item,$user_id);
+            }
+            $bot->sendMessage('User deleted from channels');
+        }else{
+            $bot->sendMessage('The user does not exist on any channel');
         }
-        $bot->sendMessage('User deleted from channels');
+
     }
 
     public function delFromGroup(Nutgram $bot, $user_id){
         $this->getUser($bot,$user_id);
-        foreach ($this->groups_id as $item) {
-            $bot->banChatMember($item,$user_id);
+        if ($this->groups_id !== null){
+            foreach ($this->groups_id as $item) {
+                $bot->banChatMember($item,$user_id);
+            }
+            $bot->sendMessage('User deleted from groups');
+        }else{
+            $bot->sendMessage('The user does not exist on any group');
         }
-        $bot->sendMessage('User deleted from groups');
+
     }
 
     public function Addbutton(Nutgram $bot)
@@ -123,8 +144,7 @@ class ManageService
                 $str .= $i + 1 . '. ' . $this->channels_title[$i] . " (Channel)" . "\n";
             }
         }
-        $str .= '_____________________________
-        ' . "\n";
+        $str .= '_____________________________' . "\n";
 
         if ($this->groups_title !== null) {
             for ($i = 0, $iMax = count($this->groups_title); $i < $iMax; $i++) {
@@ -163,8 +183,6 @@ class ManageService
 
     public function __construct()
     {
-        /*$psr6Cache = new FilesystemAdapter();
-        $psr16Cache = new Psr16Cache($psr6Cache);*/
         $this->bot = new Nutgram(env('MANAGER_BOT_TOKEN'));
         $this->cache = new Cache();
     }
