@@ -16,13 +16,16 @@ class ManageService
 
     public $channels_id;
 
+    public $channels_invite_link;
+
     public $groups_title;
 
     public $groups_id;
 
-    public function tst(){
-        Cache::put('test', 'dadawdawda');
-        dd(Cache::get('yoq'));
+    public $groups_invite_link;
+
+    public function tst(Nutgram $bot){
+        dd($bot->getChat(-1001715385949)->invite_link);
     }
 
     public function handle(Nutgram $bot)
@@ -97,12 +100,15 @@ class ManageService
                 $member = $bot->getChatMember((int)$key, $user);
                 if ($member->status === 'member' || $member->status === 'creator') {
                     $title = $bot->getChat($key)->title;
+                    $invite_link = $bot->getChat($key)->invite_link;
                     if ($chats === 'channels'){
                         $this->channels_id[] = $key;
                         $this->channels_title[] = $title;
+                        $this->channels_invite_link[] = $invite_link;
                     }else{
                         $this->groups_id[] = $key;
                         $this->groups_title[] = $title;
+                        $this->groups_invite_link[] = $invite_link;
                     }
                 }
             }
@@ -140,15 +146,17 @@ class ManageService
     {
         $str = '';
         if ($this->channels_title !== null) {
+            $str .= "Channels"."\n"."\n";
             for ($i = 0, $iMax = count($this->channels_title); $i < $iMax; $i++) {
-                $str .= $i + 1 . '. ' . $this->channels_title[$i] . " (Channel)" . "\n";
+                $str .= $i + 1 . '. ' . $this->channels_title[$i] . "  " . $this->channels_invite_link[$i] . "\n";
             }
         }
-        $str .= '_____________________________' . "\n";
+        $str .= '___________________________________________' . "\n". "\n";
 
         if ($this->groups_title !== null) {
+            $str .= "Groups"."\n"."\n";
             for ($i = 0, $iMax = count($this->groups_title); $i < $iMax; $i++) {
-                $str .= $i + 1 . '. ' . $this->groups_title[$i] . " (Group)" . "\n";
+                $str .= $i + 1 . '. ' . $this->groups_title[$i] . "  " . $this->groups_invite_link[$i] . "\n";
             }
         }
 
