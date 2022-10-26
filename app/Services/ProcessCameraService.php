@@ -37,6 +37,7 @@ class ProcessCameraService
         }
     }
 
+
     public function getVideoFilelist()
     {
         $getCamerasFolder = Camera::where('id', $this->cameraId)->get('title')->first();
@@ -51,15 +52,15 @@ class ProcessCameraService
                 }
         }
         else {
-            $nofolder_notification = 'There is no folder with such name';
-            return $nofolder_notification;
+            $nofolder_notify = 'There is no folder with such name';
+            return $nofolder_notify;
         }
-
-/*       foreach ($files as $file) {
-            if ($file != '.' && $file != '..') {
-                $filelist[] = $file;
-            }
-        }*/
         return $filelist;
     }
+
+    private function searchVideoInTGChanel(){
+
+    }
+
+
 }
