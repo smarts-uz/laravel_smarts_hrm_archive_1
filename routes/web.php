@@ -30,6 +30,17 @@ Route::get('/telegram', function (){
     return $contents;
 });
 
+Route::get('/proto', function (){
+
+    $MTProto = new \App\Services\MTProtoService();
+
+    $messages = $MTProto->MadelineProto->messages->getHistory(['peer'=>-1001807426588]);
+    foreach ($messages as $message){
+        dump($message);
+    }
+
+});
+
 
 Route::get('/test', function () {
     $file_system = new FileSystemService();

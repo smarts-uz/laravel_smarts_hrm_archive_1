@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Services\FileSystemService;
+use App\Services\MTProtoService;
 use App\Services\NutgramService;
 use App\Services\PythonService;
 use Illuminate\Console\Command;
@@ -32,7 +33,10 @@ class TestCommand extends Command
 
     public function handle()
     {
-        $file_system = new FileSystemService();
+
+        $MTProto = new MTProtoService();
+
+        /*$file_system = new FileSystemService();
         $path = 'D:\Smart_Software\Sync_Data\PHP';
         //ALL.txt
         $txt_file = $file_system->searchForTxt($path);
@@ -56,6 +60,6 @@ class TestCommand extends Command
             }
         }
 
-        $python_service->subFolderSync($path);
+        $python_service->subFolderSync($path);*/
     }
 }
