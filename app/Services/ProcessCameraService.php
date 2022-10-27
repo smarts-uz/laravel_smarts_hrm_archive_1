@@ -12,12 +12,14 @@
 namespace App\Services;
 
 use App\Models\Camera;
+use SergiX44\Nutgram\Nutgram;
 use function PHPUnit\Framework\isEmpty;
 
 class ProcessCameraService
 {
     protected $path;
     protected $cameraId;
+    protected Nutgram $tg_bot;
 
     public function __construct($id = null){
         $this->cameraId = $id;
@@ -28,6 +30,7 @@ class ProcessCameraService
         else {
             $this->path = env('ROOT_PATH');
         }
+        $this->tg_bot = new Nutgram(env('TELEGRAM_TOKEN'));
     }
 
     public function __get($property)
@@ -40,11 +43,11 @@ class ProcessCameraService
 
     public function getVideoFilelist()
     {
-        $getCamerasFolder = Camera::where('id', $this->cameraId)->get('title')->first();
         $filelist = [];
-        if (is_dir($this->path.'\\'.$getCamerasFolder->title))
+        $getCamerasFolderName = Camera::where('id', $this->cameraId)->get('title')->first();
+        if (is_dir($this->path.'\\'.$getCamerasFolderName->title))
         {
-            $folder_items = scandir($this->path.'\\'.$getCamerasFolder->title);
+            $folder_items = scandir($this->path.'\\'.$getCamerasFolderName->title);
                 foreach ($folder_items as $folder_item) {
                     if ($folder_item != '.' && $folder_item != '..') {
                         $filelist[] = $folder_item;
@@ -59,8 +62,12 @@ class ProcessCameraService
     }
 
     private function searchVideoInTGChanel(){
-
+        $this->tg_bot->start();
+        $this->tg_bot->onText(function($text) {
+            if (isEmpty($text)) {
+                return;
+            }
+            $this->tg_bot->say($text);
+        });
     }
-
-
 }
