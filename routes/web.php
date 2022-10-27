@@ -34,9 +34,13 @@ Route::get('/proto', function (){
 
     $MTProto = new \App\Services\MTProtoService();
 
-    $messages = $MTProto->MadelineProto->messages->getHistory(['peer'=>-1001807426588]);
+    $messages = $MTProto->MadelineProto->messages->getHistory(['peer'=>798946526]);
     foreach ($messages as $message){
-        dump($message);
+        try {
+            print_r($message);
+        }catch (Exception $e){
+            print_r($e->getMessage());
+        }
     }
 
 });
