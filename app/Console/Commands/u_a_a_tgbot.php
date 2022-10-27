@@ -68,15 +68,16 @@ class u_a_a_tgbot extends Command
      */
     public function handle()
     {
-        if ( $this->argument('id') !== null) {
+/*        if ( $this->argument('id') !== null) {
             $cameraID = $this->argument('id');
         }
-           else {
-               $cameraID = $this->argumentsRequest();
-           }
-        $test = new ProcessCameraService($cameraID);
+       else {
+           $cameraID = $this->argumentsRequest();
+       }*/
+        $test = new ProcessCameraService(9);
         $path = $test->getVideoFilelist();
-
+        $test->searchPostInTGChannel();
+        dd($path);
         return Command::SUCCESS;
     }
 }

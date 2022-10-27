@@ -21,13 +21,13 @@ class ProcessCameraService
     protected $cameraId;
     protected Nutgram $tg_bot;
 
-    public function __construct($id = null){
+    public function __construct($id = null)
+    {
         $this->cameraId = $id;
         if (getenv('COMPUTERNAME') === 'WORKPC') {
             exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
             $this->path = 'Z:/';
-        }
-        else {
+        } else {
             $this->path = env('ROOT_PATH');
         }
         $this->tg_bot = new Nutgram(env('TELEGRAM_TOKEN'));
@@ -45,29 +45,45 @@ class ProcessCameraService
     {
         $filelist = [];
         $getCamerasFolderName = Camera::where('id', $this->cameraId)->get('title')->first();
-        if (is_dir($this->path.'\\'.$getCamerasFolderName->title))
-        {
-            $folder_items = scandir($this->path.'\\'.$getCamerasFolderName->title);
-                foreach ($folder_items as $folder_item) {
-                    if ($folder_item != '.' && $folder_item != '..') {
-                        $filelist[] = $folder_item;
-                    }
+        if (is_dir($this->path . '\\' . $getCamerasFolderName->title)) {
+            $folder_items = scandir($this->path . '\\' . $getCamerasFolderName->title);
+            foreach ($folder_items as $folder_item) {
+                if ($folder_item != '.' && $folder_item != '..') {
+                    $filelist[] = $folder_item;
                 }
-        }
-        else {
+            }
+        } else {
             $nofolder_notify = 'There is no folder with such name';
             return $nofolder_notify;
         }
         return $filelist;
     }
 
-    private function searchVideoInTGChanel(){
-        $this->tg_bot->start();
-        $this->tg_bot->onText(function($text) {
-            if (isEmpty($text)) {
-                return;
+    private function searchPostInTGChannel($postText)
+    {
+        $channelUpdates = $this->tg_bot->getUpdates();
+        foreach ($channelUpdates as $updateGroup) {
+            if ($updateGroup->message) {
+                if ($updateGroup->message->text !== null) {
+                    $test = $updateGroup->message;
+                    if ($test->text === $postText) {
+                        return $this->tg_bot->messageId();
+                    } else {
+                        return false;
+                    }
+                }
             }
-            $this->tg_bot->say($text);
-        });
+        }
+    }
+
+    private function postProcess($camera)
+    {
+        $postText = '';
+        $postExists = new searchPostInTGChannel($postText);
+        $videoFilesPath = $this->path . '\\' . $camera->title . '\\';
+        if ($postExists) {
+
+        }
     }
 }
+
