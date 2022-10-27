@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Controller;
-use App\Http\Controllers\TgController;
 use App\Models\Camera;
 use App\Services\FileSystemService;
 use App\Services\ManageService;
@@ -24,11 +23,11 @@ use SergiX44\Nutgram\Nutgram;
 
 Route::post('/hook', [ManageService::class, 'handle']);
 
-Route::get('/folder', function () {
-
-    $file_system = new FileSystemService();
-    $array = $file_system->scanFolder('D:\Smart_Software\Sync_Data\PHP');
-    dd($array);
+Route::get('/telegram', function (){
+    $filename = 'D:/ALL.url';
+    $handle = fopen($filename, "r");
+    $contents = file($filename);;
+    return $contents;
 });
 
 

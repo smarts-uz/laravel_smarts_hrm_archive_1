@@ -24,7 +24,7 @@ def mhtml(path):
 
 def txt(path):
     file = open(path)
-    return file.read()
+    return file.reZzad()
 
 def read_url(path):
     file = open(path)

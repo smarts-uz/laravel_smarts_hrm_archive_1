@@ -6,29 +6,21 @@ use SergiX44\Nutgram\Nutgram;
 
 class FileSystemService
 {
-    private $path;
+    public $path;
 
     public function __construct()
     {
-       if (getenv('COMPUTERNAME') !== 'WORKPC') {
-           exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
-           $this->path = 'Z:/';
-       }
-       else {
-        $this->path = env('ROOT_PATH');
-       }
-    }
-
-    public function __get($property)
-    {
-        if (property_exists($this, $property)) {
-            return $this->$property;
+        if (getenv('COMPUTERNAME') !== 'WORKPC') {
+            exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' .
+                env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
+            $this->path = 'Z:/';
+        } else {
+            $this->path = env('ROOT_PATH');
         }
     }
 
     public function createUrlFile($path, $urll)
     {
-
         $url = fopen($path . '/ALL.url', 'w');
         $text = "[{000214A0-0000-0000-C000-000000000046}]
 Prop3=19,11
@@ -59,6 +51,18 @@ IconFile=C:\Windows\System32\SHELL32.dll";
         $list = scandir($path);
         foreach ($list as $item) {
             if (is_file($path . '/' . $item) && $item === 'ALL.txt') {
+                $result = $path . '/' . $item;
+            }
+        }
+        return $result;
+    }
+
+    public function searchForUrl($path)
+    {
+        $result = null;
+        $list = scandir($path);
+        foreach ($list as $item) {
+            if (is_file($path . '/' . $item) && $item === 'ALL.url' || str_starts_with($item, 'T.Me')) {
                 $result = $path . '/' . $item;
             }
         }
@@ -115,4 +119,24 @@ IconFile=C:\Windows\System32\SHELL32.dll";
             }
         }
     }
+
+    public function caption($path)
+    {
+        $path_parts = pathinfo($path);
+        switch ($path_parts['extension']) {
+            case 'txt':
+                $handle = fopen($path, "r");
+                $contents = fread($handle, filesize($path));
+                return $contents;
+            case 'mhtml':
+                $content = file($path);
+                foreach ($content as $item) {
+                    if (str_contains($item, 'Snapshot-Content-Location:')) {
+                        $line = explode(' ', $item);
+                        return substr($line[1], 0, -2);
+                    }
+                }
+        }
+    }
+
 }
