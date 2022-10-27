@@ -139,4 +139,17 @@ IconFile=C:\Windows\System32\SHELL32.dll";
         }
     }
 
+    public function getFIles($path){
+        $files = [];
+        $dir = scandir($path);
+        foreach ($dir as $item){
+            if(is_file($path.'/'.$item)){
+                array_push($files, $item);
+            }
+        }
+        return $files;
+    }
+
+
+
 }

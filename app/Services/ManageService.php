@@ -69,7 +69,6 @@ class ManageService
             }
         });
 
-
         $bot->run();
 
     }
