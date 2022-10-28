@@ -6,6 +6,7 @@ use App\Services\FileSystemService;
 use App\Services\ManageService;
 use App\Services\NutgramService;
 use App\Services\PythonService;
+use App\Services\SearchService;
 use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\Route;
 use SergiX44\Nutgram\Nutgram;
@@ -20,6 +21,10 @@ use SergiX44\Nutgram\Nutgram;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/history', function (){
+    $search  = new SearchService();
+    $search->findMessage();
+});
 
 Route::post('/hook', [ManageService::class, 'handle']);
 
