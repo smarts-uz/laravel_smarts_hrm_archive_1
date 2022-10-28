@@ -23,28 +23,22 @@ use SergiX44\Nutgram\Nutgram;
 
 Route::post('/hook', [ManageService::class, 'handle']);
 
-Route::get('/telegram', function (){
+Route::get('/telegram', function () {
     $filename = 'D:/ALL.url';
     $handle = fopen($filename, "r");
     $contents = file($filename);;
     return $contents;
 });
 
-Route::get('/proto', function (){
+
+
+Route::get('/proto', function ()  {
 
     $MTProto = new \App\Services\MTProtoService();
 
-    $messages = $MTProto->MadelineProto->messages->getHistory(['peer'=>798946526]);
-    foreach ($messages as $message){
-        try {
-            print_r($message);
-        }catch (Exception $e){
-            print_r($e->getMessage());
-        }
-    }
-
+    $comments = $MTProto->getComments('https://t.me/c/1807426588/408');
+    dd($comments);
 });
-
 
 Route::get('/test', function () {
     $file_system = new FileSystemService();

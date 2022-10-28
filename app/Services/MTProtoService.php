@@ -13,12 +13,19 @@ class MTProtoService
     public function __construct()
     {
         $settings = new Settings;
-        $settings->setAppInfo((new AppInfo)->setApiHash('adcaaf6ff60778f454ee90f3a6c26c7b')->setApiId(9330195));
+        $settings->setAppInfo((new AppInfo)->setApiHash('0cc5751f00631d78d4dc5618864102dd')->setApiId(15108824));
 
-        $this->MadelineProto = new API('D:/session.madeline', $settings);
+        $this->MadelineProto = new API('/Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline', $settings);
         $this->MadelineProto->start();
     }
 
-    
+    public function getComments($url)
+    {
+        $MTProto = new \App\Services\MTProtoService();
+        $split = explode( "/", $url);
+        $messages = $MTProto->MadelineProto->messages->getReplies(['peer' => -100 . $split[4], 'msg_id' => $split[5]]);
+
+        return $messages['messages'];
+    }
 
 }
