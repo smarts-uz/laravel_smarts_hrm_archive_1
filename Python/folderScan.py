@@ -13,7 +13,7 @@ if __name__ == '__main__':
     parser = createParser()
     argument = parser.parse_args()
 
-    # print (namespace)
+    # scan files in folder and if there is folder "-Theory" also scan folder -Theory
     if argument.path and os.path.exists(argument.path):
         for entry in os.scandir(argument.path):
            if entry.is_dir() and entry.name == '-Theory':
