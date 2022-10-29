@@ -37,7 +37,9 @@ Route::get('/proto', function ()  {
     $MTProto = new \App\Services\MTProtoService();
 
     $comments = $MTProto->getComments('https://t.me/c/1807426588/408');
-    dd($comments);
+    $files = $MTProto->getFiles($comments);
+    dd($files);
+//    dd($files);
 });
 
 Route::get('/test', function () {

@@ -1,0 +1,463 @@
+Logger:         	MadelineProto
+Logger:         	Copyright (C) 2016-2022 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	MadelineProto is starting, please wait...
+Serialization:  	Connected to IPC socket!
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+Exception:      	Undefined array key "media" in MTProtoService.php:35
+ClientAbstract: 	Got exception while receiving in IPC client: Amp\Ipc\Sync\ChannelException: The channel closed unexpectedly. Did the context die? in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php:72
+Stack trace:
+#0 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(118): Generator->send(NULL)
+#2 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#6 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#7 {main}
+ClientAbstract: 	Reconnecting to IPC server!
+Server:         	Starting IPC server /Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline (process)
+ProcessRunner:  	Starting process with '/opt/homebrew/bin/php' '-dhtml_errors=0' '-ddisplay_errors=0' '-dlog_errors=1' '/Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php' 'madeline-ipc' '/Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline' '319863271'
+Server:         	Amp\Parallel\Context\ContextException: Could not get entry file! in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/WebRunner.php:46
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Server.php(110): danog\MadelineProto\Ipc\Runner\WebRunner::start('/Users/ramziddi...', 319863271)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(121): danog\MadelineProto\Ipc\Server::startMe(Object(danog\MadelineProto\SessionPaths))
+#2 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->loopInternal()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(161): Generator->throw(Object(Amp\Ipc\Sync\ChannelException))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(109): danog\MadelineProto\Coroutine->throw(Object(Amp\Ipc\Sync\ChannelException))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#7 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#12 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#17 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#18 {main}
+Server:         	Starting IPC server /Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline (web)
+Server:         	Amp\Parallel\Context\ContextException: Could not get entry file! in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/WebRunner.php:46
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Server.php(117): danog\MadelineProto\Ipc\Runner\WebRunner::start('/Users/ramziddi...', 319863271)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(121): danog\MadelineProto\Ipc\Server::startMe(Object(danog\MadelineProto\SessionPaths))
+#2 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->loopInternal()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(161): Generator->throw(Object(Amp\Ipc\Sync\ChannelException))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(109): danog\MadelineProto\Coroutine->throw(Object(Amp\Ipc\Sync\ChannelException))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#7 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#12 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#17 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#18 {main}
+API:            	Shutting down MadelineProto (danog\MadelineProto\API)
+ClientAbstract: 	An error occurred while disconnecting the client: Amp\ByteStream\ClosedException: The stream is not writable in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceOutputStream.php:177
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceOutputStream.php(157): Amp\ByteStream\ResourceOutputStream->send('\x00(\x00\x00\x00O:28:"Amp\\...', false)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(51): Amp\ByteStream\ResourceOutputStream->write('\x00(\x00\x00\x00O:28:"Amp\\...')
+#2 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(55): Amp\call(Object(Closure))
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(101): Amp\Ipc\Sync\ChannelledStream->send(Object(Amp\Ipc\Sync\ChannelCloseReq))
+#7 [internal function]: Amp\Ipc\Sync\ChannelledSocket->Amp\Ipc\Sync\{closure}()
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(118): Amp\call(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(142): Amp\Ipc\Sync\ChannelledSocket->disconnect()
+#12 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->disconnect()
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(71): Generator->current()
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(277): danog\MadelineProto\Coroutine->__construct(Object(Generator))
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Client.php(100): danog\MadelineProto\Tools::wait(Object(Generator))
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/API.php(379): danog\MadelineProto\Ipc\Client->unreference()
+#17 [internal function]: danog\MadelineProto\API->__destruct()
+#18 {main}
+
+Next Amp\Ipc\Sync\ChannelException: Sending on the channel failed. Did the context die? in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php:53
+Stack trace:
+#0 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(115): Generator->throw(Object(Amp\ByteStream\ClosedException))
+#2 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\ByteStream\ClosedException), NULL)
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(151): Amp\Failure->onResolve(Object(Closure))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(55): Amp\call(Object(Closure))
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(101): Amp\Ipc\Sync\ChannelledStream->send(Object(Amp\Ipc\Sync\ChannelCloseReq))
+#7 [internal function]: Amp\Ipc\Sync\ChannelledSocket->Amp\Ipc\Sync\{closure}()
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(118): Amp\call(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(142): Amp\Ipc\Sync\ChannelledSocket->disconnect()
+#12 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->disconnect()
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(71): Generator->current()
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(277): danog\MadelineProto\Coroutine->__construct(Object(Generator))
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Client.php(100): danog\MadelineProto\Tools::wait(Object(Generator))
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/API.php(379): danog\MadelineProto\Ipc\Client->unreference()
+#17 [internal function]: danog\MadelineProto\API->__destruct()
+#18 {main}
+API:            	Prompting final serialization...
+API:            	Done final serialization!
+Logger:         	MadelineProto
+Logger:         	Copyright (C) 2016-2022 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	MadelineProto is starting, please wait...
+Serialization:  	Connected to IPC socket!
+Exception:      	Undefined array key "media" in MTProtoService.php:34
+ClientAbstract: 	Got exception while receiving in IPC client: Amp\Ipc\Sync\ChannelException: The channel closed unexpectedly. Did the context die? in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php:72
+Stack trace:
+#0 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(118): Generator->send(NULL)
+#2 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#6 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#7 {main}
+ClientAbstract: 	Reconnecting to IPC server!
+Server:         	Starting IPC server /Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline (process)
+ProcessRunner:  	Starting process with '/opt/homebrew/bin/php' '-dhtml_errors=0' '-ddisplay_errors=0' '-dlog_errors=1' '/Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php' 'madeline-ipc' '/Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline' '1326079604'
+Server:         	Amp\Parallel\Context\ContextException: Could not get entry file! in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/WebRunner.php:46
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Server.php(110): danog\MadelineProto\Ipc\Runner\WebRunner::start('/Users/ramziddi...', 1326079604)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(121): danog\MadelineProto\Ipc\Server::startMe(Object(danog\MadelineProto\SessionPaths))
+#2 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->loopInternal()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(161): Generator->throw(Object(Amp\Ipc\Sync\ChannelException))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(109): danog\MadelineProto\Coroutine->throw(Object(Amp\Ipc\Sync\ChannelException))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#7 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#12 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#17 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#18 {main}
+Server:         	Starting IPC server /Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline (web)
+Server:         	Amp\Parallel\Context\ContextException: Could not get entry file! in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/WebRunner.php:46
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Server.php(117): danog\MadelineProto\Ipc\Runner\WebRunner::start('/Users/ramziddi...', 1326079604)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(121): danog\MadelineProto\Ipc\Server::startMe(Object(danog\MadelineProto\SessionPaths))
+#2 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->loopInternal()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(161): Generator->throw(Object(Amp\Ipc\Sync\ChannelException))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(109): danog\MadelineProto\Coroutine->throw(Object(Amp\Ipc\Sync\ChannelException))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#7 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#12 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#17 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#18 {main}
+API:            	Shutting down MadelineProto (danog\MadelineProto\API)
+ClientAbstract: 	An error occurred while disconnecting the client: Amp\ByteStream\ClosedException: The stream is not writable in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceOutputStream.php:177
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceOutputStream.php(157): Amp\ByteStream\ResourceOutputStream->send('\x00(\x00\x00\x00O:28:"Amp\\...', false)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(51): Amp\ByteStream\ResourceOutputStream->write('\x00(\x00\x00\x00O:28:"Amp\\...')
+#2 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(55): Amp\call(Object(Closure))
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(101): Amp\Ipc\Sync\ChannelledStream->send(Object(Amp\Ipc\Sync\ChannelCloseReq))
+#7 [internal function]: Amp\Ipc\Sync\ChannelledSocket->Amp\Ipc\Sync\{closure}()
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(118): Amp\call(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(142): Amp\Ipc\Sync\ChannelledSocket->disconnect()
+#12 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->disconnect()
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(71): Generator->current()
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(277): danog\MadelineProto\Coroutine->__construct(Object(Generator))
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Client.php(100): danog\MadelineProto\Tools::wait(Object(Generator))
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/API.php(379): danog\MadelineProto\Ipc\Client->unreference()
+#17 [internal function]: danog\MadelineProto\API->__destruct()
+#18 {main}
+
+Next Amp\Ipc\Sync\ChannelException: Sending on the channel failed. Did the context die? in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php:53
+Stack trace:
+#0 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(115): Generator->throw(Object(Amp\ByteStream\ClosedException))
+#2 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\ByteStream\ClosedException), NULL)
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(151): Amp\Failure->onResolve(Object(Closure))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(55): Amp\call(Object(Closure))
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(101): Amp\Ipc\Sync\ChannelledStream->send(Object(Amp\Ipc\Sync\ChannelCloseReq))
+#7 [internal function]: Amp\Ipc\Sync\ChannelledSocket->Amp\Ipc\Sync\{closure}()
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(118): Amp\call(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(142): Amp\Ipc\Sync\ChannelledSocket->disconnect()
+#12 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->disconnect()
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(71): Generator->current()
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(277): danog\MadelineProto\Coroutine->__construct(Object(Generator))
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Client.php(100): danog\MadelineProto\Tools::wait(Object(Generator))
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/API.php(379): danog\MadelineProto\Ipc\Client->unreference()
+#17 [internal function]: danog\MadelineProto\API->__destruct()
+#18 {main}
+API:            	Prompting final serialization...
+API:            	Done final serialization!
+Logger:         	MadelineProto
+Logger:         	Copyright (C) 2016-2022 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	MadelineProto is starting, please wait...
+Serialization:  	Connected to IPC socket!
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+Exception:      	Undefined array key "media" in MTProtoService.php:38
+ClientAbstract: 	Got exception while receiving in IPC client: Amp\Ipc\Sync\ChannelException: The channel closed unexpectedly. Did the context die? in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php:72
+Stack trace:
+#0 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(118): Generator->send(NULL)
+#2 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#6 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#7 {main}
+ClientAbstract: 	Reconnecting to IPC server!
+Server:         	Starting IPC server /Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline (process)
+ProcessRunner:  	Starting process with '/opt/homebrew/bin/php' '-dhtml_errors=0' '-ddisplay_errors=0' '-dlog_errors=1' '/Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php' 'madeline-ipc' '/Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline' '163788930'
+Server:         	Amp\Parallel\Context\ContextException: Could not get entry file! in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/WebRunner.php:46
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Server.php(110): danog\MadelineProto\Ipc\Runner\WebRunner::start('/Users/ramziddi...', 163788930)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(121): danog\MadelineProto\Ipc\Server::startMe(Object(danog\MadelineProto\SessionPaths))
+#2 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->loopInternal()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(161): Generator->throw(Object(Amp\Ipc\Sync\ChannelException))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(109): danog\MadelineProto\Coroutine->throw(Object(Amp\Ipc\Sync\ChannelException))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#7 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#12 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#17 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#18 {main}
+Server:         	Starting IPC server /Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline (web)
+Server:         	Amp\Parallel\Context\ContextException: Could not get entry file! in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/WebRunner.php:46
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Server.php(117): danog\MadelineProto\Ipc\Runner\WebRunner::start('/Users/ramziddi...', 163788930)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(121): danog\MadelineProto\Ipc\Server::startMe(Object(danog\MadelineProto\SessionPaths))
+#2 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->loopInternal()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(161): Generator->throw(Object(Amp\Ipc\Sync\ChannelException))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(109): danog\MadelineProto\Coroutine->throw(Object(Amp\Ipc\Sync\ChannelException))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#7 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#12 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#17 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#18 {main}
+API:            	Shutting down MadelineProto (danog\MadelineProto\API)
+ClientAbstract: 	An error occurred while disconnecting the client: Amp\ByteStream\ClosedException: The stream is not writable in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceOutputStream.php:177
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceOutputStream.php(157): Amp\ByteStream\ResourceOutputStream->send('\x00(\x00\x00\x00O:28:"Amp\\...', false)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(51): Amp\ByteStream\ResourceOutputStream->write('\x00(\x00\x00\x00O:28:"Amp\\...')
+#2 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(55): Amp\call(Object(Closure))
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(101): Amp\Ipc\Sync\ChannelledStream->send(Object(Amp\Ipc\Sync\ChannelCloseReq))
+#7 [internal function]: Amp\Ipc\Sync\ChannelledSocket->Amp\Ipc\Sync\{closure}()
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(118): Amp\call(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(142): Amp\Ipc\Sync\ChannelledSocket->disconnect()
+#12 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->disconnect()
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(71): Generator->current()
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(277): danog\MadelineProto\Coroutine->__construct(Object(Generator))
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Client.php(100): danog\MadelineProto\Tools::wait(Object(Generator))
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/API.php(379): danog\MadelineProto\Ipc\Client->unreference()
+#17 [internal function]: danog\MadelineProto\API->__destruct()
+#18 {main}
+
+Next Amp\Ipc\Sync\ChannelException: Sending on the channel failed. Did the context die? in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php:53
+Stack trace:
+#0 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(115): Generator->throw(Object(Amp\ByteStream\ClosedException))
+#2 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\ByteStream\ClosedException), NULL)
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(151): Amp\Failure->onResolve(Object(Closure))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(55): Amp\call(Object(Closure))
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(101): Amp\Ipc\Sync\ChannelledStream->send(Object(Amp\Ipc\Sync\ChannelCloseReq))
+#7 [internal function]: Amp\Ipc\Sync\ChannelledSocket->Amp\Ipc\Sync\{closure}()
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(118): Amp\call(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(142): Amp\Ipc\Sync\ChannelledSocket->disconnect()
+#12 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->disconnect()
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(71): Generator->current()
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(277): danog\MadelineProto\Coroutine->__construct(Object(Generator))
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Client.php(100): danog\MadelineProto\Tools::wait(Object(Generator))
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/API.php(379): danog\MadelineProto\Ipc\Client->unreference()
+#17 [internal function]: danog\MadelineProto\API->__destruct()
+#18 {main}
+API:            	Prompting final serialization...
+API:            	Done final serialization!
+Logger:         	MadelineProto
+Logger:         	Copyright (C) 2016-2022 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	MadelineProto is starting, please wait...
+Serialization:  	Connected to IPC socket!
+ClientAbstract: 	Got exception while receiving in IPC client: Amp\Ipc\Sync\ChannelException: The channel closed unexpectedly. Did the context die? in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php:72
+Stack trace:
+#0 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(118): Generator->send(NULL)
+#2 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#6 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#7 {main}
+ClientAbstract: 	Reconnecting to IPC server!
+Server:         	Starting IPC server /Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline (process)
+ProcessRunner:  	Starting process with '/opt/homebrew/bin/php' '-dhtml_errors=0' '-ddisplay_errors=0' '-dlog_errors=1' '/Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php' 'madeline-ipc' '/Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline' '441203678'
+Server:         	Amp\Parallel\Context\ContextException: Could not get entry file! in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/WebRunner.php:46
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Server.php(110): danog\MadelineProto\Ipc\Runner\WebRunner::start('/Users/ramziddi...', 441203678)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(121): danog\MadelineProto\Ipc\Server::startMe(Object(danog\MadelineProto\SessionPaths))
+#2 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->loopInternal()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(161): Generator->throw(Object(Amp\Ipc\Sync\ChannelException))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(109): danog\MadelineProto\Coroutine->throw(Object(Amp\Ipc\Sync\ChannelException))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#7 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#12 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#17 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#18 {main}
+Server:         	Starting IPC server /Users/ramziddinabdumominov/Documents/modelineProtoSession/session.madeline (web)
+Server:         	Amp\Parallel\Context\ContextException: Could not get entry file! in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/WebRunner.php:46
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Server.php(117): danog\MadelineProto\Ipc\Runner\WebRunner::start('/Users/ramziddi...', 441203678)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(121): danog\MadelineProto\Ipc\Server::startMe(Object(danog\MadelineProto\SessionPaths))
+#2 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->loopInternal()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(161): Generator->throw(Object(Amp\Ipc\Sync\ChannelException))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(109): danog\MadelineProto\Coroutine->throw(Object(Amp\Ipc\Sync\ChannelException))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#7 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\Ipc\Sync\ChannelException), NULL)
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(143): Amp\Failure->onResolve(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(177): Amp\Coroutine->resolve(Object(Amp\Failure))
+#12 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(137): Amp\Coroutine->fail(Object(Amp\Ipc\Sync\ChannelException))
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(198): Amp\Deferred->resolve()
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(259): Amp\ByteStream\ResourceInputStream->free()
+#17 [internal function]: Amp\ByteStream\ResourceInputStream->__destruct()
+#18 {main}
+API:            	Shutting down MadelineProto (danog\MadelineProto\API)
+ClientAbstract: 	An error occurred while disconnecting the client: Amp\ByteStream\ClosedException: The stream is not writable in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceOutputStream.php:177
+Stack trace:
+#0 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceOutputStream.php(157): Amp\ByteStream\ResourceOutputStream->send('\x00(\x00\x00\x00O:28:"Amp\\...', false)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(51): Amp\ByteStream\ResourceOutputStream->write('\x00(\x00\x00\x00O:28:"Amp\\...')
+#2 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(55): Amp\call(Object(Closure))
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(101): Amp\Ipc\Sync\ChannelledStream->send(Object(Amp\Ipc\Sync\ChannelCloseReq))
+#7 [internal function]: Amp\Ipc\Sync\ChannelledSocket->Amp\Ipc\Sync\{closure}()
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(118): Amp\call(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(142): Amp\Ipc\Sync\ChannelledSocket->disconnect()
+#12 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->disconnect()
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(71): Generator->current()
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(277): danog\MadelineProto\Coroutine->__construct(Object(Generator))
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Client.php(100): danog\MadelineProto\Tools::wait(Object(Generator))
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/API.php(379): danog\MadelineProto\Ipc\Client->unreference()
+#17 [internal function]: danog\MadelineProto\API->__destruct()
+#18 {main}
+
+Next Amp\Ipc\Sync\ChannelException: Sending on the channel failed. Did the context die? in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php:53
+Stack trace:
+#0 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(115): Generator->throw(Object(Amp\ByteStream\ClosedException))
+#2 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Failure.php(33): Amp\Coroutine->Amp\{closure}(Object(Amp\ByteStream\ClosedException), NULL)
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(151): Amp\Failure->onResolve(Object(Closure))
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php(55): Amp\call(Object(Closure))
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(101): Amp\Ipc\Sync\ChannelledStream->send(Object(Amp\Ipc\Sync\ChannelCloseReq))
+#7 [internal function]: Amp\Ipc\Sync\ChannelledSocket->Amp\Ipc\Sync\{closure}()
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(67): Generator->current()
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/functions.php(96): Amp\Coroutine->__construct(Object(Generator))
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledSocket.php(118): Amp\call(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/ClientAbstract.php(142): Amp\Ipc\Sync\ChannelledSocket->disconnect()
+#12 [internal function]: danog\MadelineProto\Ipc\ClientAbstract->disconnect()
+#13 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(71): Generator->current()
+#14 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(277): danog\MadelineProto\Coroutine->__construct(Object(Generator))
+#15 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Client.php(100): danog\MadelineProto\Tools::wait(Object(Generator))
+#16 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/API.php(379): danog\MadelineProto\Ipc\Client->unreference()
+#17 [internal function]: danog\MadelineProto\API->__destruct()
+#18 {main}
+API:            	Prompting final serialization...
+API:            	Done final serialization!

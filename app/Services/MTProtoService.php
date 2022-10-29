@@ -21,11 +21,20 @@ class MTProtoService
 
     public function getComments($url)
     {
-        $MTProto = new \App\Services\MTProtoService();
-        $split = explode( "/", $url);
-        $messages = $MTProto->MadelineProto->messages->getReplies(['peer' => -100 . $split[4], 'msg_id' => $split[5]]);
+        $split = explode("/", $url);
+        $messages = $this->MadelineProto->messages->getReplies(['peer' => -100 . $split[4], 'msg_id' => $split[5]]);
 
         return $messages['messages'];
     }
 
+    public function getFiles($comments)
+    {
+        $files = [];
+        foreach ($comments as $message) {
+            if (array_key_exists('media', $message)) {
+                array_push($files, $message['media']['document']['attributes'][0]['file_name']);
+            }
+        }
+        return $files;
+    }
 }
