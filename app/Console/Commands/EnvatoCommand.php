@@ -29,7 +29,7 @@ class EnvatoCommand extends Command
     public function handle()
     {
         $me = new EnvatoService();
-        $me->run(-1001884117700, -1001760502540);
+        $me->run(1760502540, 0);
         //1897777451
         //639086927
         //1857450597
