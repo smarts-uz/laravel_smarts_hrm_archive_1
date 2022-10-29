@@ -64,10 +64,10 @@ class EnvatoService
             foreach ($posts as $key => $post) {
                 if (array_key_exists($key, $comments)) {
                     foreach ($comments[$key] as $comment) {
-                        preg_match('/#previews#/i', $comment, $match);
+                        preg_match('/#(previews)|(elements-cover-images)#/i', $comment, $match);
                         if (!is_array($match)) {
-
-                            preg_match('#https://video-previews[a-z-_/\.0-9]+#', $this->getLink($post), $matches);
+                            preg_match('#(https://video-previews[a-z-_/\.0-9]+)|((?<=src=")https://elements-cover-images[a-zA-Z-_/\.0-9\?%&;=]+)#',
+                                preg_replace('#amp;#', '', $this->getLink($post)), $matches);
 
                             if (array_key_exists(0, $matches)) {
                                 $this->MadelineProto->messages->sendMessage(
@@ -78,7 +78,8 @@ class EnvatoService
                         }
                     }
                 } else {
-                    preg_match('#https://video-previews[a-z-_/\.0-9]+#', $this->getLink($post), $matches);
+                    preg_match('#(https://video-previews[a-z-_/\.0-9]+)|((?<=src=")https://elements-cover-images[a-zA-Z-_/\.0-9\?%&;=]+)#',
+                        preg_replace('#amp;#', '', $this->getLink($post)), $matches);
 
                     if (array_key_exists(0, $matches)) {
                         $this->MadelineProto->messages->sendMessage(
@@ -93,8 +94,5 @@ class EnvatoService
 
             sleep(2);
         } while (false);
-
-        file_put_contents('a.json', json_encode($posts),);
-        file_put_contents('d.json', json_encode($comments),);
     }
 }
