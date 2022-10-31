@@ -22,8 +22,12 @@ use SergiX44\Nutgram\Nutgram;
 |
 */
 Route::get('/history', function (){
-    $search  = new SearchService();
-    $search->findMessage();
+    $MTProto = new \App\Services\MTProtoService();
+    try{
+        $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\PHPython');
+    }catch (Exception $e){
+        dump($e->getMessage());
+    }
 });
 
 Route::post('/hook', [ManageService::class, 'handle']);
@@ -35,7 +39,21 @@ Route::get('/telegram', function () {
     return $contents;
 });
 
-
+Route::get('/search', function (){
+    try{
+        $MTProto = new \App\Services\MTProtoService();
+        $message = yield $MTProto->MadelineProto->messages->sendMedia([
+            'peer' => -1001732713545,
+            'media' => [
+                'file' => 'D:\Smart_Software\Sync_Data\PHP\Tequilarapido.Python-Bridge/ALL.url'
+            ],
+            'reply_to_msg_id' => 2078
+        ]);
+        dump($message);
+    }catch (Exception $e){
+        dump($e->getMessage());
+    }
+});
 
 Route::get('/proto', function ()  {
 

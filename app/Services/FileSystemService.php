@@ -11,8 +11,7 @@ class FileSystemService
     public function __construct()
     {
         if (getenv('COMPUTERNAME') !== 'WORKPC') {
-            exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' .
-                env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
+            exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
             $this->path = 'Z:/';
         } else {
             $this->path = env('ROOT_PATH');
@@ -97,7 +96,6 @@ IconFile=C:\Windows\System32\SHELL32.dll";
             if (is_file($path . '/' . $item) && $item != 'ALL.txt' && $item != 'ALL.url') {
                 $post_url = $python_service->searchForMessage($txt_data, $titles);
                 $this->createUrlFile($path, $post_url);
-                break;
             } else if (is_dir($path . '/' . $item) && $item != '- Theory' && !str_starts_with($item, '@') && !str_starts_with($item, '.')) {
                 array_push($titles, $item);
                 $this->createPost($path . '/' . $item, $txt_data, $titles);
@@ -150,6 +148,11 @@ IconFile=C:\Windows\System32\SHELL32.dll";
         return $files;
     }
 
-
+    public function readUrl($path){
+        $f = fopen($path, 'r+');
+        $data = fread($f, filesize($path));
+        $strings = explode("\n", $data);
+        return substr($strings[4], 4);
+    }
 
 }

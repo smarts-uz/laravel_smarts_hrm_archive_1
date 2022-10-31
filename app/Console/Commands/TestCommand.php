@@ -34,8 +34,16 @@ class TestCommand extends Command
 
     public function handle()
     {
-        $MTProto = new MTProtoService();
-        $file_system = new FileSystemService();
+        $MTProto = new \App\Services\MTProtoService();
+
+
+        try{
+            $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\Tequilarapido.Python-Bridge');
+        }catch (Exception $e){
+            dump($e->getMessage());
+        }
+
+        /*$file_system = new FileSystemService();
         $path = 'D:\Smart_Software\Sync_Data\PHP';
         //ALL.txt
         $txt_file = $file_system->searchForTxt($path);
@@ -52,7 +60,28 @@ class TestCommand extends Command
                     $file_system->syncSubFolder($path . '/' . $folder, $txt_data, $titles);
                 }
             }
-        }
+
+        }*/
+
+//        $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\Tequilarapido.Python-Bridge');
+
+        /*
+
+        if (count(explode(' | ', $txt_data[0])) > 1 && (int)$txt_data[1] != 0) {
+            $folders = scandir($path);
+            foreach ($folders as $folder) {
+                $titles = [];
+                if (is_dir($path . '/' . $folder) && $folder != '- Theory' && !str_starts_with($folder, '@') && !str_starts_with($folder, '.')) {
+                    //Adding folder name to Title
+                    array_push($titles, $folder);
+                    $file_system->createPost($path . '/' . $folder, $txt_data, $titles);
+                    $file_system->syncSubFolder($path . '/' . $folder, $txt_data, $titles);
+                }
+            }
+        }*/
+
+
+        /*
         $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => 798946526]);
         foreach ($messages as $message) {
             try {
@@ -61,7 +90,7 @@ class TestCommand extends Command
                 print_r($e->getMessage());
             }
         }
-        /*$file_system = new FileSystemService();
+        $file_system = new FileSystemService();
         //ALL.txt
         $txt_file = $file_system->searchForTxt($path);
         $txt_data = $file_system->readTxt($txt_file);
