@@ -11,10 +11,15 @@ class SearchService
 
     public function findMessage($channel_id, $message){
         $search = $this->MTProto->messages->search([
-            "peer" => -1001563939142,
-            "q" => '#php'
+            "peer" => $channel_id,
+            "q" => $message
         ]);
-        file_put_contents('test.txt', json_encode($search), FILE_APPEND);
+
+        if ($search["count"] > 0){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public function __construct()
