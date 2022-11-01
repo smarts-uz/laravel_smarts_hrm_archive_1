@@ -40,8 +40,8 @@ class EnvatoService
 
     public function getComments($start, $end) {
         $count = $end[5] - $start[5];
-        $comments = [];
-        $post = [];
+        $posts = [];
+        $post_id = [];
         $offset_id = 0;
         do {
             $messages_Messages = $this->MadelineProto->messages->getHistory([
@@ -54,7 +54,7 @@ class EnvatoService
             if (count($messages_Messages['messages']) == 0) break;
 
             foreach ($messages_Messages['messages'] as $key => $item) {
-                $post[] = $item['id'];
+                $post_id[] = $item['id'];
             }
 
             $offset_id = end($messages_Messages['messages'])['id'];
@@ -62,18 +62,18 @@ class EnvatoService
             sleep(2);
         } while (true);
         for ($i = 0; $i <= $count; $i++) {
-            if (in_array($start[5] + $i, $post)) {
-                $comments[$start[5] + $i] = $this->MadelineProto->messages->getReplies(
+            if (in_array($start[5] + $i, $post_id)) {
+                $posts[$start[5] + $i] = $this->MadelineProto->messages->getReplies(
                     ['peer' => -100 . $start[4],
                         'msg_id' => $start[5] + $i])['messages'];
             }
         }
-        return $comments;
+        return $posts;
     }
     public function Previews($start, $end){
         $start = explode("/", $start);
         $end = explode("/", $end);
-        $comments = $this->getComments($start, $end);
-        file_put_contents('a.json', json_encode($comments));
+        $posts = $this->getComments($start, $end);
+        file_put_contents('a.json', json_encode($posts));
     }
 }
