@@ -29,7 +29,7 @@ class EnvatoCommand extends Command
     public function handle()
     {
         $me = new EnvatoService();
-        $me->run(1760502540, 0);
+        $me->Previews('https://t.me/c/1884117700/767', 'https://t.me/c/1884117700/773');
         //1897777451
         //639086927
         //1857450597
