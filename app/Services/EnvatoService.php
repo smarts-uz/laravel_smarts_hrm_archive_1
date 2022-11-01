@@ -31,7 +31,9 @@ class EnvatoService
         $subject = curl_exec($ch);
         // 4. закрываем соединение
         curl_close($ch);
-        return $subject;
+        preg_match('#(https://video-previews[a-z-_/\.0-9]+)|((?<=src=")https://elements-cover-images[a-zA-Z-_/\.0-9\?%&;=]+)#',
+            preg_replace('#amp;#', '', $subject), $matches);
+        return $matches;
     }
 
     public function run($channel, $date)
@@ -46,7 +48,8 @@ class EnvatoService
                 'offset_date' => $date,
                 'offset_id' => $offset_id,
                 'limit' => $limit,
-                'max_id' => 99999
+                'max_id' => 99999,
+                'min_id' => $offset_id
             ]);
 
             if (count($messages_Messages['messages']) == 0) break;
@@ -64,11 +67,9 @@ class EnvatoService
             foreach ($posts as $key => $post) {
                 if (array_key_exists($key, $comments)) {
                     foreach ($comments[$key] as $comment) {
-                        preg_match('/#(previews)|(elements-cover-images)#/i', $comment, $match);
-                        if (!is_array($match)) {
-                            preg_match('#(https://video-previews[a-z-_/\.0-9]+)|((?<=src=")https://elements-cover-images[a-zA-Z-_/\.0-9\?%&;=]+)#',
-                                preg_replace('#amp;#', '', $this->getLink($post)), $matches);
-
+                        preg_match('/#(previews)|(elements-cover-images)#/i', $comment, $m);
+                        if (!is_array($m)) {
+                            $matches = $this->getLink($post);
                             if (array_key_exists(0, $matches)) {
                                 $this->MadelineProto->messages->sendMessage(
                                     ['peer' => '-100' . $channel,
@@ -78,8 +79,7 @@ class EnvatoService
                         }
                     }
                 } else {
-                    preg_match('#(https://video-previews[a-z-_/\.0-9]+)|((?<=src=")https://elements-cover-images[a-zA-Z-_/\.0-9\?%&;=]+)#',
-                        preg_replace('#amp;#', '', $this->getLink($post)), $matches);
+                    $matches = $this->getLink($post);
 
                     if (array_key_exists(0, $matches)) {
                         $this->MadelineProto->messages->sendMessage(
@@ -94,5 +94,8 @@ class EnvatoService
 
             sleep(2);
         } while (false);
+
+        file_put_contents('a.json', json_encode($posts),);
+        file_put_contents('d.json', json_encode($comments),);
     }
 }
