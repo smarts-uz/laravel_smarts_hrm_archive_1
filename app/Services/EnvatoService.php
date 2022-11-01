@@ -61,10 +61,9 @@ class EnvatoService
 
             sleep(2);
         } while (true);
-        file_put_contents('b.json', json_encode($post));
         for ($i = 0; $i <= $count; $i++) {
             if (in_array($start[5] + $i, $post)) {
-                $comments[] = $this->MadelineProto->messages->getReplies(
+                $comments[$start[5] + $i] = $this->MadelineProto->messages->getReplies(
                     ['peer' => -100 . $start[4],
                         'msg_id' => $start[5] + $i])['messages'];
             }
