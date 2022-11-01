@@ -49,21 +49,18 @@ class MTProtoService
     public function sync($path)
     {
         $file_system = new FileSystemService();
-        $folders = scandir($path);
+        $search = new SearchService();
         $url_file = $file_system->searchForUrl($path);
         $url = $file_system->readUrl($url_file);
         $message = $this->getReplyMessage($url);
-
-        $message_id = '';
-
+        $mess_url = $search->searchMessage(-1001732713545,$message);
         $comments = $this->getComments($url);
         $tg_files = $this->getFiles($comments);
         $storage_files = $file_system->getFIles($path);
         $to_tg = array_diff($storage_files, $tg_files);
-        dd($comments);
         $nutgram = new NutgramService();
         foreach ($to_tg as $item) {
-            $nutgram->sendDocument($path . '/' . $item, -1001732713545, 2078);
+            $nutgram->sendDocument($path . '/' . $item, -1001732713545, $mess_url);
         }
     }
 }

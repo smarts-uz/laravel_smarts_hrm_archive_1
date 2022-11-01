@@ -16,7 +16,7 @@ class SearchService
         $limit = 100;
 
         do {
-            $messages_Messages = $this->MTProto->messages->getHistory(['peer' => $channel, 'offset_id' => $offset_id, 'offset_date' => 0, 'add_offset' => 0, 'limit' => $limit, 'max_id' => 0, 'min_id' => 0, 'hash' => 0]);
+            $messages_Messages = $this->MTProto->MadelineProto->messages->getHistory(['peer' => $channel, 'offset_id' => $offset_id, 'offset_date' => 0, 'add_offset' => 0, 'limit' => $limit, 'max_id' => 0, 'min_id' => 0, 'hash' => 0]);
 
             if (count($messages_Messages['messages']) == 0) break;
 
