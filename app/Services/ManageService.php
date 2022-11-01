@@ -93,13 +93,16 @@ class ManageService
 
             foreach ($type as $chat => $key) {
                 $member = $bot->getChatMember((int)$key, $user);
+
                 if ($member->status === 'member' || $member->status === 'creator') {
                     $title = $bot->getChat($key)->title;
                     $invite_link = $bot->getChat($key)->invite_link;
+
                     if ($chats === 'channels'){
                         $this->channels_id[] = $key;
                         $this->channels_title[] = $title;
                         $this->channels_invite_link[] = $invite_link;
+
                     }else{
                         $this->groups_id[] = $key;
                         $this->groups_title[] = $title;

@@ -57,7 +57,6 @@ class u_a_a_tgbot extends Command
         $cameraID = trim(fgets($fh));
         fclose($fh);
         $test = new ProcessCameraService($cameraID);
-        //$cameraID = $test->readConsoleLine('Enter the camera ID: ');
         $path = $test->getVideoFilelist();
         dd($path);
         return Command::SUCCESS;

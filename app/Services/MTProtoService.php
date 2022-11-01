@@ -59,6 +59,7 @@ class MTProtoService
         $storage_files = $file_system->getFIles($path);
         $to_tg = array_diff($storage_files, $tg_files);
         $nutgram = new NutgramService();
+
         foreach ($to_tg as $item) {
             $nutgram->sendDocument($path . '/' . $item, -1001732713545, $mess_url);
         }
