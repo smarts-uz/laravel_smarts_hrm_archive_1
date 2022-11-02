@@ -80,13 +80,19 @@ class EnvatoService
         return $posts;
     }
 
-    public function sendlink($posts, $comments) {
+    public function sendlink($posts, $comments, $channel) {
         foreach ($comments as $key => $postComment) {
             foreach ($postComment as $comment) {
                 if (array_key_exists('message', $comment)) {
-                    preg_match('/#(video-previews)|(elements-cover-images)#/i', $comment, $match);
+                    preg_match('/#(video-previews)|(elements-cover-images)#/i', $comment['message'], $match);
                     if (!is_array($match)) {
-
+                        $matches = $this->getLink($posts[$key]);
+                        if (array_key_exists(0, $matches)) {
+                            $this->MadelineProto->messages->sendMessage(
+                                ['peer' => '-100' . $channel,
+                                    'message' => $matches[0],
+                                    'reply_to_msg_id' => $key]);
+                        }
                     }
                 }
             }
@@ -95,9 +101,11 @@ class EnvatoService
 
     public function Previews($start, $end){
         $start = explode("/", $start);
-        $posts = $this->getPostId($start[4]);
         $end = explode("/", $end);
+        $channel = $start[4];
+        $posts = $this->getPostId($channel);
         $comments = $this->getComments($start, $end, $posts);
+        $this->sendlink($posts, $comments, $channel);
         file_put_contents('a.json', json_encode($comments));
         file_put_contents('b.json', json_encode($posts));
     }
