@@ -76,7 +76,7 @@ class NutgramService
     public function sendDocument($file, $chat_id, $reply_to = null){
         $f = fopen($file, 'r+');
         $this->bot->sendDocument($f, ['chat_id' => $chat_id, 'reply_to_message_id' => $reply_to,
-            'caption' => $this->file_system->caption($file)]);
+            'caption' => '#post_file']);
     }
 
 }

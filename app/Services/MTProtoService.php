@@ -22,7 +22,7 @@ class MTProtoService
     public function getComments($url)
     {
         $split = explode("/", $url);
-        $messages = $this->MadelineProto->messages->getReplies(['peer' => -100 . $split[4], 'msg_id' => $split[5]]);
+        $messages = $this->MadelineProto->messages->getReplies(['peer' => '-100' . $split[4], 'msg_id' => $split[5]]);
 
         return $messages['messages'];
     }

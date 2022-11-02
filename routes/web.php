@@ -21,13 +21,16 @@ use SergiX44\Nutgram\Nutgram;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/history', function (){
+Route::get('/history', function () {
     $MTProto = new \App\Services\MTProtoService();
-    try{
+    /*try{
         $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\PHPython');
     }catch (Exception $e){
         dump($e->getMessage());
-    }
+    }*/
+
+    $replies = $MTProto->MadelineProto->messages->getHistory(['peer' => -1001807426588, 'offset_id' => 527]);
+    print_r($replies['messages'][0]['message']);
 });
 
 Route::post('/hook', [ManageService::class, 'handle']);
@@ -39,23 +42,51 @@ Route::get('/telegram', function () {
     return $contents;
 });
 
-Route::get('/search', function (){
-    try{
-        $MTProto = new \App\Services\MTProtoService();
-        $message = yield $MTProto->MadelineProto->messages->sendMedia([
-            'peer' => -1001732713545,
-            'media' => [
-                'file' => 'D:\Smart_Software\Sync_Data\PHP\Tequilarapido.Python-Bridge/ALL.url'
-            ],
-            'reply_to_msg_id' => 2078
-        ]);
-        dump($message);
-    }catch (Exception $e){
-        dump($e->getMessage());
+Route::get('/search', function () {
+    $MTProto = new \App\Services\MTProtoService();
+    $envato = new \App\Services\EnvatoService();
+    $search = new SearchService();
+    $send = new \App\Services\SendMediaServis();
+
+    $offset = 'https://t.me/c/1807426588/532';
+    $end = 'https://t.me/c/1807426588/534';
+
+    if ($end == null) {
+        return;
+    } else {
+        for ($i = (int)explode('/', $offset)[5]; $i <= (int)explode('/', $end)[5]; $i++) {
+            $message = $MTProto->getReplyMessage(substr($offset, 0, -strlen(explode('/', $offset)[5])) . $i);
+            $mess_url = $search->searchMessage(-1001732713545, $message);
+            print_r(substr($offset, 0, -strlen(explode('/', $offset)[5])));
+            print_r($i);
+            print_r(PHP_EOL);
+            $comments = $MTProto->getComments(substr($offset, 0, -strlen(explode('/', $offset)[5])) . $i);
+            if (count($comments) == 0) {
+                $split = explode("/", substr($offset, 0, -strlen(explode('/', $offset)[5])) . $i);
+                $replies = $MTProto->MadelineProto->messages->getHistory(['peer' => '-100' . $split[4], 'offset_id' => (int)$split[5] + 1]);
+                print_r($replies['messages'][0]['message']);
+                $link = $envato->getLink($replies['messages'][0]['message']);
+                print_r($link);
+            }
+            foreach ($comments as $comment) {
+                if (!str_contains($comment['message'], "#post_file")) {
+                    try{
+                        $split = explode("/", substr($offset, 0, -strlen(explode('/', $offset)[5])) . $i);
+                        $replies = $MTProto->MadelineProto->messages->getHistory(['peer' => '-100' . $split[4], 'offset_id' => (int)$split[5] + 1]);
+                        $link = $envato->getLink($replies['messages'][0]['message']);
+                        print_r($link);
+                        $qwe = $MTProto->MadelineProto->messages->sendMessage(['peer' => '@Ramziddin_dev', 'message' => '#post_url']);
+                        print_r($qwe);
+                    }catch (Exception $e){
+                        print_r($e->getMessage());
+                    }
+                }
+            }
+        }
     }
 });
 
-Route::get('/proto', function ()  {
+Route::get('/proto', function () {
 
     $MTProto = new \App\Services\MTProtoService();
 

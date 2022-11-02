@@ -36,12 +36,22 @@ class TestCommand extends Command
     {
         $MTProto = new \App\Services\MTProtoService();
 
+        $offset = '';
+        $end = '';
 
-        try {
-            $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\Tequilarapido.Python-Bridge');
-        } catch (Exception $e) {
-            dump($e->getMessage());
+        if($end == null){
+
+        }else{
+            $diff = explode('/',$offset)[5] - explode('/',$end)[5];
+            print_r($diff);
+
+
         }
 
+
+
+        $comments = $MTProto->getComments('https://t.me/c/1807426588/530');
+        print_r($comments);
+
     }
-    }
+}
