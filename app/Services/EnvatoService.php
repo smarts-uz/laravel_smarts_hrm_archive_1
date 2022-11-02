@@ -10,13 +10,13 @@ class EnvatoService
 {
     public $MadelineProto;
 
-    public function __construct()
+    /*public function __construct()
     {
         $settings = new Settings;
 
         $this->MadelineProto = new API('D:/Sessions/akbarshoh.8522/session.madeline');
         $this->MadelineProto->start();
-    }
+    }*/
 
     public function getLink($postLink)
     {

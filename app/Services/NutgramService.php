@@ -8,7 +8,7 @@ use SergiX44\Nutgram\Nutgram;
 
 class NutgramService
 {
-    protected $bot;
+    public $bot;
     protected $file_system;
 
     public function __construct()

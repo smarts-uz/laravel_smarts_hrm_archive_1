@@ -28,9 +28,8 @@ Route::get('/history', function () {
     }catch (Exception $e){
         dump($e->getMessage());
     }*/
-
-    $replies = $MTProto->MadelineProto->messages->getHistory(['peer' => -1001807426588, 'offset_id' => 527]);
-    print_r($replies['messages'][0]['message']);
+    $qwe = $MTProto->MadelineProto->messages->sendMessage(['peer' => '@Ramziddin_dev', 'message' => '#post_url']);
+    print_r($qwe);
 });
 
 Route::post('/hook', [ManageService::class, 'handle']);
@@ -67,19 +66,20 @@ Route::get('/search', function () {
                 print_r($replies['messages'][0]['message']);
                 $link = $envato->getLink($replies['messages'][0]['message']);
                 print_r($link);
+                $messages_DiscussionMessage = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer'=> '-100' . $split[4], 'msg_id'=> (int)$split[5]]);
+                print_r($messages_DiscussionMessage['messages'][0]['peer_id']['channel_id']);
+                print_r($messages_DiscussionMessage['messages'][0]['id']);
+                $qwe = $MTProto->MadelineProto->messages->sendMedia(['peer' => '-100' . $messages_DiscussionMessage['messages'][0]['peer_id']['channel_id'],"media" =>
+                    ['_' => 'inputMediaUploadedDocument','file' => $link[0]], "message" => '#post_file', 'reply_to_msg_id'=>(int)$messages_DiscussionMessage['messages'][0]['id']]);
+                print_r($qwe);
             }
             foreach ($comments as $comment) {
+
                 if (!str_contains($comment['message'], "#post_file")) {
-                    try{
                         $split = explode("/", substr($offset, 0, -strlen(explode('/', $offset)[5])) . $i);
                         $replies = $MTProto->MadelineProto->messages->getHistory(['peer' => '-100' . $split[4], 'offset_id' => (int)$split[5] + 1]);
                         $link = $envato->getLink($replies['messages'][0]['message']);
                         print_r($link);
-                        $qwe = $MTProto->MadelineProto->messages->sendMessage(['peer' => '@Ramziddin_dev', 'message' => '#post_url']);
-                        print_r($qwe);
-                    }catch (Exception $e){
-                        print_r($e->getMessage());
-                    }
                 }
             }
         }
@@ -90,11 +90,8 @@ Route::get('/proto', function () {
 
     $MTProto = new \App\Services\MTProtoService();
 
-    $comments = $MTProto->getComments('https://t.me/c/1807426588/408');
-    $files = $MTProto->getFiles($comments);
-    dd($files);
-//    dd($files);
-});
+
+    });
 
 Route::get('/test', function () {
     $file_system = new FileSystemService();
