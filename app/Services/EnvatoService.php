@@ -38,22 +38,22 @@ class EnvatoService
         return $matches;
     }
 
-    public function getComments($start, $end, $post_id) {
+    public function getComments($start, $end, $posts) {
         $count = $end[5] - $start[5];
-        $posts = [];
-
+        $comments = [];
         for ($i = 0; $i <= $count; $i++) {
-            if (in_array($start[5] + $i, $post_id)) {
-                $posts[$start[5] + $i] = $this->MadelineProto->messages->getReplies(
+            if (array_key_exists($start[5] + $i, $posts)) {
+                $comments[$start[5] + $i] = $this->MadelineProto->messages->getReplies(
                     ['peer' => -100 . $start[4],
                         'msg_id' => $start[5] + $i])['messages'];
+
             }
         }
-        return $posts;
+        return $comments;
     }
 
     public function getPostId($channel_id) {
-        $post_id = [];
+        $posts = [];
         $offset_id = 0;
         do {
             $messages_Messages = $this->MadelineProto->messages->getHistory([
@@ -66,25 +66,30 @@ class EnvatoService
             if (count($messages_Messages['messages']) == 0) break;
 
             foreach ($messages_Messages['messages'] as $key => $item) {
-                $post_id[] = $item['id'];
+                if (array_key_exists('media', $item)) {
+                    if (array_key_exists('webpage', $item['media'])) {
+                        $posts[$item['id']] = $item['media']['webpage']['url'];
+                    }
+                }
             }
 
             $offset_id = end($messages_Messages['messages'])['id'];
 
             sleep(2);
         } while (true);
-        return $post_id;
+        return $posts;
     }
 
-    public function sendlink() {
+    public function sendlink($posts) {
 
     }
 
     public function Previews($start, $end){
         $start = explode("/", $start);
+        $posts = $this->getPostId($start[4]);
         $end = explode("/", $end);
-        $post_id = $this->getPostId($start[4]);
-        $posts = $this->getComments($start, $end, $post_id);
-        file_put_contents('a.json', json_encode($posts));
+        $comments = $this->getComments($start, $end, $posts);
+        file_put_contents('a.json', json_encode($comments));
+        file_put_contents('b.json', json_encode($posts));
     }
 }
