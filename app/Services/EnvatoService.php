@@ -80,8 +80,17 @@ class EnvatoService
         return $posts;
     }
 
-    public function sendlink($posts) {
+    public function sendlink($posts, $comments) {
+        foreach ($comments as $key => $postComment) {
+            foreach ($postComment as $comment) {
+                if (array_key_exists('message', $comment)) {
+                    preg_match('/#(video-previews)|(elements-cover-images)#/i', $comment, $match);
+                    if (!is_array($match)) {
 
+                    }
+                }
+            }
+        }
     }
 
     public function Previews($start, $end){
