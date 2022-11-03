@@ -15,7 +15,7 @@ class u_a_a_tgbot extends Command
      *
      * @var string
      */
-    protected $signature = 'u_a_a_tgbot:uploader {id?}';
+    protected $signature = 'u_a_a_tgbot:uploader';
 
     /**
      * The console command description.
@@ -24,43 +24,6 @@ class u_a_a_tgbot extends Command
      */
     protected $description = 'Run SmartsHRM telegram bot BotName';
 
-    public function argumentsRequest()
-    {
-        //Office selection block
-        $allOffices = Office::all();
-        echo "Offices list" . PHP_EOL;
-        foreach ($allOffices as $office) {
-            echo $office->id . ' - ' . $office->name . ' Adress: ' . $office->adress . '. (phone: ' . $office->phone . ')' . PHP_EOL;
-        }
-        echo '==========================================';
-        echo PHP_EOL;
-/*        $fh = fopen('php://stdin', 'r');
-        echo 'Select office No:';
-        $officeID = trim(fgets($fh));
-        fclose($fh);*/
-
-        $officeNumber = $this->ask('Select office No:');
-
-        //Office cameras selection block
-        echo '==========================================';
-        echo PHP_EOL;
-        echo 'Office cameras' . PHP_EOL;
-
-        $allCameras = Camera::where('office_id', $officeNumber)->get();;
-        foreach ($allCameras as $camera) {
-            echo $camera->id . ' - ' . $camera->name . PHP_EOL;
-        }
-
-/*        $fh = fopen('php://stdin', 'r');
-        echo 'Process camera No:';
-        $cameraID = trim(fgets($fh));
-        fclose($fh);*/
-
-        $cameraID = $this->ask('Select camera No:');
-
-        return $cameraID;
-    }
-
     /**
      * Execute the console command.
      *
@@ -68,15 +31,35 @@ class u_a_a_tgbot extends Command
      */
     public function handle()
     {
-        if ( $this->argument('id') !== null) {
-            $cameraID = $this->argument('id');
+        $allOffices = Office::all();
+        echo "Offices list".PHP_EOL;
+        foreach ($allOffices as $office) {
+            echo $office->id.' - '.$office->name.' Adress: '.$office->adress.'. (phone: '.$office->phone.')'.PHP_EOL;
         }
-           else {
-               $cameraID = $this->argumentsRequest();
-           }
-        $test = new ProcessCameraService($cameraID);
-        $path = $test->getVideoFilelist();
+        echo '==========================================';
+        echo PHP_EOL;
+        $fh = fopen('php://stdin', 'r');
+        echo 'Enter the office Id:';
+        $officeID = trim(fgets($fh));
+        fclose($fh);
 
+        echo '==========================================';
+        echo PHP_EOL;
+        echo 'Office cameras'. PHP_EOL;
+
+        $allCameras = Camera::where('office_id', $officeID)->get();;
+        foreach ($allCameras as $camera) {
+            echo $camera->id.' - '.$camera->name.PHP_EOL;
+        }
+
+        $fh = fopen('php://stdin', 'r');
+        echo 'Process camero No:';
+        $cameraID = trim(fgets($fh));
+        fclose($fh);
+        $test = new ProcessCameraService($cameraID);
+        //$cameraID = $test->readConsoleLine('Enter the camera ID: ');
+        $path = $test->getVideoFilelist();
+        dd($path);
         return Command::SUCCESS;
     }
 }
