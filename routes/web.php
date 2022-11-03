@@ -1,13 +1,10 @@
 <?php
 
-use App\Http\Controllers\Controller;
-use App\Models\Camera;
 use App\Services\FileSystemService;
 use App\Services\ManageService;
-use App\Services\NutgramService;
-use Illuminate\Routing\RouteRegistrar;
 use Illuminate\Support\Facades\Route;
 use SergiX44\Nutgram\Nutgram;
+use TCG\Voyager\Facades\Voyager;
 
 /*
 |--------------------------------------------------------------------------
