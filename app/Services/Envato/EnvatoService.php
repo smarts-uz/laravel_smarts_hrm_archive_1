@@ -1,10 +1,6 @@
 <?php
 
-namespace App\Services;
-
-use danog\MadelineProto\API;
-use danog\MadelineProto\Settings;
-use danog\MadelineProto\Settings\AppInfo;
+namespace App\Services\Envato;
 
 class EnvatoService
 {
