@@ -150,6 +150,11 @@ IconFile=C:\Windows\System32\SHELL32.dll";
         return $files;
     }
 
-
+    public function readUrl($path){
+        $f = fopen($path, 'r+');
+        $data = fread($f, filesize($path));
+        $strings = explode("\n", $data);
+        return substr($strings[4], 4);
+    }
 
 }
