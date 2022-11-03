@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use App\Services\MTProtoService;
 use Exception;
 use App\Services\Envato\EnvatoService;
-use App\Services\SearchService;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
@@ -34,7 +33,6 @@ class TestCommand extends Command
     {
         $MTProto = new MTProtoService();
         $envato = new EnvatoService();
-        $search = new SearchService();
 
         $offset = 'https://t.me/c/1807426588/532';
         $end = 'https://t.me/c/1807426588/536';

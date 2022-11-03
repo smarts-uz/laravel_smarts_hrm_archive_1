@@ -15,7 +15,7 @@ class MTProtoService
         $settings = new Settings;
         $settings->setAppInfo((new AppInfo)->setApiHash('0cc5751f00631d78d4dc5618864102dd')->setApiId(15108824));
 
-        $this->MadelineProto = new API('/Users/ramziddinabdumominov/Documents/modelineProtoPHP/session.madeline', $settings);
+        $this->MadelineProto = new API(env('SESSION_PUT'), $settings);
         $this->MadelineProto->start();
     }
 
@@ -53,7 +53,7 @@ class MTProtoService
         $url_file = $file_system->searchForUrl($path);
         $url = $file_system->readUrl($url_file);
         $message = $this->getReplyMessage($url);
-        $mess_url = $search->searchMessage(-1001732713545,$message);
+        $mess_url = $search->searchMessage(-1001732713545, $message);
         $comments = $this->getComments($url);
         $tg_files = $this->getFiles($comments);
         $storage_files = $file_system->getFIles($path);

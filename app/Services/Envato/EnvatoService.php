@@ -34,7 +34,8 @@ class EnvatoService
         return $matches;
     }
 
-    public function getComments($start, $end, $post_id) {
+    public function getComments($start, $end, $post_id)
+    {
         $count = $end[5] - $start[5];
         $posts = [];
 
@@ -48,7 +49,8 @@ class EnvatoService
         return $posts;
     }
 
-    public function getPostId($channel_id) {
+    public function getPostId($channel_id)
+    {
         $post_id = [];
         $offset_id = 0;
         do {
@@ -72,11 +74,13 @@ class EnvatoService
         return $post_id;
     }
 
-    public function sendlink() {
+    public function sendlink()
+    {
 
     }
 
-    public function Previews($start, $end){
+    public function Previews($start, $end)
+    {
         $start = explode("/", $start);
         $end = explode("/", $end);
         $post_id = $this->getPostId($start[4]);
