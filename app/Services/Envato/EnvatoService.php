@@ -6,13 +6,13 @@ class EnvatoService
 {
     public $MadelineProto;
 
-    /*public function __construct()
+    public function __construct()
     {
         $settings = new Settings;
 
-        $this->MadelineProto = new API('D:/Sessions/akbarshoh.8522/session.madeline');
+        $this->MadelineProto = new API(env('SESSION_PUT'));
         $this->MadelineProto->start();
-    }*/
+    }
 
     public function getLink($postLink)
     {
@@ -83,7 +83,7 @@ class EnvatoService
     {
         $start = explode("/", $start);
         $end = explode("/", $end);
-        $post_id = $this->getPostId($start[4]);
+        $post_id = $this->getPostId(env('CHANNEL_ID'));
         $posts = $this->getComments($start, $end, $post_id);
         file_put_contents('a.json', json_encode($posts));
     }
