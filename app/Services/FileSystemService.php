@@ -10,17 +10,13 @@ class FileSystemService
 
     public function __construct()
     {
-        if (getenv('COMPUTERNAME') !== 'WORKPC') {
-            exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' .
-                env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
-            $this->path = 'Z:/';
-        } else {
-            $this->path = env('ROOT_PATH');
-        }
+//        exec('net use Z: \\' . env('SHARED_FOLDER') . '/user:' . env('SHARED_FOLDER_USER') . ' ' . env('SHARED_FOLDER_PASSWORD') . ' /persistent:Yes');
+        $this->path = 'Z:/';
     }
 
     public function createUrlFile($path, $urll)
     {
+
         $url = fopen($path . '/ALL.url', 'w');
         $text = "[{000214A0-0000-0000-C000-000000000046}]
 Prop3=19,11
@@ -43,6 +39,7 @@ IconFile=C:\Windows\System32\SHELL32.dll";
             }
         }
         return $list;
+
     }
 
     public function searchForTxt($path)
@@ -57,24 +54,13 @@ IconFile=C:\Windows\System32\SHELL32.dll";
         return $result;
     }
 
-    public function searchForUrl($path)
-    {
-        $result = null;
-        $list = scandir($path);
-        foreach ($list as $item) {
-            if (is_file($path . '/' . $item) && $item === 'ALL.url' || str_starts_with($item, 'T.Me')) {
-                $result = $path . '/' . $item;
-            }
-        }
-        return $result;
-    }
-
     public function readTxt($file)
     {
         $f = fopen($file, 'r+');
         $text = fread($f, filesize($file));
         $split = explode("\r\n", $text);
         return $split;
+
     }
 
     public function fileExists($path)
@@ -106,6 +92,18 @@ IconFile=C:\Windows\System32\SHELL32.dll";
                 $this->createPost($path, $txt_data, $titles);
             }
         }
+    }
+
+    public function searchForUrl($path)
+    {
+        $result = null;
+        $list = scandir($path);
+        foreach ($list as $item) {
+            if (is_file($path . '/' . $item) && $item === 'ALL.url' || str_starts_with($item, 'T.Me')) {
+                $result = $path . '/' . $item;
+            }
+        }
+        return $result;
     }
 
     public function syncSubFolder($path, $txt_data, $titles)
