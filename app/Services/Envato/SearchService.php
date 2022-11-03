@@ -41,10 +41,10 @@ class SearchService
         print_r($messages);
     }
 
-    public function searchMessage($chat_id, $searched = null)
+    public function getMessages($chat_id, $from, $to)
     {
         $messages = [];
-        for ($i = 309; $i <= 310; $i++) {
+        for ($i = $from; $i <= $to; $i++) {
             $messages[] = $this->MProto->channels->getMessages(["channel" => $chat_id, "id" => [$i]]);
         }
         return $messages;
