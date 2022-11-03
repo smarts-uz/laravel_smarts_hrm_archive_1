@@ -41,16 +41,6 @@ class SearchService
         print_r($messages);
     }
 
-    public function getMediaLink($link)
-    {
-        $html = file_get_contents($link);
-        $dom = new DOMDocument;
-        $dom->loadHTML($html);
-        foreach ($dom->getElementsByTagName('a') as $node) {
-            echo $dom->saveHtml($node), PHP_EOL;
-        }
-    }
-
     public function searchMessage($chat_id, $searched = null)
     {
         $messages = [];
