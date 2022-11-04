@@ -22,7 +22,7 @@ class MTProtoService
     public function getComments($url)
     {
         $split = explode("/", $url);
-        $messages = $this->MadelineProto->messages->getReplies(['peer' => '-100' . $split[4], 'msg_id' => $split[5]]);
+        $messages = $this->MadelineProto->messages->getReplies(['peer' => '-100' . $split[count($split) - 2], 'msg_id' => $split[count($split) - 1]]);
 
         return $messages['messages'];
     }
@@ -32,8 +32,8 @@ class MTProtoService
         $files = [];
         foreach ($comments as $message) {
             if (array_key_exists('media', $message)) {
-                foreach ($message['media']['document']['attributes'] as $item){
-                    if($item['_'] == 'documentAttributeFilename'){
+                foreach ($message['media']['document']['attributes'] as $item) {
+                    if ($item['_'] == 'documentAttributeFilename') {
                         array_push($files, $item['file_name']);
                     }
                 }
@@ -49,7 +49,7 @@ class MTProtoService
                 foreach ($message['media']['document']['attributes'] as $item) {
                     if ($item['_'] == 'documentAttributeFilename') {
                         if (in_array($item['file_name'], $files_to_download)) {
-                            yield $this->MadelineProto->downloadToDir($item['media'], $path . '/' );;
+                            yield $this->MadelineProto->downloadToDir($item['media'], $path . '/');;
 
                         }
                     }
@@ -65,15 +65,21 @@ class MTProtoService
 
         $url_file = $file_system->searchForUrl($path);
         $url = $file_system->readUrl($url_file);
-        //$split = explode("/", $url);
-        //$message = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => '-100' . $split[4], 'msg_id' => (int)$split[5]]);
+        //dd($url);
+        $split = explode("/", $url);
+        $message = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => '-100' . $split[count($split) - 2], 'msg_id' => (int)$split[count($split) - 1]]);
         $comments = $this->getComments($url);
-
-        //$tg_files = $this->getFiles($comments);
-        //$storage_files = $file_system->getFIles($path);
-        echo '<pre>';
-        print_r($comments);
-        /*echo '<pre>';
-        print_r($to_st);*/
+        $tg_files = $this->getFiles($comments);
+        $storage_files = $file_system->getFIles($path);
+        $to_tg = array_diff($storage_files, $tg_files);
+        $to_st = array_diff($tg_files, $storage_files);
+        foreach ($to_tg as $item) {
+            $descr = $file_system->caption($path . '/' . $item);
+            print_r($path . '/' . $item);
+            print_r($descr);
+            $MTProto->MadelineProto->messages->sendMedia(["peer" => '-100' . $message['messages'][0]['peer_id']['channel_id'],
+                "reply_to_msg_id"=>(int)$message['messages'][0]['id'], "media" => ['_' => 'inputMediaUploadedDocument',
+                    'file' => $path . '/' . $item], "message" => $descr]);
+        }
     }
 }

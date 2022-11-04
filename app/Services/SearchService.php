@@ -56,8 +56,6 @@ class SearchService
             $message_id = $this->searchMessage($txt_data[1], $text);
         }
         $line = 'https://t.me/c/' . substr($txt_data[1], 4) . '/' . $message_id;
-        $message = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => $txt_data[1], 'msg_id' => $message_id]);
-        file_put_contents('D:\JSONs\\' . $titles[0] . '.json', json_encode($message));
         return $line;
     }
 

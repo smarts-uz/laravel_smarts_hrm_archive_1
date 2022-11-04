@@ -38,7 +38,7 @@ Route::get('/preview', function () {
 Route::get('/test', function () {
     $file_system = new FileSystemService();
     $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
-    $path = 'D:\Smart_Software\Sync_Data\PHP';
+    $path = '/Users/ramziddinabdumominov/Desktop/Nutgram Sync';
     $files = $file_system->fileExists($path);
     if ($files === 1) {
         $all_txt = $file_system->searchForTxt($path);
@@ -58,7 +58,7 @@ Route::get('/test', function () {
 
 Route::get('/files', function () {
     $MTProto = new MTProtoService();
-    $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\PHPython');
+    $MTProto->sync('/Users/ramziddinabdumominov/Desktop/Nutgram Sync');
 });
 
 Route::group(['prefix' => 'admin'], function () {
