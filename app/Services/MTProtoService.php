@@ -65,8 +65,8 @@ class MTProtoService
 
         $url_file = $file_system->searchForUrl($path);
         $url = $file_system->readUrl($url_file);
-        $split = explode("/", $url);
-        $message = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => '-100'  . $split[4], 'msg_id' => (int)$split[5]]);
+        //$split = explode("/", $url);
+        //$message = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => '-100' . $split[4], 'msg_id' => (int)$split[5]]);
         $comments = $this->getComments($url);
 
         //$tg_files = $this->getFiles($comments);
