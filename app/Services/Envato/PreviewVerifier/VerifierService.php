@@ -5,6 +5,7 @@ namespace App\Services\Envato\PreviewVerifier;
 use App\Services\Envato\EnvatoService;
 use App\Services\MTProtoService;
 use Exception;
+use function Amp\Iterator\concat;
 
 class VerifierService
 {
@@ -20,10 +21,14 @@ class VerifierService
         $MTProto = new MTProtoService();
         $envato = new EnvatoService();
 
-        if ($end == null) {
+        if ($end != null) {
             for ($i = $start; $i < $end; $i++) {
                 $line = 'https://t.me/c/' . substr(env("CHANNEL_ID"), 4) . '/' . $i;
-                $message = $this->MTProto->MadelineProto->messages->getDiscussionMessage(["peer" => env("CHANNEL_ID"), 'msg_id' => [$i]]);
+                try{
+                    $message = $this->MTProto->MadelineProto->messages->getDiscussionMessage(["peer" => env("CHANNEL_ID"), 'msg_id' => $i]);
+                }catch (Exception $e){
+                    continue;
+                }
                 $comments = $this->MTProto->getComments($line);
                 $link = $envato->getLink($message['messages'][0]['media']['webpage']['url']);
                 if (count($comments) == 0) {

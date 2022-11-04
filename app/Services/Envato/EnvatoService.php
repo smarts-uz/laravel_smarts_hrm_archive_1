@@ -2,17 +2,10 @@
 
 namespace App\Services\Envato;
 
+use danog\MadelineProto\Settings;
+
 class EnvatoService
 {
-    public $MadelineProto;
-
-    public function __construct()
-    {
-        $settings = new Settings;
-
-        $this->MadelineProto = new API(env('SESSION_PUT'));
-        $this->MadelineProto->start();
-    }
 
     public function getLink($postLink)
     {

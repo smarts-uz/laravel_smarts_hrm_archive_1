@@ -20,13 +20,17 @@ use TCG\Voyager\Facades\Voyager;
 
 Route::post('/hook', [ManageService::class, 'handle']);
 
-Route::get('/telegram', function (){
+Route::get('/telegram', function () {
     $filename = 'D:/ALL.url';
     $handle = fopen($filename, "r");
     $contents = file($filename);;
     return $contents;
 });
 
+Route::get('/preview', function () {
+    $preview = new App\Services\Envato\PreviewVerifier\VerifierService();
+    $preview->verifier(532, 536);
+});
 
 Route::get('/test', function () {
     $file_system = new FileSystemService();
@@ -49,9 +53,9 @@ Route::get('/test', function () {
     }
 });
 
-Route::get('/files', function (){
-   $MTProto = new MTProtoService();
-   $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\PHPython');
+Route::get('/files', function () {
+    $MTProto = new MTProtoService();
+    $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\PHPython');
 });
 
 Route::group(['prefix' => 'admin'], function () {
