@@ -28,8 +28,11 @@ Route::get('/telegram', function () {
 });
 
 Route::get('/preview', function () {
-    $preview = new App\Services\Envato\PreviewVerifier\VerifierService();
-    $preview->verifier(532, 536);
+
+    dd(123123123);
+
+    /*$preview = new App\Services\Envato\PreviewVerifier\VerifierService();
+    $preview->verifier(532, 536);*/
 });
 
 Route::get('/test', function () {

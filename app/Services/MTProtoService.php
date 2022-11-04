@@ -42,6 +42,22 @@ class MTProtoService
         return $files;
     }
 
+    public function downloadMedia($comments, $files_to_download, $path)
+    {
+        foreach ($comments as $message) {
+            if (array_key_exists('media', $message)) {
+                foreach ($message['media']['document']['attributes'] as $item) {
+                    if ($item['_'] == 'documentAttributeFilename') {
+                        if (in_array($item['file_name'], $files_to_download)) {
+                            yield $this->MadelineProto->downloadToDir($item['media'], $path . '/' );;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     public function sync($path)
     {
         $file_system = new FileSystemService();
@@ -53,11 +69,11 @@ class MTProtoService
         $message = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => '-100'  . $split[4], 'msg_id' => (int)$split[5]]);
         $comments = $this->getComments($url);
 
-        $tg_files = $this->getFiles($comments);
-        $storage_files = $file_system->getFIles($path);
-
+        //$tg_files = $this->getFiles($comments);
+        //$storage_files = $file_system->getFIles($path);
         echo '<pre>';
-        print_r($tg_files);
-        //print_r($storage_files);
+        print_r($comments);
+        /*echo '<pre>';
+        print_r($to_st);*/
     }
 }
