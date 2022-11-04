@@ -41,8 +41,39 @@ class SearchService
         }
     }
 
-    public function __construct()
+    public function searchForMessage($txt_data, $titles = [])
     {
-        $this->MTProto = new MTProtoService();
+        $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
+        $MTProto = new MTProtoService();
+        $text = $this->folders($txt_data, $titles);
+        print_r($text);
+        print_r(PHP_EOL);
+        $message_id = $this->searchMessage($txt_data[1], $text);
+        if ($message_id == null || $message_id == "") {
+            $bot->sendMessage($text, ['chat_id' => $txt_data[1]]);
+            print_r($text);
+            print_r(PHP_EOL);
+            $message_id = $this->searchMessage($txt_data[1], $text);
+        }
+        $line = 'https://t.me/c/' . substr($txt_data[1], 4) . '/' . $message_id;
+        $message = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => $txt_data[1], 'msg_id' => $message_id]);
+        file_put_contents('D:\JSONs\\' . $titles[0] . '.json', json_encode($message));
+        return $line;
+    }
+
+    public function folders($txt_data, $folders = [])
+    {
+        if (count($folders) != 0) {
+            $text = '';
+            foreach (array_reverse($folders) as $title) {
+                $text .= $title;
+                $text .= ' | ';
+            }
+            $text .= $txt_data[0];
+            return $text;
+        } else {
+            return $txt_data[0];
+        }
+
     }
 }
