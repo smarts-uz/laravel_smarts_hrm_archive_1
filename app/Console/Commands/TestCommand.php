@@ -38,8 +38,7 @@ class TestCommand extends Command
         $end = 'https://t.me/c/1807426588/536';
 
         if ($end == null) {
-            return;
-        } else {
+
             for ($i = (int)explode('/', $offset)[5]; $i <= (int)explode('/', $end)[5]; $i++) {
                 print_r(substr($offset, 0, -strlen(explode('/', $offset)[5])));
                 print_r($i);
@@ -51,7 +50,7 @@ class TestCommand extends Command
                 }
 
                 $split = explode("/", substr($offset, 0, -strlen(explode('/', $offset)[5])) . $i);
-                $message = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => '-100' . $split[4], 'msg_id' => (int)$split[5]]);
+                $message = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => '-100'  . $split[4], 'msg_id' => (int)$split[5]]);
                 $link = $envato->getLink($message['messages'][0]['media']['webpage']['url']);
                 if (count($comments) == 0) {
                     $MTProto->MadelineProto->messages->sendMessage(['peer' => '-100' . $message['messages'][0]['peer_id']['channel_id'],

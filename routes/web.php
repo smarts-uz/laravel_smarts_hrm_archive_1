@@ -2,6 +2,7 @@
 
 use App\Services\FileSystemService;
 use App\Services\ManageService;
+use App\Services\MTProtoService;
 use Illuminate\Support\Facades\Route;
 use SergiX44\Nutgram\Nutgram;
 use TCG\Voyager\Facades\Voyager;
@@ -27,7 +28,6 @@ Route::get('/telegram', function (){
 });
 
 
-
 Route::get('/test', function () {
     $file_system = new FileSystemService();
     $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
@@ -47,6 +47,11 @@ Route::get('/test', function () {
             $file_system->createUrlFile($path, (string)$getUrl);
         }
     }
+});
+
+Route::get('/files', function (){
+   $MTProto = new MTProtoService();
+   $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\PHPython');
 });
 
 Route::group(['prefix' => 'admin'], function () {

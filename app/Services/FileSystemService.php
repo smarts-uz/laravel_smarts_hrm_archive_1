@@ -77,11 +77,11 @@ IconFile=C:\Windows\System32\SHELL32.dll";
 
     public function createPost($path, $txt_data, $titles = [])
     {
-        $python_service = new PythonService();
+        $search = new SearchService();
         $dir = scandir($path);
         foreach ($dir as $item) {
             if (is_file($path . '/' . $item) && $item != 'ALL.txt' && $item != 'ALL.url') {
-                $post_url = $python_service->searchForMessage($txt_data, $titles);
+                $post_url = $search->searchForMessage($txt_data, $titles);
                 $this->createUrlFile($path, $post_url);
                 break;
             } else if (is_dir($path . '/' . $item) && $item != '- Theory' && !str_starts_with($item, '@') && !str_starts_with($item, '.')) {

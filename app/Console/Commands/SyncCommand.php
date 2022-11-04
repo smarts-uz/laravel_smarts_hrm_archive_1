@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Services\FileSystemService;
 use Illuminate\Console\Command;
 
 class SyncCommand extends Command
@@ -11,7 +12,7 @@ class SyncCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'command:name';
+    protected $signature = 'command:sync {path}';
 
     /**
      * The console command description.
@@ -27,6 +28,23 @@ class SyncCommand extends Command
      */
     public function handle()
     {
-        return Command::SUCCESS;
+        $file_system = new FileSystemService();
+        $path = $this->argument('path');
+        //ALL.txt
+        $txt_file = $file_system->searchForTxt($path);
+        $txt_data = $file_system->readTxt($txt_file);
+        // Verifying ALL.txt data
+        if (count(explode(' | ', $txt_data[0])) > 1 && (int)$txt_data[1] != 0) {
+            $folders = scandir($path);
+            foreach ($folders as $folder) {
+                $titles = [];
+                if (is_dir($path . '/' . $folder) && $folder != '- Theory' && !str_starts_with($folder, '@') && !str_starts_with($folder, '.')) {
+                    //Adding folder name to Title
+                    array_push($titles, $folder);
+                    $file_system->createPost($path . '/' . $folder, $txt_data, $titles);
+                    $file_system->syncSubFolder($path . '/' . $folder, $txt_data, $titles);
+                }
+            }
+        }
     }
 }

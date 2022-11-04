@@ -32,36 +32,32 @@ class MTProtoService
         $files = [];
         foreach ($comments as $message) {
             if (array_key_exists('media', $message)) {
-                array_push($files, $message['media']['document']['attributes'][0]['file_name']);
+                foreach ($message['media']['document']['attributes'] as $item){
+                    if($item['_'] == 'documentAttributeFilename'){
+                        array_push($files, $item['file_name']);
+                    }
+                }
             }
         }
         return $files;
     }
 
-    public function getReplyMessage($url)
-    {
-        $url = explode('/', $url);
-        $messages = $this->MadelineProto->messages->getHistory(['peer' => '-100' . $url[count($url) - 2], 'offset_id' => (int)end($url) + 1]);
-        return $messages['messages'][0]['message'];
-
-    }
-
     public function sync($path)
     {
         $file_system = new FileSystemService();
-        $search = new SearchService();
+        $MTProto = new MTProtoService();
+
         $url_file = $file_system->searchForUrl($path);
         $url = $file_system->readUrl($url_file);
-        $message = $this->getReplyMessage($url);
-        $mess_url = $search->searchMessage(-1001732713545, $message);
+        $split = explode("/", $url);
+        $message = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => '-100'  . $split[4], 'msg_id' => (int)$split[5]]);
         $comments = $this->getComments($url);
+
         $tg_files = $this->getFiles($comments);
         $storage_files = $file_system->getFIles($path);
-        $to_tg = array_diff($storage_files, $tg_files);
-        $nutgram = new NutgramService();
 
-        foreach ($to_tg as $item) {
-            $nutgram->sendDocument($path . '/' . $item, -1001732713545, $mess_url);
-        }
+        echo '<pre>';
+        print_r($tg_files);
+        //print_r($storage_files);
     }
 }
