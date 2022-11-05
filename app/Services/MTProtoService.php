@@ -42,13 +42,13 @@ class MTProtoService
         return $files;
     }
 
-    public function downloadMedia($comments, $files_to_download, $path)
+    public function downloadMedia($comments, $file_name, $path)
     {
         foreach ($comments as $message) {
             if (array_key_exists('media', $message)) {
                 foreach ($message['media']['document']['attributes'] as $item) {
                     if ($item['_'] == 'documentAttributeFilename') {
-                        if (in_array($item['file_name'], $files_to_download)) {
+                        if (in_array($item['file_name'], $file_name)) {
                             yield $this->MadelineProto->downloadToDir($item['media'], $path . '/');;
 
                         }
@@ -79,7 +79,13 @@ class MTProtoService
             print_r($descr);
             $MTProto->MadelineProto->messages->sendMedia(["peer" => '-100' . $message['messages'][0]['peer_id']['channel_id'],
                 "reply_to_msg_id"=>(int)$message['messages'][0]['id'], "media" => ['_' => 'inputMediaUploadedDocument',
-                    'file' => $path . '/' . $item], "message" => $descr]);
+                    'file' => $path . '/' . $item, 'attributes' => [
+                        ['_' => 'documentAttributeFilename', 'file_name' => $item]
+                    ]], "message" => $descr]);
+        }
+
+        foreach ($to_st as $item){
+            $MTProto->downloadMedia($comments, $item, $path);
         }
     }
 }

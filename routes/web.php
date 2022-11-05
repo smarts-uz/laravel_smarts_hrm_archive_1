@@ -58,7 +58,7 @@ Route::get('/test', function () {
 
 Route::get('/files', function () {
     $MTProto = new MTProtoService();
-    $MTProto->sync('/Users/ramziddinabdumominov/Desktop/Nutgram Sync');
+    $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\PHPython');
 });
 
 Route::group(['prefix' => 'admin'], function () {

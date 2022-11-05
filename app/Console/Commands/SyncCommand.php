@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Services\FileSystemService;
+use App\Services\MTProtoService;
 use Illuminate\Console\Command;
 
 class SyncCommand extends Command
@@ -28,7 +29,7 @@ class SyncCommand extends Command
      */
     public function handle()
     {
-        $file_system = new FileSystemService();
+        /*$file_system = new FileSystemService();
         $path = $this->argument('path');
         //ALL.txt
         $txt_file = $file_system->searchForTxt($path);
@@ -45,6 +46,10 @@ class SyncCommand extends Command
                     $file_system->syncSubFolder($path . '/' . $folder, $txt_data, $titles);
                 }
             }
-        }
+        }*/
+
+        $MTProto = new MTProtoService();
+        $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\PHPython');
+
     }
 }
