@@ -2,12 +2,18 @@
 
 namespace App\Services\Envato;
 
-use danog\MadelineProto\Settings;
+use danog\MadelineProto\API;
 
-class EnvatoService
+trait EnvatoService
 {
+    public $MadelineProto;
+    public function __construct()
+    {
+        $this->MadelineProto = new API(env('SESSION_PUT'));
+        $this->MadelineProto->start();
+    }
 
-    public function getLink($postLink)
+    protected function getLink($postLink)
     {
         // 1. инициализация
         $ch = curl_init();
@@ -27,57 +33,30 @@ class EnvatoService
         return $matches;
     }
 
-    public function getComments($start, $end, $post_id)
-    {
-        $count = $end[5] - $start[5];
-        $posts = [];
+    public function getPostId($start, $end) {
 
-        for ($i = 0; $i <= $count; $i++) {
-            if (in_array($start[5] + $i, $post_id)) {
-                $posts[$start[5] + $i] = $this->MadelineProto->messages->getReplies(
-                    ['peer' => -100 . $start[4],
-                        'msg_id' => $start[5] + $i])['messages'];
-            }
+        $channel_id = env('CHANNEL_ID');
+
+        for ($i = $start; $i <= $end; $i++) {
+
+            $item = $this->MadelineProto->channels->getMessages([
+            "channel" => '-100' . $channel_id,
+            "id" => [$i]])['messages'];
+                if (array_key_exists('media', $item[0]) && array_key_exists('webpage', $item[0]['media'])) {
+
+                    if(array_key_exists('url', $item[0]['media']['webpage'])) {
+
+                        $this->getComments(
+                            $channel_id, $item[0]['id'],
+                            $item[0]['replies']['replies'],
+                            $item[0]['media']['webpage']['url']);
+                    } else {
+
+                        $this->MadelineProto->messages->sendMessage([
+                            'peer' => '-100' . env('REPORT_CHANNEL_ID'),
+                            'message' => 'https://t.me/c/' . $channel_id .'/' . $item[0]['id'] . ' 404 not found']);
+                    }}
+            sleep(1);
         }
-        return $posts;
-    }
-
-    public function getPostId($channel_id)
-    {
-        $post_id = [];
-        $offset_id = 0;
-        do {
-            $messages_Messages = $this->MadelineProto->messages->getHistory([
-                'peer' => '-100' . $channel_id,
-                'offset_id' => $offset_id,
-                'limit' => 100,
-                'max_id' => 99999
-            ]);
-
-            if (count($messages_Messages['messages']) == 0) break;
-
-            foreach ($messages_Messages['messages'] as $key => $item) {
-                $post_id[] = $item['id'];
-            }
-
-            $offset_id = end($messages_Messages['messages'])['id'];
-
-            sleep(2);
-        } while (true);
-        return $post_id;
-    }
-
-    public function sendlink()
-    {
-
-    }
-
-    public function Previews($start, $end)
-    {
-        $start = explode("/", $start);
-        $end = explode("/", $end);
-        $post_id = $this->getPostId(env('CHANNEL_ID'));
-        $posts = $this->getComments($start, $end, $post_id);
-        file_put_contents('a.json', json_encode($posts));
     }
 }
