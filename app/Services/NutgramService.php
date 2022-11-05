@@ -46,7 +46,7 @@ class NutgramService
 
     public function sendFile($camera, $video, $message_id, $caption, $folder)
     {
-        $this->bot->sendDocument($video, ['chat_id' => env('GROUP_ID'), 'reply_to_message_id' => $message_id, 'caption' => $caption]);
+        $this->bot->sendDocument([$video, $video], ['chat_id' => env('GROUP_ID'), 'reply_to_message_id' => $message_id, 'caption' => $caption]);
         $target = Camera::where('title', $camera->title);
         $target->update(['folder' => $folder, 'video' => $caption]);
         sleep(3);

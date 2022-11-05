@@ -13,7 +13,7 @@ class SyncCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'command:sync {path}';
+    protected $signature = 'command:sync';
 
     /**
      * The console command description.
