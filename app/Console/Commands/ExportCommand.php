@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+
 use App\Services\MadelineProto\MTProtoService;
 use Illuminate\Console\Command;
 
@@ -66,7 +67,6 @@ class ExportCommand extends Command
         }
            $path .= $date['year'] . '/';
 
-        file_put_contents($path  . 'result.json', json_encode($update));
 
         //month
         if(!is_dir($path . $date['month'])){
@@ -74,6 +74,18 @@ class ExportCommand extends Command
         }
         $path .= $date['month'] . '/';
 
-        
+        //day
+        if(!is_dir($path . $date['day'])){
+            mkdir($path . $date['day']);
+        }
+        $path .= $date['day'] . '/';
+        if($date['hour'] != ""){
+            if (is_dir($path . $date['hour'])){
+                mkdir($path . $date['hour']);
+            }
+            $path .= $date['day'] . '/';
+        }
+        file_put_contents($path  . 'result.json', json_encode($update));
+
     }
 }
