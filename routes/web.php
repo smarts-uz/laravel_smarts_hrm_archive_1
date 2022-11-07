@@ -31,8 +31,8 @@ Route::get('/preview', function () {
 
     $MTProto = new MTProtoService();
     $chat = $MTProto->MadelineProto->channels->getFullChannel(['channel' => -1001807426588]);
-    echo '<pre>';
-    print_r($chat['chats'][0]['title']);
+        $date = "6.1.2009 13:00+01:00";
+        echo '<pre>';
 });
 
 Route::get('/test', function () {
