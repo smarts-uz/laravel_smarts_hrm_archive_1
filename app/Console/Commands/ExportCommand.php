@@ -67,5 +67,13 @@ class ExportCommand extends Command
            $path .= $date['year'] . '/';
 
         file_put_contents($path  . 'result.json', json_encode($update));
+
+        //month
+        if(!is_dir($path . $date['month'])){
+            mkdir($path . $date['month']);
+        }
+        $path .= $date['month'] . '/';
+
+        
     }
 }
