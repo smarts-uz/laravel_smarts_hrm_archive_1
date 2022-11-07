@@ -10,7 +10,7 @@ class ManageService
 
     public Nutgram $bot;
 
-    public $cache;
+    public $user_id;
 
     public $channels_title;
 
@@ -27,13 +27,14 @@ class ManageService
     public function handle(Nutgram $bot)
     {
 
+
         $bot->onCommand('start', function (Nutgram $bot) {
             $bot->sendMessage('Tekshirmoqchi bo\'lgan useringizni idsini kiriting');
         });
 
         $bot->onText('id {user_id}', function (Nutgram $bot, $user_id) {
             if (is_numeric($user_id)) {
-                Cache::put('user_id', $user_id);
+                $this->user_id = $user_id;
                 $user = $this->getUser($bot, $user_id);
                 $this->Addbutton($user);
             } else {
@@ -42,8 +43,8 @@ class ManageService
         });
 
         $bot->onText('Channels ❌', function (Nutgram $bot) {
-            if (Cache::get('user_id') !== null){
-                $user_id = Cache::get('user_id');
+            if ($this->user_id !== null){
+                $user_id = $this->user_id;
                 $this->delFromChannel($bot,$user_id);
             }else{
                 $bot->sendMessage('The first enter user id, please!');
@@ -51,8 +52,8 @@ class ManageService
         });
 
         $bot->onText('Groups ❌', function (Nutgram $bot) {
-            if (Cache::get('user_id') !== null){
-                $user_id = Cache::get('user_id');
+            if ($this->user_id !== null){
+                $user_id = $this->user_id;
                 $this->delFromGroup($bot, $user_id);
             }else{
                 $bot->sendMessage('The first enter user id, please!');
@@ -60,8 +61,8 @@ class ManageService
         });
 
         $bot->onText('All ❌', function (Nutgram $bot) {
-            if (Cache::get('user_id') !== null){
-                $user_id = Cache::get('user_id');
+            if ($this->user_id !== null){
+                $user_id = $this->user_id;
                 $this->delFromChannel($bot,$user_id);
                 $this->delFromGroup($bot, $user_id);
             }else{
@@ -116,8 +117,13 @@ class ManageService
         if ($this->channels_id !== null){
             foreach ($this->channels_id as $item) {
                 $bot->banChatMember($item,$user_id);
+
+
             }
             $bot->sendMessage('User deleted from channels');
+
+            $this->channels_title = null;
+            $this->groups_title = null;
         }else{
             $bot->sendMessage('The user does not exist on any channel');
         }
@@ -129,8 +135,12 @@ class ManageService
         if ($this->groups_id !== null){
             foreach ($this->groups_id as $item) {
                 $bot->banChatMember($item,$user_id);
+
             }
             $bot->sendMessage('User deleted from groups');
+
+            $this->channels_title = null;
+            $this->groups_title = null;
         }else{
             $bot->sendMessage('The user does not exist on any group');
         }
@@ -182,11 +192,12 @@ class ManageService
 
         }
         $bot->sendMessage($str, $kb);
+
     }
 
     public function __construct()
     {
         $this->bot = new Nutgram(env('MANAGER_BOT_TOKEN'));
-        $this->cache = new Cache();
+//        $this->cache = new Cache();
     }
 }
