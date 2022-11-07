@@ -50,34 +50,20 @@ class ExportCommand extends Command
             }
         }
 
-        $path = '';
+        $path = 'D:/JSONf/';
 
         //Title
-        if(!is_dir('D:/JSONf/' . $chat['chats'][0]['title'])){
-            mkdir('D:/JSONf/' . $chat['chats'][0]['title']);
-            $path = 'D:/JSONs/' . $chat['chats'][0]['title'];
-        }
-        //Year
-        if(!is_dir($path . $chat['chats'][0]['title'])){
+        if(!is_dir( $path . $chat['chats'][0]['title'])){
             mkdir($path . $chat['chats'][0]['title']);
-            $path = $path . $chat['chats'][0]['title'];
         }
+        $path .= $chat['chats'][0]['title'] . '/';
 
-
-
-
-
-        //full
-        if (!is_dir('D:/JSONf/{channel_name}/{YYYY}/{MM}/{DD}/{HH}' . $chat['chats'][0]['title'])){
-            mkdir('D:/JSONf/{channel_name}/{YYYY}/{MM}/{DD}/{HH}' . $chat['chats'][0]['title']);
-            $path=$path . $chat['chats'][0]['title'];
+        //Year
+        if(!is_dir($path . '2022')){
+            mkdir($path . '2022');
         }
+           $path .= '2022/';
 
-
-        //Hour
-        if(!is_dir('D:/JSONs/' . $chat['chats'][0]['title'] . '/' . $date_start)){
-            mkdir('D:/JSONs/' . $chat['chats'][0]['title'] . '/' . $date_start);
-        }
-        file_put_contents('D:/JSONs/' . $chat['chats'][0]['title'] . '/' . $date_start  . '/result.json', json_encode($update));
+        file_put_contents($path  . 'result.json', json_encode($update));
     }
 }
