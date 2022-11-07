@@ -29,10 +29,10 @@ Route::get('/telegram', function () {
 
 Route::get('/preview', function () {
 
-    dd(123123123);
-
-    /*$preview = new App\Services\Envato\PreviewVerifier\VerifierService();
-    $preview->verifier(532, 536);*/
+    $MTProto = new MTProtoService();
+    $chat = $MTProto->MadelineProto->channels->getFullChannel(['channel' => -1001807426588]);
+    echo '<pre>';
+    print_r($chat['chats'][0]['title']);
 });
 
 Route::get('/test', function () {
@@ -59,6 +59,21 @@ Route::get('/test', function () {
 Route::get('/files', function () {
     $MTProto = new MTProtoService();
     $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\PHPython');
+});
+
+Route::get('/export', function (){
+    $oct31 = [];
+    $MTProto = new MTProtoService();
+    $messages = $MTProto->MadelineProto->messages->getHistory(['peer'=>-1001807426588, 'limit'=>100]);
+    foreach ($messages['messages'] as $message){
+        if($message['date']>=1666119600 && $message['date']<=1666206000){
+            print_r($message['date']);
+            array_push($oct31, $message);
+        }
+    }
+    echo '<pre>';
+    print_r($oct31);
+
 });
 
 Route::group(['prefix' => 'admin'], function () {

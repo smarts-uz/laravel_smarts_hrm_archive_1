@@ -15,7 +15,8 @@
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.0",
         "nutgram/nutgram": "^3.7",
-        "tcg/voyager": "^1.5"
+        "tcg/voyager": "^1.5",
+      "ext-readline": "*"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",

@@ -46,7 +46,7 @@ class MTProtoService
     public function downloadMedia($comments, $file_name, $path)
     {
         $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $file_name]);
-        $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $path. '/']);
+        $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $path . '/']);
         foreach ($comments as $message) {
             if (array_key_exists('media', $message)) {
                 foreach ($message['media']['document']['attributes'] as $item) {
@@ -66,15 +66,11 @@ class MTProtoService
         $file_system = new FileSystemService();
         $url_file = $file_system->searchForUrl($path);
         $url = $file_system->readUrl($url_file);
-        dd($url);
-        $split = explode("/", $url);
-        $message = $this->MadelineProto->messages->getDiscussionMessage(['peer' => '-100' . $split[count($split) - 2], 'msg_id' => (int)$split[count($split) - 1]]);
         $comments = $this->getComments($url);
         $tg_files = $this->getFiles($comments);
         $storage_files = $file_system->getFIles($path);
         $to_tg = array_diff($storage_files, $tg_files);
         $to_st = array_diff($tg_files, $storage_files);
-        var_dump($to_st);
         /*foreach ($to_tg as $item) {
             try {
                 $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $item]);
@@ -92,24 +88,25 @@ class MTProtoService
             }
         }*/
         try {
-        foreach ($to_st as $item) {
-            foreach ($comments as $message) {
-                if (array_key_exists('media', $message)) {
-                    print_r($message);
-                    foreach ($message['media']['document']['attributes'] as $item1) {
-                        if ($item1['_'] == 'documentAttributeFilename') {
-                            if (in_array($item1['file_name'], $item)) {
-                                yield $this->MadelineProto->downloadToDir($message['media'], $path . '/');;
-
+            foreach ($to_st as $item) {
+                foreach ($comments as $comment) {
+                    if (array_key_exists('media', $comment)) {
+                        foreach ($comment['media']['document']['attributes'] as $att) {
+                            if ($att['_'] == 'documentAttributeFilename') {
+                                if ($att['file_name'] == $item) {
+                                    $file = $this->MadelineProto->downloadToDir($comment['media'], $path . '/');;
+                                    print_r($file);
+                                }
                             }
                         }
                     }
                 }
+                print_r($item);
+                $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $item]);
             }
-        }
         } catch (Exception $e) {
             $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $e->getMessage()]);
-            $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $to_st]);
         }
+
     }
 }
