@@ -4,7 +4,7 @@
 namespace App\Services\Envato\MessageEditor;
 
 
-use App\Services\MTProtoService;
+use App\Services\MadelineProto\MTProtoService;
 
 class EditorService
 {
@@ -12,7 +12,7 @@ class EditorService
 
     public function editMessage($chat_id, $message_id, $message){
         $this->MProto->MadelineProto->messages->editMessage(["peer" => $chat_id, "id" => $message_id, "message" => $message]);
-    
+
     }
 
 

@@ -4,7 +4,7 @@
 namespace App\Services\Envato;
 
 
-use App\Services\MTProtoService;
+use App\Services\MadelineProto\MTProtoService;
 
 class SearchService
 {

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\MadelineProto;
 
+use App\Services\FileSystemService;
 use danog\MadelineProto\API;
 use danog\MadelineProto\Settings;
 use danog\MadelineProto\Settings\AppInfo;

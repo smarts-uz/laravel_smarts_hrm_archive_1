@@ -1,8 +1,8 @@
 <?php
 
 use App\Services\FileSystemService;
+use App\Services\MadelineProto\MTProtoService;
 use App\Services\ManageService;
-use App\Services\MTProtoService;
 use Illuminate\Support\Facades\Route;
 use SergiX44\Nutgram\Nutgram;
 use TCG\Voyager\Facades\Voyager;
@@ -62,18 +62,10 @@ Route::get('/files', function () {
 });
 
 Route::get('/export', function (){
-    $oct31 = [];
-    $MTProto = new MTProtoService();
-    $messages = $MTProto->MadelineProto->messages->getHistory(['peer'=>-1001807426588, 'limit'=>100]);
-    foreach ($messages['messages'] as $message){
-        if($message['date']>=1666119600 && $message['date']<=1666206000){
-            print_r($message['date']);
-            array_push($oct31, $message);
-        }
-    }
-    echo '<pre>';
-    print_r($oct31);
+    $date_start = '20.10.2022';
+    $date = date_parse_from_format("j.n.Y H:iP", $date_start);
 
+    print_r($date['year']);
 });
 
 Route::group(['prefix' => 'admin'], function () {

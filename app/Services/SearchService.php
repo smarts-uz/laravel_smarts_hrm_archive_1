@@ -3,6 +3,7 @@
 
 namespace App\Services;
 
+use App\Services\MadelineProto\MTProtoService;
 use SergiX44\Nutgram\Nutgram;
 
 class SearchService

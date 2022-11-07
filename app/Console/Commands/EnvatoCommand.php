@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Services\Envato\EnvatoService;
-use App\Services\MTProtoService;
+use App\Services\MadelineProto\MTProtoService;
 use Exception;
 use Illuminate\Console\Command;
 

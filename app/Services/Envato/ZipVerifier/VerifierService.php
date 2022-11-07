@@ -2,7 +2,7 @@
 
 namespace App\Services\Envato\ZipVerifier;
 
-use App\Services\MTProtoService;
+use App\Services\MadelineProto\MTProtoService;
 
 class VerifierService
 {

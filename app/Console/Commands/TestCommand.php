@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Services\MTProtoService;
-use Exception;
 use App\Services\Envato\EnvatoService;
+use App\Services\MadelineProto\MTProtoService;
+use Exception;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command

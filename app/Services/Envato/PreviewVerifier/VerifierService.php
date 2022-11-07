@@ -3,9 +3,8 @@
 namespace App\Services\Envato\PreviewVerifier;
 
 use App\Services\Envato\EnvatoService;
-use App\Services\MTProtoService;
+use App\Services\MadelineProto\MTProtoService;
 use Exception;
-use function Amp\Iterator\concat;
 
 class VerifierService
 {
