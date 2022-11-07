@@ -36,8 +36,6 @@ class EnvatoSendMediaService {
         {
             case $replies > 0:
                 $comments = $this->MadelineProto->messages->getReplies(['peer' => -100 .$channel_id, 'msg_id'=> $id]);
-                //var_dump('hello');
-                //file_put_contents('b.json', json_encode($comments));
                 $this->sendMessage($message, $comments['messages']);
                 break;
             default: $post_id = $this->MadelineProto->messages->getDiscussionMessage([

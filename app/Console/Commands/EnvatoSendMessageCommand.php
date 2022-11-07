@@ -29,6 +29,6 @@ class EnvatoSendMessageCommand extends Command
     public function handle()
     {
         $me = new EnvatoSendMessageService();
-        $me->getPostId('2087', '2109');
+        $me->getPostId('2128', '2129');
     }
 }
