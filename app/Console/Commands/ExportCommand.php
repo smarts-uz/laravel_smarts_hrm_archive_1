@@ -40,7 +40,7 @@ class ExportCommand extends Command
         $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => $channel_id, 'limit' => 100]);
         $chat = $MTProto->MadelineProto->channels->getFullChannel(['channel' => $channel_id]);
 
-        $structure = 'D:/JSONs/{channel_name}/{YYYY}/{MM}/{DD}/{HH}';
+        $structure = 'D:/JSONf/{channel_name}/{YYYY}/{MM}/{DD}/{HH}';
 
         foreach ($messages['messages'] as $message) {
             if ($message['date'] >= $unix_start && $message['date'] <= $unix_end) {
@@ -53,8 +53,8 @@ class ExportCommand extends Command
         $path = '';
 
         //Title
-        if(!is_dir('D:/JSONs/' . $chat['chats'][0]['title'])){
-            mkdir('D:/JSONs/' . $chat['chats'][0]['title']);
+        if(!is_dir('D:/JSONf/' . $chat['chats'][0]['title'])){
+            mkdir('D:/JSONf/' . $chat['chats'][0]['title']);
             $path = 'D:/JSONs/' . $chat['chats'][0]['title'];
         }
         //Year
@@ -64,10 +64,14 @@ class ExportCommand extends Command
         }
 
 
-        //Month
 
 
-        //Day
+
+        //full
+        if (!is_dir('D:/JSONf/{channel_name}/{YYYY}/{MM}/{DD}/{HH}' . $chat['chats'][0]['title'])){
+            mkdir('D:/JSONf/{channel_name}/{YYYY}/{MM}/{DD}/{HH}' . $chat['chats'][0]['title']);
+            $path=$path . $chat['chats'][0]['title'];
+        }
 
 
         //Hour
