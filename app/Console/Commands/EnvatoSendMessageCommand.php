@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Services\Envato\PreviewVerifier\EnvatoSendMessageService;
+use Illuminate\Console\Command;
 
 class EnvatoSendMessageCommand extends Command
 {
