@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\MTProtoService;
+use App\Services\MadelineProto\MTProtoService;
 use Illuminate\Console\Command;
 
 class ExportCommand extends Command
@@ -37,6 +37,8 @@ class ExportCommand extends Command
         $unix_start = strtotime($date_start);
         $unix_end = strtotime($date_end);
 
+        $date = date_parse_from_format("j.n.Y H:iP", $date_start);
+
         $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => $channel_id, 'limit' => 100]);
         $chat = $MTProto->MadelineProto->channels->getFullChannel(['channel' => $channel_id]);
 
@@ -59,10 +61,10 @@ class ExportCommand extends Command
         $path .= $chat['chats'][0]['title'] . '/';
 
         //Year
-        if(!is_dir($path . '2022')){
-            mkdir($path . '2022');
+        if(!is_dir($path . $date['year'])){
+            mkdir($path . $date['year']);
         }
-           $path .= '2022/';
+           $path .= $date['year'] . '/';
 
         file_put_contents($path  . 'result.json', json_encode($update));
     }
