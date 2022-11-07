@@ -4,6 +4,7 @@ namespace App\Console;
 
 use App\Console\Commands\EnvatoSendMessageCommand;
 use App\Console\Commands\EnvatoSendMediaCommand;
+use App\Console\Commands\EnvatoZipVerifyCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -17,6 +18,7 @@ class Kernel extends ConsoleKernel
     protected $commands = [
         EnvatoSendMessageCommand::class,
         EnvatoSendMediaCommand::class,
+        EnvatoZipVerifyCommand::class
     ];
 
     /**

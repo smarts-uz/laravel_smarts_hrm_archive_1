@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Services\Envato\ZipVerifier\VerifierService;
 
 class EnvatoZipVerifyCommand extends Command
 {
@@ -27,6 +28,7 @@ class EnvatoZipVerifyCommand extends Command
      */
     public function handle()
     {
-        return Command::SUCCESS;
+        $verify = new VerifierService();
+        $verify->verifier(100, 200);
     }
 }

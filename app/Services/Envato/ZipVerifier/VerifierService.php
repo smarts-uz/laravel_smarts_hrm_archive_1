@@ -28,8 +28,6 @@ class VerifierService
                                 $message = $this->MTProto->MadelineProto->channels->getMessages(["channel" => env("CHANNEL_ID"), "id" => [$i]]);
                                 $Updates = $this->MTProto->MadelineProto->messages->editMessage([
                                     'peer'=>env("CHANNEL_ID"),'id'=>$i, 'message'=>str_replace("#New", "",$message['message'])]);
-
-
                             }
                         }
                     }
