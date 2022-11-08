@@ -192,6 +192,8 @@ class ManageService
 
         }
         $bot->sendMessage($str, $kb);
+        $this->channels_title = null;
+        $this->groups_title = null;
 
     }
 
@@ -199,5 +201,6 @@ class ManageService
     {
         $this->bot = new Nutgram(env('MANAGER_BOT_TOKEN'));
 //        $this->cache = new Cache();
+
     }
 }
