@@ -10,8 +10,6 @@ class ManageService
 
     public Nutgram $bot;
 
-    public $user_id;
-
     public $channels_title;
 
     public $channels_id;
@@ -24,6 +22,8 @@ class ManageService
 
     public $groups_invite_link;
 
+    public $cache;
+
     public function handle(Nutgram $bot)
     {
 
@@ -34,7 +34,7 @@ class ManageService
 
         $bot->onText('id {user_id}', function (Nutgram $bot, $user_id) {
             if (is_numeric($user_id)) {
-                $this->user_id = $user_id;
+                Cache::put('user_id', $user_id);
                 $user = $this->getUser($bot, $user_id);
                 $this->Addbutton($user);
             } else {
@@ -43,8 +43,8 @@ class ManageService
         });
 
         $bot->onText('Channels ❌', function (Nutgram $bot) {
-            if ($this->user_id !== null){
-                $user_id = $this->user_id;
+            if (Cache::get('user_id') !== null){
+                $user_id = Cache::get('user_id');
                 $this->delFromChannel($bot,$user_id);
             }else{
                 $bot->sendMessage('The first enter user id, please!');
@@ -52,8 +52,8 @@ class ManageService
         });
 
         $bot->onText('Groups ❌', function (Nutgram $bot) {
-            if ($this->user_id !== null){
-                $user_id = $this->user_id;
+            if (Cache::get('user_id') !== null){
+                $user_id = Cache::get('user_id');
                 $this->delFromGroup($bot, $user_id);
             }else{
                 $bot->sendMessage('The first enter user id, please!');
@@ -61,8 +61,8 @@ class ManageService
         });
 
         $bot->onText('All ❌', function (Nutgram $bot) {
-            if ($this->user_id !== null){
-                $user_id = $this->user_id;
+            if (Cache::get('user_id') !== null){
+                $user_id = Cache::get('user_id');
                 $this->delFromChannel($bot,$user_id);
                 $this->delFromGroup($bot, $user_id);
             }else{
@@ -70,7 +70,7 @@ class ManageService
             }
         });
 
-        $ch = curl_init();
+        /*$ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot5405829088:AAEIArJ7zMIDjOqBEQyCmOnpQygyjkV09YQ/getWebhookInfo");
 
@@ -82,7 +82,7 @@ class ManageService
             $bot->run();
         }
 
-        curl_close($ch);
+        curl_close($ch);*/
     }
 
     public function getList()
@@ -211,7 +211,5 @@ class ManageService
     public function __construct()
     {
         $this->bot = new Nutgram(env('MANAGER_BOT_TOKEN'));
-//        $this->cache = new Cache();
-
     }
 }
