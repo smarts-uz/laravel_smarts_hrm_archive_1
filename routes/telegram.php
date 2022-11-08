@@ -1,10 +1,6 @@
 <?php
 
 use App\Services\ManageService;
-use SergiX44\Nutgram\Nutgram;
-
-
-
 
 $config = [
     'timeout' => 60,
@@ -12,3 +8,4 @@ $config = [
 
 $servise = new ManageService();
 $servise->handle($bot);
+

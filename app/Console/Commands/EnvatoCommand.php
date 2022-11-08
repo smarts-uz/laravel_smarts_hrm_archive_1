@@ -92,7 +92,5 @@ class EnvatoCommand extends Command
                 }
             }
         }
-
-
     }
 }
