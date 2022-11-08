@@ -70,7 +70,7 @@ class ManageService
             }
         });
 
-        /*$ch = curl_init();
+        $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot5405829088:AAEIArJ7zMIDjOqBEQyCmOnpQygyjkV09YQ/getWebhookInfo");
 
@@ -82,7 +82,7 @@ class ManageService
             $bot->run();
         }
 
-        curl_close($ch);*/
+        curl_close($ch);
     }
 
     public function getList()
