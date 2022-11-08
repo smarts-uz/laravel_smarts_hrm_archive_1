@@ -70,8 +70,6 @@ class ManageService
             }
         });
 
-        $bot->run();
-
     }
 
     public function getList()

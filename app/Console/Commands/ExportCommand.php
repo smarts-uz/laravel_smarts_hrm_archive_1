@@ -41,7 +41,6 @@ class ExportCommand extends Command
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
 
         $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => $channel_id, 'limit' => 100]);
-        $chat = $MTProto->MadelineProto->channels->getFullChannel(['channel' => $channel_id]);
 
         $structure = 'D:/JSONf/{channel_name}/{YYYY}/{MM}/{DD}/{HH}';
 
@@ -55,36 +54,7 @@ class ExportCommand extends Command
 
         $path = 'D:/JSONf/';
 
-        //Title
-        if(!is_dir( $path . $chat['chats'][0]['title'])){
-            mkdir($path . $chat['chats'][0]['title']);
-        }
-        $path .= $chat['chats'][0]['title'] . '/';
 
-        //Year
-        if(!is_dir($path . $date['year'])){
-            mkdir($path . $date['year']);
-        }
-           $path .= $date['year'] . '/';
-
-
-        //month
-        if(!is_dir($path . $date['month'])){
-            mkdir($path . $date['month']);
-        }
-        $path .= $date['month'] . '/';
-
-        //day
-        if(!is_dir($path . $date['day'])){
-            mkdir($path . $date['day']);
-        }
-        $path .= $date['day'] . '/';
-        if($date['hour'] != ""){
-            if (is_dir($path . $date['hour'])){
-                mkdir($path . $date['hour']);
-            }
-            $path .= $date['day'] . '/';
-        }
         file_put_contents($path  . 'result.json', json_encode($update));
 
     }
