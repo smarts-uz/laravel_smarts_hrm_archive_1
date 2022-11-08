@@ -72,7 +72,7 @@ class ManageService
 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot5405829088:AAEIArJ7zMIDjOqBEQyCmOnpQygyjkV09YQ/getWebhookInfo");
+        curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot".env('MANAGER_BOT_TOKEN')."/getWebhookInfo");
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
