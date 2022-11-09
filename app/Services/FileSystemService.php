@@ -88,7 +88,6 @@ IconFile=C:\Windows\System32\SHELL32.dll";
                 array_push($titles, $item);
                 $this->createPost($path . '/' . $item, $txt_data, $titles);
             } else if ($item == '- Theory' && $this->fileExists($path . '/- Theory')) {
-//                array_push($titles, $item);
                 $this->createPost($path, $txt_data, $titles);
             }
         }

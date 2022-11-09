@@ -62,50 +62,6 @@ class MTProtoService
 
     public function sync($path)
     {
-        $file_system = new FileSystemService();
-        $url_file = $file_system->searchForUrl($path);
-        $url = $file_system->readUrl($url_file);
-        $comments = $this->getComments($url);
-        $tg_files = $this->getFiles($comments);
-        $storage_files = $file_system->getFIles($path);
-        $to_tg = array_diff($storage_files, $tg_files);
-        $to_st = array_diff($tg_files, $storage_files);
-        /*foreach ($to_tg as $item) {
-            try {
-                $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $item]);
 
-                $descr = $file_system->caption($path . '/' . $item);
-                print_r($path . '/' . $item);
-                print_r($descr);
-                $this->MadelineProto->messages->sendMedia(["peer" => '-100' . $message['messages'][0]['peer_id']['channel_id'],
-                    "reply_to_msg_id" => (int)$message['messages'][0]['id'], "media" => ['_' => 'inputMediaUploadedDocument',
-                        'file' => $path . '/' . $item, 'attributes' => [
-                            ['_' => 'documentAttributeFilename', 'file_name' => $item]
-                        ]], "message" => $descr]);
-            } catch (Exception $e) {
-                $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $e->getMessage()]);
-            }
-        }*/
-        try {
-            foreach ($to_st as $item) {
-                foreach ($comments as $comment) {
-                    if (array_key_exists('media', $comment)) {
-                        foreach ($comment['media']['document']['attributes'] as $att) {
-                            if ($att['_'] == 'documentAttributeFilename') {
-                                if ($att['file_name'] == $item) {
-                                    $file = $this->MadelineProto->downloadToDir($comment['media'], $path . '/');;
-                                    print_r($file);
-                                }
-                            }
-                        }
-                    }
-                }
-                print_r($item);
-                $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $item]);
-            }
-        } catch (Exception $e) {
-            $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $e->getMessage()]);
-        }
-
-    }
+}
 }

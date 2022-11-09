@@ -33,30 +33,16 @@ class VerifierService
             foreach ($comments as $comment) {
                 try {
                     if ($comment['media']) {
-
+                        file_put_contents('/Users/ramziddinabdumominov/Documents/Json/ZipVerifier/' . $i . '/' . $comment['id'] . '.json', json_encode($comment));
                         if ($comment['media']['document']) {
-                            if ($comment['media']['document']['mime_type'] == "application\/zip") {
+                            if ($comment['media']['document']['mime_type'] == "application/zip") {
                                 if (str_contains($message['messages'][0]['message'], "#New")) {
-                                    print_r("Has #New !");
-                                    print_r(PHP_EOL);
-                                    print_r($message['messages'][0]['message']);
-                                    print_r(PHP_EOL);
-                                    print_r(str_replace("#New", "", $message['messages'][0]['message']));
-                                    print_r(PHP_EOL);
-                                    print_r(PHP_EOL);
                                     $this->MTProto->MadelineProto->messages->editMessage([
                                         'peer' => env("CHANNEL_ID"), 'id' => $i, 'message' => str_replace("#New", "", $message['messages'][0]['message'])]);
                                 }
                             } else {
                                 if (!str_contains($message['messages'][0]['message'], "#New")) {
-                                    print_r("Has #New !");
-                                    print_r(PHP_EOL);
-                                    print_r($message['messages'][0]['message']);
-                                    print_r(PHP_EOL);
-                                    print_r($message['messages'][0]['message'] . "\r\n\r\n#New");
-                                    print_r(PHP_EOL);
-                                    print_r(PHP_EOL);
-                                    $Updates = $this->MTProto->MadelineProto->messages->editMessage([
+                                    $this->MTProto->MadelineProto->messages->editMessage([
                                         'peer' => env("CHANNEL_ID"), 'id' => $i, 'message' => $message['messages'][0]['message'] . "\r\n\r\n#New"]);
                                 }
                             }

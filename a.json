@@ -1,0 +1,56 @@
+{
+    "761": [
+        {
+            "_": "message",
+            "out": false,
+            "mentioned": false,
+            "media_unread": false,
+            "silent": false,
+            "post": false,
+            "from_scheduled": false,
+            "legacy": false,
+            "edit_hide": false,
+            "pinned": false,
+            "noforwards": false,
+            "id": 2708,
+            "from_id": {
+                "_": "peerUser",
+                "user_id": 892257733
+            },
+            "peer_id": {
+                "_": "peerChannel",
+                "channel_id": 1760502540
+            },
+            "reply_to": {
+                "_": "messageReplyHeader",
+                "reply_to_scheduled": false,
+                "reply_to_msg_id": 2706
+            },
+            "date": 1667165974,
+            "message": "",
+            "media": {
+                "_": "messageMediaDocument",
+                "nopremium": false,
+                "document": {
+                    "_": "document",
+                    "id": 5402176067811156259,
+                    "access_hash": 6682899951417496561,
+                    "file_reference": {
+                        "_": "bytes",
+                        "bytes": "AmjvIwwAAAqUY2DlR6sAwazUDsCS4MLUBs8mf\/Y="
+                    },
+                    "date": 1667165974,
+                    "mime_type": "application\/zip",
+                    "size": 80510,
+                    "dc_id": 2,
+                    "attributes": [
+                        {
+                            "_": "documentAttributeFilename",
+                            "file_name": "elements-knight-simple-font-S6AVK7.zip"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}
