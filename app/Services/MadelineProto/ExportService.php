@@ -56,10 +56,10 @@ class ExportService
 
         //Hours
         if($date['hour'] != ""){
-            if (is_dir($path . $date['hour'])){
+            if (!is_dir($path . $date['hour'])){
                 mkdir($path . $date['hour']);
             }
-            $path .= $date['day'] . '/';
+            $path .= $date['hour'] . '/';
         }
         return $path;
     }
@@ -70,19 +70,19 @@ class ExportService
         $date_start = readline('Enter start date: ');
         $date_end = readline('Enter end date: ');
         $unix_start = strtotime($date_start);
-        $unix_end = strtotime($date_end);
+        $unix_end = strtotime($date_end == "" ? "now" : $date_end);
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
 
 
         $path = $this->folderPath($channel_id, 'D:/JSONs/', $date);
+
         if($date['hour'] == ""){
-            $update = $this->getMessages($channel_id, $unix_start, $unix_start + 86400);
-            file_put_contents($path  . 'result.json', json_encode($update));
-
+            //$update = $this->getMessages($channel_id, $unix_start, $unix_start + 86400);
+            if($unix_start + 86400 <= $unix_end){
+                $unix_start += 86400;
+                print_r(gmdate("j.n.Y H:iP", $unix_start));
+            }
+//            file_put_contents($path  . 'result.json', json_encode($update));
         }
-
-
     }
-
-
 }

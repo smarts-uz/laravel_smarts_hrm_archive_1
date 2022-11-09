@@ -46,8 +46,6 @@ class MTProtoService
 
     public function downloadMedia($comments, $file_name, $path)
     {
-        $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $file_name]);
-        $this->MadelineProto->messages->sendMessage(['peer' => 1244414566, 'message' => $path . '/']);
         foreach ($comments as $message) {
             if (array_key_exists('media', $message)) {
                 foreach ($message['media']['document']['attributes'] as $item) {
