@@ -19,26 +19,50 @@ class VerifierService
             $line = 'https://t.me/c/' . substr(env("CHANNEL_ID"), 4) . '/' . $i;
             try {
                 $message = $this->MTProto->MadelineProto->channels->getMessages(["channel" => env("CHANNEL_ID"), "id" => [$i]]);
+                file_put_contents('D:/JSONs/ZipVerifier/' . $i . '.json', json_encode($message));
                 $comments = $this->MTProto->getComments($line);
-            } catch (\Exception $e) {continue;}
+            } catch (\Exception $e) {
+                continue;
+            }
             foreach ($comments as $comment) {
+                if(!is_dir('D:/JSONs/ZipVerifier/' . (string)$i)){
+                    mkdir('D:/JSONs/ZipVerifier/' . (string)$i);
+                }
+                file_put_contents('D:/JSONs/ZipVerifier/' . $i . '/' . $comment['id'] . '.json', json_encode($message));
+
                 try {
                     if ($comment['media']) {
+
                         if ($comment['media']['document']) {
                             if ($comment['media']['document']['mime_type'] == "application\/zip") {
                                 if (str_contains($message['messages'][0]['message'], "#New")) {
+                                    print_r("Has #New !");
+                                    print_r(PHP_EOL);
+                                    print_r($message['messages'][0]['message']);
+                                    print_r(PHP_EOL);
+                                    print_r(str_replace("#New", "", $message['messages'][0]['message']));
+                                    print_r(PHP_EOL);
+                                    print_r(PHP_EOL);
                                     $this->MTProto->MadelineProto->messages->editMessage([
                                         'peer' => env("CHANNEL_ID"), 'id' => $i, 'message' => str_replace("#New", "", $message['messages'][0]['message'])]);
                                 }
                             } else {
                                 if (!str_contains($message['messages'][0]['message'], "#New")) {
+                                    print_r("Has #New !");
+                                    print_r(PHP_EOL);
+                                    print_r($message['messages'][0]['message']);
+                                    print_r(PHP_EOL);
+                                    print_r($message['messages'][0]['message'] . "\r\n\r\n#New");
+                                    print_r(PHP_EOL);
+                                    print_r(PHP_EOL);
                                     $Updates = $this->MTProto->MadelineProto->messages->editMessage([
                                         'peer' => env("CHANNEL_ID"), 'id' => $i, 'message' => $message['messages'][0]['message'] . "\r\n\r\n#New"]);
                                 }
                             }
                         }
                     }
-                } catch (\Exception $e) {continue;}
+                } catch (\Exception $e) {continue;
+                }
             }
         }
     }
