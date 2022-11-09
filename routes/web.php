@@ -30,9 +30,10 @@ Route::get('/telegram', function () {
 Route::get('/preview', function () {
 
     $MTProto = new MTProtoService();
-    $chat = $MTProto->MadelineProto->channels->getFullChannel(['channel' => -1001807426588]);
-        $date = "6.1.2009 13:00+01:00";
-        echo '<pre>';
+
+//    $chat = $MTProto->MadelineProto->channels->getFullChannel(['channel' => -1001807426588]);
+//        $date = "6.1.2009 13:00+01:00";
+//        echo '<pre>';
 });
 
 Route::get('/test', function () {

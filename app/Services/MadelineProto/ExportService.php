@@ -74,7 +74,7 @@ class ExportService
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
 
 
-        $path = $this->folderPath($channel_id, 'D:/JSONs/', $date);
+        $path = $this->folderPath($channel_id, '/Users/ramziddinabdumominov/Documents/Json/', $date);
 
         if($date['hour'] == ""){
             //$update = $this->getMessages($channel_id, $unix_start, $unix_start + 86400);

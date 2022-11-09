@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Services\MadelineProto\MTProtoService;
+use App\Services\MadelineProto\SyncService;
 use Illuminate\Console\Command;
 
 class SyncCommand extends Command

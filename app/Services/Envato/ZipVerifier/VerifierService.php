@@ -19,17 +19,18 @@ class VerifierService
             $line = 'https://t.me/c/' . substr(env("CHANNEL_ID"), 4) . '/' . $i;
             try {
                 $message = $this->MTProto->MadelineProto->channels->getMessages(["channel" => env("CHANNEL_ID"), "id" => [$i]]);
-                file_put_contents('D:/JSONs/ZipVerifier/' . $i . '.json', json_encode($message));
+                file_put_contents('/Users/ramziddinabdumominov/Documents/Json/ZipVerifier/' . $i . '.json', json_encode($message));
                 $comments = $this->MTProto->getComments($line);
+                if (count($comments) === 0) {
+                    if (!str_contains($message['messages'][0]['message'], "#New")) {
+                        $Updates = $this->MTProto->MadelineProto->messages->editMessage([
+                            'peer' => env("CHANNEL_ID"), 'id' => $i, 'message' => $message['messages'][0]['message'] . "\r\n\r\n#New"]);
+                    }
+                }
             } catch (\Exception $e) {
                 continue;
             }
             foreach ($comments as $comment) {
-                if(!is_dir('D:/JSONs/ZipVerifier/' . (string)$i)){
-                    mkdir('D:/JSONs/ZipVerifier/' . (string)$i);
-                }
-                file_put_contents('D:/JSONs/ZipVerifier/' . $i . '/' . $comment['id'] . '.json', json_encode($message));
-
                 try {
                     if ($comment['media']) {
 
@@ -61,7 +62,10 @@ class VerifierService
                             }
                         }
                     }
-                } catch (\Exception $e) {continue;
+
+                } catch
+                (\Exception $e) {
+                    continue;
                 }
             }
         }
