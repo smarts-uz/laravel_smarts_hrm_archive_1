@@ -31,7 +31,7 @@ class SyncCommand extends Command
     public function handle()
     {
         $file_system = new FileSystemService();
-        $path = readline('Please enter PATH: ');
+        $path = setting('file-system.path_to_sync');
         //ALL.txt
         $txt_file = $file_system->searchForTxt($path);
         $txt_data = $file_system->readTxt($txt_file);

@@ -2,11 +2,9 @@
 
 namespace App\Services\MadelineProto;
 
-use App\Services\FileSystemService;
 use danog\MadelineProto\API;
 use danog\MadelineProto\Settings;
 use danog\MadelineProto\Settings\AppInfo;
-use Exception;
 
 class MTProtoService
 {
@@ -15,8 +13,7 @@ class MTProtoService
     public function __construct()
     {
         $settings = new Settings;
-        $settings->setAppInfo((new AppInfo)->setApiHash('0cc5751f00631d78d4dc5618864102dd')->setApiId(15108824));
-
+        $settings->setAppInfo((new AppInfo)->setApiHash('adcaaf6ff60778f454ee90f3a6c26c7b')->setApiId(9330195));
         $this->MadelineProto = new API(env('SESSION_PUT'), $settings);
         $this->MadelineProto->start();
     }
