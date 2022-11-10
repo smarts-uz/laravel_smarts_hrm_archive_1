@@ -79,6 +79,7 @@ class ManageService
         $output = curl_exec($ch);
         $output = json_decode($output);
         if ($output->result->url !== '') {
+            echo $output->result->url."\n";
             $bot->run();
         }
 
