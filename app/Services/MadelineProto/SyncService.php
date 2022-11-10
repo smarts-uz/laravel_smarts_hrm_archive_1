@@ -17,6 +17,9 @@ class SyncService
         $file_system = new FileSystemService();
         $MTProto = new MTProtoService();
         $url_file = $file_system->searchForUrl($path);
+        if($url_file == null){
+        return;
+        }
         print_r($url_file);
         $url = $file_system->readUrl($url_file);
         $comments = $MTProto->getComments($url);

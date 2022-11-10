@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Http\Controllers\Controller;
+use App\Services\MadelineProto\MTProtoService;
 use Illuminate\Console\Command;
 
 class ManageCommand extends Command
@@ -28,7 +29,7 @@ class ManageCommand extends Command
      */
     public function handle()
     {
-        $controllle = new Controller();
-        $controllle->tst();
+        $handle = new MTProtoService();
+        $handle->sync();
     }
 }

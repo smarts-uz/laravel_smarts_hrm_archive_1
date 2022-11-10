@@ -2,6 +2,7 @@
 
 namespace App\Services\MadelineProto;
 
+use App\Services\TaskStatus\HandleStatusService;
 use danog\MadelineProto\API;
 use danog\MadelineProto\Settings;
 use danog\MadelineProto\Settings\AppInfo;
@@ -16,6 +17,8 @@ class MTProtoService
         $settings->setAppInfo((new AppInfo)->setApiHash('adcaaf6ff60778f454ee90f3a6c26c7b')->setApiId(9330195));
         $this->MadelineProto = new API(env('SESSION_PUT'), $settings);
         $this->MadelineProto->start();
+        $this->MadelineProto->messages->sendMessage(["peer" => 1307688882, "message" => "test"]);
+        HandleStatusService::startAndLoop(env('SESSION_PUT'), $settings);
     }
 
     public function getComments($url)
@@ -57,8 +60,8 @@ class MTProtoService
         }
     }
 
-    public function sync($path)
+    public function sync()
     {
-
-}
+        self::__construct();
+    }
 }
