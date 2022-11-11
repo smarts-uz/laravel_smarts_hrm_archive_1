@@ -45,11 +45,13 @@ trait EnvatoService
                 if (array_key_exists('media', $item[0]) && array_key_exists('webpage', $item[0]['media'])) {
 
                     if(array_key_exists('url', $item[0]['media']['webpage'])) {
-
+                        var_dump($item[0]['id']);
                         $this->getComments(
                             $channel_id, $item[0]['id'],
                             $item[0]['replies']['replies'],
-                            $item[0]['media']['webpage']['url']);
+                            $item[0]['media']['webpage']['url'],
+                            $item[0]['message']);
+
                     } else {
 
                         $this->MadelineProto->messages->sendMessage([

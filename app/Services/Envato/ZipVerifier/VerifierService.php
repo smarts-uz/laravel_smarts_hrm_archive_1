@@ -2,59 +2,64 @@
 
 namespace App\Services\Envato\ZipVerifier;
 
+use App\Services\Envato\EnvatoService;
 use App\Services\MadelineProto\MTProtoService;
+use danog\MadelineProto\API;
 
 class VerifierService
 {
-    public $MTProto;
+    use EnvatoService;
 
-    public function __construct()
-    {
-        $this->MTProto = new MTProtoService();
+    protected function getComments($channel_id, $id, $replies, $url, $message) {
+        switch(true)
+        {
+            case $replies > 0:
+                $comments = $this->MadelineProto->messages->getReplies(['peer' => -100 .$channel_id, 'msg_id'=> $id]);
+                $this->sortMessage($message, $comments['messages'], $id);
+                break;
+            default: $post_id = $this->MadelineProto->messages->getDiscussionMessage([
+                'peer' => -100 . $channel_id, 'msg_id' => $id])['messages'][0]['id'];
+                $this->addTags($message, $id);
+                break;
+        }
     }
 
-    public function verifier($start, $end)
-    {
-        for ($i = $start; $i <= $end; $i++) {
-            $line = 'https://t.me/c/' . substr(env("CHANNEL_ID"), 4) . '/' . $i;
-            try {
-                $message = $this->MTProto->MadelineProto->channels->getMessages(["channel" => env("CHANNEL_ID"), "id" => [$i]]);
-                file_put_contents('/Users/ramziddinabdumominov/Documents/Json/ZipVerifier/' . $i . '.json', json_encode($message));
-                $comments = $this->MTProto->getComments($line);
-                if (count($comments) === 0) {
-                    if (!str_contains($message['messages'][0]['message'], "#New")) {
-                        $Updates = $this->MTProto->MadelineProto->messages->editMessage([
-                            'peer' => env("CHANNEL_ID"), 'id' => $i, 'message' => $message['messages'][0]['message'] . "\r\n\r\n#New"]);
-                    }
-                }
-            } catch (\Exception $e) {
-                continue;
+    public function sortMessage($message, $comments, $id) {
+        $a = true;
+        foreach ($comments as $comment) {
+            if (array_key_exists('media', $comment)
+            && array_key_exists('document', $comment['media'])
+            && array_key_exists('mime_type', $comment['media']['document'])
+            && preg_match('#(zip)#',
+                    $comment['media']['document']['mime_type'], $arr)) {
+                $a = false;
             }
-            foreach ($comments as $comment) {
-                try {
-                    if ($comment['media']) {
-                        file_put_contents('/Users/ramziddinabdumominov/Documents/Json/ZipVerifier/' . $i . '/' . $comment['id'] . '.json', json_encode($comment));
-                        if ($comment['media']['document']) {
-                            if ($comment['media']['document']['mime_type'] == "application/zip") {
-                                if (str_contains($message['messages'][0]['message'], "#New")) {
-                                    $this->MTProto->MadelineProto->messages->editMessage([
-                                        'peer' => env("CHANNEL_ID"), 'id' => $i, 'message' => str_replace("#New", "", $message['messages'][0]['message'])]);
-                                }
-                            } else {
-                                if (!str_contains($message['messages'][0]['message'], "#New")) {
-                                    $this->MTProto->MadelineProto->messages->editMessage([
-                                        'peer' => env("CHANNEL_ID"), 'id' => $i, 'message' => $message['messages'][0]['message'] . "\r\n\r\n#New"]);
-                                }
-                            }
-                        }
-                    }
+        }
+        if ($a) {
+            $this->addTags($message, $id);
+        } else {
+            $this->removeTags($message, $id);
+        }
+    }
 
-                } catch
-                (\Exception $e) {
-                    continue;
-                }
-            }
+    protected function addTags($message, $id) {
+        $newMessage = str_replace(['#New', '   ' . '#New'], ['' , ''], $message);
+        if ($newMessage !== $message) {
+            $newMessage  = $newMessage . " " . '#New';
+            $this->MadelineProto->messages->editMessage(
+                ['peer'   => -100 .env('CHANNEL_ID'),
+                    'id'      => $id,
+                    'message' => $newMessage]);
+        }
+    }
+
+    protected function removeTags($message, $id) {
+        $newMessage = str_replace(['#New', '   ' . '#New'], ['' , ''], $message);
+        if ($newMessage !== $message) {
+            $this->MadelineProto->messages->editMessage(
+                ['peer'   => -100 .env('CHANNEL_ID'),
+                    'id'      => $id,
+                    'message' => $newMessage]);
         }
     }
 }
-
