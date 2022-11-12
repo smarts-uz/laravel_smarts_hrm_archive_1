@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Http\Controllers\Controller;
 use App\Services\MadelineProto\MTProtoService;
+use App\Services\TaskStatus\HandleStatusService;
 use Illuminate\Console\Command;
 
 class ManageCommand extends Command
@@ -30,6 +31,6 @@ class ManageCommand extends Command
     public function handle()
     {
         $handle = new MTProtoService();
-        $handle->sync();
+        HandleStatusService::startAndLoop(env('SESSION_PUT') . '/session.madeline', $handle->settings);
     }
 }

@@ -12,6 +12,8 @@ class HandleStatusService extends EventHandler
 {
     public $MTProto;
 
+    public function getReportPeers() { return '@akbarshoh8522'; }
+
     public function onUpdateNewMessage(array $update): \Generator
     {
         if ($update['message']['_'] === 'messageEmpty' || $update['message']['out'] ?? false) {

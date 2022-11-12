@@ -9,15 +9,15 @@
     "license": "MIT",
     "require": {
         "php": "^8.0",
-        "danog/madelineproto": "7.0.138.9999",
+        "ext-curl": "*",
+        "ext-readline": "*",
+        "danog/madelineproto": "^7.0.141",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.0",
-        "nutgram/nutgram": "^3.7",
-        "tcg/voyager": "^1.5",
-      "ext-readline": "*",
-      "ext-curl": "*"
+        "nutgram/nutgram": "^3.8",
+        "tcg/voyager": "^1.5"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^1.0",
