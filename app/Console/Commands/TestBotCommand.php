@@ -31,6 +31,6 @@ class TestBotCommand extends Command
     {
         $bot = new TestBot();
         $settings = new Settings;
-        $bot::startAndLoopBot(env('SESSION_PUT'), '5660989845:AAGJBH3m8Nif8vjql6P85TAeCbj9UHCi364', $settings);
+        $bot::startAndLoop(env('SESSION_PUT'), $settings);
     }
 }

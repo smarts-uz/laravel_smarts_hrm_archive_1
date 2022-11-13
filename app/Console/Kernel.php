@@ -6,6 +6,7 @@ use App\Console\Commands\EnvatoSendMessageCommand;
 use App\Console\Commands\EnvatoSendMediaCommand;
 use App\Console\Commands\EnvatoZipVerifyCommand;
 use App\Console\Commands\TestBotCommand;
+use App\Console\Commands\EnvatoParseCmd;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -20,7 +21,8 @@ class Kernel extends ConsoleKernel
         EnvatoSendMessageCommand::class,
         EnvatoSendMediaCommand::class,
         EnvatoZipVerifyCommand::class,
-        TestBotCommand::class
+        TestBotCommand::class,
+        EnvatoParseCmd::class,
     ];
 
     /**
