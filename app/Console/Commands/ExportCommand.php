@@ -31,7 +31,6 @@ class ExportCommand extends Command
     public function handle()
     {
         $export = new ExportService();
-        $MTProto = new MTProtoService();
 
         $update = [];
         $channel_id = readline('Enter a Chat ID: ');

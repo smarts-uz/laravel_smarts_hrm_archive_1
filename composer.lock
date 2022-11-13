@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7221a2db135880574a6b89ebcf22aa79",
+    "content-hash": "46d501df6293317c49b1b156c1b0cd76",
     "packages": [
         {
             "name": "amphp/amp",
@@ -2206,16 +2206,16 @@
         },
         {
             "name": "danog/madelineproto",
-            "version": "7.0.141",
+            "version": "7.0.139",
             "source": {
                 "type": "git",
                 "url": "https://github.com/danog/MadelineProto.git",
-                "reference": "67a78c9d32ed68e5735ff7cb6c74a6a980a1fb0e"
+                "reference": "fdfb23216de9591596614c7c094aa821ae5c6b45"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danog/MadelineProto/zipball/67a78c9d32ed68e5735ff7cb6c74a6a980a1fb0e",
-                "reference": "67a78c9d32ed68e5735ff7cb6c74a6a980a1fb0e",
+                "url": "https://api.github.com/repos/danog/MadelineProto/zipball/fdfb23216de9591596614c7c094aa821ae5c6b45",
+                "reference": "fdfb23216de9591596614c7c094aa821ae5c6b45",
                 "shasum": ""
             },
             "require": {
@@ -2263,6 +2263,7 @@
                 "bamarni/composer-bin-plugin": "1.5.0",
                 "danog/phpdoc": "^0.1.7",
                 "ext-ctype": "*",
+                "phabel/phabel": "^1",
                 "phpdocumentor/reflection-docblock": "^5.2",
                 "phpunit/phpunit": "^9",
                 "roave/security-advisories": "dev-latest",
@@ -2318,7 +2319,7 @@
             ],
             "support": {
                 "issues": "https://github.com/danog/MadelineProto/issues",
-                "source": "https://github.com/danog/MadelineProto/tree/7.0.141"
+                "source": "https://github.com/danog/MadelineProto/tree/7.0.139"
             },
             "funding": [
                 {
@@ -2326,7 +2327,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-11-07T14:54:43+00:00"
+            "time": "2022-11-04T13:16:30+00:00"
         },
         {
             "name": "danog/magicalserializer",
@@ -5410,16 +5411,16 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v4.15.1",
+            "version": "v4.15.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "0ef6c55a3f47f89d7a374e6f835197a0b5fcf900"
+                "reference": "f59bbe44bf7d96f24f3e2b4ddc21cd52c1d2adbc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
-                "reference": "0ef6c55a3f47f89d7a374e6f835197a0b5fcf900",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/f59bbe44bf7d96f24f3e2b4ddc21cd52c1d2adbc",
+                "reference": "f59bbe44bf7d96f24f3e2b4ddc21cd52c1d2adbc",
                 "shasum": ""
             },
             "require": {
@@ -5460,9 +5461,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.1"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v4.15.2"
             },
-            "time": "2022-09-04T07:30:47+00:00"
+            "time": "2022-11-12T15:38:23+00:00"
         },
         {
             "name": "nunomaduro/termwind",

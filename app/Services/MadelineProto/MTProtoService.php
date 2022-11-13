@@ -15,7 +15,7 @@ class MTProtoService
     public function __construct()
     {
         $this->settings = new Settings;
-        $this->settings->setAppInfo((new AppInfo)->setApiHash('adcaaf6ff60778f454ee90f3a6c26c7b')->setApiId(9330195));
+        $this->settings->setAppInfo((new AppInfo)->setApiHash('d9486a4abc9bb65e48a963bc93e383b5')->setApiId(11982879));
         $this->MadelineProto = new API(env('SESSION_PUT') . '/session.madeline', $this->settings);
         $this->MadelineProto->start();
     }

@@ -32,13 +32,16 @@ class TestCommand extends Command
 
     public function handle()
     {
-        $start = readline('Enter start position: ');
+
+        $MTProto = new MTProtoService();
+
+        /*$start = readline('Enter start position: ');
         $end = readline('Enter end position: ');
 
 
         $verifyZip = new VerifierService();
 
-        $verifyZip->verifier($start, $end);
+        $verifyZip->verifier($start, $end);*/
 
     }
 }

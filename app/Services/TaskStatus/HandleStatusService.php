@@ -4,38 +4,36 @@
 namespace App\Services\TaskStatus;
 
 
-use App\Services\MadelineProto\MTProtoService;
+use danog\MadelineProto\API;
 use danog\MadelineProto\EventHandler;
+use danog\MadelineProto\Settings;
+use danog\MadelineProto\Settings\AppInfo;
 
 
 class HandleStatusService extends EventHandler
 {
-    public $MTProto;
-
-    public function getReportPeers() { return '@akbarshoh8522'; }
-
-    public function onUpdateNewMessage(array $update): \Generator
+    public function onUpdateNewMessage(array $update)
     {
-        if ($update['message']['_'] === 'messageEmpty' || $update['message']['out'] ?? false) {
-            return;
-        }
+        $mes = $update['message'];
+        $user = $mes['from_id']['user_id'];
+        $message = $mes['message'];
 
-        $message = $update['message']['message'];
-
-        switch (strtolower((string)$message)) {
-            case 'hello':
-                yield $this->messages->sendMessage(['peer' => $update, 'message' => "Hi!", 'reply_to_msg_id' => isset($update['message']['id']) ? $update['message']['id'] : null, 'parse_mode' => 'HTML']);
-                break;
-            case 'salom':
-                yield $this->messages->sendMessage(['peer' => $update, 'message' => "Salom!", 'reply_to_msg_id' => isset($update['message']['id']) ? $update['message']['id'] : null, 'parse_mode' => 'HTML']);
-                break;
-            case 'ishla yaxshimi':
-                yield $this->messages->sendMessage(['peer' => $update, 'message' => "Bo'vottimi", 'reply_to_msg_id' => isset($update['message']['id']) ? $update['message']['id'] : null, 'parse_mode' => 'HTML']);
-                break;
+        switch ((string)$message) {
             default:
-                yield $this->messages->sendMessage(['peer' => $update, 'message' => (string)$message, 'reply_to_msg_id' => isset($update['message']['id']) ? $update['message']['id'] : null, 'parse_mode' => 'HTML']);
-                break;
+                $this->messages->sendMessage(['peer' => $user, 'message' => $message]);
         }
     }
 
+    public function __construct()
+    {
+        $settings = new Settings;
+
+        $settings->setAppInfo((new AppInfo)->setApiId(9330195)->setApiHash('adcaaf6ff60778f454ee90f3a6c26c7b'));
+        $madelineproto = new API(env('SESSION_PUT') . '/session.madeline', $settings);
+        $madelineproto->start();
+
+        HandleStatusService::startAndLoop(env('SESSION_PUT') . '/bot.madeline', $settings);
+    }
 }
+
+

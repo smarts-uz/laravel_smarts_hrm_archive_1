@@ -73,7 +73,7 @@ class ExportService
         $unix_end = strtotime($date_end == "" ? "now" : $date_end);
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
 
-        $path = $this->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Export\\', $date);
+        $path = $this->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Updates\\', $date);
 
         if($date['hour'] == ""){
             //$update = $this->getMessages($channel_id, $unix_start, $unix_start + 86400);
