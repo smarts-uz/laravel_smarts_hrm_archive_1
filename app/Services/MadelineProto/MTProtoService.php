@@ -18,7 +18,6 @@ class MTProtoService
         $this->settings->setAppInfo((new AppInfo)->setApiHash('adcaaf6ff60778f454ee90f3a6c26c7b')->setApiId(9330195));
         $this->MadelineProto = new API(env('SESSION_PUT') . '/session.madeline', $this->settings);
         $this->MadelineProto->start();
-        $this->MadelineProto->messages->sendMessage(["peer" => 1307688882, "message" => "test"]);
     }
 
     public function getComments($url)

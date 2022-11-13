@@ -48,14 +48,14 @@ class ExportCommand extends Command
                     $unix_start += 86400;
                     $date = date_parse_from_format("j.n.Y H", gmdate("j.n.Y", $unix_start));
                     $update = $export->getMessages($channel_id, $unix_start, $unix_start + 86400);
-                    $files = $MTProto->getFiles($update);
-                    $path = $export->folderPath($channel_id, '/Users/ramziddinabdumominov/Documents/Json/', $date);
+                    $path = $export->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Export/', $date);
+                    /*$files = $MTProto->getFiles($update);
                     if(!is_dir($path . '/files')){
                         mkdir($path . '/files');
                     }
                     foreach ($files as $file){
                         $MTProto->downloadMedia($update,$file, $path . '/files/');
-                    }
+                    }*/
                     file_put_contents($path . 'result.json', json_encode($update));
 
 
@@ -64,17 +64,20 @@ class ExportCommand extends Command
                 if ($unix_start + 3600 <= $unix_end) {
                     $unix_start += 3600;
                     print_r(gmdate("j.n.Y H:i", $unix_start));
+
                     $update = $export->getMessages($channel_id, $unix_start, $unix_start + 3600);
-                    $files = $MTProto->getFiles($update);
-                    $path = $export->folderPath($channel_id, 'D:/JSONs/', $date);
+                    print_r($update);
+                    print_r(PHP_EOL);
+                    $path = $export->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Export/', $date);
+                    /*$files = $MTProto->getFiles($update);
                     if(!is_dir($path . '/files')){
                         mkdir($path . '/files');
                     }
                     foreach ($files as $file){
                         $MTProto->downloadMedia($update,$file, $path . '/files/');
-                    }
+                    }*/
                     $date = date_parse_from_format("j.n.Y H:i", gmdate("j.n.Y H:i", $unix_start));
-                    $path = $export->folderPath($channel_id, '/Users/ramziddinabdumominov/Documents/Json/', $date);
+                    $path = $export->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Export/', $date);
                     file_put_contents($path . 'result.json', json_encode($update));
                 }
             }

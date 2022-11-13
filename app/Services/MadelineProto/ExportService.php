@@ -16,8 +16,8 @@ class ExportService
         $messages = $this->MTProto->MadelineProto->messages->getHistory(['peer' => $id, 'limit' => 100]);
         $update = [];
         foreach ($messages['messages'] as $message) {
-            if ($message['date'] >= $start && $message['date'] <= $end) {
-                print_r($message['date']);
+            if ($message['date'] > $start && $message['date'] < $end) {
+                print_r($message['date'] . '        ' . $start);
                 print_r(PHP_EOL);
                 array_push($update, $message);
             }
@@ -73,8 +73,7 @@ class ExportService
         $unix_end = strtotime($date_end == "" ? "now" : $date_end);
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
 
-
-        $path = $this->folderPath($channel_id, '/Users/ramziddinabdumominov/Documents/Json/', $date);
+        $path = $this->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Export\\', $date);
 
         if($date['hour'] == ""){
             //$update = $this->getMessages($channel_id, $unix_start, $unix_start + 86400);

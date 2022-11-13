@@ -47,7 +47,7 @@ IconFile=C:\Windows\System32\SHELL32.dll";
         $result = null;
         $list = scandir($path);
         foreach ($list as $item) {
-            if (is_file($path . '/' . $item) && $item === 'ALL.txt') {
+            if (is_file($path . '/' . $item) && $item == 'ALL.txt') {
                 $result = $path . '/' . $item;
             }
         }
