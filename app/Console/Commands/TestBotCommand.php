@@ -29,8 +29,8 @@ class TestBotCommand extends Command
      */
     public function handle()
     {
-        $bot = new TestBot();
         $settings = new Settings;
-        $bot::startAndLoop(env('SESSION_PUT'), $settings);
+
+        TestBot::startAndLoop(env('SESSION_PUT'), $settings);
     }
 }
