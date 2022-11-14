@@ -30,6 +30,7 @@ class ManageCommand extends Command
      */
     public function handle()
     {
-        $handle = new HandleStatusService();
+        $Mtproto = new MTProtoService();
+        HandleStatusService::startAndLoop(env('SESSION_PUT') . '/session.madeline', $Mtproto->settings);
     }
 }

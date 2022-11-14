@@ -14,26 +14,25 @@ class HandleStatusService extends EventHandler
 {
     public function onUpdateNewMessage(array $update)
     {
+        echo gettype($update."\n");
+        file_put_contents('update.json', json_encode($update, JSON_THROW_ON_ERROR));
         $mes = $update['message'];
+        print_r($mes."\n");
         $user = $mes['from_id']['user_id'];
+        print_r($user."\n");
         $message = $mes['message'];
+        print_r($message."\n");
 
         switch ((string)$message) {
+            case 'stop madeline':
+                $this->stop();
+                break;
             default:
-                $this->messages->sendMessage(['peer' => $user, 'message' => $message]);
+                $this->messages->sendMessage(['peer' => 1307688882, 'message' => $message]);
         }
     }
 
-    public function __construct()
-    {
-        $settings = new Settings;
 
-        $settings->setAppInfo((new AppInfo)->setApiId(9330195)->setApiHash('adcaaf6ff60778f454ee90f3a6c26c7b'));
-        $madelineproto = new API(env('SESSION_PUT') . '/session.madeline', $settings);
-        $madelineproto->start();
-
-        HandleStatusService::startAndLoop(env('SESSION_PUT') . '/bot.madeline', $settings);
-    }
 }
 
 
