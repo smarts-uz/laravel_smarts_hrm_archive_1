@@ -27,7 +27,7 @@ class EnvatoParseCmd extends Command
      */
     public function handle()
     {
-        $this->envatoParse('https://elements.envato.com','wordpress');
+        $this->envatoParse('https://elements.envato.com','video-templates');
     }
 
     public function envatoParse ($link, $category = NULL, $filter = NULL) {
@@ -37,11 +37,12 @@ class EnvatoParseCmd extends Command
             if ($filter) {$url.= '/' . $filter;}
             if ($i > 1) {$url .= '/pg-' . $i;}
 
-            $pattern = '#(?:<li class="[- a-zA-Z0-9]+"><div class="[a-zA-Z]+" data-test-selector="[- a-zA-Z]+"><a title="[- a-zA-Z0-9&]+" class="[a-zA-Z_0-9]+" href=")([\/a-zA-Z0-9-]+)"><\/a>#';
+            $pattern = '#(?:<li class="[- a-zA-Z0-9]+"><div class="[a-zA-Z]+" data-test-selector="[- a-zA-Z]+"><a title="[- a-zA-Z0-9&()&amp;\.\| &\#x27;\+\?=]+" class="[a-zA-Z_0-9 ]+" href=")([\/a-zA-Z0-9-]+)"><\/a>#';
             $parsed =  $this->parse($url, $pattern, true);
             $links = array();
-            $itemPattern = '#(https://video-previews[a-z-_/\.0-9]+)((?<=src=")https://elements-cover-images[a-zA-Z-_/\.0-9\?%&;=]+)#';
+            $itemPattern = '#(https://video-previews[a-z-_/\.0-9]+)|((?<=src=")https://elements-cover-images[- a-zA-Z0-9&()&amp;\.\| &\#x27;\+\?=]+)|((?:<h1 class="[- a-zA-Z0-9]+">)[- a-zA-Z0-9&()&amp;\.\| &\#x27;\+\?=]+(?=</h1>))#';
             foreach ($parsed[1] as $item) {
+                //$itemHtml = $this->getHtml($link . $item);
                 $links[] = $this->parse($link . $item, $itemPattern, true);
             }
         }
