@@ -62,11 +62,33 @@ class TestBotCommand extends Command
         switch(true)
         {
             case $replies > 0:
-                echo 'bla bla';
+                $comments = $this->MadelineProto->messages->getReplies(['peer' => -1001852006251, 'msg_id'=> $id]);
+                return $comments[0];
                 break;
             default:
             echo 'bla bla';
                 break;
+        }
+    }
+
+    protected function addTags($message, $id) {
+        $newMessage = str_replace(['#New', '   ' . '#New'], ['' , ''], $message);
+        if ($newMessage !== $message) {
+            $newMessage  = $newMessage . " " . '#New';
+            $this->MadelineProto->messages->editMessage(
+                ['peer'   => -100 .env('CHANNEL_ID'),
+                    'id'      => $id,
+                    'message' => $newMessage]);
+        }
+    }
+
+    protected function removeTags($message, $id) {
+        $newMessage = str_replace(['#New', '   ' . '#New'], ['' , ''], $message);
+        if ($newMessage !== $message) {
+            $this->MadelineProto->messages->editMessage(
+                ['peer'   => -100 .env('CHANNEL_ID'),
+                    'id'      => $id,
+                    'message' => $newMessage]);
         }
     }
 }
