@@ -58,7 +58,7 @@ Route::get('/test', function () {
 });
 
 Route::get('/files', function () {
-    $MTProto = new MTProtoService();
+    /*$MTProto = new MTProtoService();
 
     $history = $MTProto->MadelineProto->messages->getHistory(['peer' => 1307688882, 'offset_date'=> 1668366000, 'limit'=>100]);
     $messages = [];
@@ -68,7 +68,12 @@ Route::get('/files', function () {
         }
     }
     echo '<pre>';
-    print_r($messages);
+    print_r($messages);*/
+//    date_default_timezone_set('UTC');
+    $unix_date = 1668497340;
+    $date = date("M d Y H:i:s", $unix_date);
+    print_r($date);
+
 });
 
 Route::get('/export', function (){

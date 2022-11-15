@@ -36,38 +36,39 @@ class ExportService
         }
     }
 
-    public function folderPath($id, $path, $date){
+    public function folderPath($id, $path, $date)
+    {
 
-        $chat = $this->MTProto->MadelineProto->channels->getFullChannel(['channel' => $id]);
+        //$chat = $this->MTProto->MadelineProto->channels->getFullChannel(['channel' => $id]);
 
         //Title
-        if(!is_dir( $path . $chat['chats'][0]['title'])){
-            mkdir($path . $chat['chats'][0]['title']);
+        if (!is_dir($path . $id)) {
+            mkdir($path . $id);
         }
         $path .= $id . '/';
 
         //Year
-        if(!is_dir($path . $date['year'])){
+        if (!is_dir($path . $date['year'])) {
             mkdir($path . $date['year']);
         }
         $path .= $date['year'] . '/';
 
 
         //month
-        if(!is_dir($path . $date['month'])){
+        if (!is_dir($path . $date['month'])) {
             mkdir($path . $date['month']);
         }
         $path .= $date['month'] . '/';
 
         //day
-        if(!is_dir($path . $date['day'])){
+        if (!is_dir($path . $date['day'])) {
             mkdir($path . $date['day']);
         }
         $path .= $date['day'] . '/';
 
         //Hours
-        if($date['hour'] != ""){
-            if (!is_dir($path . $date['hour'])){
+        if ($date['hour'] != "") {
+            if (!is_dir($path . $date['hour'])) {
                 mkdir($path . $date['hour']);
             }
             $path .= $date['hour'] . '/';
@@ -75,7 +76,8 @@ class ExportService
         return $path;
     }
 
-    public function export(){
+    public function export()
+    {
 
         $channel_id = readline('Enter a Chat ID: ');
         $date_start = readline('Enter start date: ');
