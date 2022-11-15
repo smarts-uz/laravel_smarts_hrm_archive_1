@@ -3,6 +3,7 @@
 use App\Services\FileSystemService;
 use App\Services\MadelineProto\MTProtoService;
 use App\Services\ManageService;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use SergiX44\Nutgram\Nutgram;
 use TCG\Voyager\Facades\Voyager;
@@ -88,6 +89,10 @@ Route::get('/export', function () {
     $date = date_parse_from_format("j.n.Y H:iP", $date_start);
 
     print_r($date['year']);
+});
+
+Route::get('/madeline', function (){
+    Artisan::call('manage:user');
 });
 
 Route::group(['prefix' => 'admin'], function () {
