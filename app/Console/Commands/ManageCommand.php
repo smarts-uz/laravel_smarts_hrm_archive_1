@@ -32,5 +32,6 @@ class ManageCommand extends Command
     {
         $Mtproto = new MTProtoService();
         HandleStatusService::startAndLoop(env('SESSION_PUT') . '/session.madeline', $Mtproto->settings);
+
     }
 }
