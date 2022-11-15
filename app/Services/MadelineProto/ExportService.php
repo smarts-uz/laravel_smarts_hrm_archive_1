@@ -13,7 +13,7 @@ class ExportService
 
     public function getMessages($id, $start, $end)
     {
-        $messages = $this->MTProto->MadelineProto->messages->getHistory(['peer' => $id, 'offset_date'=>$end, 'limit' => 100]);
+        $messages = $this->MTProto->MadelineProto->messages->getHistory(['peer' => $id, 'offset_date' => $end, 'limit' => 100]);
         $update = [];
         foreach ($messages['messages'] as $message) {
             if ($message['date'] > (int)$start) {
@@ -25,12 +25,18 @@ class ExportService
 
     public function downloadMedia($messages, $path)
     {
+        print_r(111111);
         if (!is_dir($path . 'files')) {
             mkdir($path . 'files');
         }
         $path .= 'files/';
         foreach ($messages as $message) {
             if (array_key_exists('media', $message)) {
+                try {
+                    print_r('Downloading ' . $message['media']['document']['attributes'][0]['file_name']);
+                } catch (\Exception $e) {
+                    print_r($e->getMessage());
+                }
                 yield $this->MTProto->MadelineProto->downloadToDir($message['media'], $path . '/');
             }
         }

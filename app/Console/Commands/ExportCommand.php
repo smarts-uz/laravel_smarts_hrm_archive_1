@@ -31,9 +31,9 @@ class ExportCommand extends Command
     public function handle()
     {
         $export = new ExportService();
-        $channel_id = 1244414566;
-        $date_start = '14.11.2022';
-        $date_end = '16.11.2022';
+        $channel_id = 798946526;
+        $date_start = '1.11.2022';
+        $date_end = '14.11.2022';
         $unix_end = strtotime($date_end == "" ? "now" : $date_end);
         $unix_start = strtotime($date_start);
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
@@ -42,13 +42,35 @@ class ExportCommand extends Command
                 if ($unix_start + 86400 <= $unix_end) {
                     $update = $export->getMessages($channel_id, $unix_start, $unix_start + 86400);
                     $date = date_parse_from_format("j.n.Y H", date("j.n.Y", $unix_start));
-                    $path = $export->folderPath($channel_id, '/Users/ramziddinabdumominov/Desktop/MadeLineProtoTest/test/', $date);
+                    $path = $export->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Export/', $date);
                     if (!is_dir($path . '/files')) {
                         mkdir($path . '/files');
                     }
                     file_put_contents($path . 'result.json', json_encode($update));
                     $unix_start += 86400;
-                    $export->downloadMedia($update, $path);
+                    if (!is_dir($path . 'files')) {
+                        mkdir($path . 'files');
+                    }
+                    $path .= 'files/';
+                    foreach ($update as $messa) {
+                        if (array_key_exists('media', $messa)) {
+                            if(array_key_exists('document', $messa['media'])){
+                                try {
+                                    foreach ($messa['media']['document']['attributes'] as $attribute){
+                                        if($attribute['_'] == 'documentAttributeFilename'){
+                                            $export->MTProto->MadelineProto->downloadToDir($messa['media'], $path . '/');
+                                            print_r('Downloading ' . $attribute['file_name']);
+                                            print_r(PHP_EOL);
+                                        }
+                                    }
+                                } catch (\Exception $e) {
+                                    print_r($e->getMessage());
+                                }
+
+                            }
+                            //yield $export->MTProto->MadelineProto->downloadToDir($messa['media'], $path . '/');
+                        }
+                    }
 
                 }
             } /*else {
