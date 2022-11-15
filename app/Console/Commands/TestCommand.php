@@ -43,9 +43,21 @@ class TestCommand extends Command
             $mess['date'] = date("j.n.Y H:iP", $message['date']);
             $mess['date_unixtime'] = (string)$message['date'];
             $mess['text'] = $message['message'];
+            if (array_key_exists('media', $message)) {
+                if (array_key_exists('document', $message['media'])) {
+                    foreach ($message['media']['document']['attributes'] as $attribute) {
+
+                        if ($attribute['_'] == 'documentAttributeFilename') {
+                            $mess['file'] = 'files/' . $attribute['file_name'];
+                        }
+                        if ($attribute['_'] == 'documentAttributeAudio') {
+                            $mess['media_type'] = 'voice_message';
+                        }
+                    }
+                }
+            }
             array_push($update, $mess);
         }
         print_r($update);
-
     }
 }

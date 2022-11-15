@@ -3293,3 +3293,2082 @@ Session, Ramziddin_dev:        	Garbage collected 9 incoming messages in DC 2, 0
 Session, Ramziddin_dev:        	Garbage collected 8 outgoing messages in DC 2, 0 left
 Session, Ramziddin_dev:        	Garbage collected 12 incoming messages in DC 2, 0 left
 Session, Ramziddin_dev:        	Garbage collected 12 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 4 left
+Session, Ramziddin_dev:        	Garbage collected 6 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 4 outgoing messages in DC 2, 0 left
+Logger:         	MadelineProto
+Logger:         	Copyright (C) 2016-2022 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	It seems like the session is busy.
+Serialization:  	Telegram does not support starting multiple instances of the same session, make sure no other instance of the session is running.
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Logger:         	MadelineProto
+Logger:         	Copyright (C) 2016-2022 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	It seems like the session is busy.
+Serialization:  	Telegram does not support starting multiple instances of the same session, make sure no other instance of the session is running.
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+API:            	!!! Could not connect to MadelineProto, please check and report the logs for more details. !!!
+API:            	!!! Reconnecting using slower method. !!!
+Serialization:  	It seems like the session is busy.
+Serialization:  	Telegram does not support starting multiple instances of the same session, make sure no other instance of the session is running.
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+API:            	!!! Could not connect to MadelineProto, please check and report the logs for more details. !!!
+API:            	!!! Reconnecting using slower method. !!!
+Serialization:  	It seems like the session is busy.
+Serialization:  	Telegram does not support starting multiple instances of the same session, make sure no other instance of the session is running.
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+API:            	!!! Could not connect to MadelineProto, please check and report the logs for more details. !!!
+Exception:      	Could not connect to MadelineProto, please check the MadelineProto.log file to debug! in API.php:314
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+API:            	!!! Could not connect to MadelineProto, please check and report the logs for more details. !!!
+Exception:      	Could not connect to MadelineProto, please check the MadelineProto.log file to debug! in API.php:314
+Logger:         	MadelineProto
+Logger:         	Copyright (C) 2016-2022 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	It seems like the session is busy.
+Serialization:  	Telegram does not support starting multiple instances of the same session, make sure no other instance of the session is running.
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+API:            	!!! Could not connect to MadelineProto, please check and report the logs for more details. !!!
+API:            	!!! Reconnecting using slower method. !!!
+Serialization:  	It seems like the session is busy.
+Serialization:  	Telegram does not support starting multiple instances of the same session, make sure no other instance of the session is running.
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+API:            	!!! Could not connect to MadelineProto, please check and report the logs for more details. !!!
+Exception:      	Could not connect to MadelineProto, please check the MadelineProto.log file to debug! in API.php:314
+Logger:         	MadelineProto
+Logger:         	Copyright (C) 2016-2022 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	It seems like the session is busy.
+Serialization:  	Telegram does not support starting multiple instances of the same session, make sure no other instance of the session is running.
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+API:            	!!! Could not connect to MadelineProto, please check and report the logs for more details. !!!
+API:            	!!! Reconnecting using slower method. !!!
+Serialization:  	It seems like the session is busy.
+Serialization:  	Telegram does not support starting multiple instances of the same session, make sure no other instance of the session is running.
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+API:            	!!! Could not connect to MadelineProto, please check and report the logs for more details. !!!
+Exception:      	Could not connect to MadelineProto, please check the MadelineProto.log file to debug! in API.php:314
+Logger:         	MadelineProto
+Logger:         	Copyright (C) 2016-2022 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	It seems like the session is busy.
+Serialization:  	Telegram does not support starting multiple instances of the same session, make sure no other instance of the session is running.
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+API:            	!!! Could not connect to MadelineProto, please check and report the logs for more details. !!!
+API:            	!!! Reconnecting using slower method. !!!
+Serialization:  	It seems like the session is busy.
+Serialization:  	Telegram does not support starting multiple instances of the same session, make sure no other instance of the session is running.
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+Serialization:  	Still waiting for exclusive session lock...
+API:            	!!! Could not connect to MadelineProto, please check and report the logs for more details. !!!
+Exception:      	Could not connect to MadelineProto, please check the MadelineProto.log file to debug! in API.php:314
+Logger:         	MadelineProto
+Logger:         	Copyright (C) 2016-2022 Daniil Gentili
+Logger:         	Licensed under AGPLv3
+Logger:         	https://github.com/danog/MadelineProto
+Serialization:  	Got exclusive session lock!
+DataCenter, Ramziddin_dev:     	Disconnecting all before reconnect!
+DataCenterConnection, Ramziddin_dev: 	Disconnecting from shared DC 
+DataCenterConnection, Ramziddin_dev: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter, Ramziddin_dev:     	Disconnecting all before reconnect!
+DataCenterConnection, Ramziddin_dev: 	Disconnecting from shared DC 
+DataCenterConnection, Ramziddin_dev: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter, Ramziddin_dev:     	Disconnecting all before reconnect!
+DataCenterConnection, Ramziddin_dev: 	Disconnecting from shared DC 
+DataCenterConnection, Ramziddin_dev: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter, Ramziddin_dev:     	Disconnecting all before reconnect!
+DataCenterConnection, Ramziddin_dev: 	Disconnecting from shared DC 
+DataCenterConnection, Ramziddin_dev: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter, Ramziddin_dev:     	Disconnecting all before reconnect!
+DataCenterConnection, Ramziddin_dev: 	Disconnecting from shared DC 
+DataCenterConnection, Ramziddin_dev: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter, Ramziddin_dev:     	Disconnecting all before reconnect!
+DataCenterConnection, Ramziddin_dev: 	Disconnecting from shared DC 
+DataCenterConnection, Ramziddin_dev: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter, Ramziddin_dev:     	Disconnecting all before reconnect!
+DataCenterConnection, Ramziddin_dev: 	Disconnecting from shared DC 
+DataCenterConnection, Ramziddin_dev: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter, Ramziddin_dev:     	Disconnecting all before reconnect!
+DataCenterConnection, Ramziddin_dev: 	Disconnecting from shared DC 
+DataCenterConnection, Ramziddin_dev: 	Backed up 0, added to 0 existing messages) from DC 
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 2 (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.167.41:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection, Ramziddin_dev:     	Connecting to DC 2.0
+Session, Ramziddin_dev:        	Resetting session in DC 2.0...
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 1 (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.175.54:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection, Ramziddin_dev:     	Connecting to DC 1.0
+Session, Ramziddin_dev:        	Resetting session in DC 1.0...
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 2_media (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.167.222:443 main DC 2_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection, Ramziddin_dev:     	Connecting to DC 2_media.0
+Session, Ramziddin_dev:        	Resetting session in DC 2_media.0...
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 3 (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection, Ramziddin_dev:     	Connecting to DC 3.0
+Session, Ramziddin_dev:        	Resetting session in DC 3.0...
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 4 (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection, Ramziddin_dev:     	Connecting to DC 4.0
+Session, Ramziddin_dev:        	Resetting session in DC 4.0...
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 4_media (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.165.136:443 main DC 4_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection, Ramziddin_dev:     	Connecting to DC 4_media.0
+Session, Ramziddin_dev:        	Resetting session in DC 4_media.0...
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 5 (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://91.108.56.119:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection, Ramziddin_dev:     	Connecting to DC 5.0
+Session, Ramziddin_dev:        	Resetting session in DC 5.0...
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 203_cdn (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://91.105.192.100:443 main DC 203_cdn, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection, Ramziddin_dev:     	Connecting to DC 203_cdn.0
+Session, Ramziddin_dev:        	Resetting session in DC 203_cdn.0...
+Connection, Ramziddin_dev:     	Connected to DC 203_cdn.0!
+Connection, Ramziddin_dev:     	Connecting to DC 203_cdn.1
+Session, Ramziddin_dev:        	Resetting session in DC 203_cdn.1...
+Connection, Ramziddin_dev:     	Connected to DC 2_media.0!
+Connection, Ramziddin_dev:     	Connecting to DC 2_media.1
+Session, Ramziddin_dev:        	Resetting session in DC 2_media.1...
+Connection, Ramziddin_dev:     	Connected to DC 2.0!
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+DataCenterConnection, Ramziddin_dev: 	Restoring 0 messages to DC 2
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2
+DataCenter, Ramziddin_dev:     	OK!
+Connection, Ramziddin_dev:     	Connected to DC 4.0!
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+DataCenterConnection, Ramziddin_dev: 	Restoring 0 messages to DC 4
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4
+DataCenter, Ramziddin_dev:     	OK!
+Connection, Ramziddin_dev:     	Connected to DC 4_media.0!
+Connection, Ramziddin_dev:     	Connecting to DC 4_media.1
+Session, Ramziddin_dev:        	Resetting session in DC 4_media.1...
+Connection, Ramziddin_dev:     	Connected to DC 5.0!
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+DataCenterConnection, Ramziddin_dev: 	Restoring 0 messages to DC 5
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 5
+DataCenter, Ramziddin_dev:     	OK!
+Connection, Ramziddin_dev:     	Connected to DC 203_cdn.1!
+Connection, Ramziddin_dev:     	Connecting to DC 203_cdn.2
+Session, Ramziddin_dev:        	Resetting session in DC 203_cdn.2...
+Connection, Ramziddin_dev:     	Connected to DC 2_media.1!
+Connection, Ramziddin_dev:     	Connecting to DC 2_media.2
+Session, Ramziddin_dev:        	Resetting session in DC 2_media.2...
+Connection, Ramziddin_dev:     	Connected to DC 4_media.1!
+Connection, Ramziddin_dev:     	Connecting to DC 4_media.2
+Session, Ramziddin_dev:        	Resetting session in DC 4_media.2...
+Connection, Ramziddin_dev:     	Connected to DC 1.0!
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+DataCenterConnection, Ramziddin_dev: 	Restoring 0 messages to DC 1
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 1
+DataCenter, Ramziddin_dev:     	OK!
+Connection, Ramziddin_dev:     	Connected to DC 3.0!
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+DataCenterConnection, Ramziddin_dev: 	Restoring 0 messages to DC 3
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 3
+DataCenter, Ramziddin_dev:     	OK!
+Connection, Ramziddin_dev:     	Connected to DC 203_cdn.2!
+Connection, Ramziddin_dev:     	Connecting to DC 203_cdn.3
+Session, Ramziddin_dev:        	Resetting session in DC 203_cdn.3...
+Connection, Ramziddin_dev:     	Connected to DC 2_media.2!
+Connection, Ramziddin_dev:     	Connecting to DC 2_media.3
+Session, Ramziddin_dev:        	Resetting session in DC 2_media.3...
+Connection, Ramziddin_dev:     	Connected to DC 203_cdn.3!
+Connection, Ramziddin_dev:     	Connecting to DC 203_cdn.4
+Session, Ramziddin_dev:        	Resetting session in DC 203_cdn.4...
+Connection, Ramziddin_dev:     	Connected to DC 4_media.2!
+Connection, Ramziddin_dev:     	Connecting to DC 4_media.3
+Session, Ramziddin_dev:        	Resetting session in DC 4_media.3...
+ResponseHandler, Ramziddin_dev: 	Received bad_msg_notification: incorrect server salt (in this case, the bad_server_salt response is received with the correct salt, and the message is to be re-sent with it)
+ResponseHandler, Ramziddin_dev: 	Received bad_msg_notification: incorrect server salt (in this case, the bad_server_salt response is received with the correct salt, and the message is to be re-sent with it)
+Connection, Ramziddin_dev:     	Connected to DC 203_cdn.4!
+DataCenterConnection, Ramziddin_dev: 	Restoring 0 messages to DC 203_cdn
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 203_cdn
+DataCenter, Ramziddin_dev:     	OK!
+Connection, Ramziddin_dev:     	Connected to DC 2_media.3!
+Connection, Ramziddin_dev:     	Connecting to DC 2_media.4
+Session, Ramziddin_dev:        	Resetting session in DC 2_media.4...
+Connection, Ramziddin_dev:     	Connected to DC 4_media.3!
+Connection, Ramziddin_dev:     	Connecting to DC 4_media.4
+Session, Ramziddin_dev:        	Resetting session in DC 4_media.4...
+ResponseHandler, Ramziddin_dev: 	Received bad_msg_notification: incorrect server salt (in this case, the bad_server_salt response is received with the correct salt, and the message is to be re-sent with it)
+Connection, Ramziddin_dev:     	Connected to DC 2_media.4!
+DataCenterConnection, Ramziddin_dev: 	Restoring 0 messages to DC 2_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2_media
+DataCenter, Ramziddin_dev:     	OK!
+Connection, Ramziddin_dev:     	Connected to DC 4_media.4!
+DataCenterConnection, Ramziddin_dev: 	Restoring 0 messages to DC 4_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4_media
+DataCenter, Ramziddin_dev:     	OK!
+MTProto, Ramziddin_dev:        	Initing authorization...
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 2
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 1
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 3
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 4
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 5
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 203_cdn
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 203_cdn
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 2_media
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 4_media
+MTProto, Ramziddin_dev:        	Done initing authorization!
+MTProto, Ramziddin_dev:        	Starting update system
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1077712128
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1115554076
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1148551822
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1197396434
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1236802421
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1255386798
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1369931559
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1376446355
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1377073002
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1416531749
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1507101933
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1509642403
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1531369113
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1536850711
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1573175787
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1606297059
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1623748430
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1631935561
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1641384152
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1645118157
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1687319681
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1714906633
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1715065579
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1732713545
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1732811298
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1736380151
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1741728154
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1760502540
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1807426588
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1871463648
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1884117700
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1886703335
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 1
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 3
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 5
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 203_cdn
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 2 (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.167.41:443 main DC 2, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection, Ramziddin_dev: 	Already connected!
+DataCenter, Ramziddin_dev:     	OK!
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 1 (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.175.54:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection, Ramziddin_dev: 	Already connected!
+DataCenter, Ramziddin_dev:     	OK!
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 2_media (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.167.222:443 main DC 2_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection, Ramziddin_dev: 	Already connected!
+DataCenter, Ramziddin_dev:     	OK!
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 3 (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection, Ramziddin_dev: 	Already connected!
+DataCenter, Ramziddin_dev:     	OK!
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 4 (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.167.91:443 main DC 4, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection, Ramziddin_dev: 	Already connected!
+DataCenter, Ramziddin_dev:     	OK!
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 4_media (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.165.136:443 main DC 4_media, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection, Ramziddin_dev: 	Already connected!
+DataCenter, Ramziddin_dev:     	OK!
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 5 (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://91.108.56.119:443 main DC 5, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection, Ramziddin_dev: 	Already connected!
+DataCenter, Ramziddin_dev:     	OK!
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 203_cdn (-1) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://91.105.192.100:443 main DC 203_cdn, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+DataCenterConnection, Ramziddin_dev: 	Already connected!
+DataCenter, Ramziddin_dev:     	OK!
+MTProto, Ramziddin_dev:        	Initing authorization...
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 2
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 1
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 3
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 4
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 5
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 203_cdn
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 203_cdn
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 2_media
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 4_media
+MTProto, Ramziddin_dev:        	Done initing authorization!
+MTProto, Ramziddin_dev:        	Starting update system
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1077712128
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1115554076
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1148551822
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1197396434
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1236802421
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1255386798
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1369931559
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1376446355
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1377073002
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1416531749
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1507101933
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1509642403
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1531369113
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1536850711
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1573175787
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1606297059
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1623748430
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1631935561
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1641384152
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1645118157
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1687319681
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1714906633
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1715065579
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1732713545
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1732811298
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1736380151
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1741728154
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1760502540
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1807426588
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1871463648
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1884117700
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1886703335
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 1
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 3
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 5
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 203_cdn
+ResponseHandler, Ramziddin_dev: 	Received bad_msg_notification: incorrect server salt (in this case, the bad_server_salt response is received with the correct salt, and the message is to be re-sent with it)
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1236802421
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1148551822
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1197396434
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1255386798
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1573175787
+ReadLoop, Ramziddin_dev:       	WARNING: Resetting auth key in DC 3.0...
+Session, Ramziddin_dev:        	Resetting session in DC 3.0...
+DataCenterConnection, Ramziddin_dev: 	Reconnecting shared DC 3
+DataCenterConnection, Ramziddin_dev: 	Disconnecting from shared DC 3
+Connection, Ramziddin_dev:     	Disconnecting from DC 3.0
+DataCenterConnection, Ramziddin_dev: 	Backed up  from DC 3.0
+Connection, Ramziddin_dev:     	Disconnected from DC 3.0
+DataCenterConnection, Ramziddin_dev: 	Backed up 0, added to 0 existing messages) from DC 3
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.175.100:443 main DC 3, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (-1)
+Connection, Ramziddin_dev:     	Connecting to DC 3.0
+Session, Ramziddin_dev:        	Resetting session in DC 3.0...
+PeerHandler, Ramziddin_dev:    	Only have min peer for 919329416 in database, trying to fetch full info
+PeerHandler, Ramziddin_dev:    	Only have min peer for 1507400110 in database, trying to fetch full info
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1249308316...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1249308316...
+FeedLoop, Ramziddin_dev:       	MSGID duplicate (18306) in update feed loop channel 1573175787
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1255386798...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1778836108...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1778836108...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1778836108...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1778836108...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1778836108...
+MTProto, Ramziddin_dev:        	Initing auth 3
+InternalLoop, Ramziddin_dev:   	Waiting for auth in update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1077712128
+MTProto, Ramziddin_dev:        	Initing auth 3
+InternalLoop, Ramziddin_dev:   	Waiting for auth in update feed loop channel 1077712128
+MTProto, Ramziddin_dev:        	Initing auth 3
+InternalLoop, Ramziddin_dev:   	Waiting for auth in update feed loop channel 1255386798
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1416531749
+MTProto, Ramziddin_dev:        	Initing auth 3
+InternalLoop, Ramziddin_dev:   	Waiting for auth in update feed loop channel 1416531749
+MTProto, Ramziddin_dev:        	Initing auth 3
+InternalLoop, Ramziddin_dev:   	Waiting for auth in update feed loop channel 1778836108
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1148551822...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1148551822...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1458440809...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1197396434...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1197396434...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1197396434...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1197396434...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1197396434...
+FeedLoop, Ramziddin_dev:       	Getdiff fed me message of type message in update feed loop channel 1197396434...
+MTProto, Ramziddin_dev:        	Initing auth 3
+InternalLoop, Ramziddin_dev:   	Waiting for auth in update feed loop channel 1148551822
+MTProto, Ramziddin_dev:        	Initing auth 3
+InternalLoop, Ramziddin_dev:   	Waiting for auth in update feed loop channel 1458440809
+MTProto, Ramziddin_dev:        	Initing auth 3
+InternalLoop, Ramziddin_dev:   	Waiting for auth in update feed loop channel 1197396434
+MTProto, Ramziddin_dev:        	Initing auth 3
+InternalLoop, Ramziddin_dev:   	Waiting for auth in getUpdate loop generic
+Connection, Ramziddin_dev:     	Connected to DC 3.0!
+DataCenterConnection, Ramziddin_dev: 	Restoring 0 messages to DC 3
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 3
+MTProto, Ramziddin_dev:        	Initing authorization...
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 2
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 1
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 3
+DataCenterConnection, Ramziddin_dev: 	Generating temporary authorization key for DC 3...
+AuthKeyHandler, Ramziddin_dev: 	Requesting pq...
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 4
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 5
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 203_cdn
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 203_cdn
+MTProto, Ramziddin_dev:        	Updated config!
+MTProto, Ramziddin_dev:        	{
+    "_": "config",
+    "phonecalls_enabled": true,
+    "default_p2p_contacts": true,
+    "preload_featured_stickers": false,
+    "ignore_phone_entities": false,
+    "revoke_pm_inbox": true,
+    "blocked_mode": false,
+    "pfs_enabled": false,
+    "force_try_ipv6": false,
+    "date": 1668511823,
+    "expires": 1668515182,
+    "test_mode": false,
+    "this_dc": 2,
+    "dc_txt_domain_name": "apv3.stel.com",
+    "chat_size_max": 200,
+    "megagroup_size_max": 200000,
+    "forwarded_count_max": 100,
+    "online_update_period_ms": 210000,
+    "offline_blur_timeout_ms": 5000,
+    "offline_idle_timeout_ms": 30000,
+    "online_cloud_timeout_ms": 300000,
+    "notify_cloud_delay_ms": 30000,
+    "notify_default_delay_ms": 1500,
+    "push_chat_period_ms": 60000,
+    "push_chat_limit": 2,
+    "saved_gifs_limit": 200,
+    "edit_time_limit": 172800,
+    "revoke_time_limit": 2147483647,
+    "revoke_pm_time_limit": 2147483647,
+    "rating_e_decay": 2419200,
+    "stickers_recent_limit": 200,
+    "stickers_faved_limit": 5,
+    "channels_read_media_period": 604800,
+    "pinned_dialogs_count_max": 5,
+    "pinned_infolder_count_max": 100,
+    "call_receive_timeout_ms": 20000,
+    "call_ring_timeout_ms": 90000,
+    "call_connect_timeout_ms": 30000,
+    "call_packet_timeout_ms": 10000,
+    "me_url_prefix": "https://t.me/",
+    "gif_search_username": "gif",
+    "venue_search_username": "foursquare",
+    "img_search_username": "bing",
+    "caption_length_max": 1024,
+    "message_length_max": 4096,
+    "webfile_dc_id": 4,
+    "reactions_default": {
+        "_": "reactionEmoji",
+        "emoticon": "\ud83d\udc4d"
+    }
+}
+PeerHandler, Ramziddin_dev:    	MSG_ID_INVALID
+MTProto, Ramziddin_dev:        	Initing auth
+InternalLoop, Ramziddin_dev:   	Waiting for auth in update feed loop channel 1236802421
+PeerHandler, Ramziddin_dev:    	MSG_ID_INVALID
+Session, Ramziddin_dev:        	Garbage collected 50 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 50 outgoing messages in DC 2, 0 left
+MsgIdHandler, Ramziddin_dev:   	Zend hashmap reallocation done. Cleaned memory: 0.1 Mb
+Session, Ramziddin_dev:        	Garbage collected 5 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 4 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 4 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 3 outgoing messages in DC 5, 1 left
+MTProto, Ramziddin_dev:        	Accepted IPC client connection!
+Session, Ramziddin_dev:        	Garbage collected 4 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 1, 0 left
+ResponseHandler, Ramziddin_dev: 	Trying to assign a response of type ResPQ to its request...
+ResponseHandler, Ramziddin_dev: 	Does the request of return type ResPQ match?
+ResponseHandler, Ramziddin_dev: 	Yes
+AuthKeyHandler, Ramziddin_dev: 	Factorizing with native_single_cpp (please wait, might take a while)
+AuthKeyHandler, Ramziddin_dev: 	Factorizing with python_single_alt (please wait, might take a while)
+AuthKeyHandler, Ramziddin_dev: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler, Ramziddin_dev: 	Factorizing with python_single (please wait, might take a while)
+AuthKeyHandler, Ramziddin_dev: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler, Ramziddin_dev: 	Factorizing with native_single (please wait, might take a while)
+AuthKeyHandler, Ramziddin_dev: 	Install https://prime.madelineproto.xyz and the FFI extension to speed this up!
+AuthKeyHandler, Ramziddin_dev: 	Factorization 2579553549790546157 = 1516555441 * 1700929277
+AuthKeyHandler, Ramziddin_dev: 	Starting Diffie Hellman key exchange
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+ResponseHandler, Ramziddin_dev: 	Trying to assign a response of type Server_DH_Params to its request...
+ResponseHandler, Ramziddin_dev: 	Does the request of return type Server_DH_Params match?
+ResponseHandler, Ramziddin_dev: 	Yes
+AuthKeyHandler, Ramziddin_dev: 	Server-client time delta = -1.0 s
+Crypt, Ramziddin_dev:          	Executing p/g checks (1/2)...
+Crypt, Ramziddin_dev:          	Executing p/g checks (2/2)...
+Crypt, Ramziddin_dev:          	Executing g check...
+Crypt, Ramziddin_dev:          	Executing g_a check (1/2)...
+Crypt, Ramziddin_dev:          	Executing g_a check (2/2)...
+AuthKeyHandler, Ramziddin_dev: 	Generating b...
+AuthKeyHandler, Ramziddin_dev: 	Generating g_b...
+Crypt, Ramziddin_dev:          	Executing g_a check (1/2)...
+Crypt, Ramziddin_dev:          	Executing g_a check (2/2)...
+AuthKeyHandler, Ramziddin_dev: 	Executing g_b check...
+AuthKeyHandler, Ramziddin_dev: 	Preparing client_DH_inner_data...
+AuthKeyHandler, Ramziddin_dev: 	Executing set_client_DH_params...
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 1 left
+ResponseHandler, Ramziddin_dev: 	Trying to assign a response of type Set_client_DH_params_answer to its request...
+ResponseHandler, Ramziddin_dev: 	Does the request of return type Set_client_DH_params_answer match?
+ResponseHandler, Ramziddin_dev: 	Yes
+AuthKeyHandler, Ramziddin_dev: 	Generating authorization key...
+AuthKeyHandler, Ramziddin_dev: 	Diffie Hellman key exchange processed successfully!
+AuthKeyHandler, Ramziddin_dev: 	Auth key generated
+DataCenterConnection, Ramziddin_dev: 	Binding authorization keys...
+DataCenterConnection, Ramziddin_dev: 	Bound temporary and permanent authorization keys, DC 3
+WriteLoop, Ramziddin_dev:      	Writing client info (also executing help.getConfig)...
+Session, Ramziddin_dev:        	Garbage collected 5 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 4 outgoing messages in DC 3, 1 left
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 3
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 2_media
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 4_media
+MTProto, Ramziddin_dev:        	Initing authorization...
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 2
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 1
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 3
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 4
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 5
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 203_cdn
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 203_cdn
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 2_media
+DataCenterConnection, Ramziddin_dev: 	Initing auth for DC 4_media
+MTProto, Ramziddin_dev:        	Done initing authorization!
+MTProto, Ramziddin_dev:        	Starting update system
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1077712128
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1115554076
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1148551822
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1197396434
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1236802421
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1255386798
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1369931559
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1376446355
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1377073002
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1416531749
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1507101933
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1509642403
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1531369113
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1536850711
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1573175787
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1606297059
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1623748430
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1631935561
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1641384152
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1645118157
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1687319681
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1714906633
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1715065579
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1732713545
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1732811298
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1736380151
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1741728154
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1760502540
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1807426588
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1871463648
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1884117700
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1886703335
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 1
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 3
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 5
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 203_cdn
+MTProto, Ramziddin_dev:        	Starting update system
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1077712128
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1115554076
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1148551822
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1197396434
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1236802421
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1255386798
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1369931559
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1376446355
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1377073002
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1416531749
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1507101933
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1509642403
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1531369113
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1536850711
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1573175787
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1606297059
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1623748430
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1631935561
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1641384152
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1645118157
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1687319681
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1714906633
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1715065579
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1732713545
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1732811298
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1736380151
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1741728154
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1760502540
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1807426588
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1871463648
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1884117700
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1886703335
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 1
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 3
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 5
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 203_cdn
+MTProto, Ramziddin_dev:        	Getting updates after deserialization...
+MTProto, Ramziddin_dev:        	Done initing authorization!
+MTProto, Ramziddin_dev:        	Starting update system
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1077712128
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1115554076
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1148551822
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1197396434
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1236802421
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1255386798
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1369931559
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1376446355
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1377073002
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1416531749
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1507101933
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1509642403
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1531369113
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1536850711
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1573175787
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1606297059
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1623748430
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1631935561
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1641384152
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1645118157
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1687319681
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1714906633
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1715065579
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1732713545
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1732811298
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1736380151
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1741728154
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1760502540
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1807426588
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1871463648
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1884117700
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1886703335
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 1
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 2_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 3
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 4_media
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 5
+DataCenterConnection, Ramziddin_dev: 	Flushing pending messages, DC 203_cdn
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 37 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 1 left
+API, Ramziddin_dev:            	MadelineProto is ready!
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.ipcState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.ipcState.php.lock...
+Server, Ramziddin_dev:         	Exception in IPC connection: Amp\Ipc\Sync\ChannelException: The channel closed unexpectedly. Did the context die? in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/ipc/lib/Sync/ChannelledStream.php:72
+Stack trace:
+#0 [internal function]: Amp\Ipc\Sync\ChannelledStream->Amp\Ipc\Sync\{closure}()
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Coroutine.php(118): Generator->send(NULL)
+#2 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): Amp\Coroutine->Amp\{closure}(NULL, NULL)
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(101): Amp\Deferred->resolve(NULL)
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Loop/NativeDriver.php(327): Amp\ByteStream\ResourceInputStream::Amp\ByteStream\{closure}('yb', Resource id #552, NULL)
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Loop/NativeDriver.php(127): Amp\Loop\NativeDriver->selectStreams(Array, Array, 0.375)
+#7 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Loop/Driver.php(138): Amp\Loop\NativeDriver->dispatch(true)
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Loop/Driver.php(72): Amp\Loop\Driver->tick()
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Loop.php(95): Amp\Loop\Driver->run()
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(294): Amp\Loop::run(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php(110): danog\MadelineProto\Tools::wait(Object(Amp\Internal\PrivatePromise))
+#12 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php(134): {closure}()
+#13 {main}
+Session, Ramziddin_dev:        	Garbage collected 2 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 3 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+GarbageCollector, Ramziddin_dev: 	gc_collect_cycles done. Cleaned memory: 1 Mb
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 41 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 41 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Garbage collected 18 incoming messages in DC 2, 20 left
+Session, Ramziddin_dev:        	Garbage collected 16 outgoing messages in DC 2, 23 left
+Session, Ramziddin_dev:        	Garbage collected 23 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 23 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 3 outgoing messages in DC 2, 36 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 36 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 41 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 43 outgoing messages in DC 2, 0 left
+MsgIdHandler, Ramziddin_dev:   	Zend hashmap reallocation done. Cleaned memory: 0.1 Mb
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+Session, Ramziddin_dev:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 2 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 36 left
+Session, Ramziddin_dev:        	Garbage collected 38 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 36 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 41 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 44 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 41 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 42 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 42 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 41 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 3 outgoing messages in DC 2, 36 left
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 36 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 44 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 40 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 38 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1077712128
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 2 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 41 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 40 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 33 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 32 outgoing messages in DC 2, 7 left
+Session, Ramziddin_dev:        	Garbage collected 9 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 7 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+Session, Ramziddin_dev:        	Garbage collected 3 outgoing messages in DC 2, 36 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 36 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 46 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 42 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session, Ramziddin_dev:        	Garbage collected 2 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 38 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 12 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 12 outgoing messages in DC 2, 26 left
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+Session, Ramziddin_dev:        	Garbage collected 26 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 26 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 4 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 10 left
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 38 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 37 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 5 incoming messages in DC 2, 0 left
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 39 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 40 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+Session, Ramziddin_dev:        	Garbage collected 37 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 37 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 35 left
+Session, Ramziddin_dev:        	Garbage collected 38 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 37 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 10 left
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 40 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 40 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 42 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 43 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 5 outgoing messages in DC 2, 36 left
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 36 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	MSGID duplicate (98513) in update feed loop channel 1249308316
+Session, Ramziddin_dev:        	Garbage collected 44 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 41 outgoing messages in DC 2, 0 left
+MsgIdHandler, Ramziddin_dev:   	Zend hashmap reallocation done. Cleaned memory: 0.1 Mb
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 41 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1458440809
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 44 outgoing messages in DC 2, 0 left
+MsgIdHandler, Ramziddin_dev:   	Zend hashmap reallocation done. Cleaned memory: 0.1 Mb
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 42 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 46 outgoing messages in DC 2, 0 left
+MsgIdHandler, Ramziddin_dev:   	Zend hashmap reallocation done. Cleaned memory: 0.1 Mb
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 2 incoming messages in DC 2, 0 left
+ReadLoop, Ramziddin_dev:       	danog\MadelineProto\NothingInTheSocketException in /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Stream/Common/BufferedRawStream.php:180
+Stack trace:
+#0 [internal function]: danog\MadelineProto\Stream\Common\BufferedRawStream->bufferReadGenerator(1)
+#1 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Coroutine.php(112): Generator->send(NULL)
+#2 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Internal/Placeholder.php(149): danog\MadelineProto\Coroutine->danog\MadelineProto\{closure}(NULL, NULL)
+#3 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Deferred.php(53): Amp\Promise@anonymous->resolve(NULL)
+#4 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/byte-stream/lib/ResourceInputStream.php(101): Amp\Deferred->resolve(NULL)
+#5 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Loop/NativeDriver.php(327): Amp\ByteStream\ResourceInputStream::Amp\ByteStream\{closure}('cw', Resource id #315, NULL)
+#6 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Loop/NativeDriver.php(127): Amp\Loop\NativeDriver->selectStreams(Array, Array, 0.461)
+#7 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Loop/Driver.php(138): Amp\Loop\NativeDriver->dispatch(true)
+#8 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Loop/Driver.php(72): Amp\Loop\Driver->tick()
+#9 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/amphp/amp/lib/Loop.php(95): Amp\Loop\Driver->run()
+#10 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Tools.php(294): Amp\Loop::run(Object(Closure))
+#11 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php(110): danog\MadelineProto\Tools::wait(Object(Amp\Internal\PrivatePromise))
+#12 /Users/ramziddinabdumominov/Documents/laravel_python_smarts_hrm_bot/vendor/danog/madelineproto/src/danog/MadelineProto/Ipc/Runner/entry.php(134): {closure}()
+#13 {main}
+ReadLoop, Ramziddin_dev:       	Got nothing in the socket in DC 1.0, reconnecting...
+Connection, Ramziddin_dev:     	Reconnecting DC 1.0
+Connection, Ramziddin_dev:     	Disconnecting from DC 1.0
+Connection, Ramziddin_dev:     	Disconnected from DC 1.0
+DataCenter, Ramziddin_dev:     	Reconnecting to DC 1 (0) from existing
+DataCenterConnection, Ramziddin_dev: 	Trying shared connection via tcp://149.154.175.54:443 main DC 1, via ipv4 using AbridgedStream => BufferedRawStream => DefaultStream (0)
+Connection, Ramziddin_dev:     	Connecting to DC 1.0
+Connection, Ramziddin_dev:     	Connected to DC 1.0!
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+DataCenter, Ramziddin_dev:     	OK!
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 7 outgoing messages in DC 2, 34 left
+Session, Ramziddin_dev:        	Garbage collected 38 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 34 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+Session, Ramziddin_dev:        	Garbage collected 3 outgoing messages in DC 2, 24 left
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 41 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 44 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 40 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 2 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 41 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 45 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 44 outgoing messages in DC 2, 0 left
+MsgIdHandler, Ramziddin_dev:   	Zend hashmap reallocation done. Cleaned memory: 0.1 Mb
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 15 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 14 outgoing messages in DC 2, 28 left
+Session, Ramziddin_dev:        	Garbage collected 30 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 28 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 9 left
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 37 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 44 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+Session, Ramziddin_dev:        	Garbage collected 45 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 43 outgoing messages in DC 2, 0 left
+MsgIdHandler, Ramziddin_dev:   	Zend hashmap reallocation done. Cleaned memory: 0.1 Mb
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 13 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 15 outgoing messages in DC 2, 25 left
+Session, Ramziddin_dev:        	Garbage collected 27 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 25 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 11 left
+Session, Ramziddin_dev:        	Garbage collected 42 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+Session, Ramziddin_dev:        	Garbage collected 42 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 41 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 32 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 33 outgoing messages in DC 2, 8 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 8 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 32 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 34 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 12 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 12 outgoing messages in DC 2, 18 left
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session, Ramziddin_dev:        	Garbage collected 28 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 27 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 28 left
+Session, Ramziddin_dev:        	Garbage collected 40 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 37 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 43 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 39 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 35 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 33 outgoing messages in DC 2, 8 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 11 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 8 outgoing messages in DC 2, 0 left
+GarbageCollector, Ramziddin_dev: 	gc_collect_cycles done. Cleaned memory: 2 Mb
+Session, Ramziddin_dev:        	Garbage collected 12 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 11 outgoing messages in DC 2, 18 left
+Session, Ramziddin_dev:        	Garbage collected 28 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 28 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 28 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 44 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 38 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 2 incoming messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 37 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 35 outgoing messages in DC 2, 5 left
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 5 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 4 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 32 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 33 outgoing messages in DC 2, 3 left
+Session, Ramziddin_dev:        	Garbage collected 12 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 36 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 32 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 36 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 32 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Garbage collected 30 incoming messages in DC 2, 4 left
+Session, Ramziddin_dev:        	Garbage collected 27 outgoing messages in DC 2, 5 left
+Session, Ramziddin_dev:        	Garbage collected 15 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 14 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 4 outgoing messages in DC 2, 28 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 45 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 37 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Can't garbage collect pong in DC 4, not handled yet!
+Session, Ramziddin_dev:        	Garbage collected 0 incoming messages in DC 4, 1 left
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 4, 1 left
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+Session, Ramziddin_dev:        	Garbage collected 35 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 32 outgoing messages in DC 2, 8 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 8 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 35 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 31 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 5 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+Session, Ramziddin_dev:        	Garbage collected 35 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 36 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 26 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 23 outgoing messages in DC 2, 9 left
+Session, Ramziddin_dev:        	Garbage collected 11 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 outgoing messages in DC 2, 8 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 8 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 6 outgoing messages in DC 2, 21 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 38 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 29 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+Session, Ramziddin_dev:        	Garbage collected 34 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 32 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 3, 1 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 37 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 31 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 35 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 31 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 8 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 8 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 35 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 32 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 12 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 2 incoming messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 14 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 11 outgoing messages in DC 2, 18 left
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 19 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 20 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 8 outgoing messages in DC 2, 2 left
+Session, Ramziddin_dev:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 19 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 37 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 30 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 6 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 13 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+Session, Ramziddin_dev:        	Garbage collected 29 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 31 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 4 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 15 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 3 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 31 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 29 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 4 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 8 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 outgoing messages in DC 2, 2 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 7 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Can't garbage collect msg_container in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Can't garbage collect rpc_result in DC 2, not handled yet!
+Session, Ramziddin_dev:        	Garbage collected 25 incoming messages in DC 2, 2 left
+Session, Ramziddin_dev:        	Garbage collected 20 outgoing messages in DC 2, 10 left
+Session, Ramziddin_dev:        	Garbage collected 13 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 12 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 6 left
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 1, 1 left
+Session, Ramziddin_dev:        	Garbage collected 13 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 11 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 outgoing messages in DC 2, 15 left
+Session, Ramziddin_dev:        	Garbage collected 25 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 23 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 6 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 37 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 30 outgoing messages in DC 2, 1 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 5 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 3 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 19 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 20 outgoing messages in DC 2, 11 left
+Session, Ramziddin_dev:        	Garbage collected 15 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 15 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 8 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 8 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop generic
+Session, Ramziddin_dev:        	Garbage collected 11 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 9 left
+Session, Ramziddin_dev:        	Garbage collected 29 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 25 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 4.0
+PingLoop, Ramziddin_dev:       	Ping DC 2.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 4, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 outgoing messages in DC 2, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 5.0
+Session, Ramziddin_dev:        	Garbage collected 0 outgoing messages in DC 5, 1 left
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 5, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 5, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updateShort) received via the socket...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 3.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 3, 0 left
+Session, Ramziddin_dev:        	Garbage collected 2 outgoing messages in DC 2, 13 left
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1778836108
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 36 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 34 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 outgoing messages in DC 2, 0 left
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+Session, Ramziddin_dev:        	Garbage collected 37 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 32 outgoing messages in DC 2, 0 left
+PingLoop, Ramziddin_dev:       	Ping DC 1.0
+Session, Ramziddin_dev:        	Garbage collected 1 incoming messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 1, 0 left
+Session, Ramziddin_dev:        	Garbage collected 1 outgoing messages in DC 2, 8 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 8 outgoing messages in DC 2, 0 left
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.safe.php.lock...
+SessionPaths, Ramziddin_dev:   	Waiting for exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+SessionPaths, Ramziddin_dev:   	Got exclusive lock of /Users/ramziddinabdumominov/Desktop/mdsession/index.madeline.lightState.php.lock...
+APIWrapper, Ramziddin_dev:     	Saved session!
+UpdateHandler, Ramziddin_dev:  	Parsing updates (updates) received via the socket...
+SeqLoop, Ramziddin_dev:        	Was fed updates of type updates...
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Resumed update feed loop channel 1249308316
+FeedLoop, Ramziddin_dev:       	Got channel too long update, getting difference...
+Session, Ramziddin_dev:        	Garbage collected 37 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 33 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 32 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 31 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 10 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 9 outgoing messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 13 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 15 outgoing messages in DC 2, 17 left
+Session, Ramziddin_dev:        	Garbage collected 19 incoming messages in DC 2, 0 left
+Session, Ramziddin_dev:        	Garbage collected 17 outgoing messages in DC 2, 0 left

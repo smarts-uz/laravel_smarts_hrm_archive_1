@@ -31,9 +31,9 @@ class ExportCommand extends Command
     public function handle()
     {
         $export = new ExportService();
-        $channel_id = 798946526;
-        $date_start = '1.11.2022';
-        $date_end = '14.11.2022';
+        $channel_id = 1244414566;
+        $date_start = '14.11.2022';
+        $date_end = '16.11.2022';
         $unix_end = strtotime($date_end == "" ? "now" : $date_end);
         $unix_start = strtotime($date_start);
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
