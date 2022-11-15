@@ -25,6 +25,18 @@ class TestBot extends EventHandler
      * @see https://docs.madelineproto.xyz/docs/DATABASE.html
      * @var array
      */
+
+    public $MadelineProto;
+
+    public function getmes () {
+        $this->MadelineProto = new API(env('SESSION_PUT'));
+        $this->MadelineProto->start();
+        $post_id = $this->MadelineProto->messages->getDiscussionMessage([
+            'peer' => -1001711427913, 'msg_id' => 45])['messages'][0]['id'];
+
+        return $post_id;
+    }
+
     protected static array $dbProperties = [
         'dataStoredOnDb' => 'array'
     ];
@@ -54,9 +66,11 @@ class TestBot extends EventHandler
      *
      * @param array $update Update
      */
-    public function onUpdateNewChannelMessage(array $update): \Generator
+    public function onUpdateNewChannelMessage(array $update)
     {
+        $this->getmes();
         return $this->onUpdateNewMessage($update);
+
     }
     /**
      * Handle updates from users.
@@ -65,22 +79,19 @@ class TestBot extends EventHandler
      *
      * @return \Generator
      */
-    public function onUpdateNewMessage(array $update): \Generator
+    public function onUpdateNewMessage(array $update)
     {
-        file_put_contents('s.json', json_encode($update));
+        file_put_contents('dis.json', json_encode($update));
         if ($update['message']['_'] === 'messageEmpty' || $update['message']['out'] ?? false) {
             return;
         }
-        $a = $this->messages->getDiscussionMessage([
-        'peer' => '-100' . '1711427913',
-        'msg_id' => 17
-        ]);
-        file_put_contents('dis.json', json_encode($update));
-        yield $this->messages->sendMessage(['peer' => $update,
+        /*$post_id = $this->MadelineProto->messages->getDiscussionMessage([
+            'peer' => -1001711427913, 'msg_id' => 41])['messages'][0]['id'];*/
+         $this->messages->sendMessage(['peer' => $update,
         'message' => $update['message']['message'],
         'reply_to_msg_id' => isset($update['message']['id']) ? $update['message']['id'] : null]);
         if (isset($update['message']['media']) && $update['message']['media']['_'] !== 'messageMediaGame') {
-            yield $this->messages->sendMedia(['peer' => $update,
+            $this->messages->sendMedia(['peer' => $update,
             'message' => $update['message']['message'],
             'media' => $update]);
         }
