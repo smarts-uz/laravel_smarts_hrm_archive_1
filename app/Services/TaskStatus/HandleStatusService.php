@@ -18,19 +18,22 @@ class HandleStatusService extends EventHandler
 
     public function onUpdateNewMessage(array $update)
     {
-        if ($update['message']['_'] === 'messageEmpty' || $update['message']['out'] ?? false) {
+        /*if ($update['message']['_'] === 'messageEmpty') {
             return;
-        }
-        $res = \json_encode($update, JSON_PRETTY_PRINT);
+        }*/
+        $res = json_encode($update, JSON_PRETTY_PRINT);
+        print_r($res);
+        file_put_contents('update.json', $res, FILE_APPEND);
+        file_put_contents('update.json', ',', FILE_APPEND);
 
         echo gettype($update."\n");
-        file_put_contents('update.json', json_encode($update, JSON_THROW_ON_ERROR));
+//        file_put_contents('update.json', json_encode($update, JSON_THROW_ON_ERROR));
         $mes = $update['message'];
-        print_r($mes."\n");
+//        print_r($mes."\n");
         $user = $mes['from_id']['user_id'];
-        print_r($user."\n");
+//        print_r($user."\n");
         $message = $mes['message'];
-        print_r($message."\n");
+//        print_r($message."\n");
 
         switch ((string)$message) {
             case 'stop madeline':
