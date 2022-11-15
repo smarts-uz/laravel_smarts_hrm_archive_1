@@ -29,9 +29,16 @@ Route::get('/telegram', function () {
 
 Route::get('/preview', function () {
 
-    $MTProto = new MTProtoService();
 
-//    $chat = $MTProto->MadelineProto->channels->getFullChannel(['channel' => -1001807426588]);
+    $MTProto = new MTProtoService();
+    $export = new \App\Services\MadelineProto\ExportService();
+
+    $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => 1244414566, 'limit' => 100]);
+//    print_r($messages);
+    $tgJson = $export->ForwardJson($messages);
+    print_r($tgJson);
+
+    //    $chat = $MTProto->MadelineProto->channels->getFullChannel(['channel' => -1001807426588]);
 //        $date = "6.1.2009 13:00+01:00";
 //        echo '<pre>';
 });
@@ -76,7 +83,7 @@ Route::get('/files', function () {
 
 });
 
-Route::get('/export', function (){
+Route::get('/export', function () {
     $date_start = '20.10.2022';
     $date = date_parse_from_format("j.n.Y H:iP", $date_start);
 

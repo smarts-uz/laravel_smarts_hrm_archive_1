@@ -2,6 +2,8 @@
 
 namespace App\Services\MadelineProto;
 
+use danog\MadelineProto\messages;
+
 class ExportService
 {
     public $MTProto;
@@ -84,7 +86,6 @@ class ExportService
 
     public function export()
     {
-
         $channel_id = readline('Enter a Chat ID: ');
         $date_start = readline('Enter start date: ');
         $date_end = readline('Enter end date: ');
@@ -101,4 +102,34 @@ class ExportService
             }
         }
     }
+
+    public function ForwardJson($messages)
+    {
+        $update = [];
+
+        foreach ($messages['messages'] as $message) {
+            $mess = [];
+            $mess['id'] = $message['id'];
+            $mess['type'] = $message['_'];
+            $mess['date'] = date("j.n.Y H:iP", $message['date']);
+            $mess['date_unixtime'] = (string)$message['date'];
+            $mess['text'] = ;
+            if (array_key_exists('media', $message)) {
+                if (array_key_exists('document', $message['media'])) {
+                    foreach ($message['media']['document']['attributes'] as $attribute) {
+
+                        if ($attribute['_'] == 'documentAttributeFilename') {
+                            $mess['file'] = 'files/' . $attribute['file_name'];
+                        }
+                        if ($attribute['_'] == 'documentAttributeAudio') {
+                            $mess['media_type'] = 'voice_message';
+                        }
+                    }
+                }
+            }
+            array_push($update, $mess);
+        }
+        return $update;
+    }
+
 }
