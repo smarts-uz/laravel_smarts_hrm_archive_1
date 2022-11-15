@@ -58,7 +58,7 @@ trait EnvatoService
                             'peer' => '-100' . env('REPORT_CHANNEL_ID'),
                             'message' => 'https://t.me/c/' . $channel_id .'/' . $item[0]['id'] . ' 404 not found']);
                     }}
-            sleep(1);
+            sleep(5);
         }
     }
 }

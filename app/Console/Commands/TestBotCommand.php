@@ -40,7 +40,7 @@ class TestBotCommand extends Command
 
     public function getPostId($start, $end) {
 
-        $channel_id = -1001852006251;
+        $channel_id = -100 . env('STATUS_CHANNEL_ID');
 
         for ($i = $start; $i <= $end; $i++) {
 
@@ -62,8 +62,8 @@ class TestBotCommand extends Command
         switch(true)
         {
             case $replies > 0:
-                $comments = $this->MadelineProto->messages->getReplies(['peer' => -1001852006251, 'msg_id'=> $id]);
-                return $comments[0];
+                $comments = $this->MadelineProto->messages->getReplies(['peer' => -100 . $channel_id, 'msg_id'=> $id]);
+                $this->confirmStatus($comments[0], $message, $id);
                 break;
             default:
             echo 'bla bla';
@@ -71,22 +71,39 @@ class TestBotCommand extends Command
         }
     }
 
-    protected function addTags($message, $id) {
-        $newMessage = str_replace(['#New', '   ' . '#New'], ['' , ''], $message);
+    public function confirmStatus ($comment, $message, $id)  {
+        switch (true) {
+            case $comment['message'] === '#Ready' &&
+            (array_key_exists('from_id', $comment) &&
+            $comment['from_id']['user_id'] === 2092452523):
+                $this->addTags($message, $id, ['#ActiveTask', '#ActiveBug', '#Rejected'], ['#NeedTests']);
+            break;
+            default:
+            echo 'bla bla';
+
+            break;
+        }
+        if (array_key_exists('from_id', $comment) && $comment['from_id']['user_id'] === 2092452523) {
+
+        }
+    }
+
+    protected function addTags($message, $id, $tags, $tag) {
+        $newMessage = str_replace($tags, [''], $message);
         if ($newMessage !== $message) {
-            $newMessage  = $newMessage . " " . '#New';
+            $newMessage  = $newMessage . " " . $tag;
             $this->MadelineProto->messages->editMessage(
-                ['peer'   => -100 .env('CHANNEL_ID'),
+                ['peer'   => -100 .env('STATUS_CHANNEL_ID'),
                     'id'      => $id,
                     'message' => $newMessage]);
         }
     }
 
-    protected function removeTags($message, $id) {
-        $newMessage = str_replace(['#New', '   ' . '#New'], ['' , ''], $message);
+    protected function removeTags($message, $id, $tags) {
+        $newMessage = str_replace($tags, [''], $message);
         if ($newMessage !== $message) {
             $this->MadelineProto->messages->editMessage(
-                ['peer'   => -100 .env('CHANNEL_ID'),
+                ['peer'   => -100 .env('STATUS_CHANNEL_ID'),
                     'id'      => $id,
                     'message' => $newMessage]);
         }

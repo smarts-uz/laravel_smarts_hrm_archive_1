@@ -29,6 +29,6 @@ class EnvatoZipVerifyCommand extends Command
     public function handle()
     {
         $verify = new VerifierService();
-        $verify->getPostId(2143, 2148);
+        $verify->getPostId(2830, 2840);
     }
 }

@@ -32,8 +32,10 @@ class TestBot extends EventHandler
         $this->MadelineProto = new API(env('SESSION_PUT'));
         $this->MadelineProto->start();
         $post_id = $this->MadelineProto->messages->getDiscussionMessage([
-            'peer' => -1001711427913, 'msg_id' => 45])['messages'][0]['id'];
-
+            'peer' => -1001711427913, 'msg_id' => 45]);
+        $post =$this->MadelineProto->messages->getMessages([
+            "channel" => -1001711427913,
+            "id" => 42]);
         return $post_id;
     }
 
@@ -68,7 +70,6 @@ class TestBot extends EventHandler
      */
     public function onUpdateNewChannelMessage(array $update)
     {
-        $this->getmes();
         return $this->onUpdateNewMessage($update);
 
     }
@@ -81,15 +82,19 @@ class TestBot extends EventHandler
      */
     public function onUpdateNewMessage(array $update)
     {
-        file_put_contents('dis.json', json_encode($update));
+
         if ($update['message']['_'] === 'messageEmpty' || $update['message']['out'] ?? false) {
             return;
         }
+        //$a = $this->getmes();
+        file_put_contents('dis.json', json_encode($update));
+        $this->messages->sendMessage(['peer' => $update,
+            'message' => $update['message']['message'],
+            'reply_to_msg_id' => isset($update['message']['id']) ? $update['message']['id'] : null]);
+        //file_put_contents('s.json', json_encode($a));
         /*$post_id = $this->MadelineProto->messages->getDiscussionMessage([
             'peer' => -1001711427913, 'msg_id' => 41])['messages'][0]['id'];*/
-         $this->messages->sendMessage(['peer' => $update,
-        'message' => $update['message']['message'],
-        'reply_to_msg_id' => isset($update['message']['id']) ? $update['message']['id'] : null]);
+
         if (isset($update['message']['media']) && $update['message']['media']['_'] !== 'messageMediaGame') {
             $this->messages->sendMedia(['peer' => $update,
             'message' => $update['message']['message'],
