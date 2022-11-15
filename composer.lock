@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "46d501df6293317c49b1b156c1b0cd76",
+    "content-hash": "c20210c12ae7b44471185cf4694dcbd7",
     "packages": [
         {
             "name": "amphp/amp",
@@ -2206,16 +2206,16 @@
         },
         {
             "name": "danog/madelineproto",
-            "version": "7.0.139",
+            "version": "7.0.141",
             "source": {
                 "type": "git",
                 "url": "https://github.com/danog/MadelineProto.git",
-                "reference": "fdfb23216de9591596614c7c094aa821ae5c6b45"
+                "reference": "67a78c9d32ed68e5735ff7cb6c74a6a980a1fb0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/danog/MadelineProto/zipball/fdfb23216de9591596614c7c094aa821ae5c6b45",
-                "reference": "fdfb23216de9591596614c7c094aa821ae5c6b45",
+                "url": "https://api.github.com/repos/danog/MadelineProto/zipball/67a78c9d32ed68e5735ff7cb6c74a6a980a1fb0e",
+                "reference": "67a78c9d32ed68e5735ff7cb6c74a6a980a1fb0e",
                 "shasum": ""
             },
             "require": {
@@ -2263,7 +2263,6 @@
                 "bamarni/composer-bin-plugin": "1.5.0",
                 "danog/phpdoc": "^0.1.7",
                 "ext-ctype": "*",
-                "phabel/phabel": "^1",
                 "phpdocumentor/reflection-docblock": "^5.2",
                 "phpunit/phpunit": "^9",
                 "roave/security-advisories": "dev-latest",
@@ -2319,7 +2318,7 @@
             ],
             "support": {
                 "issues": "https://github.com/danog/MadelineProto/issues",
-                "source": "https://github.com/danog/MadelineProto/tree/7.0.139"
+                "source": "https://github.com/danog/MadelineProto/tree/7.0.141"
             },
             "funding": [
                 {
@@ -2327,7 +2326,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-11-04T13:16:30+00:00"
+            "time": "2022-11-07T14:54:43+00:00"
         },
         {
             "name": "danog/magicalserializer",

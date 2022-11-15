@@ -18,7 +18,6 @@ class VerifierService
     public function verifier($start, $end = null)
     {
         $MTProto = new MTProtoService();
-        $envato = new EnvatoService();
 
         if ($end != null) {
             for ($i = $start; $i < $end; $i++) {

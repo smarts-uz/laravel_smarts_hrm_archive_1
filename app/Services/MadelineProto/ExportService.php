@@ -13,16 +13,27 @@ class ExportService
 
     public function getMessages($id, $start, $end)
     {
-        $messages = $this->MTProto->MadelineProto->messages->getHistory(['peer' => $id, 'limit' => 100]);
+        $messages = $this->MTProto->MadelineProto->messages->getHistory(['peer' => $id, 'offset_date'=>$end, 'limit' => 100]);
         $update = [];
         foreach ($messages['messages'] as $message) {
-            if ($message['date'] > $start && $message['date'] < $end) {
-                print_r($message['date'] . '        ' . $start);
-                print_r(PHP_EOL);
+            if ($message['date'] > (int)$start) {
                 array_push($update, $message);
             }
         }
         return $update;
+    }
+
+    public function downloadMedia($messages, $path)
+    {
+        if (!is_dir($path . 'files')) {
+            mkdir($path . 'files');
+        }
+        $path .= 'files/';
+        foreach ($messages as $message) {
+            if (array_key_exists('media', $message)) {
+                yield $this->MTProto->MadelineProto->downloadToDir($message['media'], $path . '/');
+            }
+        }
     }
 
     public function folderPath($id, $path, $date){
@@ -33,7 +44,7 @@ class ExportService
         if(!is_dir( $path . $chat['chats'][0]['title'])){
             mkdir($path . $chat['chats'][0]['title']);
         }
-        $path .= $chat['chats'][0]['title'] . '/';
+        $path .= $id . '/';
 
         //Year
         if(!is_dir($path . $date['year'])){
@@ -72,16 +83,14 @@ class ExportService
         $unix_start = strtotime($date_start);
         $unix_end = strtotime($date_end == "" ? "now" : $date_end);
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
-
         $path = $this->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Updates\\', $date);
-
-        if($date['hour'] == ""){
-            //$update = $this->getMessages($channel_id, $unix_start, $unix_start + 86400);
-            if($unix_start + 86400 <= $unix_end){
+        if ($date['hour'] == "") {
+            if ($unix_start + 86400 <= $unix_end) {
+                $update = $this->getMessages($channel_id, $unix_start, $unix_start + 86400);
+                file_put_contents($path . 'result.json', json_encode($update));
                 $unix_start += 86400;
                 print_r(gmdate("j.n.Y H:iP", $unix_start));
             }
-//            file_put_contents($path  . 'result.json', json_encode($update));
         }
     }
 }

@@ -59,7 +59,16 @@ Route::get('/test', function () {
 
 Route::get('/files', function () {
     $MTProto = new MTProtoService();
-    $MTProto->sync('D:\Smart_Software\Sync_Data\PHP\PHPython');
+
+    $history = $MTProto->MadelineProto->messages->getHistory(['peer' => 1307688882, 'offset_date'=> 1668366000, 'limit'=>100]);
+    $messages = [];
+    foreach ($history['messages'] as $message) {
+        if($message['date']>1668279600){
+            array_push($messages, $message);
+        }
+    }
+    echo '<pre>';
+    print_r($messages);
 });
 
 Route::get('/export', function (){

@@ -36,8 +36,6 @@ class EnvatoCommand extends Command
         $end = $list[1];
 
         $MTProto = new MTProtoService();
-        $envato = new EnvatoService();
-
         if ($end != null) {
             for ($i = $start; $i < $end; $i++) {
                 $line = 'https://t.me/c/' . substr(env("CHANNEL_ID"), 4) . '/' . $i;
