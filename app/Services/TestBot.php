@@ -18,13 +18,25 @@ class TestBot extends EventHandler
     /**
      * @var int|string Username or ID of bot admin
      */
-    const ADMIN = "akbarshoh8522"; // Change this
+    const ADMIN = "smartSoftware_bot"; // Change this
 
     /**
      * List of properties automatically stored in database (MySQL, Postgres, redis or memory).
      * @see https://docs.madelineproto.xyz/docs/DATABASE.html
      * @var array
      */
+
+    public $MadelineProto;
+
+    public function getmes () {
+        $this->MadelineProto = new API(env('SESSION_PUT'));
+        $this->MadelineProto->start();
+        $post_id = $this->MadelineProto->messages->getDiscussionMessage([
+            'peer' => -1001711427913, 'msg_id' => 45])['messages'][0]['id'];
+
+        return $post_id;
+    }
+
     protected static array $dbProperties = [
         'dataStoredOnDb' => 'array'
     ];
@@ -54,9 +66,11 @@ class TestBot extends EventHandler
      *
      * @param array $update Update
      */
-    public function onUpdateNewChannelMessage(array $update): \Generator
+    public function onUpdateNewChannelMessage(array $update)
     {
+        $this->getmes();
         return $this->onUpdateNewMessage($update);
+
     }
     /**
      * Handle updates from users.
@@ -65,45 +79,22 @@ class TestBot extends EventHandler
      *
      * @return \Generator
      */
-    public function onUpdateNewMessage(array $update): \Generator
+    public function onUpdateNewMessage(array $update)
     {
+        file_put_contents('dis.json', json_encode($update));
         if ($update['message']['_'] === 'messageEmpty' || $update['message']['out'] ?? false) {
             return;
         }
-
-        yield $this->messages->sendMessage(['peer' => $update,
+        /*$post_id = $this->MadelineProto->messages->getDiscussionMessage([
+            'peer' => -1001711427913, 'msg_id' => 41])['messages'][0]['id'];*/
+         $this->messages->sendMessage(['peer' => $update,
         'message' => $update['message']['message'],
         'reply_to_msg_id' => isset($update['message']['id']) ? $update['message']['id'] : null]);
         if (isset($update['message']['media']) && $update['message']['media']['_'] !== 'messageMediaGame') {
-            yield $this->messages->sendMedia(['peer' => $update, 'message' => $update['message']['message'], 'media' => $update]);
-        }
-
-        // You can also use the built-in MadelineProto MySQL async driver!
-
-        // Can be anything serializable, an array, an int, an object
-        $myData = [];
-
-        // Use the isset method to check whether some data exists in the database
-        if (yield $this->dataStoredOnDb->isset('yourKey')) {
-            // Always yield when fetching data
-            $myData = yield $this->dataStoredOnDb['yourKey'];
-        }
-        $this->dataStoredOnDb['yourKey'] = $myData + ['moreStuff' => 'yay'];
-
-        $this->dataStoredOnDb['otherKey'] = 0;
-        unset($this->dataStoredOnDb['otherKey']);
-
-        $this->logger("Count: ".(yield $this->dataStoredOnDb->count()));
-
-        // You can even use an async iterator to iterate over the data
-        $iterator = $this->dataStoredOnDb->getIterator();
-        while (yield $iterator->advance()) {
-            [$key, $value] = $iterator->getCurrent();
-            $this->logger($key);
-            $this->logger($value);
+            $this->messages->sendMedia(['peer' => $update,
+            'message' => $update['message']['message'],
+            'media' => $update]);
         }
     }
 }
-$settings = new Settings;
 
-TestBot::startAndLoop(env('SESSION_PUT') . '/index.madeline', $settings);
