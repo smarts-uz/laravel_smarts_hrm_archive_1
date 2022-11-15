@@ -42,13 +42,13 @@ class ExportCommand extends Command
                 if ($unix_start + 86400 <= $unix_end) {
                     $update = $export->getMessages($channel_id, $unix_start, $unix_start + 86400);
                     $date = date_parse_from_format("j.n.Y H", date("j.n.Y", $unix_start));
-                    $path = $export->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Export/', $date);
-                    /*if (!is_dir($path . '/files')) {
+                    $path = $export->folderPath($channel_id, '/Users/ramziddinabdumominov/Desktop/MadeLineProtoTest/test/', $date);
+                    if (!is_dir($path . '/files')) {
                         mkdir($path . '/files');
-                    }*/
+                    }
                     file_put_contents($path . 'result.json', json_encode($update));
-                    //$unix_start += 86400;
-                    //$export->downloadMedia($update, $path);
+                    $unix_start += 86400;
+                    $export->downloadMedia($update, $path);
 
                 }
             } /*else {

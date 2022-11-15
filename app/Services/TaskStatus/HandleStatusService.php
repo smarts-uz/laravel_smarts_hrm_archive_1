@@ -44,6 +44,7 @@ class HandleStatusService extends EventHandler
 //            print_r($discussion);
             $this->messages->sendMessage(['peer' => 1244414566, 'message' => json_encode($update)]);
         }
+
     }
 
     public function onUpdateNewChannelMessage(array $update)

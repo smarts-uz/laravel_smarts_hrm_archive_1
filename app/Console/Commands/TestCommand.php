@@ -34,14 +34,18 @@ class TestCommand extends Command
     {
 
         $MTProto = new MTProtoService();
-
-        /*$start = readline('Enter start position: ');
-        $end = readline('Enter end position: ');
-
-
-        $verifyZip = new VerifierService();
-
-        $verifyZip->verifier($start, $end);*/
+        $message = $MTProto->MadelineProto->messages->getHistory(['peer' => 1244414566, 'message' => ['messages']]);
+        $update = [];
+        foreach ($message['messages'] as $message) {
+            $mess = [];
+            $mess['id'] = $message['id'];
+            $mess['type'] = $message['_'];
+            $mess['date'] = date("j.n.Y H:iP", $message['date']);
+            $mess['date_unixtime'] = (string)$message['date'];
+            $mess['text'] = $message['message'];
+            array_push($update, $mess);
+        }
+        print_r($update);
 
     }
 }
