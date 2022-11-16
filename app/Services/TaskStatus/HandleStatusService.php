@@ -17,17 +17,19 @@ class HandleStatusService
 
     public $Madeline;
 
+    public $Search;
+
     public function onUpdateNewMessage(array $update)
     {
         $this->Madeline = new MTProtoService();
-        $Search = new SearchService();
+        $this->Search = new SearchService();
         $g_history = $this->Madeline->MadelineProto->messages->getHistory(["peer" => -1001851760117]);
         foreach ($g_history['messages'] as $message) {
             if (array_key_exists('reply_to', $message)) {
                 $g_post = $this->Madeline->MadelineProto->channels->getMessages(["channel" => -1001851760117, "id" => [$message["reply_to"]["reply_to_msg_id"]]]);
                 $g_post_msg = $g_post["messages"][0]["message"];
                 if (strpos($g_post_msg, "#Task")) {
-                    $ch_post_id = $Search->searchMessage(-1001715385949, $g_post_msg);
+                    $ch_post_id = $this->Search->searchMessage(-1001715385949, $g_post_msg);
                     $g_post_msg;  /* gruppadig kanal posti #task borligi */
                     $message['message'];  /* uni commenti */
                     if (array_key_exists("from_id", $g_history['messages'][0])) {
@@ -51,6 +53,7 @@ class HandleStatusService
     public function __construct($API)
     {
         $this->Madeline = new MTProtoService();
+        $this->Search = new SearchService();
     }
 
 }

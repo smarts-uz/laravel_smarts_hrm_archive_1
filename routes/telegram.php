@@ -1,5 +1,5 @@
 <?php
-/*
+
 use App\Services\ManageService;
 
 
@@ -22,6 +22,6 @@ if ($output->result->url === '') {
 }
 
 curl_close($ch);
-*/
+
 
 
