@@ -42,14 +42,19 @@ class ManageCommand extends Command
                 $g_post_msg = $g_post["messages"][0]["message"];
                 if (strpos($g_post_msg, "#Task")) {
                     $ch_post_id = $Search->searchMessage(-1001715385949, $g_post_msg);
-                    dump($g_post_msg);  /* gruppadig kanal posti #task borligi */
-                    dump($message['message']);  /* uni commenti */
-                    if ($message['message'] === '#Redy') {
-                        dump($ch_post_id); /* kanal post id */
-                        $ch_post = $Mtproto->MadelineProto->channels->getMessages(["channel" => -1001715385949, "id" => [$ch_post_id]]);
-                        dump($ch_post);
-                        $editted = $g_post_msg . "\n#NeedTests";
-                        $Mtproto->MadelineProto->messages->editMessage(["peer" => -1001715385949, "id" => $ch_post_id, "message" => $editted]);
+                    $g_post_msg;  /* gruppadig kanal posti #task borligi */
+                    $message['message'];  /* uni commenti */
+                    if (array_key_exists("from_id", $message)) {
+
+                        switch (true) {
+                            case ($message['message'] == '#Redy' && $message["from_id"]["user_id"] === 5466804391 && !strpos($g_post_msg, "#NeedTests")):
+                                $ch_post_id; /* kanal post id */
+                                $ch_post = $Mtproto->MadelineProto->channels->getMessages(["channel" => -1001715385949, "id" => [$ch_post_id]]);
+                                $ch_post;
+                                $editted = $g_post_msg . "\n#NeedTests";
+                                $Mtproto->MadelineProto->messages->editMessage(["peer" => -1001715385949, "id" => $ch_post_id, "message" => $editted]);
+                                break;
+                        }
                     }
                 }
             }
