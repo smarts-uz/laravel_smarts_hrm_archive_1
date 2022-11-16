@@ -33,10 +33,9 @@ Route::get('/preview', function () {
 
     $MTProto = new MTProtoService();
     $export = new \App\Services\MadelineProto\ExportService();
-
-    $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => 1244414566, 'limit' => 100]);
+    $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => 1244414566, 'limit' => 20]);
 //    print_r($messages);
-    $tgJson = $export->ForwardJson($messages);
+    $tgJson = $export->ForwardJson($messages['messages']);
     print_r($tgJson);
 
     //    $chat = $MTProto->MadelineProto->channels->getFullChannel(['channel' => -1001807426588]);

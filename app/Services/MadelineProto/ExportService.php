@@ -3,6 +3,7 @@
 namespace App\Services\MadelineProto;
 
 use danog\MadelineProto\messages;
+use danog\MadelineProto\MTProto;
 
 class ExportService
 {
@@ -105,19 +106,27 @@ class ExportService
 
     public function ForwardJson($messages)
     {
+        $MTProto = new MTProtoService();
         $update = [];
+        $chat = $MTProto->MadelineProto->getPwrChat(1244414566);
+        $update['name'] = $chat['first_name'];
+        if(array_key_exists('last_name', $chat)){
+            $update['last_name'] = $chat['last_name'];
+        }
+        $update['type'] = $chat['type'];
+        $update['id'] = $chat['id'];
+        $update['messages'] = [];
 
-        foreach ($messages as $message) {
+        for($i = count($messages)-1; $i>-1; $i--) {
+            $message = $messages[$i];
             $mess = [];
             $mess['id'] = $message['id'];
             $mess['type'] = $message['_'];
             $mess['date'] = date("j.n.Y H:iP", $message['date']);
             $mess['date_unixtime'] = (string)$message['date'];
-            $mess['text'] = array_key_exists('message', $message) ? $message['message'] : '';
             if (array_key_exists('media', $message)) {
                 if (array_key_exists('document', $message['media'])) {
                     foreach ($message['media']['document']['attributes'] as $attribute) {
-
                         if ($attribute['_'] == 'documentAttributeFilename') {
                             $mess['file'] = 'files/' . $attribute['file_name'];
                         }
@@ -125,9 +134,26 @@ class ExportService
                             $mess['media_type'] = 'voice_message';
                         }
                     }
+                    $mess['mime_type'] = $message['media']['document']['mime_type'];
+                }
+                if($message['media']['_']  == 'messageMediaPhoto'){
+                    $mess['photo'] = 'Photo';
                 }
             }
-            array_push($update, $mess);
+            if(array_key_exists('fwd_from',$message)){
+                if(array_key_exists('from_id', $message['fwd_from'])){
+                    $mess['forwarded_from'] = $message['fwd_from']['from_id']['user_id'];
+                }
+            }
+            if(array_key_exists('edit_date', $message)){
+                $mess['edited'] = date("j.n.Y H:iP", $message['edit_date']);
+                $mess['edited_unixtime'] = (string)$message['edit_date'];
+            }
+            if(array_key_exists('reply_to', $message)){
+                $mess['reply_to_message_id'] = $message['reply_to']['reply_to_msg_id'];
+            }
+            $mess['text'] = array_key_exists('message', $message) ? $message['message'] : '';
+            array_push($update['messages'], $mess);
         }
         return $update;
     }

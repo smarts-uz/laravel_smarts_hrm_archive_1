@@ -31,9 +31,9 @@ class ExportCommand extends Command
     public function handle()
     {
         $export = new ExportService();
-        $channel_id = 798946526;
+        $channel_id = 1244414566;
         $date_start = '1.11.2022';
-        $date_end = '14.11.2022';
+        $date_end = '15.11.2022';
         $unix_end = strtotime($date_end == "" ? "now" : $date_end);
         $unix_start = strtotime($date_start);
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
@@ -42,7 +42,7 @@ class ExportCommand extends Command
                 if ($unix_start + 86400 <= $unix_end) {
                     $update = $export->getMessages($channel_id, $unix_start, $unix_start + 86400);
                     $date = date_parse_from_format("j.n.Y H", date("j.n.Y", $unix_start));
-                    $path = $export->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Export/', $date);
+                    $path = $export->folderPath($channel_id, '/Users/ramziddinabdumominov/Desktop/MadeLineProtoTest/test\\', $date);
                     if (!is_dir($path . '/files')) {
                         mkdir($path . '/files');
                     }
@@ -70,7 +70,7 @@ class ExportCommand extends Command
                                 }
 
                             }
-                            //yield $export->MTProto->MadelineProto->downloadToDir($messa['media'], $path . '/');
+                            yield $export->MTProto->MadelineProto->downloadToDir($messa['media'], $path . '/');
                         }
                     }
 
