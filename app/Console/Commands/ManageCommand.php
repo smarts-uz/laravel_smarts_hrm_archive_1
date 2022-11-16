@@ -44,10 +44,11 @@ class ManageCommand extends Command
                     $ch_post_id = $Search->searchMessage(-1001715385949, $g_post_msg);
                     $g_post_msg;  /* gruppadig kanal posti #task borligi */
                     $message['message'];  /* uni commenti */
-                    if (array_key_exists("from_id", $message)) {
-
+                    if (array_key_exists("from_id", $g_history['messages'][0])) {
+//                        dump($g_history['messages'][0]['message']);
+//                        dump($message["from_id"]["user_id"]);
                         switch (true) {
-                            case ($message['message'] == '#Redy' && $message["from_id"]["user_id"] === 5466804391 && !strpos($g_post_msg, "#NeedTests")):
+                            case ($g_history['messages'][0]['message'] == '#Redy' && $g_history['messages'][0]["from_id"]["user_id"] == 5466804391 && !strpos($g_post_msg, "#NeedTests")):
                                 $ch_post_id; /* kanal post id */
                                 $ch_post = $Mtproto->MadelineProto->channels->getMessages(["channel" => -1001715385949, "id" => [$ch_post_id]]);
                                 $ch_post;

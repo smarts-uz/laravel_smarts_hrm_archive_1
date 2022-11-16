@@ -5,52 +5,51 @@ namespace App\Services\TaskStatus;
 
 
 use App\Services\MadelineProto\MTProtoService;
+use App\Services\SearchService;
 use danog\MadelineProto\API;
 use danog\MadelineProto\EventHandler;
 use danog\MadelineProto\Settings;
 use danog\MadelineProto\Settings\AppInfo;
 
 
-class HandleStatusService extends EventHandler
+class HandleStatusService
 {
 
     public $Madeline;
 
     public function onUpdateNewMessage(array $update)
     {
-        /*if ($update['message']['_'] === 'messageEmpty') {
-            return;
-        }*/
-        $res = json_encode($update, JSON_PRETTY_PRINT);
-        print_r($res);
-        file_put_contents('update.json', $res, FILE_APPEND);
-        file_put_contents('update.json', ',', FILE_APPEND);
-
-        echo gettype($update."\n");
-//        file_put_contents('update.json', json_encode($update, JSON_THROW_ON_ERROR));
-        $mes = $update['message'];
-//        print_r($mes."\n");
-        $user = $mes['from_id']['user_id'];
-//        print_r($user."\n");
-        $message = $mes['message'];
-//        print_r($message."\n");
-
-        switch ((string)$message) {
-            case 'stop madeline':
-                $this->Madeline->MadelineProto->stop();
-                break;
-            case 'start madeline':
-                $this->startAndLoop(env('SESSION_PUT') . '/session.madeline', $this->Madeline->settings);
-                break;
-            default:
-                $this->messages->sendMessage(['peer' => 1307688882, 'message' => $message]);
+        $this->Madeline = new MTProtoService();
+        $Search = new SearchService();
+        $g_history = $this->Madeline->MadelineProto->messages->getHistory(["peer" => -1001851760117]);
+        foreach ($g_history['messages'] as $message) {
+            if (array_key_exists('reply_to', $message)) {
+                $g_post = $this->Madeline->MadelineProto->channels->getMessages(["channel" => -1001851760117, "id" => [$message["reply_to"]["reply_to_msg_id"]]]);
+                $g_post_msg = $g_post["messages"][0]["message"];
+                if (strpos($g_post_msg, "#Task")) {
+                    $ch_post_id = $Search->searchMessage(-1001715385949, $g_post_msg);
+                    $g_post_msg;  /* gruppadig kanal posti #task borligi */
+                    $message['message'];  /* uni commenti */
+                    if (array_key_exists("from_id", $g_history['messages'][0])) {
+//                        dump($g_history['messages'][0]['message']);
+//                        dump($message["from_id"]["user_id"]);
+                        switch (true) {
+                            case ($g_history['messages'][0]['message'] == '#Redy' && $g_history['messages'][0]["from_id"]["user_id"] == 5466804391 && !strpos($g_post_msg, "#NeedTests")):
+                                $ch_post_id; /* kanal post id */
+                                $ch_post = $this->Madeline->MadelineProto->channels->getMessages(["channel" => -1001715385949, "id" => [$ch_post_id]]);
+                                $ch_post;
+                                $editted = $g_post_msg . "\n#NeedTests";
+                                $this->Madeline->MadelineProto->messages->editMessage(["peer" => -1001715385949, "id" => $ch_post_id, "message" => $editted]);
+                                break;
+                        }
+                    }
+                }
+            }
         }
-
     }
 
     public function __construct($API)
     {
-        parent::__construct($API);
         $this->Madeline = new MTProtoService();
     }
 
