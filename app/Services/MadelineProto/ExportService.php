@@ -7,14 +7,14 @@ use danog\MadelineProto\MTProto;
 
 class ExportService
 {
-    public $MTProto;
+    public MTProtoService $MTProto;
 
     public function __construct()
     {
         $this->MTProto = new MTProtoService();
     }
 
-    public function getMessages($id, $start, $end)
+    public function getMessages($id, $start, $end): array
     {
         $messages = $this->MTProto->MadelineProto->messages->getHistory(['peer' => $id, 'offset_date' => $end, 'limit' => 100]);
         $update = [];
@@ -149,6 +149,9 @@ class ExportService
                 $mess['edited'] = date("j.n.Y H:iP", $message['edit_date']);
                 $mess['edited_unixtime'] = (string)$message['edit_date'];
             }
+            $chat = $this->MTProto->MadelineProto->getPwrChat($message['peer_id']['user_id']);
+            $mess['from'] = $chat['first_name'];
+            $mess['from_id'] = $message['from_id']['user_id'];
             if(array_key_exists('reply_to', $message)){
                 $mess['reply_to_message_id'] = $message['reply_to']['reply_to_msg_id'];
             }

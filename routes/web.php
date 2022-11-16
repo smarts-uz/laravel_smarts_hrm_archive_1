@@ -1,6 +1,7 @@
 <?php
 
 use App\Services\FileSystemService;
+use App\Services\MadelineProto\ExportService;
 use App\Services\MadelineProto\MTProtoService;
 use App\Services\ManageService;
 use Illuminate\Support\Facades\Artisan;
@@ -65,22 +66,49 @@ Route::get('/test', function () {
 });
 
 Route::get('/files', function () {
-    /*$MTProto = new MTProtoService();
+    $export = new ExportService();
+    $channel_id = 1244414566;
+    $date_start = '1.11.2022';
+    $date_end = '15.11.2022';
+    print_r('salfasef');
+    $unix_end = strtotime($date_end == "" ? "now" : $date_end);
+    $unix_start = strtotime($date_start);
+    $date = date_parse_from_format("j.n.Y H:iP", $date_start);
+    while ($unix_end > $unix_start) {
+        if ($date['hour'] == "") {
+            if ($unix_start + 86400 <= $unix_end) {
+                $update = $export->getMessages($channel_id, $unix_start, $unix_start + 86400);
+                $date = date_parse_from_format("j.n.Y H", date("j.n.Y", $unix_start));
+                $path = $export->folderPath($channel_id, '/Users/ramziddinabdumominov/Desktop/MadeLineProtoTest/test/', $date);
+                if (!is_dir($path . '/files')) {
+                    mkdir($path . '/files');
+                }
+                file_put_contents($path . 'result.json', json_encode($update));
+                $telegram = $export->ForwardJson($update);
+                file_put_contents($path . 'telegram.json', json_encode($telegram));
+                $unix_start += 86400;
+                foreach ($update as $messa) {
+                    if (array_key_exists('media', $messa)) {
+                        if (array_key_exists('document', $messa['media'])) {
+                            try {
+                                foreach ($messa['media']['document']['attributes'] as $attribute) {
+                                    if ($attribute['_'] == 'documentAttributeFilename') {
+                                        $export->MTProto->MadelineProto->downloadToDir($messa['media'], $path . '/');
+                                        print_r('Downloading ' . $attribute['file_name']);
+                                        print_r(PHP_EOL);
+                                    }
+                                }
+                            } catch (\Exception $e) {
+                                print_r($e->getMessage());
+                            }
 
-    $history = $MTProto->MadelineProto->messages->getHistory(['peer' => 1307688882, 'offset_date'=> 1668366000, 'limit'=>100]);
-    $messages = [];
-    foreach ($history['messages'] as $message) {
-        if($message['date']>1668279600){
-            array_push($messages, $message);
+                        }
+//                        yield $export->MTProto->MadelineProto->downloadToDir($messa['media'], $path . '/');
+                    }
+                }
+            }
         }
     }
-    echo '<pre>';
-    print_r($messages);*/
-//    date_default_timezone_set('UTC');
-    $unix_date = 1668497340;
-    $date = date("M d Y H:i:s", $unix_date);
-    print_r($date);
-
 });
 
 Route::get('/export', function () {

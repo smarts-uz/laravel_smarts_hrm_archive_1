@@ -31,9 +31,9 @@ class ExportCommand extends Command
     public function handle()
     {
         $export = new ExportService();
-        $channel_id = 1244414566;
-        $date_start = '1.11.2022';
-        $date_end = '15.11.2022';
+        $channel_id = readline('Enter channel_id: ');
+        $date_start = readline('Enter start date: ');
+        $date_end = readline('Enter end date: ');
         $unix_end = strtotime($date_end == "" ? "now" : $date_end);
         $unix_start = strtotime($date_start);
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
@@ -42,35 +42,41 @@ class ExportCommand extends Command
                 if ($unix_start + 86400 <= $unix_end) {
                     $update = $export->getMessages($channel_id, $unix_start, $unix_start + 86400);
                     $date = date_parse_from_format("j.n.Y H", date("j.n.Y", $unix_start));
-                    $path = $export->folderPath($channel_id, '/Users/ramziddinabdumominov/Desktop/MadeLineProtoTest/test\\', $date);
+                    $path = $export->folderPath($channel_id, '/Users/ramziddinabdumominov/Desktop/MadeLineProtoTest/test/', $date);
                     if (!is_dir($path . '/files')) {
                         mkdir($path . '/files');
                     }
                     file_put_contents($path . 'result.json', json_encode($update));
                     $telegram = $export->ForwardJson($update);
-                    file_put_contents($path. 'telegram.json', json_encode($telegram));
+                    file_put_contents($path . 'telegram.json', json_encode($telegram));
                     $unix_start += 86400;
                     if (!is_dir($path . 'files')) {
                         mkdir($path . 'files');
                     }
-                    $path .= 'files/';
                     foreach ($update as $messa) {
                         if (array_key_exists('media', $messa)) {
-                            if(array_key_exists('document', $messa['media'])){
+                            if ($messa['media']['_'] =='messageMediaPhoto'){
+                                $export->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
+                            }
+                            if (array_key_exists('document', $messa['media'])) {
+                                $export->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
                                 try {
-                                    foreach ($messa['media']['document']['attributes'] as $attribute){
-                                        if($attribute['_'] == 'documentAttributeFilename'){
-                                            $export->MTProto->MadelineProto->downloadToDir($messa['media'], $path . '/');
+                                    foreach ($messa['media']['document']['attributes'] as $attribute) {
+                                        if ($attribute['_'] == 'documentAttributeFilename') {
+                                            print_r(PHP_EOL);
+                                            print_r(PHP_EOL);
                                             print_r('Downloading ' . $attribute['file_name']);
                                             print_r(PHP_EOL);
                                         }
                                     }
                                 } catch (\Exception $e) {
                                     print_r($e->getMessage());
-                                }
+                                    print_r(PHP_EOL);
 
+                                }
+                                print_r(PHP_EOL);
+                                print_r(PHP_EOL);
                             }
-                            yield $export->MTProto->MadelineProto->downloadToDir($messa['media'], $path . '/');
                         }
                     }
 
