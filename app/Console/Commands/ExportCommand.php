@@ -42,7 +42,7 @@ class ExportCommand extends Command
                 if ($unix_start + 86400 <= $unix_end) {
                     $update = $export->getMessages($channel_id, $unix_start, $unix_start + 86400);
                     $date = date_parse_from_format("j.n.Y H", date("j.n.Y", $unix_start));
-                    $path = $export->folderPath($channel_id, '/Users/ramziddinabdumominov/Desktop/MadeLineProtoTest/test/', $date);
+                    $path = $export->folderPath($channel_id, 't:\Manage\HRMApp\SmartsHRM\Portable\export/', $date);
                     if (!is_dir($path . '/files')) {
                         mkdir($path . '/files');
                     }

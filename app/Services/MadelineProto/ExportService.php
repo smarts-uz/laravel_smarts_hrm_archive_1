@@ -151,7 +151,7 @@ class ExportService
             }
             $chat = $this->MTProto->MadelineProto->getPwrChat($message['peer_id']['user_id']);
             $mess['from'] = $chat['first_name'];
-            $mess['from_id'] = $message['from_id']['user_id'];
+            $mess['from_id'] = $message['peer_id']['user_id'];
             if(array_key_exists('reply_to', $message)){
                 $mess['reply_to_message_id'] = $message['reply_to']['reply_to_msg_id'];
             }
