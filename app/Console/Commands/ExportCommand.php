@@ -47,6 +47,8 @@ class ExportCommand extends Command
                         mkdir($path . '/files');
                     }
                     file_put_contents($path . 'result.json', json_encode($update));
+                    $telegram = $export->ForwardJson($update);
+                    file_put_contents($path. 'telegram.json', json_encode($telegram));
                     $unix_start += 86400;
                     if (!is_dir($path . 'files')) {
                         mkdir($path . 'files');

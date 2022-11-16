@@ -107,13 +107,13 @@ class ExportService
     {
         $update = [];
 
-        foreach ($messages['messages'] as $message) {
+        foreach ($messages as $message) {
             $mess = [];
             $mess['id'] = $message['id'];
             $mess['type'] = $message['_'];
             $mess['date'] = date("j.n.Y H:iP", $message['date']);
             $mess['date_unixtime'] = (string)$message['date'];
-            $mess['text'] = ;
+            $mess['text'] = array_key_exists('message', $message) ? $message['message'] : '';
             if (array_key_exists('media', $message)) {
                 if (array_key_exists('document', $message['media'])) {
                     foreach ($message['media']['document']['attributes'] as $attribute) {
