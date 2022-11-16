@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Http\Controllers\Controller;
 use App\Services\MadelineProto\MTProtoService;
+use App\Services\SearchService;
 use App\Services\TaskStatus\HandleStatusService;
 use danog\MadelineProto\messages;
 use danog\MadelineProto\MTProto;
@@ -33,19 +34,25 @@ class ManageCommand extends Command
     public function handle()
     {
         $Mtproto = new MTProtoService();
-//        do {
-            $history = $Mtproto->MadelineProto->messages->getHistory(["peer" => -1001851760117]);
-        /*file_put_contents('history.json', json_encode($history, JSON_THROW_ON_ERROR), FILE_APPEND);
-        file_put_contents('history.json', ',', FILE_APPEND);
-        sleep(5);*/
-//        } while (true);
-             foreach ($history['messages'] as $message) {
-//             print_r($message);
-                if (array_key_exists('reply_to', $message)){
-                    $ch_post = $Mtproto->MadelineProto->channels->getMessages(["channel" => -1001851760117, "id" => [$message["reply_to"]["reply_to_msg_id"]]]);
-                    dump($ch_post["messages"][0]["message"]);
-                    dump($message['message']);
+        $Search = new SearchService();
+        $g_history = $Mtproto->MadelineProto->messages->getHistory(["peer" => -1001851760117]);
+        foreach ($g_history['messages'] as $message) {
+            if (array_key_exists('reply_to', $message)) {
+                $g_post = $Mtproto->MadelineProto->channels->getMessages(["channel" => -1001851760117, "id" => [$message["reply_to"]["reply_to_msg_id"]]]);
+                $g_post_msg = $g_post["messages"][0]["message"];
+                if (strpos($g_post_msg, "#Task")) {
+                    $ch_post_id = $Search->searchMessage(-1001715385949, $g_post_msg);
+                    dump($g_post_msg);  /* gruppadig kanal posti #task borligi */
+                    dump($message['message']);  /* uni commenti */
+                    if ($message['message'] === '#Redy') {
+                        dump($ch_post_id); /* kanal post id */
+                        $ch_post = $Mtproto->MadelineProto->channels->getMessages(["channel" => -1001715385949, "id" => [$ch_post_id]]);
+                        dump($ch_post);
+                        $editted = $g_post_msg . "\n#NeedTests";
+                        $Mtproto->MadelineProto->messages->editMessage(["peer" => -1001715385949, "id" => $ch_post_id, "message" => $editted]);
+                    }
                 }
             }
+        }
     }
 }
