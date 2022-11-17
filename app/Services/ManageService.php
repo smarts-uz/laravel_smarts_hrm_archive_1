@@ -30,11 +30,11 @@ class ManageService
     {
 
 
-        $bot->onCommand('start', function (Nutgram $bot) {
+        $bot->onText('/start', function (Nutgram $bot) {
             $bot->sendMessage('Tekshirmoqchi bo\'lgan useringizni idsini kiriting');
         });
 
-        $bot->onText('id {user_id}', function (Nutgram $bot, $user_id) {
+        $bot->onText('{user_id}', function (Nutgram $bot, $user_id) {
             if (is_numeric($user_id)) {
                 Cache::put('user_id', $user_id);
                 $user = $this->getUser($bot, $user_id);
@@ -43,8 +43,8 @@ class ManageService
                 } else {
                     $this->Addbutton($user);
                 }
-            } else {
-                $bot->sendMessage('bu user idsi emas, id son bo\'lishi kerak');
+            } else if ($user_id !== '/start' && $user_id !== 'Channels ❌' && $user_id !== 'Groups ❌' && $user_id !== 'All ❌'){
+                $bot->sendMessage('tushunarsiz kommanda yoki teks kiritildi');
             }
         });
 
@@ -128,8 +128,7 @@ class ManageService
                         }
                     }
                 } else {
-                    $this->error = "Adminkadan $type[$chat] qo'shilmagan";
-                    dd($type,$chat);
+                    $this->error = "Adminkadan $chats qo'shilmagan";
                     return "error";
                 }
             }
@@ -143,8 +142,6 @@ class ManageService
         if ($this->channels_id !== null) {
             foreach ($this->channels_id as $item) {
                 $bot->banChatMember($item, $user_id);
-
-
             }
             $bot->sendMessage('User deleted from channels');
 
