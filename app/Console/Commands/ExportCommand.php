@@ -14,7 +14,7 @@ class ExportCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'command:export';
+    protected $signature = 'command:export {--channelid=} {--startdate=} {--enddate=}';
 
     /**
      * The console command description.
@@ -31,77 +31,42 @@ class ExportCommand extends Command
     public function handle()
     {
         $export = new ExportService();
-        $channel_id = readline('Enter channel_id: ');
-        $date_start = readline('Enter start date: ');
-        $date_end = readline('Enter end date: ');
+        if ($this->option('channelid') == "") {
+            $channel_id = readline('Enter channel_id: ');
+        } else {
+            $channel_id = $this->option('channelid');
+        }
+        if ($this->option('startdate') == "") {
+            $date_start = readline('Enter start date: ');
+        } else {
+            $date_start = $this->option('startdate');
+        }
+        if ($this->option('enddate') == "") {
+            $date_end = readline('Enter end date: ');
+        } else {
+            $date_end = $this->option('enddate');
+        }
         $unix_end = strtotime($date_end == "" ? "now" : $date_end);
         $unix_start = strtotime($date_start);
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
+
+
         while ($unix_end > $unix_start) {
             if ($date['hour'] == "") {
                 if ($unix_start + 86400 <= $unix_end) {
-                    $update = $export->getMessages($channel_id, $unix_start, $unix_start + 86400);
                     $date = date_parse_from_format("j.n.Y H", date("j.n.Y", $unix_start));
-                    $path = $export->folderPath($channel_id, 't:\Manage\HRMApp\SmartsHRM\Portable\export/', $date);
-                    if (!is_dir($path . '/files')) {
-                        mkdir($path . '/files');
-                    }
-                    file_put_contents($path . 'result.json', json_encode($update));
-                    $telegram = $export->ForwardJson($update);
-                    file_put_contents($path . 'telegram.json', json_encode($telegram));
+                    $end = $unix_start += 86400;
+                    $export->export($channel_id, $unix_start, $end, $date);
                     $unix_start += 86400;
-                    if (!is_dir($path . 'files')) {
-                        mkdir($path . 'files');
-                    }
-                    foreach ($update as $messa) {
-                        if (array_key_exists('media', $messa)) {
-                            if ($messa['media']['_'] =='messageMediaPhoto'){
-                                $export->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
-                            }
-                            if (array_key_exists('document', $messa['media'])) {
-                                $export->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
-                                try {
-                                    foreach ($messa['media']['document']['attributes'] as $attribute) {
-                                        if ($attribute['_'] == 'documentAttributeFilename') {
-                                            print_r(PHP_EOL);
-                                            print_r(PHP_EOL);
-                                            print_r('Downloading ' . $attribute['file_name']);
-                                            print_r(PHP_EOL);
-                                        }
-                                    }
-                                } catch (\Exception $e) {
-                                    print_r($e->getMessage());
-                                    print_r(PHP_EOL);
-
-                                }
-                                print_r(PHP_EOL);
-                                print_r(PHP_EOL);
-                            }
-                        }
-                    }
-
                 }
-            } /*else {
+            } else {
                 if ($unix_start + 3600 <= $unix_end) {
-                    $unix_start += 3600;
-                    print_r(gmdate("j.n.Y H:i", $unix_start));
-
-                    $update = $export->getMessages($channel_id, $unix_start, $unix_start + 3600);
-                    print_r($update);
-                    print_r(PHP_EOL);
-                    $path = $export->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Export/', $date);
-                    /*$files = $MTProto->getFiles($update);
-                    if(!is_dir($path . '/files')){
-                        mkdir($path . '/files');
-                    }
-                    foreach ($files as $file){
-                        $MTProto->downloadMedia($update,$file, $path . '/files/');
-                    }*//*
                     $date = date_parse_from_format("j.n.Y H:i", gmdate("j.n.Y H:i", $unix_start));
-                    $path = $export->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Export/', $date);
-                    file_put_contents($path . 'result.json', json_encode($update));
+                    $end = $unix_start += 3600;
+                    $export->export($channel_id, $unix_start, $end, $date);
+                    $unix_start += 3600;
                 }
-            }*/
+            }
         }
     }
 }

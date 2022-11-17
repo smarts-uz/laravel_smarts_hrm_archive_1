@@ -15,7 +15,7 @@ class TestCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'command:test';
+    protected $signature = 'test';
 
     /**
      * The console command description.
@@ -33,8 +33,7 @@ class TestCommand extends Command
     public function handle()
     {
 
-        $MTProto = new MTProtoService();
-        $chat = $MTProto->MadelineProto->getPwrChat(1244414566);
-        print_r($chat);
+
+
     }
 }

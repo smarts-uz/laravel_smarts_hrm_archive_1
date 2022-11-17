@@ -28,19 +28,21 @@ class ExportService
 
     public function downloadMedia($messages, $path)
     {
-        print_r(111111);
-        if (!is_dir($path . 'files')) {
-            mkdir($path . 'files');
-        }
-        $path .= 'files/';
-        foreach ($messages as $message) {
-            if (array_key_exists('media', $message)) {
-                try {
-                    print_r('Downloading ' . $message['media']['document']['attributes'][0]['file_name']);
-                } catch (\Exception $e) {
-                    print_r($e->getMessage());
+        foreach ($messages as $messa) {
+            if (array_key_exists('media', $messa)) {
+                if ($messa['media']['_'] == 'messageMediaPhoto') {
+                    $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
                 }
-                yield $this->MTProto->MadelineProto->downloadToDir($message['media'], $path . '/');
+                if (array_key_exists('document', $messa['media'])) {
+                    $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
+                    foreach ($messa['media']['document']['attributes'] as $attribute) {
+                        if ($attribute['_'] == 'documentAttributeFilename') {
+                            print_r(PHP_EOL);
+                            print_r('Downloading ' . $attribute['file_name']);
+                            print_r(PHP_EOL);
+                        }
+                    }
+                }
             }
         }
     }
@@ -48,13 +50,18 @@ class ExportService
     public function folderPath($id, $path, $date)
     {
 
-        //$chat = $this->MTProto->MadelineProto->channels->getFullChannel(['channel' => $id]);
-
-        //Title
-        if (!is_dir($path . $id)) {
-            mkdir($path . $id);
+        $chat = $this->MTProto->MadelineProto->getPwrChat($id);
+        $title = '';
+        if($chat['type'] == 'supergroup' || $chat['type'] == 'channel') {
+            $title = $chat['title'];
+        }else if($chat['type'] == 'user'){
+            $title = $chat['first_name'];
         }
-        $path .= $id . '/';
+        //Title
+        if (!is_dir($path . $title)) {
+            mkdir($path . $title);
+        }
+        $path .= $title . '/';
 
         //Year
         if (!is_dir($path . $date['year'])) {
@@ -85,26 +92,27 @@ class ExportService
         return $path;
     }
 
-    public function export()
+    public function export($channel_id, $unix_start, $end, $date)
     {
-        $channel_id = readline('Enter a Chat ID: ');
-        $date_start = readline('Enter start date: ');
-        $date_end = readline('Enter end date: ');
-        $unix_start = strtotime($date_start);
-        $unix_end = strtotime($date_end == "" ? "now" : $date_end);
-        $date = date_parse_from_format("j.n.Y H:iP", $date_start);
-        $path = $this->folderPath($channel_id, 'C:\Users\Pavilion\Documents\MadelineProto\JSONs\Updates\\', $date);
-        if ($date['hour'] == "") {
-            if ($unix_start + 86400 <= $unix_end) {
-                $update = $this->getMessages($channel_id, $unix_start, $unix_start + 86400);
-                file_put_contents($path . 'result.json', json_encode($update));
-                $unix_start += 86400;
-                print_r(gmdate("j.n.Y H:iP", $unix_start));
-            }
+        $path = $this->folderPath($channel_id, setting('file-system.tg_export'), $date);
+        if(is_file($path . 'end.txt')){
+            return;
         }
+        $update = $this->getMessages($channel_id, $unix_start, $end);
+        if (!is_dir($path . '/files')) {
+            mkdir($path . '/files');
+        }
+        file_put_contents($path . 'result.json', json_encode($update));
+//                    $telegram = $export->FormatJson($update);
+//                    file_put_contents($path . 'telegram.json', json_encode($telegram));
+        if (!is_dir($path . 'files')) {
+            mkdir($path . 'files');
+        }
+        $this->downloadMedia($update, $path);
+        fopen("end.txt", "w");
     }
 
-    public function ForwardJson($messages)
+    public function FormatJson($messages)
     {
         $MTProto = new MTProtoService();
         $update = [];
@@ -122,7 +130,7 @@ class ExportService
             $mess = [];
             $mess['id'] = $message['id'];
             $mess['type'] = $message['_'];
-            $mess['date'] = date("j.n.Y H:iP", $message['date']);
+            $mess['date'] = date("Y-n-j", $message['date']) . 'T' . date("H:i:s", $message['date']);
             $mess['date_unixtime'] = (string)$message['date'];
             if (array_key_exists('media', $message)) {
                 if (array_key_exists('document', $message['media'])) {
@@ -146,17 +154,17 @@ class ExportService
                 }
             }
             if(array_key_exists('edit_date', $message)){
-                $mess['edited'] = date("j.n.Y H:iP", $message['edit_date']);
+                $mess['edited'] = date("Y-n-j", $message['edit_date']) . 'T' . date("H:i:s", $message['edit_date']);
                 $mess['edited_unixtime'] = (string)$message['edit_date'];
             }
             $chat = $this->MTProto->MadelineProto->getPwrChat($message['peer_id']['user_id']);
             $mess['from'] = $chat['first_name'];
-            $mess['from_id'] = $message['peer_id']['user_id'];
+            $mess['from_id'] = $chat['type'] . $message['peer_id']['user_id'];
             if(array_key_exists('reply_to', $message)){
                 $mess['reply_to_message_id'] = $message['reply_to']['reply_to_msg_id'];
             }
             $mess['text'] = array_key_exists('message', $message) ? $message['message'] : '';
-            array_push($update['messages'], $mess);
+            $update['messages'][] = $mess;
         }
         return $update;
     }

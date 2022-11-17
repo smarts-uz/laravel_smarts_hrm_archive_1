@@ -23,10 +23,10 @@ use TCG\Voyager\Facades\Voyager;
 Route::post('/hook', [ManageService::class, 'handle']);
 
 Route::get('/telegram', function () {
-    $filename = 'D:/ALL.url';
-    $handle = fopen($filename, "r");
-    $contents = file($filename);;
-    return $contents;
+    $MTProto = new MTProtoService();
+    $chat = $MTProto->MadelineProto->getPwrChat(-1001732713545);
+    echo '<pre>';
+    print_r($chat);
 });
 
 Route::get('/preview', function () {
