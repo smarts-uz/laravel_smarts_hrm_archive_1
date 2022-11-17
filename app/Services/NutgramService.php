@@ -14,7 +14,7 @@ class NutgramService
 
     public function __construct()
     {
-        $bot = new Nutgram(env('MANAGER_BOT_TOKEN'), ['timeout' => 60]);
+        $bot = new Nutgram(env('DROPPER_BOT_TOKEN'), ['timeout' => 60]);
         $this->bot = $bot;
         $this->file_system = new FileSystemService();
     }

@@ -5,7 +5,7 @@ use App\Services\ManageService;
 
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot".env('MANAGER_BOT_TOKEN')."/getWebhookInfo");
+curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot".env('DROPPER_BOT_TOKEN')."/getWebhookInfo");
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
