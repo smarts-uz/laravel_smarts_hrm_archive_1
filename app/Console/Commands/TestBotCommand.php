@@ -2,10 +2,10 @@
 
 namespace App\Console\Commands;
 
-use App\Services\TestBot;
 use danog\MadelineProto\API;
 use danog\MadelineProto\Settings;
 use Illuminate\Console\Command;
+use TCG\Voyager\Models\User;
 
 class TestBotCommand extends Command
 {
@@ -35,13 +35,27 @@ class TestBotCommand extends Command
     {
         $this->MadelineProto = new API(env('SESSION_PUT'));
         $this->MadelineProto->start();
-        $end = $this->MadelineProto->messages->getHistory(['peer' => -1001852006251, 'limit' => 1,])['messages'][0]['id'];
-        $this->getPostId('1', $end);
+        $dev = User::where('role_id', '=', env('DEVELOPER_ID'))->pluck('telegram_id')->all();
+        $pm = User::where('role_id', '=', env('PM_ID'))->pluck('telegram_id')->all();
+        $qa = User::where('role_id', '=', env('QA_ID'))->pluck('telegram_id')->all();
+        $this->status = [
+            '#Bug' => ['id' => $qa, 'tag' => '#ActiveBug'],
+            '#OK' => ['id' => $qa, 'tag' => '#Completed'],
+            '#Ready' => ['id' => $dev, 'tag' => '#NeedTests'],
+            '#Reject' => ['id' => $pm, 'tag' => '#Rejected'],
+            '#Accept' => ['id' => $pm, 'tag' => '#Accepted'],
+        ];
+        while (true) {
+            $end = $this->MadelineProto->messages->getHistory([
+            'peer' => -1001852006251, 'limit' => 1,])['messages'][0]['id'];
+            $this->getPostId('1', $end);
+        }
     }
+
+    public $status;
 
     public function getPostId($start, $end)
     {
-
         $channel_id = -100 . env('STATUS_CHANNEL_ID');
 
         for ($i = $start; $i <= $end; $i++) {
@@ -58,6 +72,7 @@ class TestBotCommand extends Command
             }
             sleep(1);
         }
+        sleep(60);
     }
 
     protected function getComments($channel_id, $id, $replies, $message)
@@ -68,23 +83,24 @@ class TestBotCommand extends Command
                 $this->confirmStatus($comments['messages'][0], $message, $id);
                 break;
             default:
-                echo 'bla bla';
+                $this->addTags($message, $id, '/\s#(\w+)/', '#ActiveTask');
                 break;
         }
     }
 
     public function confirmStatus($comment, $message, $id)
     {
-        $status = [
-            '#Bug' => ['id' => [781366976], 'tag' => '#ActiveBug'],
-            '#Ready' => ['id' => [2092452523], 'tag' => '#NeedTests'],
-            '#OK' => ['id' => [781366976], 'tag' => '#Completed'],
-        ];
-        foreach ($status as $key => $item) {
-            if ($comment['message'] === $key && (array_key_exists('from_id', $comment) &&
-            in_array((int)$comment['from_id']['user_id'], $item['id']))) {
+        $tag = true;
+        foreach ($this->status as $key => $item) {
+            if ($comment['message'] === $key &&
+                (array_key_exists('from_id', $comment) &&
+                    in_array((string)$comment['from_id']['user_id'], $item['id']))) {
                 $this->addTags($message, $id, '/\s#(\w+)/', $item['tag']);
+                $tag = false;
             }
+        }
+        if ($tag) {
+            $this->addTags($message, $id, '/\s#(\w+)/', '#InProcess');
         }
     }
 
