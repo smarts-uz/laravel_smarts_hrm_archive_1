@@ -30,9 +30,41 @@ class ExportService
     {
         foreach ($messages as $messa) {
             if (array_key_exists('media', $messa)) {
-                if ($messa['media']['_'] == 'messageMediaPhoto') {
-                    $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
+
+                switch ($messa['media']['_']) {
+                    case 'messageMediaDocument':
+                        if (!is_dir($path . 'files')) {
+                            mkdir($path . 'files');
+                        }
+                        $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
+                        break;
+                    case 'messageMediaPhoto':
+                        if (!is_dir($path . 'photos')) {
+                            mkdir($path . 'photos');
+                        }
+                        $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/photos/');
+
+                        break;
+                    case'messageMediaVideo':
+                        if (!is_dir($path . 'videos_files')) {
+                            mkdir($path . 'videos_files');
+                        }
+                        $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/videos_files/');
+                        break;
+                    case'messageMediaAudio':
+                        if (!is_dir($path . 'voice_messages')) {
+                            mkdir($path . 'voice_messages');
+                        }
+                        $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/videos_messages/');
+                        break;
+                    case 'documentAttributeVideo':
+                        if (!is_dir($path . 'video_files')) {
+                            mkdir($path . 'video_files');
+                        }
+                        $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/video_files/');
                 }
+
+
                 if (array_key_exists('document', $messa['media'])) {
                     $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
                     foreach ($messa['media']['document']['attributes'] as $attribute) {
@@ -52,9 +84,9 @@ class ExportService
 
         $chat = $this->MTProto->MadelineProto->getPwrChat($id);
         $title = '';
-        if($chat['type'] == 'supergroup' || $chat['type'] == 'channel') {
+        if ($chat['type'] == 'supergroup' || $chat['type'] == 'channel') {
             $title = $chat['title'];
-        }else if($chat['type'] == 'user'){
+        } else if ($chat['type'] == 'user') {
             $title = $chat['first_name'];
         }
         //Title
@@ -89,13 +121,14 @@ class ExportService
             }
             $path .= $date['hour'] . '/';
         }
+
         return $path;
     }
 
     public function export($channel_id, $unix_start, $end, $date)
     {
         $path = $this->folderPath($channel_id, setting('file-system.tg_export'), $date);
-        if(is_file($path . 'end.txt')){
+        if (is_file($path . 'end.txt')) {
             return;
         }
         $update = $this->getMessages($channel_id, $unix_start, $end);
@@ -118,14 +151,14 @@ class ExportService
         $update = [];
         $chat = $MTProto->MadelineProto->getPwrChat(1244414566);
         $update['name'] = $chat['first_name'];
-        if(array_key_exists('last_name', $chat)){
+        if (array_key_exists('last_name', $chat)) {
             $update['last_name'] = $chat['last_name'];
         }
         $update['type'] = $chat['type'];
         $update['id'] = $chat['id'];
         $update['messages'] = [];
 
-        for($i = count($messages)-1; $i>-1; $i--) {
+        for ($i = count($messages) - 1; $i > -1; $i--) {
             $message = $messages[$i];
             $mess = [];
             $mess['id'] = $message['id'];
@@ -144,23 +177,23 @@ class ExportService
                     }
                     $mess['mime_type'] = $message['media']['document']['mime_type'];
                 }
-                if($message['media']['_']  == 'messageMediaPhoto'){
+                if ($message['media']['_'] == 'messageMediaPhoto') {
                     $mess['photo'] = 'Photo';
                 }
             }
-            if(array_key_exists('fwd_from',$message)){
-                if(array_key_exists('from_id', $message['fwd_from'])){
+            if (array_key_exists('fwd_from', $message)) {
+                if (array_key_exists('from_id', $message['fwd_from'])) {
                     $mess['forwarded_from'] = $message['fwd_from']['from_id']['user_id'];
                 }
             }
-            if(array_key_exists('edit_date', $message)){
+            if (array_key_exists('edit_date', $message)) {
                 $mess['edited'] = date("Y-n-j", $message['edit_date']) . 'T' . date("H:i:s", $message['edit_date']);
                 $mess['edited_unixtime'] = (string)$message['edit_date'];
             }
             $chat = $this->MTProto->MadelineProto->getPwrChat($message['peer_id']['user_id']);
             $mess['from'] = $chat['first_name'];
             $mess['from_id'] = $chat['type'] . $message['peer_id']['user_id'];
-            if(array_key_exists('reply_to', $message)){
+            if (array_key_exists('reply_to', $message)) {
                 $mess['reply_to_message_id'] = $message['reply_to']['reply_to_msg_id'];
             }
             $mess['text'] = array_key_exists('message', $message) ? $message['message'] : '';
