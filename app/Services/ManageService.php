@@ -24,6 +24,8 @@ class ManageService
 
     public $cache;
 
+    public $error;
+
     public function handle(Nutgram $bot)
     {
 
@@ -36,50 +38,54 @@ class ManageService
             if (is_numeric($user_id)) {
                 Cache::put('user_id', $user_id);
                 $user = $this->getUser($bot, $user_id);
-                $this->Addbutton($user);
+                if ($user === 'error') {
+                    $bot->sendMessage($this->error);
+                } else {
+                    $this->Addbutton($user);
+                }
             } else {
                 $bot->sendMessage('bu user idsi emas, id son bo\'lishi kerak');
             }
         });
 
         $bot->onText('Channels ❌', function (Nutgram $bot) {
-            if (Cache::get('user_id') !== null){
+            if (Cache::get('user_id') !== null) {
                 $user_id = Cache::get('user_id');
-                $this->delFromChannel($bot,$user_id);
-            }else{
+                $this->delFromChannel($bot, $user_id);
+            } else {
                 $bot->sendMessage('The first enter user id, please!');
             }
         });
 
         $bot->onText('Groups ❌', function (Nutgram $bot) {
-            if (Cache::get('user_id') !== null){
+            if (Cache::get('user_id') !== null) {
                 $user_id = Cache::get('user_id');
                 $this->delFromGroup($bot, $user_id);
-            }else{
+            } else {
                 $bot->sendMessage('The first enter user id, please!');
             }
         });
 
         $bot->onText('All ❌', function (Nutgram $bot) {
-            if (Cache::get('user_id') !== null){
+            if (Cache::get('user_id') !== null) {
                 $user_id = Cache::get('user_id');
-                $this->delFromChannel($bot,$user_id);
+                $this->delFromChannel($bot, $user_id);
                 $this->delFromGroup($bot, $user_id);
-            }else{
+            } else {
                 $bot->sendMessage('The first enter user id, please!');
             }
         });
 
         $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot".env('DROPPER_BOT_TOKEN')."/getWebhookInfo");
+        curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot" . env('DROPPER_BOT_TOKEN') . "/getWebhookInfo");
 
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
         $output = curl_exec($ch);
         $output = json_decode($output);
         if ($output->result->url !== '') {
-            echo $output->result->url."\n";
+            echo $output->result->url . "\n";
             $bot->run();
         }
 
@@ -92,7 +98,7 @@ class ManageService
         $groups = setting('site.tg_group');
         $channels_arr = explode(" ", $channels);
         $groups_arr = explode(" ", $groups);
-
+//        dd(empty($channels_arr));
         return [
             "channels" => $channels_arr,
             "groups" => $groups_arr,
@@ -105,30 +111,38 @@ class ManageService
         foreach ($list as $chats => $type) {
 
             foreach ($type as $chat => $key) {
-                $member = $bot->getChatMember((int)$key, $user);
-                if ($member->status === 'member' || $member->status === 'creator') {
-                    $title = $bot->getChat($key)->title;
-                    $invite_link = $bot->getChat($key)->invite_link;
-                    if ($chats === 'channels'){
-                        $this->channels_id[] = $key;
-                        $this->channels_title[] = $title;
-                        $this->channels_invite_link[] = $invite_link;
-                    }else{
-                        $this->groups_id[] = $key;
-                        $this->groups_title[] = $title;
-                        $this->groups_invite_link[] = $invite_link;
+                if ($key) {
+                    $member = $bot->getChatMember((int)$key, $user);
+
+                    if ($member->status === 'member' || $member->status === 'creator') {
+                        $title = $bot->getChat($key)->title;
+                        $invite_link = $bot->getChat($key)->invite_link;
+                        if ($chats === 'channels') {
+                            $this->channels_id[] = $key;
+                            $this->channels_title[] = $title;
+                            $this->channels_invite_link[] = $invite_link;
+                        } else {
+                            $this->groups_id[] = $key;
+                            $this->groups_title[] = $title;
+                            $this->groups_invite_link[] = $invite_link;
+                        }
                     }
+                } else {
+                    $this->error = "Adminkadan $type[$chat] qo'shilmagan";
+                    dd($type,$chat);
+                    return "error";
                 }
             }
         }
         return $bot;
     }
 
-    public function delFromChannel(Nutgram $bot, $user_id){
-        $this->getUser($bot,$user_id);
-        if ($this->channels_id !== null){
+    public function delFromChannel(Nutgram $bot, $user_id)
+    {
+        $this->getUser($bot, $user_id);
+        if ($this->channels_id !== null) {
             foreach ($this->channels_id as $item) {
-                $bot->banChatMember($item,$user_id);
+                $bot->banChatMember($item, $user_id);
 
 
             }
@@ -136,24 +150,25 @@ class ManageService
 
             $this->channels_title = null;
             $this->groups_title = null;
-        }else{
+        } else {
             $bot->sendMessage('The user does not exist on any channel');
         }
 
     }
 
-    public function delFromGroup(Nutgram $bot, $user_id){
-        $this->getUser($bot,$user_id);
-        if ($this->groups_id !== null){
+    public function delFromGroup(Nutgram $bot, $user_id)
+    {
+        $this->getUser($bot, $user_id);
+        if ($this->groups_id !== null) {
             foreach ($this->groups_id as $item) {
-                $bot->banChatMember($item,$user_id);
+                $bot->banChatMember($item, $user_id);
 
             }
             $bot->sendMessage('User deleted from groups');
 
             $this->channels_title = null;
             $this->groups_title = null;
-        }else{
+        } else {
             $bot->sendMessage('The user does not exist on any group');
         }
 
@@ -163,15 +178,15 @@ class ManageService
     {
         $str = '';
         if ($this->channels_title !== null) {
-            $str .= "Channels"."\n"."\n";
+            $str .= "Channels" . "\n" . "\n";
             for ($i = 0, $iMax = count($this->channels_title); $i < $iMax; $i++) {
                 $str .= $i + 1 . '. ' . $this->channels_title[$i] . "  " . $this->channels_invite_link[$i] . "\n";
             }
         }
-        $str .= '___________________________________________' . "\n". "\n";
+        $str .= '___________________________________________' . "\n" . "\n";
 
         if ($this->groups_title !== null) {
-            $str .= "Groups"."\n"."\n";
+            $str .= "Groups" . "\n" . "\n";
             for ($i = 0, $iMax = count($this->groups_title); $i < $iMax; $i++) {
                 $str .= $i + 1 . '. ' . $this->groups_title[$i] . "  " . $this->groups_invite_link[$i] . "\n";
             }
