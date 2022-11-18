@@ -1,10 +1,5 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="command:export --channel:35436346346 --startdate:sfg" type="PhpLocalRunConfigurationType" factoryName="PHP Console" singleton="false" path="$PROJECT_DIR$/artisan" scriptParameters="command:export --channel:35436346346 --startdate:sfga --arg">
-    <CommandLine>
-      <PhpTestInterpreterSettings>
-        <option name="interpreterName" value="PHP 8_0" />
-      </PhpTestInterpreterSettings>
-    </CommandLine>
     <method v="2" />
   </configuration>
 </component>

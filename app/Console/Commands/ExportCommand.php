@@ -6,6 +6,8 @@ namespace App\Console\Commands;
 use App\Services\MadelineProto\ExportService;
 use App\Services\MadelineProto\MTProtoService;
 use Illuminate\Console\Command;
+use danog\MadelineProto\Settings\Logger as LoggerSettings;
+use danog\MadelineProto\Logger;
 
 class ExportCommand extends Command
 {
@@ -31,6 +33,12 @@ class ExportCommand extends Command
     public function handle()
     {
         $export = new ExportService();
+        /*$export->MTProto->MadelineProto->updateSettings((new LoggerSettings())
+            ->setType(Logger::NO_LOGGER)
+            ->setLevel(Logger::LEVEL_FATAL)
+            ->setExtra('/dev/null')
+            ->setMaxSize(0)
+        );*/
         if ($this->option('channelid') == "") {
             $channel_id = readline('Enter channel_id: ');
         } else {
@@ -49,19 +57,26 @@ class ExportCommand extends Command
         $unix_end = strtotime($date_end == "" ? "now" : $date_end);
         $unix_start = strtotime($date_start);
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
-
+        $max = $date['hour'] == "" ? ($unix_end - $unix_start) / 86400 : ($unix_end - $unix_start) / 3600;
+        $progressbar = $this->output->createProgressBar((int)$max);
+        $progressbar->start();
         while ($unix_end > $unix_start) {
             if ($date['hour'] == "") {
                 if ($unix_start + 86400 <= $unix_end) {
+
                     $date = date_parse_from_format("j.n.Y H", date("j.n.Y", $unix_start));
-                    $export->export($channel_id, $unix_start, $unix_start+86400, $date);
+                    $end = $unix_start + 86400;
+                    $export->export($channel_id, $unix_start, $end, $date);
                     $unix_start += 86400;
+                    $progressbar->advance(1);
                 }
             } else {
                 if ($unix_start + 3600 <= $unix_end) {
                     $date = date_parse_from_format("j.n.Y H:i", gmdate("j.n.Y H:i", $unix_start));
-                    $export->export($channel_id, $unix_start, $unix_start+3600, $date);
+                    $end = $unix_start + 3600;
+                    $export->export($channel_id, $unix_start, $end, $date);
                     $unix_start += 3600;
+                    $progressbar->advance(1);
                 }
             }
         }

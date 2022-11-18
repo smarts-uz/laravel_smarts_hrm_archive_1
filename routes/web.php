@@ -24,24 +24,30 @@ Route::post('/hook', [ManageService::class, 'handle']);
 
 Route::get('/telegram', function () {
     $MTProto = new MTProtoService();
-    $chat = $MTProto->MadelineProto->getPwrChat(-1001732713545);
+    $chat = $MTProto->MadelineProto->getPwrChat(5305886229);
     echo '<pre>';
     print_r($chat);
 });
 
 Route::get('/preview', function () {
-
-
     $MTProto = new MTProtoService();
-    $export = new \App\Services\MadelineProto\ExportService();
-    $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => 1244414566, 'limit' => 20]);
-//    print_r($messages);
-    $tgJson = $export->ForwardJson($messages['messages']);
-    print_r($tgJson);
+    $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => -1001807426588, 'limit' => 50]);
+    echo '<pre>';
+    print_r($messages);
+});
 
-    //    $chat = $MTProto->MadelineProto->channels->getFullChannel(['channel' => -1001807426588]);
-//        $date = "6.1.2009 13:00+01:00";
-//        echo '<pre>';
+Route::get('/private', function (){
+    $MTProto = new MTProtoService();
+    $chat = $MTProto->MadelineProto->messages->getHistory(['peer' => 798946526, 'limit' => 50]);
+    echo '<pre>';
+    print_r($chat);
+});
+
+Route::get('/group', function () {
+    $MTProto = new MTProtoService();
+    $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => -1001732713545, 'limit' => 50, 'offset_date'=>1668106800]);
+    echo '<pre>';
+    print_r($messages['messages']);
 });
 
 Route::get('/test', function () {
@@ -55,11 +61,9 @@ Route::get('/test', function () {
         $titles = [];
         $file_system->syncSubFolder($path, $file, $titles);
         if (count(explode(' | ', $file[0])) > 1 && (int)$file[1] != 0) {
-            $getUrl = exec('D:\Nutgram_Sync_Components\venv\Scripts\python.exe D:\Nutgram_Sync_Components\search.py "' . (string)$file[1] . '::' . $file[0] . '"');
             if ($getUrl === "Message not Found") {
                 $bot->sendMessage($file[0], ['chat_id' => $file[1]]);
-                $getUrl = exec('D:\Nutgram_Sync_Components\venv\Scripts\python.exe D:\Nutgram_Sync_Components\search.py "' . (string)$file[1] . '::' . $file[0] . '"');
-            }
+             }
             $file_system->createUrlFile($path, (string)$getUrl);
         }
     }
@@ -114,7 +118,6 @@ Route::get('/files', function () {
 Route::get('/export', function () {
     $date_start = '20.10.2022';
     $date = date_parse_from_format("j.n.Y H:iP", $date_start);
-
     print_r($date['year']);
 });
 

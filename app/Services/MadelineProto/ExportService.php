@@ -136,13 +136,13 @@ class ExportService
             mkdir($path . '/files');
         }
         file_put_contents($path . 'result.json', json_encode($update));
-//                    $telegram = $export->FormatJson($update);
-//                    file_put_contents($path . 'telegram.json', json_encode($telegram));
+        $telegram = $this->FormatJson($update);
+        file_put_contents($path . 'telegram.json', json_encode($telegram));
         if (!is_dir($path . 'files')) {
             mkdir($path . 'files');
         }
         $this->downloadMedia($update, $path);
-        fopen("end.txt", "w");
+        fopen($path . "end.txt", "w");
     }
 
     public function FormatJson($messages)
@@ -183,16 +183,22 @@ class ExportService
             }
             if (array_key_exists('fwd_from', $message)) {
                 if (array_key_exists('from_id', $message['fwd_from'])) {
-                    $mess['forwarded_from'] = $message['fwd_from']['from_id']['user_id'];
+                    $mess['forwarded_from'] = $message['fwd_from']['from_id'][array_key_exists('user_id', $message['fwd_from']['from_id']) ? 'user_id' : 'channel_id'];
                 }
             }
             if (array_key_exists('edit_date', $message)) {
                 $mess['edited'] = date("Y-n-j", $message['edit_date']) . 'T' . date("H:i:s", $message['edit_date']);
                 $mess['edited_unixtime'] = (string)$message['edit_date'];
             }
-            $chat = $this->MTProto->MadelineProto->getPwrChat($message['peer_id']['user_id']);
-            $mess['from'] = $chat['first_name'];
-            $mess['from_id'] = $chat['type'] . $message['peer_id']['user_id'];
+            if (array_key_exists('from_id', $message)) {
+                $chat = $this->MTProto->MadelineProto->getPwrChat($message['from_id']['user_id']);
+                $mess['from'] = $chat['first_name'];
+                $mess['from_id'] = $chat['type'] . $message['from_id']['user_id'];
+            } else {
+                $chat = $this->MTProto->MadelineProto->getPwrChat($message['peer_id'][array_key_exists('channel_id', $message['peer_id']) ? 'channel_id' : 'user_id']);
+                $mess['from'] = $chat[array_key_exists('title', $chat) ? 'title' : 'first_name'];
+                $mess['from_id'] = $chat['type'] . $message['peer_id'][array_key_exists('channel_id', $message['peer_id']) ? 'channel_id' : 'user_id'];
+            }
             if (array_key_exists('reply_to', $message)) {
                 $mess['reply_to_message_id'] = $message['reply_to']['reply_to_msg_id'];
             }

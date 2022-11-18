@@ -44,7 +44,6 @@ class NutgramCommand extends Command
 
             switch (strtolower($text)) {
                 case 'ok':
-                    print_r($qa);
                     if (in_array((string)$bot->update()->message->from->id, $qa)) {
                         $bot->editMessageText((string)$bot->update()->message->text . "\r\n\r\n#Completed", ['chat_id' => $bot->update()->message->reply_to_message->sender_chat->id, 'message_id' => $bot->update()->message->forward_from_message_id]);
                     } else {
