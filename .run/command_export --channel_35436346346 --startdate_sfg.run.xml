@@ -1,5 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="command:export --channel:35436346346 --startdate:sfg" type="PhpLocalRunConfigurationType" factoryName="PHP Console" singleton="false" path="$PROJECT_DIR$/artisan" scriptParameters="command:export --channel:35436346346 --startdate:sfga --arg">
-    <method v="2" />
-  </configuration>
-</component>

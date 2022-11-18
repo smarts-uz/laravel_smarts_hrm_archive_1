@@ -31,7 +31,6 @@ class ExportService
     {
         foreach ($messages as $messa) {
             if (array_key_exists('media', $messa)) {
-
                 switch ($messa['media']['_']) {
                     case 'messageMediaDocument':
                         foreach ($messa['media']['document']['attributes'] as $attribute) {
@@ -40,31 +39,25 @@ class ExportService
                                     if (!is_dir($path . 'rounded_video_messages')) {
                                         mkdir($path . 'rounded_video_messages');
                                     }
-                                    $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/rounded_video_messages/');
+                                    $this->MTProto->MadelineProto->downloadToDir($messa['media'], $path . 'rounded_video_messages/');
                                 } else {
                                     if (!is_dir($path . 'videos_files')) {
                                         mkdir($path . 'videos_files');
                                     }
-                                    $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/videos_files/');
+                                    $this->MTProto->MadelineProto->downloadToDir($messa['media'], $path . 'videos_files/');
                                 }
                                 break;
-                            }
-                            if ($attribute['_'] == 'documentAttributeAudio') {
+                            }else if ($attribute['_'] == 'documentAttributeAudio') {
                                 if (!is_dir($path . 'voice_messages')) {
                                     mkdir($path . 'voice_messages');
                                 }
-                                $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/voice_messages/');
+                                $this->MTProto->MadelineProto->downloadToDir($messa['media'], $path . 'voice_messages/');
                                 break;
-                            }
-                            if($attribute['_'] == 'documentAttributeFilename'){
-                                $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
-                                foreach ($messa['media']['document']['attributes'] as $attribute) {
-                                    if ($attribute['_'] == 'documentAttributeFilename') {
-                                        print_r(PHP_EOL);
-                                        print_r('Downloading ' . $attribute['file_name']);
-                                        print_r(PHP_EOL);
-                                    }
+                            }else if($attribute['_'] == 'documentAttributeFilename'){
+                                if (!is_dir($path . 'files')) {
+                                    mkdir($path . 'files');
                                 }
+                                $this->MTProto->MadelineProto->downloadToDir($messa['media'], $path . 'files/');
                             }
                         }
                         break;
@@ -72,7 +65,7 @@ class ExportService
                         if (!is_dir($path . 'photos')) {
                             mkdir($path . 'photos');
                         }
-                        $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/photos/');
+                        $this->MTProto->MadelineProto->downloadToDir($messa['media'], $path . 'photos/');
                         break;
                 }
             }
@@ -133,21 +126,23 @@ class ExportService
         }
         $update = $this->getMessages($channel_id, $unix_start, $end);
         file_put_contents($path . 'result.json', json_encode($update));
-        $telegram = $this->FormatJson($update);
+        $telegram = $this->FormatJson($channel_id, $update);
         file_put_contents($path . 'telegram.json', json_encode($telegram));
         $this->downloadMedia($update, $path);
         fopen($path . "end.txt", "w");
     }
 
-    public function FormatJson($messages)
+    public function FormatJson($id,$messages)
     {
-        $MTProto = new MTProtoService();
         $update = [];
-        $chat = $MTProto->MadelineProto->getPwrChat(1244414566);
-        $update['name'] = $chat['first_name'];
-        if (array_key_exists('last_name', $chat)) {
-            $update['last_name'] = $chat['last_name'];
+        $chat = $this->MTProto->MadelineProto->getPwrChat($id);
+
+        if($chat['type'] == 'user'){
+            $mess['name'] = $chat['first_name'];
+        }else{
+            $mess['name'] = $chat['title'];
         }
+
         $update['type'] = $chat['type'];
         $update['id'] = $chat['id'];
         $update['messages'] = [];
@@ -185,11 +180,18 @@ class ExportService
                 $mess['edited_unixtime'] = (string)$message['edit_date'];
             }
             if (array_key_exists('from_id', $message)) {
-                $chat = $this->MTProto->MadelineProto->getPwrChat($message['from_id']['user_id']);
-                $mess['from'] = $chat['first_name'];
-                $mess['from_id'] = $chat['type'] . $message['from_id']['user_id'];
+                if(array_key_exists('user_id', $message['from_id'])){
+                    $chat = $this->MTProto->MadelineProto->getPwrChat($message['from_id']['user_id']);
+                    $mess['from'] = $chat['first_name'];
+                    $mess['from_id'] = $chat['type'] . $message['from_id']['user_id'];
+                }else{
+                    $chat = $this->MTProto->MadelineProto->getPwrChat('-100' . $message['from_id']['channel_id']);
+                    $mess['from'] = $chat['title'];
+                    $mess['from_id'] = $chat['type'] . $message['from_id']['channel_id'];
+                }
             } else {
-                $chat = $this->MTProto->MadelineProto->getPwrChat($message['peer_id'][array_key_exists('channel_id', $message['peer_id']) ? 'channel_id' : 'user_id']);
+
+                $chat = $this->MTProto->MadelineProto->getPwrChat(array_key_exists('channel_id', $message['peer_id']) ? '-100' . $message['peer_id']['channel_id'] : $message['peer_id']['user_id']);
                 $mess['from'] = $chat[array_key_exists('title', $chat) ? 'title' : 'first_name'];
                 $mess['from_id'] = $chat['type'] . $message['peer_id'][array_key_exists('channel_id', $message['peer_id']) ? 'channel_id' : 'user_id'];
             }

@@ -6,6 +6,8 @@ use App\Services\TaskStatus\HandleStatusService;
 use danog\MadelineProto\API;
 use danog\MadelineProto\Settings;
 use danog\MadelineProto\Settings\AppInfo;
+use danog\MadelineProto\Logger;
+use danog\MadelineProto\Settings\Logger as LoggerSettings;
 
 class MTProtoService
 {
@@ -15,8 +17,13 @@ class MTProtoService
     public function __construct()
     {
         $this->settings = new Settings;
-//        $this->settings->setAppInfo((new AppInfo)->setApiHash('d9486a4abc9bb65e48a963bc93e383b5')->setApiId(11982879));
         $this->MadelineProto = new API(env('SESSION_PUT') . '/index.madeline', $this->settings);
+        $this->MadelineProto->updateSettings((new LoggerSettings())
+            ->setType(Logger::LOGGER_FILE)
+            ->setLevel(Logger::LEVEL_FATAL)
+            ->setExtra('/dev/null')
+            ->setMaxSize(0)
+        );
         $this->MadelineProto->start();
     }
 

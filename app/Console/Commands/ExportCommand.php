@@ -33,12 +33,6 @@ class ExportCommand extends Command
     public function handle()
     {
         $export = new ExportService();
-        /*$export->MTProto->MadelineProto->updateSettings((new LoggerSettings())
-            ->setType(Logger::NO_LOGGER)
-            ->setLevel(Logger::LEVEL_FATAL)
-            ->setExtra('/dev/null')
-            ->setMaxSize(0)
-        );*/
         if ($this->option('channelid') == "") {
             $channel_id = readline('Enter channel_id: ');
         } else {
@@ -60,7 +54,7 @@ class ExportCommand extends Command
         $max = $date['hour'] == "" ? ($unix_end - $unix_start) / 86400 : ($unix_end - $unix_start) / 3600;
         $progressbar = $this->output->createProgressBar((int)$max);
         $progressbar->start();
-        while ($unix_end >= $unix_start) {
+        while ($unix_end > $unix_start) {
             if ($date['hour'] == "") {
                 if ($unix_start + 86400 <= $unix_end) {
 
@@ -69,6 +63,7 @@ class ExportCommand extends Command
                     $export->export($channel_id, $unix_start, $end, $date);
                     $unix_start += 86400;
                     $progressbar->advance(1);
+
                 }
             } else {
                 if ($unix_start + 3600 <= $unix_end) {
@@ -77,9 +72,14 @@ class ExportCommand extends Command
                     $export->export($channel_id, $unix_start, $end, $date);
                     $unix_start += 3600;
                     $progressbar->advance(1);
+
                 }
             }
         }
+        print_r(PHP_EOL);
+        print_r(PHP_EOL);
+        print_r('Export finished successfully.');
+        print_r(PHP_EOL);
         $export->MTProto->MadelineProto->stop();
     }
 

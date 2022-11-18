@@ -42,10 +42,12 @@ class SyncService
         foreach ($to_st as $item) {
             foreach ($comments as $comment) {
                 if (array_key_exists('media', $comment)) {
-                    foreach ($comment['media']['document']['attributes'] as $att) {
-                        if ($att['_'] == 'documentAttributeFilename') {
-                            if ($att['file_name'] == $item) {
-                                $MTProto->MadelineProto->downloadToDir($comment['media'], $path . '/');
+                    if(array_key_exists('document', $comment['media'])){
+                        foreach ($comment['media']['document']['attributes'] as $att) {
+                            if ($att['_'] == 'documentAttributeFilename') {
+                                if ($att['file_name'] == $item) {
+                                    $MTProto->MadelineProto->downloadToDir($comment['media'], $path . '/');
+                                }
                             }
                         }
                     }
