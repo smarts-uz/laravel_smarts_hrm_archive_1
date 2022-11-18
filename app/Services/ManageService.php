@@ -31,20 +31,21 @@ class ManageService
 
 
         $bot->onText('/start', function (Nutgram $bot) {
-            $bot->sendMessage('Tekshirmoqchi bo\'lgan useringizni idsini kiriting');
+            $bot->sendMessage('Enter the id of the user you want to verify');
         });
 
         $bot->onText('{user_id}', function (Nutgram $bot, $user_id) {
             if (is_numeric($user_id)) {
                 Cache::put('user_id', $user_id);
                 $user = $this->getUser($bot, $user_id);
+
                 if ($user === 'error') {
                     $bot->sendMessage($this->error);
                 } else {
                     $this->Addbutton($user);
                 }
-            } else if ($user_id !== '/start' && $user_id !== 'Channels ❌' && $user_id !== 'Groups ❌' && $user_id !== 'All ❌'){
-                $bot->sendMessage('tushunarsiz kommanda yoki teks kiritildi');
+            } else if ($user_id !== '/start' && $user_id !== 'Channels ❌' && $user_id !== 'Groups ❌' && $user_id !== 'All ❌') {
+                $bot->sendMessage('I didn\'t understand you, please enter user id');
             }
         });
 
@@ -76,6 +77,11 @@ class ManageService
             }
         });
 
+        $bot->onException(function (Nutgram $bot, \Throwable $exception) {
+            echo $exception->getMessage();
+            $bot->sendMessage($exception->getMessage());
+        });
+
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot" . env('DROPPER_BOT_TOKEN') . "/getWebhookInfo");
@@ -98,7 +104,6 @@ class ManageService
         $groups = setting('site.tg_group');
         $channels_arr = explode(" ", $channels);
         $groups_arr = explode(" ", $groups);
-//        dd(empty($channels_arr));
         return [
             "channels" => $channels_arr,
             "groups" => $groups_arr,
@@ -128,7 +133,7 @@ class ManageService
                         }
                     }
                 } else {
-                    $this->error = "Adminkadan $chats qo'shilmagan";
+                    $this->error = "Not added $chats from admin panel";
                     return "error";
                 }
             }
