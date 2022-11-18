@@ -50,24 +50,23 @@ class ExportCommand extends Command
         $unix_start = strtotime($date_start);
         $date = date_parse_from_format("j.n.Y H:iP", $date_start);
 
-
         while ($unix_end > $unix_start) {
             if ($date['hour'] == "") {
                 if ($unix_start + 86400 <= $unix_end) {
                     $date = date_parse_from_format("j.n.Y H", date("j.n.Y", $unix_start));
-                    $end = $unix_start += 86400;
-                    $export->export($channel_id, $unix_start, $end, $date);
+                    $export->export($channel_id, $unix_start, $unix_start+86400, $date);
                     $unix_start += 86400;
                 }
             } else {
                 if ($unix_start + 3600 <= $unix_end) {
                     $date = date_parse_from_format("j.n.Y H:i", gmdate("j.n.Y H:i", $unix_start));
-                    $end = $unix_start += 3600;
-                    $export->export($channel_id, $unix_start, $end, $date);
+                    $export->export($channel_id, $unix_start, $unix_start+3600, $date);
                     $unix_start += 3600;
                 }
             }
         }
+        $export->MTProto->MadelineProto->stop();
     }
+
 }
 

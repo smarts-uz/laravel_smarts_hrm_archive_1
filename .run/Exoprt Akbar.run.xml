@@ -1,0 +1,5 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Exoprt Akbar" type="PhpLocalRunConfigurationType" factoryName="PHP Console" singleton="false" path="$PROJECT_DIR$/artisan" scriptParameters="command:export --channelid=1244414566 --startdate=10.11.2022 --enddate=17.11.2022">
+    <method v="2" />
+  </configuration>
+</component>

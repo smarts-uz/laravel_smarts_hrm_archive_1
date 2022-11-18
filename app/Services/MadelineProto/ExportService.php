@@ -17,6 +17,7 @@ class ExportService
     public function getMessages($id, $start, $end): array
     {
         $messages = $this->MTProto->MadelineProto->messages->getHistory(['peer' => $id, 'offset_date' => $end, 'limit' => 100]);
+
         $update = [];
         foreach ($messages['messages'] as $message) {
             if ($message['date'] > (int)$start) {
@@ -33,6 +34,22 @@ class ExportService
 
                 switch ($messa['media']['_']) {
                     case 'messageMediaDocument':
+                        foreach ($messa['media']['document']['attributes'] as $attribute) {
+                            if ($attribute['_'] == 'documentAttributeVideo') {
+                                if (!is_dir($path . 'videos_files')) {
+                                    mkdir($path . 'videos_files');
+                                }
+                                $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/videos_files/');
+                                break;
+                            }
+                            if ($attribute['_'] == 'documentAttributeAudio') {
+                                if (!is_dir($path . 'voice_messages')) {
+                                    mkdir($path . 'voice_messages');
+                                }
+                                $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/voice_messages/');
+                                break;
+                            }
+                        }
                         if (!is_dir($path . 'files')) {
                             mkdir($path . 'files');
                         }
@@ -45,23 +62,6 @@ class ExportService
                         $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/photos/');
 
                         break;
-                    case'messageMediaVideo':
-                        if (!is_dir($path . 'videos_files')) {
-                            mkdir($path . 'videos_files');
-                        }
-                        $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/videos_files/');
-                        break;
-                    case'messageMediaAudio':
-                        if (!is_dir($path . 'voice_messages')) {
-                            mkdir($path . 'voice_messages');
-                        }
-                        $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/videos_messages/');
-                        break;
-                    case 'documentAttributeVideo':
-                        if (!is_dir($path . 'video_files')) {
-                            mkdir($path . 'video_files');
-                        }
-                        $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/video_files/');
                 }
 
 
