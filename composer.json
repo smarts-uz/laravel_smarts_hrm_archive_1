@@ -17,7 +17,7 @@
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.0",
         "nutgram/nutgram": "^3.8",
-        "tcg/voyager": "^1.5"
+        "tcg/voyager": "^1.6"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.7",
