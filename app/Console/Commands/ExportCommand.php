@@ -60,7 +60,7 @@ class ExportCommand extends Command
         $max = $date['hour'] == "" ? ($unix_end - $unix_start) / 86400 : ($unix_end - $unix_start) / 3600;
         $progressbar = $this->output->createProgressBar((int)$max);
         $progressbar->start();
-        while ($unix_end > $unix_start) {
+        while ($unix_end >= $unix_start) {
             if ($date['hour'] == "") {
                 if ($unix_start + 86400 <= $unix_end) {
 

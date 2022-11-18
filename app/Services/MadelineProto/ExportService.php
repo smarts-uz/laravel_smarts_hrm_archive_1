@@ -36,10 +36,17 @@ class ExportService
                     case 'messageMediaDocument':
                         foreach ($messa['media']['document']['attributes'] as $attribute) {
                             if ($attribute['_'] == 'documentAttributeVideo') {
-                                if (!is_dir($path . 'videos_files')) {
-                                    mkdir($path . 'videos_files');
+                                if ($attribute['round_message'] == true) {
+                                    if (!is_dir($path . 'rounded_video_messages')) {
+                                        mkdir($path . 'rounded_video_messages');
+                                    }
+                                    $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/rounded_video_messages/');
+                                } else {
+                                    if (!is_dir($path . 'videos_files')) {
+                                        mkdir($path . 'videos_files');
+                                    }
+                                    $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/videos_files/');
                                 }
-                                $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/videos_files/');
                                 break;
                             }
                             if ($attribute['_'] == 'documentAttributeAudio') {
@@ -49,31 +56,24 @@ class ExportService
                                 $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/voice_messages/');
                                 break;
                             }
+                            if($attribute['_'] == 'documentAttributeFilename'){
+                                $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
+                                foreach ($messa['media']['document']['attributes'] as $attribute) {
+                                    if ($attribute['_'] == 'documentAttributeFilename') {
+                                        print_r(PHP_EOL);
+                                        print_r('Downloading ' . $attribute['file_name']);
+                                        print_r(PHP_EOL);
+                                    }
+                                }
+                            }
                         }
-                        if (!is_dir($path . 'files')) {
-                            mkdir($path . 'files');
-                        }
-                        $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
                         break;
                     case 'messageMediaPhoto':
                         if (!is_dir($path . 'photos')) {
                             mkdir($path . 'photos');
                         }
                         $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/photos/');
-
                         break;
-                }
-
-
-                if (array_key_exists('document', $messa['media'])) {
-                    $this->MTProto->MadelineProto->downloadToDir($messa, $path . '/files/');
-                    foreach ($messa['media']['document']['attributes'] as $attribute) {
-                        if ($attribute['_'] == 'documentAttributeFilename') {
-                            print_r(PHP_EOL);
-                            print_r('Downloading ' . $attribute['file_name']);
-                            print_r(PHP_EOL);
-                        }
-                    }
                 }
             }
         }
@@ -132,15 +132,9 @@ class ExportService
             return;
         }
         $update = $this->getMessages($channel_id, $unix_start, $end);
-        if (!is_dir($path . '/files')) {
-            mkdir($path . '/files');
-        }
         file_put_contents($path . 'result.json', json_encode($update));
         $telegram = $this->FormatJson($update);
         file_put_contents($path . 'telegram.json', json_encode($telegram));
-        if (!is_dir($path . 'files')) {
-            mkdir($path . 'files');
-        }
         $this->downloadMedia($update, $path);
         fopen($path . "end.txt", "w");
     }
