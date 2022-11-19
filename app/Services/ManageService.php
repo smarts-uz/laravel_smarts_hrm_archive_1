@@ -2,8 +2,10 @@
 
 namespace App\Services;
 
+use danog\MadelineProto\bots;
 use Illuminate\Support\Facades\Cache;
 use SergiX44\Nutgram\Nutgram;
+use SergiX44\Nutgram\Telegram\Attributes\MessageTypes;
 
 class ManageService
 {
@@ -28,7 +30,11 @@ class ManageService
 
     public function handle(Nutgram $bot)
     {
-
+        $bot->onMessageType(MessageTypes::LEFT_CHAT_MEMBER, function (Nutgram $bot) {
+            $chat_id = $bot->chatId();
+            $msg_id = $bot->messageId();
+            $bot->deleteMessage($chat_id, $msg_id);
+        });
 
         $bot->onText('/start', function (Nutgram $bot) {
             $bot->sendMessage('Enter the id of the user you want to verify');

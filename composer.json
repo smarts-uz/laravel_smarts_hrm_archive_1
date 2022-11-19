@@ -16,6 +16,7 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.0",
+        "longman/telegram-bot": "^0.80.0",
         "nutgram/nutgram": "^3.8",
         "tcg/voyager": "^1.6"
     },
