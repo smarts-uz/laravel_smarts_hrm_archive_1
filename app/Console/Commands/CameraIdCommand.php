@@ -2,11 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Models\Camera;
 use App\Services\NutgramService;
 use Illuminate\Console\Command;
-use App\Models\Office;
-use SergiX44\Nutgram\Nutgram;
 
 class CameraIdCommand extends Command
 {
