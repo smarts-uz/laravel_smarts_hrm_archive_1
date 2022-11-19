@@ -118,9 +118,9 @@ class ExportService
         return $path;
     }
 
-    public function export($channel_id, $unix_start, $end, $date)
+    public function export($channel_id, $unix_start, $end, $date, $path)
     {
-        $path = $this->folderPath($channel_id, setting('file-system.tg_export'), $date);
+        $path = $this->folderPath($channel_id, $path, $date);
         if (is_file($path . 'end.txt')) {
             return;
         }

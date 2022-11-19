@@ -18,12 +18,6 @@ class MTProtoService
     {
         $this->settings = new Settings;
         $this->MadelineProto = new API(env('SESSION_PUT') . '/index.madeline', $this->settings);
-        $this->MadelineProto->updateSettings((new LoggerSettings())
-            ->setType(Logger::LOGGER_FILE)
-            ->setLevel(Logger::LEVEL_FATAL)
-            ->setExtra('/dev/null')
-            ->setMaxSize(0)
-        );
         $this->MadelineProto->start();
     }
 
