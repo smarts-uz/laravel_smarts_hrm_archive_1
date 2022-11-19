@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Console\Commands\__;
 
+use App\Models\Camera;
 use App\Models\Office;
 use App\Services\ProcessCameraService;
 use App\Services\TgBotService;
 use Illuminate\Console\Command;
-use App\Models\Camera;
 
 class u_a_a_tgbot extends Command
 {

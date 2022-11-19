@@ -1,11 +1,8 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Console\Commands\__;
 
-use App\Services\Envato\EnvatoService;
-use App\Services\Envato\ZipVerifier\VerifierService;
 use App\Services\MadelineProto\MTProtoService;
-use Exception;
 use Illuminate\Console\Command;
 
 class TestCommand extends Command
