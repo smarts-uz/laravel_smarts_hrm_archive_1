@@ -14,14 +14,41 @@ class ExportService
         $this->MTProto = new MTProtoService();
     }
 
-    public function getMessages($id, $start, $end): array
+    final public function getMessages(int $id, $start, $end): array
     {
-        $messages = $this->MTProto->MadelineProto->messages->getHistory(['peer' => $id, 'offset_date' => $end, 'limit' => 100]);
+        //  $messages = $this->MTProto->MadelineProto->messages->getHistory(['peer' => $id, 'offset_date' => $end, 'limit' => 100]);
+        //  $messages = $this->MTProto->MadelineProto->messages->getHistory(['peer' => $id, 'offset_id' => 5223, 'limit' => 200]);
+     /*   $messages = $this->MTProto->MadelineProto->channels->getMessages([
+            "channel" => -1001851760117,
+            "id" => [1, 2, 3, 4, 5]
+        ]);*/
+
+
+        $messages = $this->MTProto->MadelineProto->channels->getMessages([
+            "channel" => -1001458440809,
+            "id" => [2447, 2454]
+        ]);
+
+        $replies = $this->MTProto->MadelineProto->messages->getReplies([
+            "peer" => -1001458440809,
+            "msg_id" => 2802
+        ]);
+
+
+/*
+        $replies = $this->MTProto->MadelineProto->downloadToFile()->getReplies([
+            "peer" => -1001458440809,
+            "msg_id" => 2454
+        ]);*/
+
+        //  $messages = $this->MTProto->MadelineProto->channels->getMessages(['peer' => $id, 'offset_id' => 5223, 'limit' => 200]);
+
+        // $messages = $this->MTProto->MadelineProto->messages->editMessage(['peer' => $id, 'limit' => 1]);
 
         $update = [];
         foreach ($messages['messages'] as $message) {
             if ($message['date'] > (int)$start) {
-                array_push($update, $message);
+                $update[] = $message;
             }
         }
         return $update;
@@ -47,13 +74,13 @@ class ExportService
                                     $this->MTProto->MadelineProto->downloadToDir($messa['media'], $path . 'videos_files/');
                                 }
                                 break;
-                            }else if ($attribute['_'] == 'documentAttributeAudio') {
+                            } else if ($attribute['_'] == 'documentAttributeAudio') {
                                 if (!is_dir($path . 'voice_messages')) {
                                     mkdir($path . 'voice_messages');
                                 }
                                 $this->MTProto->MadelineProto->downloadToDir($messa['media'], $path . 'voice_messages/');
                                 break;
-                            }else if($attribute['_'] == 'documentAttributeFilename'){
+                            } else if ($attribute['_'] == 'documentAttributeFilename') {
                                 if (!is_dir($path . 'files')) {
                                     mkdir($path . 'files');
                                 }
@@ -122,24 +149,24 @@ class ExportService
     {
         $path = $this->folderPath($channel_id, $path, $date);
         if (is_file($path . 'end.txt')) {
-            return;
+            //   return;
         }
         $update = $this->getMessages($channel_id, $unix_start, $end);
         file_put_contents($path . 'result.json', json_encode($update));
-        $telegram = $this->FormatJson($channel_id, $update);
+        $telegram = $this->formatJson($channel_id, $update);
         file_put_contents($path . 'telegram.json', json_encode($telegram));
         $this->downloadMedia($update, $path);
         fopen($path . "end.txt", "w");
     }
 
-    public function FormatJson($id,$messages)
+    public function formatJson($id, $messages)
     {
         $update = [];
         $chat = $this->MTProto->MadelineProto->getPwrChat($id);
 
-        if($chat['type'] == 'user'){
+        if ($chat['type'] == 'user') {
             $mess['name'] = $chat['first_name'];
-        }else{
+        } else {
             $mess['name'] = $chat['title'];
         }
 
@@ -180,11 +207,11 @@ class ExportService
                 $mess['edited_unixtime'] = (string)$message['edit_date'];
             }
             if (array_key_exists('from_id', $message)) {
-                if(array_key_exists('user_id', $message['from_id'])){
+                if (array_key_exists('user_id', $message['from_id'])) {
                     $chat = $this->MTProto->MadelineProto->getPwrChat($message['from_id']['user_id']);
                     $mess['from'] = $chat['first_name'];
                     $mess['from_id'] = $chat['type'] . $message['from_id']['user_id'];
-                }else{
+                } else {
                     $chat = $this->MTProto->MadelineProto->getPwrChat('-100' . $message['from_id']['channel_id']);
                     $mess['from'] = $chat['title'];
                     $mess['from_id'] = $chat['type'] . $message['from_id']['channel_id'];

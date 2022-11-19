@@ -7,6 +7,7 @@ use danog\MadelineProto\API;
 trait EnvatoService
 {
     public $MadelineProto;
+
     public function __construct()
     {
         $this->MadelineProto = new API(env('SESSION_PUT'));
@@ -33,31 +34,35 @@ trait EnvatoService
         return $matches;
     }
 
-    public function getPostId($start, $end) {
+    public function getPostId($start, $end)
+    {
 
         $channel_id = env('CHANNEL_ID');
 
         for ($i = $start; $i <= $end; $i++) {
 
             $item = $this->MadelineProto->channels->getMessages([
-            "channel" => '-100' . $channel_id,
-            "id" => [$i]])['messages'];
-                if (array_key_exists('media', $item[0]) && array_key_exists('webpage', $item[0]['media'])) {
+                "channel" => '-100' . $channel_id,
+                "id" => [$i]
+            ])['messages'];
 
-                    if(array_key_exists('url', $item[0]['media']['webpage'])) {
-                        var_dump($item[0]['id']);
-                        $this->getComments(
-                            $channel_id, $item[0]['id'],
-                            $item[0]['replies']['replies'],
-                            $item[0]['media']['webpage']['url'],
-                            $item[0]['message']);
+            if (array_key_exists('media', $item[0]) && array_key_exists('webpage', $item[0]['media'])) {
 
-                    } else {
+                if (array_key_exists('url', $item[0]['media']['webpage'])) {
+                    var_dump($item[0]['id']);
+                    $this->getComments(
+                        $channel_id, $item[0]['id'],
+                        $item[0]['replies']['replies'],
+                        $item[0]['media']['webpage']['url'],
+                        $item[0]['message']);
 
-                        $this->MadelineProto->messages->sendMessage([
-                            'peer' => '-100' . env('REPORT_CHANNEL_ID'),
-                            'message' => 'https://t.me/c/' . $channel_id .'/' . $item[0]['id'] . ' 404 not found']);
-                    }}
+                } else {
+
+                    $this->MadelineProto->messages->sendMessage([
+                        'peer' => '-100' . env('REPORT_CHANNEL_ID'),
+                        'message' => 'https://t.me/c/' . $channel_id . '/' . $item[0]['id'] . ' 404 not found']);
+                }
+            }
             sleep(5);
         }
     }
