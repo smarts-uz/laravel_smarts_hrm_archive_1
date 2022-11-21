@@ -102,7 +102,6 @@ class ManageService
                 $output = curl_exec($ch);
                 $output = json_decode($output);
                 if ($output->result->url !== '') {
-                    echo $output->result->url . "\n";
                     $bot->run();
                 }
 
@@ -134,14 +133,8 @@ class ManageService
     public function getUser(Nutgram $bot, $user)
     {
         $list = $this->getList();
-        dump($list);
         foreach ($list as $chats => $type) {
             foreach ($type as $chat => $key) {
-                dump($key);
-//                print_r($type[0]);
-                /*if (($key === "" && $list["channels"][0] === "") || ($key === "" && $list["groups"][0])) {
-                    continue;
-                }*/
                 if ($key) {
                     $member = $bot->getChatMember((int)$key, $user);
 
@@ -162,15 +155,11 @@ class ManageService
                 if ($list["channels"][0] === "" && $list["groups"][0]=== ""){
                     $this->error_descr = "Not added channels & groups id from admin panel";
                     $this->error = "error";
-                    dump('err');
                 }
                 else if ($type[0] === ""){
                     $this->error_descr = "Not added $chats id from admin panel";
                     $this->error = "not which one";
-                }/*elseif ($list["groups"][0]=== ""){
-                    $this->error_descr = "Not added $chats id from admin panel";
-                    $this->error = "not which one";
-                }*/
+                }
 
             }
         }
