@@ -5,7 +5,7 @@ namespace App\Services\MadelineProto\Database;
 use App\Models\TgChat;
 use App\Services\MadelineProto\MTProtoService;
 
-class ChatService
+class GetChatService
 {
     public function updateAll(){
         $MTProto = new MTProtoService();

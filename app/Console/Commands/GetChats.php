@@ -3,7 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use App\Services\MadelineProto\Database\ChatService;
+use App\Services\MadelineProto\Database\GetChatService;
 
 class GetChats extends Command
 {
@@ -26,7 +26,7 @@ class GetChats extends Command
      *
      * @return int
      */
-    public function handle(ChatService $chatService)
+    public function handle(GetChatService $chatService)
     {
         $chatService->fill();
     }
