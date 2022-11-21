@@ -1,0 +1,78 @@
+[
+  {
+    "_": "message",
+    "out": false,
+    "mentioned": false,
+    "media_unread": false,
+    "silent": false,
+    "post": false,
+    "from_scheduled": false,
+    "legacy": false,
+    "edit_hide": false,
+    "pinned": false,
+    "noforwards": false,
+    "id": 7159,
+    "from_id": {
+      "_": "peerUser",
+      "user_id": 857600996
+    },
+    "peer_id": {
+      "_": "peerChannel",
+      "channel_id": 1760502540
+    },
+    "reply_to": {
+      "_": "messageReplyHeader",
+      "reply_to_scheduled": false,
+      "reply_to_msg_id": 7156
+    },
+    "date": 1667975859,
+    "message": "",
+    "media": {
+      "_": "messageMediaPhoto",
+      "photo": {
+        "_": "photo",
+        "has_stickers": false,
+        "id": 5429158371375825516,
+        "access_hash": 6258701485176226391,
+        "file_reference": {
+          "_": "bytes",
+          "bytes": "AmjvIwwAABv3Y2vSU+KVH431V0OFGvGBc\/LdVtI="
+        },
+        "date": 1667975859,
+        "sizes": [
+          {
+            "_": "photoStrippedSize",
+            "type": "i",
+            "bytes": {
+              "_": "bytes",
+              "bytes": "ARso2CwUEngCqhvfm4TK\/Wp51Lwso61RhXMwVh+FTJ2VzKbd0kWC8khyAVHap4mYp8w5FMzTlPzVzxrSbs0dD2sS0UUV1EBTFiVSTjk9SafRRuBEVIpUHPPapKKxVFJ3HcKKKK2Efw=="
+            },
+            "inflated": {
+              "_": "bytes",
+              "bytes": "\/9j\/4AAQSkZJRgABAQAAAQABAAD\/2wBDACgcHiMeGSgjISMtKygwPGRBPDc3PHtYXUlkkYCZlo+AjIqgtObDoKrarYqMyP\/L2u71\/\/\/\/m8H\/\/\/\/6\/+b9\/\/j\/2wBDASstLTw1PHZBQXb4pYyl+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj4+Pj\/wAARCAAbACgDASIAAhEBAxEB\/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL\/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6\/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL\/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6\/9oADAMBAAIRAxEAPwDYLBQSeAKqG9+bhMr9annUvCyjrVGFczBWH4VMnZXMpt3SRYLySHIBUdqniZinzDkUzNOU\/NXPGtJuzR0PaxLRRRXUQFMWJVJOOT1Jp9FG4ERUilQc89qkorFUUncdwooorYR\/\/9k="
+            }
+          },
+          {
+            "_": "photoSize",
+            "type": "m",
+            "w": 320,
+            "h": 212,
+            "size": 5591
+          },
+          {
+            "_": "photoSizeProgressive",
+            "type": "x",
+            "w": 582,
+            "h": 386,
+            "sizes": [
+              2217,
+              8506,
+              9814
+            ]
+          }
+        ],
+        "dc_id": 2
+      }
+    }
+  }
+]
