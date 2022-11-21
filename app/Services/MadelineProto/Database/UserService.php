@@ -7,7 +7,7 @@ use App\Services\MadelineProto\MTProtoService;
 
 class UserService
 {
-    public function update(){
+    public function updateAll(){
         $MTProto = new MTProtoService();
         $users = TgUser::where('mtproto', null)->get();
         foreach ($users as $user){
@@ -30,7 +30,6 @@ class UserService
             $temp['mtproto'] = json_encode($chat);
             $post = TgUser::find($user->id);
             $post->update($temp);
-            print_r('Updated ID ' . $user->id);
         }
     }
 }

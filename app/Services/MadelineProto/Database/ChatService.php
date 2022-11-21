@@ -7,12 +7,12 @@ use App\Services\MadelineProto\MTProtoService;
 
 class ChatService
 {
-    public function update(){
+    public function updateAll(){
         $MTProto = new MTProtoService();
         $chats = TgChat::where('mtproto', null)->get();
         foreach ($chats as $user){
             $temp = [];
-            $chat = $MTProto->MadelineProto->getPwrChat($user->tg_id);
+            $chat = $MTProto->MadelineProto->getPwrChat('-100' . $user->tg_id);
             $temp['type'] = $chat['type'];
             $temp['title'] = $chat['title'];
             $temp['restricted'] = $chat['restricted'];
@@ -35,9 +35,9 @@ class ChatService
             $temp['online_count'] = $chat['online_count'];
             $temp['invite'] = $chat['invite'];
             $temp['participants'] = array_key_exists('participants', $chat) ? json_encode($chat['participants']) : null;
+            $temp['mtproto'] = json_encode($chat);
             $post = TgChat::find($user->id);
             $post->update($temp);
-            print_r('Updated ID ' . $user->id);
         }
     }
 }

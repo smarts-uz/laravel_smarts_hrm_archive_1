@@ -69,7 +69,7 @@ Route::get('/test', function () {
 
 
     $user = new ChatService();
-    $user->update();
+    $user->updateAll();
 
 });
 
