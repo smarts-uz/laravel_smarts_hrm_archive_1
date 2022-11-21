@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Console\Commands\__;
+namespace App\Console\Commands;
 
-use App\Services\ManageService;
+use App\Services\DropperBotService;
 use Illuminate\Console\Command;
 use SergiX44\Nutgram\Nutgram;
 
 
-class NutgramCommand extends Command
+class DropperCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'run:nutgram';
+    protected $signature = 'dropper:run';
 
     /**
      * The console command description.
@@ -30,7 +30,7 @@ class NutgramCommand extends Command
      */
     public function handle()
     {
-        $manage = new ManageService();
+        $manage = new DropperBotService();
         $bot = new Nutgram(env('DROPPER_BOT_TOKEN'));
         $manage->handle($bot);
         $bot->run();

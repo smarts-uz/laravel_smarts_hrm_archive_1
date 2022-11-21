@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Cache;
 use SergiX44\Nutgram\Nutgram;
 use SergiX44\Nutgram\Telegram\Attributes\MessageTypes;
 
-class ManageService
+class DropperBotService
 {
 
     public Nutgram $bot;
