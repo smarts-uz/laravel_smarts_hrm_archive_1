@@ -28,6 +28,6 @@ class GetChats extends Command
      */
     public function handle(ChatService $chatService)
     {
-        $a = $chatService->fill();
+        $chatService->fill();
     }
 }
