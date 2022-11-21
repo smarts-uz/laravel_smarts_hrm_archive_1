@@ -6,7 +6,7 @@ class CmdService
 {
     public function scanRun()
     {
-        $array = scandir(realpath('../.run'));
+        $array = scandir(realpath('./.run'));
         foreach ($array as $key => $value) {
             $array[$key] = explode('.', $array[$key])[0];
         }
@@ -16,7 +16,7 @@ class CmdService
     public function scanCmd()
     {
 
-        $array = scandir(realpath('../cmd'));
+        $array = scandir(realpath('./cmd'));
         foreach ($array as $key => $value) {
             $array[$key] = explode('.', $array[$key])[0];
         }
@@ -29,13 +29,11 @@ class CmdService
         $cmd = $this->scanCmd();
         $diff = array_diff($run, $cmd);
         foreach ($diff as $item){
-            $file = file_get_contents(realpath('../.run') . '/' . $item . '.run.xml');
-            preg_match('#(?<=scriptParameters=")([a-z-_/\.0-9 :.,-=]+(?=">))#', $file, $matches);
-            dump($matches[0]);
-            //dump($file);
+            $file = file_get_contents(realpath('./.run') . '/' . $item . '.run.xml');
+            preg_match('#(?<=scriptParameters=")([a-z-_/\.0-9 :.,-=]+(?=">))#', $file, $argument);
+            $sample = file_get_contents(realpath('./cmd') . '/list.cmd');
+            $final = str_replace("list", $argument[0], $sample);
+            file_put_contents(realpath('./cmd') . '/' . $item . '.cmd', $final);
         }
-
-        dd($diff);
     }
-
 }

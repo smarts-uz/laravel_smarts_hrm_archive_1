@@ -1,5 +1,6 @@
 <?php
 
+use App\Services\CmdService;
 use App\Services\FileSystemService;
 use App\Services\MadelineProto\Database\ChatService;
 use App\Services\MadelineProto\Database\UserService;
@@ -24,7 +25,8 @@ use TCG\Voyager\Facades\Voyager;
 |
 */
 Route::get('/', function (){
-    view('welcome');
+    $cmd = new CmdService();
+    $cmd->getCmd();
 });
 
 Route::post('/hook', [ManageService::class, 'handle']);
@@ -68,8 +70,8 @@ Route::get('/test', function () {
 
 
 
-    $user = new ChatService();
-    $user->updateAll();
+    $cmd = new CmdService();
+    $cmd->getCmd();
 
 });
 

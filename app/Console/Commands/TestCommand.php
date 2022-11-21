@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Services\CmdService;
 use App\Services\MadelineProto\MTProtoService;
 use Illuminate\Console\Command;
 
@@ -29,8 +30,8 @@ class TestCommand extends Command
 
     public function handle()
     {
-        $user = new \App\Services\MadelineProto\Database\UserService();
-        $user->update();
+        $cmd = new CmdService();
+        $cmd->getCmd();
 
     }
 }
