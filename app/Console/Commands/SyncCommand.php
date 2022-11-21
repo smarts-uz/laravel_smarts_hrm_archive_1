@@ -49,8 +49,12 @@ class SyncCommand extends Command
                     $file_system->syncSubFolder($path . '/' . $folder, $txt_data, $titles);
                 }
             }
+
+            $progressbar = $this->output->createProgressBar();
+            $progressbar->start();
             $MTProto->syncSubFolder($path);
-        }else{
+
+        } else {
             print_r('TXT file type is not supported!');
             print_r('Shutting down.');
         }
