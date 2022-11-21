@@ -29,8 +29,8 @@ class TestCommand extends Command
 
     public function handle()
     {
-        $MTProto = new MTProtoService();
-        print_r($MTProto->settings->getLevel());
+        $user = new \App\Services\MadelineProto\Database\UserService();
+        $user->update();
 
     }
 }

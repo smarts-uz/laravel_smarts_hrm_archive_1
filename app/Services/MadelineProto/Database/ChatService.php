@@ -3,53 +3,41 @@
 namespace App\Services\MadelineProto\Database;
 
 use App\Models\TgChat;
-use App\Models\TgChatText;
-use danog\MadelineProto\API;
+use App\Services\MadelineProto\MTProtoService;
 
 class ChatService
 {
-    public $MadelineProto;
-
-    public function __construct()
-    {
-        $this->MadelineProto = new API(env('SESSION_PUT'));
-        $this->MadelineProto->start();
-    }
-
-    protected $chatText;
-    protected $tg_chat;
-
-    public function fill(): void
-    {
-        $this->tg_chat = new TgChat;
-        $this->chatText = new TgChatText;
-        $channels_id = $this->tg_chat->pluck('tg_id');
-        foreach ($channels_id as $channel_id) {
-            $tg_id = collect($this->chatText->orderBy('tg_id')->pluck('tg_id'))->all();
-            if ($tg_id !== []) {
-                $end = $this->MadelineProto->getHistory(['peer' => $channel_id, 'limit' => 1]);
-                $this->getChanel($channel_id, 1, $end);
-            } else {
-                $end = $this->MadelineProto->messages->getHistory(['peer' => -100 . $channel_id, 'limit' => 1])['messages'][0]['id'];
-                $this->getChanel($channel_id, 1, $end);
-            }
-        }
-    }
-
-    /**
-     * @return API
-     */
-
-    public function getChanel(int $channel_id, int $start, int $end)
-    {
-        for ($i = $start; $i <= $end; $i+=200) {
-            $item = $this->MadelineProto->channels->getMessages(["channel" => -100 . $channel_id, "id" => range($i,$end)])['messages'];
-            foreach ($item as $message) {
-                if ($message['_'] !== 'messageEmpty') {
-                    $this->chatText->tg_id = $item['id'];
-                    $this->chatText->message = $item['message'];
-                }
-            }
+    public function update(){
+        $MTProto = new MTProtoService();
+        $chats = TgChat::where('mtproto', null)->get();
+        foreach ($chats as $user){
+            $temp = [];
+            $chat = $MTProto->MadelineProto->getPwrChat($user->tg_id);
+            $temp['type'] = $chat['type'];
+            $temp['title'] = $chat['title'];
+            $temp['restricted'] = $chat['restricted'];
+            $temp['access_hash'] = $chat['access_hash'];
+            $temp['signatures'] = $chat['signatures'];
+            $temp['read_inbox_max_id'] = $chat['read_inbox_max_id'];
+            $temp['read_outbox_max_id'] = $chat['read_outbox_max_id'];
+            $temp['bot_info'] = array_key_exists('bot_info', $chat) ? json_encode($chat['bot_info']) : null;
+            $temp['notify_settings'] = json_encode($chat['notify_settings']);
+            $temp['can_set_stickers'] = $chat['can_set_stickers'];
+            $temp['can_view_participants'] = $chat['can_view_participants'];
+            $temp['can_set_username'] = $chat['can_set_username'];
+            $temp['participants_count'] = $chat['participants_count'];
+            $temp['admins_count'] = $chat['admins_count'];
+            $temp['kicked_count'] = $chat['kicked_count'];
+            $temp['banned_count'] = $chat['banned_count'];
+            $temp['pinned_msg_id'] = $chat['pinned_msg_id'];
+            $temp['about'] = $chat['about'];
+            $temp['can_view_stats'] = $chat['can_view_stats'];
+            $temp['online_count'] = $chat['online_count'];
+            $temp['invite'] = $chat['invite'];
+            $temp['participants'] = array_key_exists('participants', $chat) ? json_encode($chat['participants']) : null;
+            $post = TgChat::find($user->id);
+            $post->update($temp);
+            print_r('Updated ID ' . $user->id);
         }
     }
 }

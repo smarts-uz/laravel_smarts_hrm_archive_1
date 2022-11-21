@@ -9,4 +9,5 @@ class TgUser extends Model
 {
     use HasFactory;
     protected $table = 'tg_users';
+    protected $guarded = [];
 }

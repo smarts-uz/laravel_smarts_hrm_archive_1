@@ -9,4 +9,6 @@ class TgChat extends Model
 {
     use HasFactory;
     protected $table = 'tg_chats';
+    protected $guarded = [];
+
 }

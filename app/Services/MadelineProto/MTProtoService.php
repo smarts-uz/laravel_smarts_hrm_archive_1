@@ -2,12 +2,8 @@
 
 namespace App\Services\MadelineProto;
 
-use App\Services\TaskStatus\HandleStatusService;
 use danog\MadelineProto\API;
 use danog\MadelineProto\Settings;
-use danog\MadelineProto\Settings\AppInfo;
-use danog\MadelineProto\Logger;
-use danog\MadelineProto\Settings\Logger as LoggerSettings;
 
 class MTProtoService
 {

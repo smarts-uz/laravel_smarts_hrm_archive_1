@@ -1,6 +1,8 @@
 <?php
 
 use App\Services\FileSystemService;
+use App\Services\MadelineProto\Database\ChatService;
+use App\Services\MadelineProto\Database\UserService;
 use App\Services\MadelineProto\ExportService;
 use App\Services\MadelineProto\MTProtoService;
 use App\Services\ManageService;
@@ -21,20 +23,20 @@ use TCG\Voyager\Facades\Voyager;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
-    $path = new \App\Services\CmdService();
-    $path->getCmd();
+Route::get('/', function (){
+    view('welcome');
 });
 
 Route::post('/hook', [ManageService::class, 'handle']);
 
 Route::get('/telegram', function () {
     $MTProto = new MTProtoService();
-    $file = file_get_contents('C:\Users\Pailion\Documents\MadelineProto\JSONs\Export\Ramziddin\2022\11\15\result.json');
-    $json = json_decode($file);
-    $chat = $MTProto->MadelineProto->getPwrChat($json[0]);
+    $chat = $MTProto->MadelineProto->getPwrChat(-1001807426588);
+    $chat2 = $MTProto->MadelineProto->getPwrChat(-1001732713545);
     echo '<pre>';
     print_r($chat);
+    echo '<pre>';
+    print_r($chat2);
     /*
     $chat = $MTProto->MadelineProto->getPwrChat(5305886229);
     echo '<pre>';
@@ -48,7 +50,7 @@ Route::get('/preview', function () {
     print_r($messages);
 });
 
-Route::get('/private', function () {
+Route::get('/private', function (){
     $MTProto = new MTProtoService();
     $chat = $MTProto->MadelineProto->messages->getHistory(['peer' => 798946526, 'limit' => 50]);
     echo '<pre>';
@@ -57,28 +59,18 @@ Route::get('/private', function () {
 
 Route::get('/group', function () {
     $MTProto = new MTProtoService();
-    $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => -1001732713545, 'limit' => 50, 'offset_date' => 1668106800]);
+    $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => -1001732713545, 'limit' => 50, 'offset_date'=>1668106800]);
     echo '<pre>';
     print_r($messages['messages']);
 });
 
 Route::get('/test', function () {
-    $file_system = new FileSystemService();
-    $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
-    $path = '/Users/ramziddinabdumominov/Desktop/Nutgram Sync';
-    $files = $file_system->fileExists($path);
-    if ($files === 1) {
-        $all_txt = $file_system->searchForTxt($path);
-        $file = $file_system->readTxt($all_txt);
-        $titles = [];
-        $file_system->syncSubFolder($path, $file, $titles);
-        if (count(explode(' | ', $file[0])) > 1 && (int)$file[1] != 0) {
-            if ($getUrl === "Message not Found") {
-                $bot->sendMessage($file[0], ['chat_id' => $file[1]]);
-            }
-            $file_system->createUrlFile($path, (string)$getUrl);
-        }
-    }
+
+
+
+    $user = new ChatService();
+    $user->update();
+
 });
 
 Route::get('/files', function () {
@@ -133,7 +125,7 @@ Route::get('/export', function () {
     print_r($date['year']);
 });
 
-Route::get('/madeline', function () {
+Route::get('/madeline', function (){
     Artisan::call('manage:user');
 });
 
