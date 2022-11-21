@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands\__;
+namespace App\Console\Commands;
 
 use App\Services\TaskStatus\EditStatusService;
 use Illuminate\Console\Command;

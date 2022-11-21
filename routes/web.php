@@ -29,9 +29,15 @@ Route::post('/hook', [ManageService::class, 'handle']);
 
 Route::get('/telegram', function () {
     $MTProto = new MTProtoService();
-    $chat = $MTProto->MadelineProto->getPwrChat(5305886229);
+    $file = file_get_contents('C:\Users\Pailion\Documents\MadelineProto\JSONs\Export\Ramziddin\2022\11\15\result.json');
+    $json = json_decode($file);
+    $chat = $MTProto->MadelineProto->getPwrChat($json[0]);
     echo '<pre>';
     print_r($chat);
+    /*
+    $chat = $MTProto->MadelineProto->getPwrChat(5305886229);
+    echo '<pre>';
+    print_r($chat);*/
 });
 
 Route::get('/preview', function () {

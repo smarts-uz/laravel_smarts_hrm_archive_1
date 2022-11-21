@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class TgChat extends Model
 {
     use HasFactory;
+    protected $table = 'tg_chats';
 }
