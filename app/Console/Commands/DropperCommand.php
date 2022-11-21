@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Services\DropperBotService;
+use App\Services\DropperBot\DropperBotService;
 use Illuminate\Console\Command;
 use SergiX44\Nutgram\Nutgram;
 

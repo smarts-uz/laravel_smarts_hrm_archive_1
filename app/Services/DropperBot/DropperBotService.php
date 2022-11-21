@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\DropperBot;
 
 use danog\MadelineProto\bots;
 use Illuminate\Support\Facades\Cache;
