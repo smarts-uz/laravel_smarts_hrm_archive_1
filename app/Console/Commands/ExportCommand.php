@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 
+use App\Models\TgChat;
 use App\Services\MadelineProto\ExportService;
 use Illuminate\Console\Command;
 
@@ -27,8 +28,10 @@ class ExportCommand extends Command
      *
      * @return int
      */
-    public function handle()
+    public function handle_()
     {
+
+
         $export = new ExportService();
         if (empty($this->option('channelid'))) {
             $channel_id = readline('Enter channel_id: ');
@@ -79,6 +82,23 @@ class ExportCommand extends Command
             }
         }
         //$export->MTProto->MadelineProto->stop();
+    }
+
+    public function handle()
+    {
+        echo 'sdafsda';
+
+            /** @var TgChat $className */
+            // $className = 'App\Models\TgChat';
+
+            //$type = 'User';
+            $type = 'Chat';
+            $className = 'App\Models\Tg' . $type;
+
+            $channels_id = $className::pluck('tg_id');
+
+        echo 'sdafsda';
+
     }
 
 }
