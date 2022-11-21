@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TgChatMessage extends Model
+class TgUserText extends Model
 {
     use HasFactory;
 }
