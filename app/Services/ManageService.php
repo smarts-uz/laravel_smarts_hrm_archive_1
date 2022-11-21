@@ -28,6 +28,8 @@ class ManageService
 
     public $error;
 
+    public $error_descr;
+
     public function handle(Nutgram $bot)
     {
         $bot->onMessageType(MessageTypes::LEFT_CHAT_MEMBER, function (Nutgram $bot) {
@@ -45,9 +47,12 @@ class ManageService
                 Cache::put('user_id', $user_id);
                 $user = $this->getUser($bot, $user_id);
 
-                if ($user === 'error') {
-                    $bot->sendMessage($this->error);
-                } else {
+                if ($this->error === 'error') {
+                    $bot->sendMessage($this->error_descr);
+                } else if ($this->error === 'not which one'){
+                    $bot->sendMessage($this->error_descr);
+                    $this->Addbutton($user);
+                }else{
                     $this->Addbutton($user);
                 }
             } else if ($user_id !== '/start' && $user_id !== 'Channels ❌' && $user_id !== 'Groups ❌' && $user_id !== 'All ❌') {
@@ -88,28 +93,38 @@ class ManageService
             $bot->sendMessage($exception->getMessage());
         });
 
-        $ch = curl_init();
+                $ch = curl_init();
 
-        curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot" . env('DROPPER_BOT_TOKEN') . "/getWebhookInfo");
+                curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot" . env('DROPPER_BOT_TOKEN') . "/getWebhookInfo");
 
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-        $output = curl_exec($ch);
-        $output = json_decode($output);
-        if ($output->result->url !== '') {
-            echo $output->result->url . "\n";
-            $bot->run();
-        }
+                $output = curl_exec($ch);
+                $output = json_decode($output);
+                if ($output->result->url !== '') {
+                    echo $output->result->url . "\n";
+                    $bot->run();
+                }
 
-        curl_close($ch);
+                curl_close($ch);
+
     }
 
     public function getList()
     {
         $channels = setting('site.tg_channel');
         $groups = setting('site.tg_group');
-        $channels_arr = explode(" ", $channels);
-        $groups_arr = explode(" ", $groups);
+        $channels_arr = explode("\r\n", $channels);
+        $groups_arr = explode("\r\n", $groups);
+
+        foreach ($channels_arr as $index => $item) {
+            $channels_arr[$index] = str_replace([' ', ',', '.'], '', $item);
+        }
+
+        foreach ($groups_arr as $index => $item) {
+            $groups_arr[$index] = str_replace([' ', ',', '.'], '', $item);
+        }
+
         return [
             "channels" => $channels_arr,
             "groups" => $groups_arr,
@@ -119,13 +134,18 @@ class ManageService
     public function getUser(Nutgram $bot, $user)
     {
         $list = $this->getList();
+        dump($list);
         foreach ($list as $chats => $type) {
-
             foreach ($type as $chat => $key) {
+                dump($key);
+//                print_r($type[0]);
+                /*if (($key === "" && $list["channels"][0] === "") || ($key === "" && $list["groups"][0])) {
+                    continue;
+                }*/
                 if ($key) {
                     $member = $bot->getChatMember((int)$key, $user);
 
-                    if ($member->status === 'member' || $member->status === 'creator') {
+                    if ($member->status === 'member' || $member->status === 'admin') {
                         $title = $bot->getChat($key)->title;
                         $invite_link = $bot->getChat($key)->invite_link;
                         if ($chats === 'channels') {
@@ -138,10 +158,20 @@ class ManageService
                             $this->groups_invite_link[] = $invite_link;
                         }
                     }
-                } else {
-                    $this->error = "Not added $chats from admin panel";
-                    return "error";
                 }
+                if ($list["channels"][0] === "" && $list["groups"][0]=== ""){
+                    $this->error_descr = "Not added channels & groups id from admin panel";
+                    $this->error = "error";
+                    dump('err');
+                }
+                else if ($type[0] === ""){
+                    $this->error_descr = "Not added $chats id from admin panel";
+                    $this->error = "not which one";
+                }/*elseif ($list["groups"][0]=== ""){
+                    $this->error_descr = "Not added $chats id from admin panel";
+                    $this->error = "not which one";
+                }*/
+
             }
         }
         return $bot;

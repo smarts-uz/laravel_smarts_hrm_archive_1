@@ -5,6 +5,7 @@ use App\Services\MadelineProto\ExportService;
 use App\Services\MadelineProto\MTProtoService;
 use App\Services\ManageService;
 use App\Services\TestConversation;
+use danog\MadelineProto\Wrappers\Webhook;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
 use SergiX44\Nutgram\Nutgram;
@@ -20,9 +21,11 @@ use TCG\Voyager\Facades\Voyager;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/', function (){
+    view('welcome');
+});
 
 Route::post('/hook', [ManageService::class, 'handle']);
-Route::post('/testing', [TestConversation::class, 'handle']);
 
 Route::get('/telegram', function () {
     $MTProto = new MTProtoService();
