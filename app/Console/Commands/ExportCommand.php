@@ -28,7 +28,7 @@ class ExportCommand extends Command
      *
      * @return int
      */
-    public function handle_()
+    public function handle()
     {
 
 
@@ -84,7 +84,7 @@ class ExportCommand extends Command
         //$export->MTProto->MadelineProto->stop();
     }
 
-    public function handle()
+    public function handle__()
     {
         echo 'sdafsda';
 
