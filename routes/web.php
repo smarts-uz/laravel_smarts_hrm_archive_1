@@ -21,8 +21,9 @@ use TCG\Voyager\Facades\Voyager;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function (){
-    view('welcome');
+Route::get('/', function () {
+    $path = new \App\Services\CmdService();
+    $path->getCmd();
 });
 
 Route::post('/hook', [ManageService::class, 'handle']);
@@ -47,7 +48,7 @@ Route::get('/preview', function () {
     print_r($messages);
 });
 
-Route::get('/private', function (){
+Route::get('/private', function () {
     $MTProto = new MTProtoService();
     $chat = $MTProto->MadelineProto->messages->getHistory(['peer' => 798946526, 'limit' => 50]);
     echo '<pre>';
@@ -56,7 +57,7 @@ Route::get('/private', function (){
 
 Route::get('/group', function () {
     $MTProto = new MTProtoService();
-    $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => -1001732713545, 'limit' => 50, 'offset_date'=>1668106800]);
+    $messages = $MTProto->MadelineProto->messages->getHistory(['peer' => -1001732713545, 'limit' => 50, 'offset_date' => 1668106800]);
     echo '<pre>';
     print_r($messages['messages']);
 });
@@ -74,7 +75,7 @@ Route::get('/test', function () {
         if (count(explode(' | ', $file[0])) > 1 && (int)$file[1] != 0) {
             if ($getUrl === "Message not Found") {
                 $bot->sendMessage($file[0], ['chat_id' => $file[1]]);
-             }
+            }
             $file_system->createUrlFile($path, (string)$getUrl);
         }
     }
@@ -132,7 +133,7 @@ Route::get('/export', function () {
     print_r($date['year']);
 });
 
-Route::get('/madeline', function (){
+Route::get('/madeline', function () {
     Artisan::call('manage:user');
 });
 
