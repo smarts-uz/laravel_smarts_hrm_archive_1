@@ -2,7 +2,9 @@
 
 namespace App\Console\Commands;
 
+use App\Services\RemoveJoinLeave\RemoveJoinLeaveService;
 use Illuminate\Console\Command;
+use SergiX44\Nutgram\Nutgram;
 
 class RemoveJoinLeaveCommand extends Command
 {
@@ -27,6 +29,9 @@ class RemoveJoinLeaveCommand extends Command
      */
     public function handle()
     {
-        return Command::SUCCESS;
+        $manage = new RemoveJoinLeaveService();
+        $bot = new Nutgram(env('REMOVE_JOIN_BOT_TOKEN'));
+        $manage->handle($bot);
+        $bot->run();
     }
 }
