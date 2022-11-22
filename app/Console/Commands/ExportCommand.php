@@ -33,7 +33,7 @@ class ExportCommand extends Command
 
 
         $export = new ExportService();
-        if (empty($this->option('channelid'))) {
+        if ( ($this->option('channelid'))) {
             $channel_id = readline('Enter channel_id: ');
         } else {
             $channel_id = $this->option('channelid');
