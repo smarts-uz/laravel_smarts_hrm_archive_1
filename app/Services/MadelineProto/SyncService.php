@@ -29,14 +29,15 @@ class SyncService
         $to_tg = array_diff($storage_files, $tg_files);
         $to_st = array_diff($tg_files, $storage_files);
         $split = explode("/", $url);
+        dump($tg_files);
+        dump($storage_files);
 
         $message = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => '-100' . $split[count($split) - 2], 'msg_id' => $split[count($split) - 1]]);
         foreach ($to_tg as $item) {
-            if($item == 'ALL.url'){return;}
             $descr = $file_system->caption($path . '/' . $item);
             $MTProto->MadelineProto->messages->sendMedia(["peer" => '-100' . $message['messages'][0]['peer_id']['channel_id'],
                 "reply_to_msg_id" => (int)$message['messages'][0]['id'],
-                    "media" => ['_' => 'inputMediaUploadedDocument',
+                "media" => ['_' => 'inputMediaUploadedDocument',
                     'file' => $path . '/' . $item, 'attributes' => [
                         ['_' => 'documentAttributeFilename', 'file_name' => $item]
                     ]], "message" => $descr]);
@@ -48,7 +49,7 @@ class SyncService
                         foreach ($comment['media']['document']['attributes'] as $att) {
                             if ($att['_'] == 'documentAttributeFilename') {
                                 if ($att['file_name'] == $item) {
-                                    $MTProto->MadelineProto->downloadToDir($comment['media'], $path . '/');
+                                    $MTProto->MadelineProto->downloadToFile($comment['media'], $path . '/' . $item);
                                 }
                             }
                         }

@@ -37,7 +37,6 @@ class SyncCommand extends Command
         $txt_file = $file_system->searchForTxt($path);
         $txt_data = $file_system->readTxt($txt_file);
         // Verifying ALL.txt data
-        print_r($txt_data);
         if (count(explode(' | ', $txt_data[0])) > 1 && (int)$txt_data[1] != 0) {
             $folders = scandir($path);
             foreach ($folders as $folder) {
