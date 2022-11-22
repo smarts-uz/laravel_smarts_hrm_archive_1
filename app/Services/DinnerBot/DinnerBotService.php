@@ -22,6 +22,9 @@ class DinnerBotService
                     echo gettype($message->forward_from_chat->id);
                     file_put_contents('message.json', json_encode($message, JSON_THROW_ON_ERROR), FILE_APPEND);
                     print_r(json_encode($message, JSON_THROW_ON_ERROR));
+                    $msg_caption = $message->caption;
+                    $msg_caption = str_replace(["📔", "💰", "\n", " "]);
+                    $bot->sendMessage($msg_caption);
                 }
             }
         });
