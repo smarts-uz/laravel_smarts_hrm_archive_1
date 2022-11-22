@@ -14,7 +14,7 @@ class SyncCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'command:sync';
+    protected $signature = 'command:sync {--path=}';
 
     /**
      * The console command description.
@@ -32,7 +32,11 @@ class SyncCommand extends Command
     {
         $file_system = new FileSystemService();
         $MTProto = new SyncService();
-        $path = setting('file-system.path_to_sync');
+        if(empty($this->option('path'))){
+            $path = setting('file-system.path_to_sync');
+        }else{
+            $path = $this->option('path');
+        }
         //ALL.txt
         $txt_file = $file_system->searchForTxt($path);
         $txt_data = $file_system->readTxt($txt_file);
