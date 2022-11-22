@@ -15,6 +15,11 @@ class RemoveJoinLeaveService
             $msg_id = $bot->messageId();
             $bot->deleteMessage($chat_id, $msg_id);
         });
+        $bot->onMessageType(MessageTypes::NEW_CHAT_MEMBERS, function (Nutgram $bot) {
+            $chat_id = $bot->chatId();
+            $msg_id = $bot->messageId();
+            $bot->deleteMessage($chat_id, $msg_id);
+        });
     }
 
     public function __construct()
