@@ -42,8 +42,11 @@ class DropperBotService
             $bot->sendMessage('Enter the id of the user you want to verify');
         });
 
-        $bot->onText('{user_id}', function (Nutgram $bot, $user_id) {
-            if (is_numeric($user_id)) {
+        $bot->onMessage( function (Nutgram $bot) {
+            $message= $bot->message();
+            file_put_contents('message.json', json_encode($message, JSON_THROW_ON_ERROR), FILE_APPEND);
+            print_r(json_encode($message, JSON_THROW_ON_ERROR));
+            /*if (is_numeric($user_id)) {
                 Cache::put('user_id', $user_id);
                 $user = $this->getUser($bot, $user_id);
 
@@ -57,7 +60,7 @@ class DropperBotService
                 }
             } else if ($user_id !== '/start' && $user_id !== 'Channels ❌' && $user_id !== 'Groups ❌' && $user_id !== 'All ❌') {
                 $bot->sendMessage('I didn\'t understand you, please enter user id');
-            }
+            }*/
         });
 
         $bot->onText('Channels ❌', function (Nutgram $bot) {

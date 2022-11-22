@@ -9,9 +9,21 @@ class DinnerBotService
 {
     public Nutgram $bot;
 
-    public function handle(Nutgram $bot){
-        $bot->onCommand('/start', function (Nutgram $bot){
+    public function handle(Nutgram $bot)
+    {
+        $bot->onCommand('/start', function (Nutgram $bot) {
             $bot->sendMessage('Bu bot orqali siz SmartSoftwareda tushlik buyurtma qilishingiz mumkin');
+        });
+
+        $bot->onMessage(function (Nutgram $bot) {
+            $message = $bot->message();
+            if (property_exists($message, 'forward_from_chat') && $message->forward_from_chat !== null) {
+                if ($message->forward_from_chat->id === -1001652566931) {
+                    echo gettype($message->forward_from_chat->id);
+                    file_put_contents('message.json', json_encode($message, JSON_THROW_ON_ERROR), FILE_APPEND);
+                    print_r(json_encode($message, JSON_THROW_ON_ERROR));
+                }
+            }
         });
     }
 
