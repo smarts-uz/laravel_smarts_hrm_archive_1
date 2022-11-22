@@ -1,6 +1,7 @@
 <?php
 
 use App\Services\CmdService;
+use App\Services\DropperBot\DropperBotService;
 use App\Services\FileSystemService;
 use App\Services\MadelineProto\Database\ChatService;
 use App\Services\MadelineProto\Database\UserService;
@@ -29,7 +30,7 @@ Route::get('/', function (){
     $cmd->getCmd();
 });
 
-Route::post('/hook', [ManageService::class, 'handle']);
+Route::post('/hook', [DropperBotService::class, 'handle']);
 
 Route::get('/telegram', function () {
     $MTProto = new MTProtoService();

@@ -3,6 +3,7 @@
 namespace App\Services\DropperBot;
 
 use danog\MadelineProto\bots;
+use danog\MadelineProto\users;
 use Illuminate\Support\Facades\Cache;
 use SergiX44\Nutgram\Nutgram;
 use SergiX44\Nutgram\Telegram\Attributes\MessageTypes;
@@ -37,11 +38,8 @@ class DropperBotService
             $bot->sendMessage('Enter the id of the user you want to verify');
         });
 
-        $bot->onMessage( function (Nutgram $bot) {
-            $message= $bot->message();
-            file_put_contents('message.json', json_encode($message, JSON_THROW_ON_ERROR), FILE_APPEND);
-            print_r(json_encode($message, JSON_THROW_ON_ERROR));
-            /*if (is_numeric($user_id)) {
+        $bot->onText('{user_id}', function (Nutgram $bot, $user_id) {
+            if (is_numeric($user_id)) {
                 Cache::put('user_id', $user_id);
                 $user = $this->getUser($bot, $user_id);
 
@@ -55,7 +53,7 @@ class DropperBotService
                 }
             } else if ($user_id !== '/start' && $user_id !== 'Channels ❌' && $user_id !== 'Groups ❌' && $user_id !== 'All ❌') {
                 $bot->sendMessage('I didn\'t understand you, please enter user id');
-            }*/
+            }
         });
 
         $bot->onText('Channels ❌', function (Nutgram $bot) {
@@ -91,19 +89,19 @@ class DropperBotService
             $bot->sendMessage($exception->getMessage());
         });
 
-                $ch = curl_init();
+        $ch = curl_init();
 
-                curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot" . env('DROPPER_BOT_TOKEN') . "/getWebhookInfo");
+        curl_setopt($ch, CURLOPT_URL, "https://api.telegram.org/bot" . env('DROPPER_BOT_TOKEN') . "/getWebhookInfo");
 
-                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 
-                $output = curl_exec($ch);
-                $output = json_decode($output);
-                if ($output->result->url !== '') {
-                    $bot->run();
-                }
+        $output = curl_exec($ch);
+        $output = json_decode($output);
+        if ($output->result->url !== '') {
+            $bot->run();
+        }
 
-                curl_close($ch);
+        curl_close($ch);
 
     }
 
