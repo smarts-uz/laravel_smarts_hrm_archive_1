@@ -42,7 +42,7 @@ class SearchService
         }
     }
 
-    public function searchForMessage($txt_data, $titles = [])
+    public function searchForMessage($path, $txt_data, $titles = [])
     {
         $bot = new Nutgram(env('TELEGRAM_TOKEN'), ['timeout' => 60]);
         $MTProto = new MTProtoService();
@@ -52,6 +52,8 @@ class SearchService
         $message_id = $this->searchMessage($txt_data[1], $text);
         if ($message_id == null || $message_id == "") {
             $bot->sendMessage($text, ['chat_id' => $txt_data[1]]);
+            $post_id = $MTProto->MadelineProto->messages->getDiscussionMessage(['peer' => $txt_data[1], 'msg_id' => $message_id])['messages'][0]['id'];
+            $bot->sendMessage($path, ['chat_id' => $txt_data[1], 'reply_to'=>$post_id]);
             print_r($text);
             print_r(PHP_EOL);
             $message_id = $this->searchMessage($txt_data[1], $text);

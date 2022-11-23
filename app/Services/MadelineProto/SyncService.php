@@ -13,17 +13,22 @@ class SyncService
         $this->MTProto = new FileSystemService();
     }
 
-    public function sync($path=null, $url = null)
+    public function sync($path = null, $url = null)
     {
         $file_system = new FileSystemService();
         $MTProto = new MTProtoService();
 
-        if($url === null){
-            $url_file = $file_system->searchForUrl($path);
-            if ($url_file == null) {
-                return;
-            }
-            $url = $file_system->readUrl($url_file);
+        switch (true) {
+            case is_null($url):
+                $url_file = $file_system->searchForUrl($path);
+                if ($url_file == null) {
+                    return;
+                }
+                $url = $file_system->readUrl($url_file);
+                break;
+            case is_null($path):
+                $comments = $MTProto->getComments($url);
+                $path = $comments[count($comments)-1]['message'];
         }
 
         $comments = $MTProto->getComments($url);

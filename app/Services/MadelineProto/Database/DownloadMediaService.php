@@ -45,6 +45,7 @@ class DownloadMediaService
                 dump('documentAttributeFilename');
                 $this->MTProto->MadelineProto->downloadToFile($media, $path .
                     $media['document']['attributes'][array_search('documentAttributeFilename',$attributes)]['file_name']);
+
             }else{
                 dump('NO   documentAttributeFilename');
                 $mime = explode('/',$media['document']['mime_type']);

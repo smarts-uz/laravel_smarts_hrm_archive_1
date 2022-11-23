@@ -81,7 +81,7 @@ IconFile=C:\Windows\System32\SHELL32.dll";
         $dir = scandir($path);
         foreach ($dir as $item) {
             if (is_file($path . '/' . $item) && $item != 'ALL.txt' && $item != 'ALL.url') {
-                $post_url = $search->searchForMessage($txt_data, $titles);
+                $post_url = $search->searchForMessage($path, $txt_data, $titles);
                 $this->createUrlFile($path, $post_url);
                 break;
             } else if (is_dir($path . '/' . $item) && $item != '- Theory' && !str_starts_with($item, '@') && !str_starts_with($item, '.')) {
@@ -120,19 +120,23 @@ IconFile=C:\Windows\System32\SHELL32.dll";
     public function caption($path)
     {
         $path_parts = pathinfo($path);
-        switch ($path_parts['extension']) {
-            case 'txt':
-                $handle = fopen($path, "r");
-                $contents = fread($handle, filesize($path));
-                return $contents;
-            case 'mhtml':
-                $content = file($path);
-                foreach ($content as $item) {
-                    if (str_contains($item, 'Snapshot-Content-Location:')) {
-                        $line = explode(' ', $item);
-                        return substr($line[1], 0, -2);
+        if(array_key_exists('extention', $path_parts)){
+            switch ($path_parts['extension']) {
+                case 'txt':
+                    $handle = fopen($path, "r");
+                    $contents = fread($handle, filesize($path));
+                    return $contents;
+                case 'mhtml':
+                    $content = file($path);
+                    foreach ($content as $item) {
+                        if (str_contains($item, 'Snapshot-Content-Location:')) {
+                            $line = explode(' ', $item);
+                            return substr($line[1], 0, -2);
+                        }
                     }
-                }
+            }
+        }else{
+            return '';
         }
     }
 
