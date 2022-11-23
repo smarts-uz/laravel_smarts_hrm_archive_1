@@ -69,10 +69,14 @@ Route::get('/group', function () {
 
 Route::get('/test', function () {
 
-
-
-    $cmd = new CmdService();
-    $cmd->getCmd();
+    //$download = new \App\Services\MadelineProto\Database\DownloadMediaService();
+    $messages = \App\Models\TgChatText::where('media', '!=', null)->where('media__', 'messageMediaDocument')->get();
+    foreach ($messages as $message){
+        $media = json_decode($message->media);
+        dump($media);
+        //$path = $download->folderPath($message, 'C:\Users\Pailion\Documents\MadelineProto\Database_media');
+        //$download->downloadMedia($path, $message);
+    }
 
 });
 

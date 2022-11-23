@@ -30,6 +30,15 @@ class SyncCommand extends Command
      */
     public function handle()
     {
+        $sync = new SyncService();
+        if(!empty($this->option('tg') && empty($this->option('path')))){
+            $url = $this->option('tg');
+            $sync->sync(null, $url);
+            return;
+        }
+
+
+
         $file_system = new FileSystemService();
         $MTProto = new SyncService();
         if(empty($this->option('path'))){

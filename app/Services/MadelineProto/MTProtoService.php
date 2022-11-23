@@ -66,8 +66,4 @@ class MTProtoService
         }
     }
 
-    public function sync()
-    {
-
-    }
 }

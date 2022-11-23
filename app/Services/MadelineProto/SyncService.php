@@ -13,16 +13,19 @@ class SyncService
         $this->MTProto = new FileSystemService();
     }
 
-    public function sync($path)
+    public function sync($path=null, $url = null)
     {
         $file_system = new FileSystemService();
         $MTProto = new MTProtoService();
 
-        $url_file = $file_system->searchForUrl($path);
-        if ($url_file == null) {
-            return;
+        if($url === null){
+            $url_file = $file_system->searchForUrl($path);
+            if ($url_file == null) {
+                return;
+            }
+            $url = $file_system->readUrl($url_file);
         }
-        $url = $file_system->readUrl($url_file);
+
         $comments = $MTProto->getComments($url);
         $tg_files = $MTProto->getFiles($comments);
         $storage_files = $file_system->getFIles($path);
